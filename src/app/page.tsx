@@ -37,17 +37,25 @@ export default function Home() {
         </div>
 
         {/* Texto Principal */}
-        <div className="z-20 text-center pointer-events-none select-none relative">
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-black font-custom-innovative tracking-tighter text-white drop-shadow-2xl">
-            EMO<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">LOC</span>
+       <div className="z-20 text-center pointer-events-none select-none relative px-4">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-custom-innovative tracking-tighter drop-shadow-2xl uppercase">
+            XAVI <br className="md:hidden" /> {/* Salto de línea solo en móvil */}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
+              COLOMÉ
+            </span>
           </h1>
-          <p className="mt-6 text-sm md:text-lg font-inter tracking-[0.3em] text-gray-400 uppercase">
-            We craft digital emotions
-          </p>
           
-          {/* Indicador de Scroll */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-[250px] opacity-50">
-              <span className="text-[10px] tracking-widest mb-2 block">SCROLL</span>
+          <div className="mt-6 flex flex-col items-center">
+            <p className="text-sm md:text-2xl font-inter tracking-[0.3em] md:tracking-[0.5em] text-gray-300 uppercase font-bold border-b border-cyan-500/30 pb-4 mb-4">
+              Digital Director
+            </p>
+            <p className="text-xs text-gray-500 font-mono tracking-widest">
+              STRATEGY · ECOMMERCE · INNOVATION
+            </p>
+          </div>
+
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-[350px] md:top-[400px] opacity-50">
+              <span className="text-[10px] tracking-widest mb-2 block animate-pulse">SCROLL</span>
               <div className="w-[1px] h-16 bg-gradient-to-b from-cyan-500 to-transparent mx-auto"></div>
           </div>
         </div>
