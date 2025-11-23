@@ -65,7 +65,7 @@ export default function HeroText() {
         {/* BLOQUE 1: NOMBRE COMPLETO (Se mueven juntos) */}
         <motion.h1 
             style={{ x: titleX, y: titleY }}
-            className="text-6xl md:text-8xl lg:text-9xl font-black uppercase mb-6 leading-none tracking-tighter relative z-30"
+            className="text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-none tracking-tighter relative z-30"
         >
             <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.6)]">
                 Xavi
