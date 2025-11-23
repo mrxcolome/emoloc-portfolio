@@ -81,7 +81,7 @@ export default function Projects() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-50"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl font-semibold font-custom-innovative text-white mb-20 tracking-tighter uppercase">
+        <h2 className="text-4xl md:text-5xl font-semibold font-custom-innovative text-white mb-20 tracking-tighter ">
           Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Path</span>
         </h2>
 
@@ -162,10 +162,10 @@ function FlipCard({ project }: { project: any }) {
             
             {/* Textos */}
             <div className="relative z-10">
-                <span className={`text-xs font-bold tracking-widest uppercase bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>
+                <span className={`text-xs font-black tracking-widest uppercase bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>
                     {project.period}
                 </span>
-                <h3 className="text-4xl font-black text-white mt-2 mb-1 font-custom-innovative uppercase drop-shadow-lg">
+                <h3 className="text-4xl font-semibold text-white mt-2 mb-1 font-custom-innovative uppercase drop-shadow-lg">
                     {project.title}
                 </h3>
                 <p className="text-lg text-gray-300 font-mono drop-shadow-md">

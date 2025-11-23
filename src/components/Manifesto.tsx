@@ -16,19 +16,12 @@ export default function Manifesto() {
     <section ref={containerRef} className="relative min-h-screen flex items-center justify-center py-24 px-6">
       
       {/* Línea de tiempo lateral (Decoración) */}
-      <div className="absolute left-4 md:left-10 top-0 bottom-0 w-[1px] bg-gray-900">
-        <motion.div 
-          style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
-          className="w-full h-full bg-gradient-to-b from-indigo-500 to-cyan-400 shadow-[0_0_10px_#4F46E5]"
-        />
-      </div>
+      
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-sm md:text-base text-cyan-400 font-custom-innovative tracking-widest mb-10 uppercase">
-          // Xavi Colomé _ Digital Director
-        </h2>
+        
 
-        <div className="space-y-12 text-3xl md:text-5xl font-bold leading-tight text-gray-800">
+        <div className="space-y-12 text-3xl md:text-7xl font-bold leading-tight text-gray-800">
           
           {/* Frase 1: Tu enfoque estratégico */}
           <ManifestoItem delay={0}>
