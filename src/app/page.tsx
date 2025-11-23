@@ -8,7 +8,7 @@ import Contact from '@/components/Contact'
 
 
 // Cargamos los componentes
-const FloatingOrb = dynamic(() => import('@/components/FloatingOrb'), { ssr: false });
+const GyroStars = dynamic(() => import('@/components/GyroStars'), { ssr: false });
 const Canvas = dynamic(() => import('@react-three/fiber').then((mod) => mod.Canvas), { ssr: false });
 
 export default function Home() {
@@ -25,16 +25,19 @@ export default function Home() {
         <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-purple-900 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse-slow"></div>
         <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-900 rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
 
-        {/* Escenario 3D */}
-        <div className="absolute inset-0 z-10">
-          <Suspense fallback={null}>
-            <Canvas camera={{ position: [0, 0, 4] }}>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[2, 5, 2]} intensity={1} />
-              <FloatingOrb />
-            </Canvas>
-          </Suspense>
-        </div>
+       {/* 3D Canvas: ESTRELLAS */}
+      <div className="absolute inset-0 z-10">
+        <Suspense fallback={null}>
+          <Canvas camera={{ position: [0, 0, 1] }}>
+            {/* Luz ambiental suave */}
+            <ambientLight intensity={0.5} />
+            
+            {/* AQUÍ ESTÁ EL CAMBIO: Ponemos las estrellas en lugar del orbe */}
+            <GyroStars />
+            
+          </Canvas>
+        </Suspense>
+      </div>
 
         {/* Texto Principal */}
        <div className="z-20 text-center pointer-events-none select-none relative px-4">
