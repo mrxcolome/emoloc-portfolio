@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { MeshDistortMaterial, Sphere } from '@react-three/drei';
 
 const FloatingOrb = () => {
-  const meshRef = useRef<any>();
+  const meshRef = useRef<any>(null);
 
   useFrame((state) => {
     const { mouse } = state;
