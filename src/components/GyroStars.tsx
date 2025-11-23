@@ -2,37 +2,25 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
+import { Stars, Sparkles } from '@react-three/drei'; // Importamos Sparkles también
 import * as THREE from 'three';
 
 const GyroStars = () => {
   const groupRef = useRef<THREE.Group>(null);
-  const { pointer } = useThree(); // Para detectar ratón/touch si no hay giroscopio
+  const { pointer } = useThree();
 
-  // Estado para guardar la inclinación objetivo
   const [targetRotation, setTargetRotation] = useState({ x: 0, y: 0 });
-  // Estado para saber si tenemos acceso al giroscopio
   const [hasGyro, setHasGyro] = useState(false);
 
   useEffect(() => {
-    // Esta función maneja los datos del giroscopio si están disponibles
     const handleDeviceOrientation = (event: DeviceOrientationEvent) => {
         if (!event.beta || !event.gamma) return;
-        setHasGyro(true); // ¡Hemos detectado datos!
-
-        // Beta es la inclinación adelante/atrás (Eje X)
-        // Gamma es la inclinación izquierda/derecha (Eje Y)
-        // Dividimos por un factor alto (ej: 40) para que el movimiento sea sutil y elegante, no mareante.
+        setHasGyro(true);
         const x = (event.beta || 0) / 40; 
         const y = (event.gamma || 0) / 40;
-        
         setTargetRotation({ x, y });
     };
-
-    // Intentamos añadir el "escuchador" del movimiento del móvil
     window.addEventListener('deviceorientation', handleDeviceOrientation);
-
-    // Limpieza al salir
     return () => {
       window.removeEventListener('deviceorientation', handleDeviceOrientation);
     };
@@ -40,24 +28,17 @@ const GyroStars = () => {
 
   useFrame((state, delta) => {
     if (groupRef.current) {
-      // 1. ROTACIÓN AUTOMÁTICA SUAVE (Para que siempre esté vivo)
-      groupRef.current.rotation.z += delta * 0.02; // Gira lentamente sobre sí mismo
+      groupRef.current.rotation.z += delta * 0.01; // Rotación muy lenta
 
       let targetX = targetRotation.x;
       let targetY = targetRotation.y;
 
-      // 2. SI NO HAY GIROSCOPIO (Desktop o iPhone sin permiso), usamos el ratón/touch
       if (!hasGyro) {
-        // Usamos la posición del puntero (ratón o dedo)
-        // Multiplicamos por 0.5 para que sea sutil
-        targetX = -pointer.y * 0.5;
-        targetY = pointer.x * 0.5;
+        targetX = -pointer.y * 0.3; // Un poco más sutil
+        targetY = pointer.x * 0.3;
       }
 
-      // 3. INTERPOLACIÓN (La clave de la suavidad)
-      // En lugar de saltar a la nueva posición, nos movemos un 5% hacia ella en cada frame.
-      // Esto elimina los temblores del sensor del móvil.
-      const smoothness = hasGyro ? 0.05 : 0.1; // Más suave en móvil, más rápido en desktop
+      const smoothness = hasGyro ? 0.05 : 0.1;
       
       groupRef.current.rotation.x = THREE.MathUtils.lerp(
         groupRef.current.rotation.x,
@@ -74,21 +55,47 @@ const GyroStars = () => {
 
   return (
     <group ref={groupRef}>
-      {/* Componente de Estrellas optimizado de 'drei'.
-        radius: Qué tan lejos están.
-        depth: Sensación de profundidad 3D.
-        count: Cuántas estrellas.
-        factor: Tamaño de las estrellas.
-        saturation: 0 es blanco y negro, 1 es color completo.
+      
+      {/* CAPA 1: Fondo lejano (El Universo) 
+          factor={4} hace que el "ruido" de fondo sea visible pero pequeño.
       */}
       <Stars 
-        radius={100} 
+        radius={80} 
         depth={50} 
-        count={5000} 
+        count={2000} 
         factor={4} 
         saturation={0} 
         fade 
+        speed={1} 
       />
+
+      {/* CAPA 2: Estrellas GRANDES y cercanas (El primer plano) 
+          size={6}: Tamaño máximo (serán aleatorias entre 0 y 6)
+          scale={12}: Ocupan un espacio amplio
+          opacity={0.8}: Brillan más
+          noise={1}: Añade variación de movimiento
+      */}
+      <Sparkles 
+        count={70} 
+        scale={12} 
+        size={6} 
+        speed={0.4} 
+        opacity={1} 
+        color="#ffffff"
+      />
+      
+      {/* CAPA 3: Unas pocas estrellas GIGANTES y desenfocadas (Efecto Bokeh/Cine) 
+          Estas son muy pocas (solo 15) pero muy grandes, dan sensación de cercanía.
+      */}
+      <Sparkles 
+        count={15} 
+        scale={10} 
+        size={15} 
+        speed={0.2} 
+        opacity={0.5} 
+        color="#cyan" // Un toque sutil azulado
+      />
+
     </group>
   );
 };
