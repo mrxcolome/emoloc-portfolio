@@ -21,21 +21,21 @@ export default function Manifesto() {
       <div className="max-w-4xl mx-auto">
         
 
-        <div className="space-y-12 text-3xl md:text-7xl font-bold leading-tight text-gray-800">
+        <div className="space-y-12 text-3xl md:text-7xl font-bold leading-tight text-gray-500">
           
           {/* Frase 1: Tu enfoque estratégico */}
           <ManifestoItem delay={0}>
-            Transformo datos en <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">rentabilidad</span> y estrategia.
+            Transformo datos en <span className="text-blue-100">rentabilidad</span> y estrategia.
           </ManifestoItem>
 
           {/* Frase 2: Tu experiencia (Castañer, Tous, etc.) */}
           <ManifestoItem delay={0.2}>
-            Más de 15 años liderando la <span className="text-indigo-500 drop-shadow-[0_0_15px_rgba(79,70,229,0.5)]">evolución digital</span> de marcas globales.
+            Más de 15 años liderando la <span className="text-blue-100">evolución digital</span> de marcas globales.
           </ManifestoItem>
 
           {/* Frase 3: Tu filosofía (Business + UX) */}
           <ManifestoItem delay={0.4}>
-            Donde el <span className="text-cyan-400">Business Plan</span> se encuentra con la <span className="text-white italic font-serif">Experiencia de Usuario</span>.
+            Donde el <span className="text-blue-100">Business Plan</span> se encuentra con la <span className="text-blue-100">Experiencia de Usuario</span>.
           </ManifestoItem>
 
         </div>

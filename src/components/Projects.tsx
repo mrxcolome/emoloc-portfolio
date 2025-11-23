@@ -82,7 +82,7 @@ export default function Projects() {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-semibold font-custom-innovative text-white mb-20 tracking-tighter ">
-          Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Path</span>
+          Career <span className="text-transparent bg-clip-text text-white">Path</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
