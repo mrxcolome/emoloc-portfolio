@@ -68,11 +68,11 @@ export default function HeroText() {
             className="text-6xl md:text-8xl lg:text-9xl font-black uppercase mb-6 leading-none tracking-tighter relative z-30"
         >
             <span className="text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.6)]">
-                XAVI
+                Xavi
             </span>
             <br className="md:hidden" />
             <span className="md:ml-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500 drop-shadow-[0_0_25px_rgba(6,182,212,0.6)]">
-                COLOMÉ
+                Colomé
             </span>
         </motion.h1>
         
