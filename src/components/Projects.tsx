@@ -77,7 +77,7 @@ const projectsData = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen py-32 px-6 bg-[#050505] relative overflow-hidden">
+    <section className="min-h-screen py-32 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-50"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">

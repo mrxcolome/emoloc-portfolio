@@ -13,7 +13,7 @@ export default function Manifesto() {
   });
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center py-24 px-6 bg-[#050505]">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center py-24 px-6">
       
       {/* Línea de tiempo lateral (Decoración) */}
       <div className="absolute left-4 md:left-10 top-0 bottom-0 w-[1px] bg-gray-900">
