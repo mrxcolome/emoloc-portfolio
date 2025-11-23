@@ -1,4 +1,20 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IMPORTAMOS ASAP */
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: #050505;
+  color: white;
+  font-family: 'Asap', sans-serif; /* Forzamos Asap por defecto */
+  overflow-x: hidden;
+}
+
+canvas {
+  touch-action: none;
+}
 
 :root {
   --background: #ffffff;
