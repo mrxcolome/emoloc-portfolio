@@ -38,18 +38,18 @@ export default function Home() {
 
         {/* Texto Principal */}
        <div className="z-20 text-center pointer-events-none select-none relative px-4">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-custom-innovative tracking-tighter uppercase mb-4">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-semibold font-custom-innovative tracking-tighter mb-4">
             
             {/* XAVI: Blanco puro con resplandor */}
             <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-              XAVI
+              Xavi
             </span>
             
             <br className="md:hidden" /> {/* Salto de línea en móvil */}
             
             {/* COLOMÉ: Degradado Neón */}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500 drop-shadow-[0_0_10px_rgba(6,182,212,0.5)]">
-               COLOMÉ
+               Colomé
             </span>
           </h1>
           

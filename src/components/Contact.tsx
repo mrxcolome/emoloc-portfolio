@@ -20,10 +20,7 @@ export default function Contact() {
             <p className="text-cyan-400 font-mono mb-4 tracking-widest uppercase text-sm">
                 Available for new challenges
             </p>
-            <h2 className="text-5xl md:text-8xl font-black font-custom-innovative tracking-tighter mb-10 uppercase">
-                XAVI <br className="md:hidden" /> 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">COLOMÉ</span>
-            </h2>
+            
         </motion.div>
 
         {/* Botón de contacto estilo Neón */}

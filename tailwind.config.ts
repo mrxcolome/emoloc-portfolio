@@ -9,8 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'custom-innovative': ['Orbitron', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        // AQUÍ ESTÁ LA MAGIA: Conectamos 'sans' con la variable de Asap
+        sans: ['var(--font-asap)', 'sans-serif'],
+        // Mantenemos esta por si acaso, apuntando a lo mismo
+        'custom-innovative': ['var(--font-asap)', 'sans-serif'], 
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',

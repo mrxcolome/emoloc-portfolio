@@ -81,7 +81,7 @@ export default function Projects() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent opacity-50"></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl font-custom-innovative text-white mb-20 tracking-tighter uppercase">
+        <h2 className="text-4xl md:text-6xl font-semibold font-custom-innovative text-white mb-20 tracking-tighter uppercase">
           Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Path</span>
         </h2>
 
