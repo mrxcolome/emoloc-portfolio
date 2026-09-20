@@ -53,7 +53,7 @@
   .type-row small{color:var(--muted);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
   .weights{display:flex;gap:48px;flex-wrap:wrap;margin-top:24px}
   .weights div{display:grid;gap:8px}
-  .weights span{font-size:clamp(40px,6vw,72px);line-height:1}
+  .weights .mostra{font-size:clamp(40px,6vw,72px);line-height:1}
   /* spacing & radius */
   .bar{background:var(--accent);height:12px;border-radius:2px}
   .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--muted)}
@@ -167,8 +167,8 @@
     </div>
     <p class="small" style="margin-top:24px">Quatre estils i cap més: tot el text d'aquesta guia i de la web és un d'aquests quatre. El color és un eix a part: qualsevol estil pot anar en tinta o en tinta suau. El paràgraf que segueix un titular és Text en tinta suau; el títol d'una targeta o d'una regla és Text en tinta. Els botons, els menús, les etiquetes de pilar i les caselles del formulari posen el Petit en gruix 600: és l'única excepció, i pertany al component, no a l'escala.</p>
     <div class="weights">
-      <div><span style="font-weight:400">Aa</span><span class="small">400 · Text i Petit</span></div>
-      <div><span style="font-weight:800">Aa</span><span class="small">800 · Titular, Subtitular i xifres</span></div>
+      <div><span class="mostra" style="font-weight:400">Aa</span><span class="small">400 · Text i Petit</span></div>
+      <div><span class="mostra" style="font-weight:800">Aa</span><span class="small">800 · Titular, Subtitular i xifres</span></div>
     </div>
     <ul class="dont">
       <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
