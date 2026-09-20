@@ -9,7 +9,7 @@ Gairebé totes les empreses petites que conec funcionen amb un excel. O amb quat
 
 Fins que un dia deixa de funcionar. I sol passar sense avisar.
 
-## els senyals
+## Els senyals
 
 **Només l'entén una persona.** Si aquesta persona està malalta o de vacances, ningú sap emetre els rebuts. El negoci depèn d'una memòria, no d'un sistema.
 
@@ -21,11 +21,11 @@ Fins que un dia deixa de funcionar. I sol passar sense avisar.
 
 **Ningú sap què va passar.** Qui va canviar aquesta quota i quan? L'excel no ho recorda.
 
-## per què els programes del mercat no ho arreglen
+## Per què els programes del mercat no ho arreglen
 
 La reacció habitual és buscar "un programa". I n'hi ha molts. Però estan fets per a un negoci mitjà imaginari, no per al teu. Tenen cinquanta funcions que no necessites i els falta la que fas cada dia. Al final, l'equip torna a l'excel perquè "és més ràpid".
 
-## l'alternativa: una eina feta per a tu
+## L'alternativa: una eina feta per a tu
 
 Una eina de gestió pròpia no és un luxe de gran empresa. És, literalment, el teu excel convertit en una aplicació:
 
@@ -37,7 +37,7 @@ Una eina de gestió pròpia no és un luxe de gran empresa. És, literalment, el
 
 Amb la intel·ligència artificial com a equip de desenvolupament, una eina així es construeix en setmanes, no en mesos, i costa una fracció del que costava fa cinc anys.
 
-## què pots fer demà al matí
+## Què pots fer demà al matí
 
 - **Fes la llista dels teus excels.** Quants n'hi ha, qui els toca, què es calcula a mà.
 - **Cronometra un tancament de mes.** Quantes hores es van en emetre rebuts o quotes. Aquest és el cost real de l'excel.

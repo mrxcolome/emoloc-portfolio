@@ -3,343 +3,312 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap">
 <style>
   :root{
-    --paper:#f4f1eb; --surface:#ffffff; --ink:#1b1815; --muted:#6b6157; --line:#ddd6cc;
-    --accent:#f26b1f; --accent-text:#b8460a; --on-accent:#1b1815; --accent-soft:#ffe4d3;
-    --ok:#1b7f4d; --warn:#b7791f;
-    --font:"DM Sans", "Helvetica Neue", Arial, sans-serif;
-    --r-s:6px; --r-m:12px; --r-l:24px; --r-pill:999px;
+    --paper:#ffffff; --surface:#f6f4f0; --ink:#1b1815; --muted:#6b6157; --line:#e2ddd5;
+    --accent:#f26b1f; --on-accent:#1b1815; --accent-soft:#ffe4d3;
+    --font:"DM Sans","Helvetica Neue",Arial,sans-serif;
+    --r-s:8px; --r-m:16px; --r-pill:999px;
     --ease:cubic-bezier(.2,.8,.2,1); --t-fast:200ms; --t-base:500ms; --t-slow:900ms;
-    --gutter:clamp(16px, 5vw, 64px);
+    --gutter:clamp(16px,5vw,64px);
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#141210; --surface:#1c1916; --ink:#f3ede6; --muted:#a89d90; --line:#2c2823;
-      --accent:#ff8a4d; --accent-text:#ffa46e; --on-accent:#141210; --accent-soft:#3a2214;
-    }
+    :root:not([data-theme="light"]){--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
   }
-  :root[data-theme="dark"]{
-    --paper:#141210; --surface:#1c1916; --ink:#f3ede6; --muted:#a89d90; --line:#2c2823;
-    --accent:#ff8a4d; --accent-text:#ffa46e; --on-accent:#141210; --accent-soft:#3a2214;
-  }
+  :root[data-theme="dark"]{--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
+
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{letter-spacing:-.02em;text-wrap:balance;margin:0;font-weight:800;line-height:1.05}
-  h1{font-size:clamp(40px,7vw,88px)}
-  h2{font-size:clamp(28px,4vw,48px)}
-  h3{font-size:22px;font-weight:600}
+  h1,h2,h3{margin:0;text-wrap:balance}
+  h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em}
+  h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.015em}
+  h3{font-size:24px;font-weight:600;line-height:1.2}
   p{margin:0;text-wrap:pretty;max-width:62ch}
   a{color:inherit}
   .wrap{max-width:1120px;margin:0 auto}
   header.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px;border-bottom:1px solid var(--line)}
   .logo{font-weight:800;font-size:24px;letter-spacing:.04em}
   .logo b{color:var(--accent);font-weight:800}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
-  .lead{font-size:clamp(18px,2vw,22px);color:var(--muted)}
-  section{padding-block:72px;border-bottom:1px solid var(--line)}
+  .label{font-size:14px;font-weight:600;color:var(--muted)}
+  .lead{font-size:24px;line-height:1.35;color:var(--muted);font-weight:400}
+  .small{font-size:14px;color:var(--muted)}
+  section{padding-block:96px;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
-  .sec-head{display:grid;gap:12px;margin-bottom:40px}
-  .grid{display:grid;gap:20px}
+  .sec-head{display:grid;gap:16px;margin-bottom:48px}
+  .grid{display:grid;gap:16px}
   .g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  .g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .g5{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
   /* colors */
-  .swatch{border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:var(--surface)}
+  .swatch{border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:var(--paper)}
   .swatch .chip{height:96px}
-  .swatch .meta{padding:14px 16px;display:grid;gap:2px;font-size:14px}
+  .swatch .meta{padding:16px;display:grid;gap:2px;font-size:14px}
   .swatch .meta b{font-weight:600}
   .swatch .meta code{color:var(--muted);font-family:ui-monospace,Menlo,monospace;font-size:13px}
   /* type */
-  .type-row{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding-block:18px;border-top:1px solid var(--line)}
+  .type-row{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:baseline;padding-block:24px;border-top:1px solid var(--line)}
   .type-row:first-child{border-top:0}
-  .type-row small{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
-  .t-display{font-size:clamp(48px,9vw,104px);font-weight:800;line-height:.95;letter-spacing:-.03em}
-  .t-h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.025em}
-  .t-h2{font-size:48px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
-  .t-h3{font-size:32px;font-weight:600;line-height:1.1;letter-spacing:-.015em}
-  .t-lead{font-size:22px;color:var(--muted)}
-  .t-body{font-size:17px}
-  .t-small{font-size:14px;color:var(--muted)}
-  .t-label{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
-  .weights{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px}
-  .weights div{display:grid;gap:4px}
+  .type-row small{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+  .weights{display:flex;gap:48px;flex-wrap:wrap;margin-top:24px}
+  .weights div{display:grid;gap:8px}
   .weights span{font-size:64px;line-height:1}
-  .weights small{color:var(--muted);font-size:13px}
   /* spacing & radius */
   .bar{background:var(--accent);height:12px;border-radius:2px}
-  .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;font-variant-numeric:tabular-nums}
-  .space-row small{color:var(--muted)}
-  .radius-row{display:flex;gap:20px;flex-wrap:wrap}
-  .radius-row div{width:120px;height:80px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:13px;color:var(--muted)}
+  .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;font-variant-numeric:tabular-nums;color:var(--muted)}
+  .radius-row{display:flex;gap:24px;flex-wrap:wrap}
+  .radius-row div{width:140px;height:88px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:14px;color:var(--muted)}
   /* components */
-  .btn{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-pill);padding:14px 22px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--accent);color:var(--on-accent)}
-  .btn-secondary{background:var(--surface);color:var(--ink);border-color:var(--line)}
+  .btn-secondary{background:var(--paper);color:var(--ink);border-color:var(--line)}
   .btn-secondary:hover{border-color:var(--ink)}
-  .btn-ghost{padding:0;background:none;color:var(--ink);text-underline-offset:4px}
-  .btn-ghost:hover{text-decoration:underline;transform:none}
   .btn svg{width:14px;height:14px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:28px;display:grid;gap:12px;transition:border-color var(--t-fast) var(--ease)}
+  .link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;text-decoration:none;text-underline-offset:4px}
+  .link:hover{text-decoration:underline}
+  .link svg{width:14px;height:14px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:24px;display:grid;gap:8px;transition:border-color var(--t-fast) var(--ease)}
   .card:hover{border-color:var(--ink)}
-  .pill{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:6px 12px;font-size:13px;font-weight:600;background:var(--accent-soft);color:var(--ink)}
+  .pill{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:8px 16px;font-size:14px;font-weight:600;background:var(--accent-soft);color:var(--ink)}
   .pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
   .stat{display:grid;gap:4px}
-  .stat b{font-size:clamp(44px,6vw,72px);font-weight:800;line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-  .stat span{font-weight:600;font-size:15px}
-  .stat small{color:var(--muted);font-size:13px}
+  .stat b{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
+  .stat span{font-weight:600;font-size:14px}
+  .stat small{color:var(--muted);font-size:14px}
   .field{display:grid;gap:8px;font-size:14px;font-weight:600}
-  .field input,.field textarea{font:inherit;font-weight:400;font-size:16px;padding:14px 16px;border-radius:var(--r-m);border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+  .field input,.field textarea{font:inherit;font-weight:400;font-size:17px;padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
   .field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
-  .check{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-pill);padding:10px 16px;font-weight:600;font-size:15px;background:var(--surface);cursor:pointer;user-select:none}
+  .check{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--r-pill);padding:10px 16px;font-weight:600;font-size:14px;background:var(--paper);cursor:pointer;user-select:none}
   .check input{accent-color:var(--accent);width:16px;height:16px;margin:0}
   .check:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
-  .rules{display:grid;gap:0}
-  .rule{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:24px;padding-block:20px;border-top:1px solid var(--line)}
+  .rules{display:grid}
+  .rule{display:grid;grid-template-columns:minmax(160px,240px) 1fr;gap:24px;padding-block:24px;border-top:1px solid var(--line)}
   .rule:first-child{border-top:0}
-  .rule h3{font-size:18px}
-  .rule p{color:var(--muted);font-size:16px}
-  .motion{display:grid;gap:12px;margin-top:20px}
-  .motion .track{position:relative;height:56px;border-radius:var(--r-m);background:var(--surface);border:1px solid var(--line);overflow:hidden}
+  .rule h3{font-size:17px;font-weight:600}
+  .rule p{color:var(--muted)}
+  .motion{display:grid;gap:8px;margin-top:24px}
+  .motion .track{position:relative;height:56px;border-radius:var(--r-s);background:var(--surface);border:1px solid var(--line);overflow:hidden}
   .motion .dot{position:absolute;top:12px;left:12px;width:32px;height:32px;border-radius:50%;background:var(--accent)}
   .motion:hover .dot.fast{transform:translateX(min(60vw,700px));transition:transform var(--t-fast) var(--ease)}
   .motion:hover .dot.base{transform:translateX(min(60vw,700px));transition:transform var(--t-base) var(--ease)}
   .motion:hover .dot.slow{transform:translateX(min(60vw,700px));transition:transform var(--t-slow) var(--ease)}
-  .motion small{color:var(--muted);font-size:13px}
-  .note{background:var(--accent-soft);border-radius:var(--r-m);padding:16px 18px;font-size:15px}
-  .dont{display:grid;gap:8px;padding:0;margin:0;list-style:none}
-  .dont li{display:flex;gap:10px;color:var(--muted)}
-  .dont li::before{content:"×";color:var(--accent-text);font-weight:800}
+  .note{background:var(--accent-soft);border-radius:var(--r-s);padding:16px;font-size:14px}
+  .dont{display:grid;gap:8px;padding:0;margin:24px 0 0;list-style:none;font-size:14px}
+  .dont li{display:flex;gap:8px;color:var(--muted)}
+  .dont li::before{content:"×";color:var(--accent);font-weight:800}
   .kbd{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-  @media (max-width:640px){.type-row,.rule{grid-template-columns:1fr;gap:6px}.t-h2{font-size:36px}.t-h3{font-size:26px}}
+  @media (max-width:640px){.type-row,.rule{grid-template-columns:1fr;gap:8px}section{padding-block:48px}}
 </style>
 
 <div class="wrap">
   <header class="top">
-    <div class="logo"><b>.</b>émoloc</div>
-    <div class="t-small">guia d'estils · v1.3 · setembre 2026</div>
+    <div class="logo"><b>.</b>emoloc</div>
+    <div class="small">Guia d'estils · v2 · setembre 2026</div>
   </header>
 
   <section>
     <div class="sec-head">
-      <p class="eyebrow">el vestuari</p>
-      <h1>guia d'estils emoloc.</h1>
-      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Sis colors, una lletra en tres gruixos, un moviment, i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí.</p>
+      <p class="label">El vestuari</p>
+      <h1>Guia d'estils emoloc</h1>
+      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en tres gruixos i cinc mides, un moviment, i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí.</p>
     </div>
-    <p class="note">Frase de missió, fixa: <strong>emoloc. l'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.</strong></p>
+    <p class="note">Frase de missió, fixa: <strong>emoloc. L'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.</strong></p>
   </section>
 
   <section id="logo">
     <div class="sec-head">
-      <p class="eyebrow">el nom</p>
-      <h2>el logotip és la paraula, al revés.</h2>
-      <p class="lead">".émoloc": el punt al davant, en taronja, com un domini llegit a l'inrevés; l'accent a la "é" perquè "emoloc" és "colomé" escrit del revés i l'accent hi viatja. Gruix 800, minúscula, i l'espaiat entre lletres una mica obert (+4 %), a diferència dels titulars, que van tancats. El punt és l'única marca gràfica.</p>
+      <p class="label">El nom</p>
+      <h2>El logotip és la paraula, al revés</h2>
+      <p class="lead">".emoloc": el punt al davant, en taronja, com un domini llegit a l'inrevés. És l'única paraula de tota la marca que va sempre en minúscula. Gruix 800 i l'espaiat entre lletres una mica obert (+4 %), al contrari dels titulars, que van tancats. El punt és l'única marca gràfica.</p>
     </div>
     <div class="grid g2">
-      <div class="card" style="align-items:center;justify-items:center;padding:56px"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b>.</b>émoloc</div></div>
-      <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--ink);color:var(--paper)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b style="color:var(--accent)">.</b>émoloc</div></div>
+      <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--paper)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b>.</b>emoloc</div></div>
+      <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--ink);color:var(--paper);border-color:var(--ink)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b style="color:var(--accent)">.</b>emoloc</div></div>
     </div>
-    <ul class="dont" style="margin-top:20px">
-      <li>Mai en majúscula, mai "Emoloc", mai sense el punt ni sense l'accent. El punt sempre al davant.</li>
-      <li>En text corrent, la marca s'escriu "emoloc", sense punt i sense accent. El ".émoloc" és el logotip, no el nom.</li>
+    <ul class="dont">
+      <li>Mai en majúscula, mai "Emoloc", mai sense el punt. El punt sempre al davant.</li>
       <li>Mai amb símbol, icona o degradat. La paraula sola.</li>
-      <li>Alçada mínima: 20 px a pantalla. Espai lliure al voltant: l'alçada de la lletra "e".</li>
+      <li>En text corrent, la marca s'escriu "emoloc", sense punt. També a l'inici de frase.</li>
+      <li>Alçada mínima a pantalla: 20 px. Espai lliure al voltant: l'alçada de la lletra "e".</li>
     </ul>
   </section>
 
   <section id="color">
     <div class="sec-head">
-      <p class="eyebrow">set colors, i prou</p>
-      <h2>paper, tinta i un taronja.</h2>
-      <p class="lead">Fons de paper càlid, tinta gairebé negra amb un punt de terra, i un únic accent: un taronja viu que només apareix on cal decidir o mirar. Els grisos tiren cap al càlid, no són grisos neutres. El taronja té dues tonalitats perquè el viu no aguanta text petit: el viu per a fons, punt del logo i xifres grans, sempre amb la tinta a sobre; el fosc per a etiquetes i enllaços.</p>
+      <p class="label">Cinc colors, i prou</p>
+      <h2>Blanc, tinta i un taronja</h2>
+      <p class="lead">Fons blanc, tinta gairebé negra amb un punt de terra, dos grisos càlids per al text secundari i les línies, i un únic accent: un taronja viu que només apareix on cal decidir o mirar. El taronja mai porta text a sobre que no sigui tinta, i mai és text de menys de 24 píxels.</p>
     </div>
-    <div class="grid g3">
-      <div class="swatch"><div class="chip" style="background:#f4f1eb"></div><div class="meta"><b>paper</b><code>#f4f1eb</code><span>el fons de tot</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid var(--line)"></div><div class="meta"><b>superfície</b><code>#ffffff</code><span>targetes, camps, capes</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#1b1815"></div><div class="meta"><b>tinta</b><code>#1b1815</code><span>text i titulars</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#6b6157"></div><div class="meta"><b>tinta suau</b><code>#6b6157</code><span>text secundari, peus</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#ddd6cc"></div><div class="meta"><b>línia</b><code>#ddd6cc</code><span>vores i separadors</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#f26b1f"></div><div class="meta"><b>taronja emoloc</b><code>#f26b1f</code><span>botons (amb text en tinta), punt del logo, xifres grans</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#b8460a"></div><div class="meta"><b>taronja de text</b><code>#b8460a</code><span>etiquetes, enllaços i text petit en taronja</span></div></div>
+    <div class="grid g5">
+      <div class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid var(--line)"></div><div class="meta"><b>Blanc</b><code>#ffffff</code><span>El fons de tot</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#1b1815"></div><div class="meta"><b>Tinta</b><code>#1b1815</code><span>Text, titulars, botons secundaris</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#6b6157"></div><div class="meta"><b>Tinta suau</b><code>#6b6157</code><span>Text secundari, etiquetes, peus</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#e2ddd5"></div><div class="meta"><b>Línia</b><code>#e2ddd5</code><span>Vores, separadors i, més clar, fons de targeta (#f6f4f0)</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#f26b1f"></div><div class="meta"><b>Taronja emoloc</b><code>#f26b1f</code><span>Punt del logo, botó principal, xifres grans</span></div></div>
     </div>
-    <h3 style="margin-top:48px">en fosc</h3>
-    <p class="t-small" style="margin-bottom:16px">La web respecta el mode fosc del sistema. Mateixos papers, invertits, i el taronja s'aclareix perquè aguanti el contrast; en fosc, el text del botó és el paper fosc.</p>
-    <div class="grid g3">
-      <div class="swatch"><div class="chip" style="background:#141210"></div><div class="meta"><b>paper fosc</b><code>#141210</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#1c1916"></div><div class="meta"><b>superfície fosca</b><code>#1c1916</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#f3ede6"></div><div class="meta"><b>tinta clara</b><code>#f3ede6</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#a89d90"></div><div class="meta"><b>tinta suau clara</b><code>#a89d90</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#2c2823"></div><div class="meta"><b>línia fosca</b><code>#2c2823</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#ff8a4d"></div><div class="meta"><b>taronja emoloc clar</b><code>#ff8a4d</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#ffa46e"></div><div class="meta"><b>taronja de text clar</b><code>#ffa46e</code></div></div>
-    </div>
-    <ul class="dont" style="margin-top:24px">
+    <h3 style="margin-top:48px">En fosc</h3>
+    <p class="small" style="margin:8px 0 16px">La web respecta el mode fosc del sistema: fons #141210, tinta #f3ede6, tinta suau #a89d90, línia #2c2823 i el taronja s'aclareix a #ff8a4d. El text del botó principal passa a ser el fons fosc.</p>
+    <ul class="dont">
       <li>El taronja mai de fons d'una secció sencera. És accent, no ambient.</li>
-      <li>Sobre el taronja viu, el text sempre en tinta, mai en blanc: el blanc no arriba al contrast mínim.</li>
-      <li>El taronja viu mai per a text de menys de 24 píxels: per a això hi ha el taronja de text.</li>
-      <li>Cap degradat, cap ombra de color. La profunditat la fan el paper, la superfície i la línia.</li>
+      <li>Sobre el taronja, el text sempre en tinta, mai en blanc: el blanc no arriba al contrast mínim.</li>
+      <li>Cap degradat, cap ombra de color. La profunditat la fan el blanc, la targeta i la línia.</li>
       <li>El color dels projectes (el granat de l'escola, el blau marí de Brachfield) només apareix dins de les seves captures i vídeos.</li>
     </ul>
   </section>
 
   <section id="type">
     <div class="sec-head">
-      <p class="eyebrow">una sola lletra, tres gruixos</p>
-      <h2>DM Sans.</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gegant es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Funciona igual de bé en minúscula, que és la nostra veu. Tres gruixos i prou: 400 per llegir, 600 per etiquetar, 800 per titular.</p>
+      <p class="label">Una sola lletra</p>
+      <h2>DM Sans, tres gruixos, cinc mides</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Tres gruixos: 400 per llegir, 600 per etiquetar i per als botons, 800 per als titulars i les xifres.</p>
     </div>
     <div>
-      <div class="type-row"><small>display · 104 / 0.95</small><div class="t-display">digital.</div></div>
-      <div class="type-row"><small>h1 · 72 / 1.0</small><div class="t-h1">digital que funciona.</div></div>
-      <div class="type-row"><small>h2 · 48 / 1.05</small><div class="t-h2">presència, gestió, venda i comunicació.</div></div>
-      <div class="type-row"><small>h3 · 32 / 1.1 · 600</small><div class="t-h3">una web feta per a l'escola, no per a una plantilla.</div></div>
-      <div class="type-row"><small>lead · 22 / 1.5</small><div class="t-lead">L'ajuda amb la transformació digital que necessita la teva empresa.</div></div>
-      <div class="type-row"><small>cos · 17 / 1.55</small><div class="t-body">Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</div></div>
-      <div class="type-row"><small>petit · 14 / 1.5</small><div class="t-small">Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</div></div>
-      <div class="type-row"><small>etiqueta · 12 · 600 · +16%</small><div class="t-label">pilar · presència</div></div>
+      <div class="type-row"><small>Titular gran · 72 / 1.0 · 800</small><h1>Digital que funciona</h1></div>
+      <div class="type-row"><small>Titular · 40 / 1.1 · 800</small><h2>Presència, gestió, venda i comunicació</h2></div>
+      <div class="type-row"><small>Subtítol · 24 / 1.2 · 600</small><h3>Una web feta per a l'escola, no per a una plantilla</h3></div>
+      <div class="type-row"><small>Text · 17 / 1.55 · 400</small><p>Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><small>Petit · 14 / 1.5 · 400 o 600</small><p class="small">Etiquetes, peus de foto, botons i notes. Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
     </div>
+    <p class="small" style="margin-top:24px">L'entradeta (el paràgraf que segueix un titular) és el subtítol en gruix 400 i tinta suau.</p>
     <div class="weights">
-      <div><span style="font-weight:400">Aa</span><small>400 · el text de lectura</small></div>
-      <div><span style="font-weight:600">Aa</span><small>600 · etiquetes, menús, botons</small></div>
-      <div><span style="font-weight:800">Aa</span><small>800 · titulars i xifres</small></div>
+      <div><span style="font-weight:400">Aa</span><span class="small">400 · el text de lectura</span></div>
+      <div><span style="font-weight:600">Aa</span><span class="small">600 · etiquetes, menús, botons</span></div>
+      <div><span style="font-weight:800">Aa</span><span class="small">800 · titulars i xifres</span></div>
     </div>
-    <ul class="dont" style="margin-top:24px">
-      <li>Titulars i etiquetes en minúscula, com el logotip. Els noms propis conserven la majúscula.</li>
-      <li>El cos de text amb majúscules normals: la minúscula és veu de marca, no norma de lectura.</li>
+    <ul class="dont">
+      <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
+      <li>Titulars sense punt final. Les frases del cos, amb punt.</li>
       <li>Xifres sempre tabulars (<span class="kbd">font-variant-numeric: tabular-nums</span>) perquè comptin sense ballar.</li>
-      <li>Línia de lectura entre 55 i 65 caràcters.</li>
+      <li>Línia de lectura entre 55 i 65 caràcters. Res en majúscules sostingudes ni amb espaiat obert, tret del logotip.</li>
     </ul>
   </section>
 
   <section id="space">
     <div class="sec-head">
-      <p class="eyebrow">l'aire</p>
-      <h2>espai, radis i retícula.</h2>
-      <p class="lead">Base de 8 píxels. Molt d'aire entre seccions, poc entre coses que van juntes. Els radis diuen què és cada cosa: petit per a camps, mitjà per a targetes, gran per a escenes, píndola per a botons.</p>
+      <p class="label">L'aire</p>
+      <h2>Cinc espais, tres radis</h2>
+      <p class="lead">Base de 8 píxels. Molt d'aire entre seccions, poc entre coses que van juntes. Els radis diuen què és cada cosa: petit per a camps i notes, mitjà per a targetes i escenes, píndola per a botons i etiquetes.</p>
     </div>
     <div class="grid g2">
       <div>
-        <h3>escala d'espai</h3>
-        <div class="space-row"><small>4</small><div class="bar" style="width:4px"></div></div>
-        <div class="space-row"><small>8</small><div class="bar" style="width:8px"></div></div>
-        <div class="space-row"><small>16</small><div class="bar" style="width:16px"></div></div>
-        <div class="space-row"><small>24</small><div class="bar" style="width:24px"></div></div>
-        <div class="space-row"><small>40</small><div class="bar" style="width:40px"></div></div>
-        <div class="space-row"><small>64</small><div class="bar" style="width:64px"></div></div>
-        <div class="space-row"><small>104</small><div class="bar" style="width:104px"></div></div>
-        <div class="space-row"><small>168</small><div class="bar" style="width:168px"></div></div>
-        <p class="t-small" style="margin-top:12px">Entre seccions: 104 a l'ordinador, 64 al mòbil. Dins d'una targeta: 24 o 28. Entre etiqueta i titular: 12.</p>
+        <h3>Espai</h3>
+        <div style="margin-top:8px">
+          <div class="space-row"><span>8</span><div class="bar" style="width:8px"></div></div>
+          <div class="space-row"><span>16</span><div class="bar" style="width:16px"></div></div>
+          <div class="space-row"><span>24</span><div class="bar" style="width:24px"></div></div>
+          <div class="space-row"><span>48</span><div class="bar" style="width:48px"></div></div>
+          <div class="space-row"><span>96</span><div class="bar" style="width:96px"></div></div>
+        </div>
+        <p class="small" style="margin-top:16px">8 entre etiqueta i titular. 16 entre elements d'una llista. 24 dins d'una targeta. 48 entre blocs d'una secció. 96 entre seccions (48 al mòbil).</p>
       </div>
       <div>
-        <h3>radis</h3>
-        <div class="radius-row" style="margin-top:12px">
-          <div style="border-radius:6px">6 · camps</div>
-          <div style="border-radius:12px">12 · targetes petites</div>
-          <div style="border-radius:24px">24 · targetes i escenes</div>
-          <div style="border-radius:999px;width:160px">píndola · botons</div>
+        <h3>Radis</h3>
+        <div class="radius-row" style="margin-top:16px">
+          <div style="border-radius:8px">8 · camps, notes</div>
+          <div style="border-radius:16px">16 · targetes, escenes</div>
+          <div style="border-radius:999px;width:180px">píndola · botons</div>
         </div>
-        <h3 style="margin-top:32px">retícula</h3>
-        <p class="t-small" style="margin-top:8px">Amplada màxima de contingut 1120 px. Marges laterals que creixen amb la pantalla (16 px al mòbil, 64 a l'ordinador). Dotze columnes a l'ordinador, quatre al mòbil.</p>
+        <h3 style="margin-top:48px">Retícula</h3>
+        <p class="small" style="margin-top:8px">Amplada màxima de contingut 1120 px. Marges laterals que creixen amb la pantalla, de 16 px al mòbil a 64 a l'ordinador. Dues columnes a l'ordinador quan hi ha text i imatge; una al mòbil.</p>
       </div>
     </div>
   </section>
 
   <section id="motion">
     <div class="sec-head">
-      <p class="eyebrow">el moviment</p>
-      <h2>tot es mou, res molesta.</h2>
-      <p class="lead">El moviment és on emoloc demostra que és punter. Però té regles: una sola corba, tres durades, i el scroll mana. Res no es mou sol si la persona no fa res, tret del vídeo del retrat i el punt del logo.</p>
+      <p class="label">El moviment</p>
+      <h2>Tot es mou, res molesta</h2>
+      <p class="lead">El moviment és on emoloc demostra que és punter. Però té regles: una sola corba, tres durades, i el scroll mana. Res no es mou sol si la persona no fa res, tret dels vídeos en bucle.</p>
     </div>
     <div class="rules">
-      <div class="rule"><h3>una corba</h3><p><span class="kbd">cubic-bezier(.2, .8, .2, 1)</span>. Arrenca decidit i frena suau. Mai rebots, mai elàstics.</p></div>
-      <div class="rule"><h3>tres durades</h3><p>200 ms per a respostes (hover, focus). 500 ms per a canvis d'estat (obrir, tancar). 900 ms per a entrades d'escena. El scroll no té durada: la persona la posa.</p></div>
-      <div class="rule"><h3>el scroll mana</h3><p>Les escenes de la portada van lligades a la posició del scroll, no a temporitzadors. Si t'atures, s'atura. Si tornes enrere, torna enrere. El scroll és suau (Lenis) però mai segrestat: la roda sempre mou la pàgina.</p></div>
-      <div class="rule"><h3>vídeo, no foto</h3><p>Les persones i els projectes es mostren en vídeo curt, mut, en bucle, sense so ni controls. Sempre amb una imatge de reserva per a connexions lentes.</p></div>
-      <div class="rule"><h3>bucle sense costura</h3><p>Cap vídeo té principi ni final visibles. Es grava o es genera perquè l'últim fotograma coincideixi amb el primer: el moviment surt d'un punt de repòs i hi torna. Entre 5 i 8 segons, càmera fixa, fons quiet. Si es nota el tall, no es publica.</p></div>
-      <div class="rule"><h3>moviment reduït</h3><p>Si el sistema demana menys moviment, les escenes no es claven, els vídeos són fotos i tot el contingut és visible a l'instant. Mateix contingut, cap animació.</p></div>
-      <div class="rule"><h3>rendiment</h3><p>Només <span class="kbd">transform</span> i <span class="kbd">opacity</span> s'animen. Cap animació que canviï mides o posicions de maquetació. 60 imatges per segon en un mòbil de gamma mitjana, o es treu.</p></div>
+      <div class="rule"><h3>Una corba</h3><p><span class="kbd">cubic-bezier(.2, .8, .2, 1)</span>. Arrenca decidit i frena suau. Mai rebots, mai elàstics.</p></div>
+      <div class="rule"><h3>Tres durades</h3><p>200 ms per a respostes (hover, focus). 500 ms per a canvis d'estat (obrir, tancar). 900 ms per a entrades d'escena. El scroll no té durada: la persona la posa.</p></div>
+      <div class="rule"><h3>El scroll mana</h3><p>Les escenes de la portada van lligades a la posició del scroll, no a temporitzadors. Si t'atures, s'atura. Si tornes enrere, torna enrere. El scroll és suau però mai segrestat: la roda sempre mou la pàgina.</p></div>
+      <div class="rule"><h3>Vídeo, no foto</h3><p>Les persones i els projectes es mostren en vídeo curt, mut, en bucle, sense so ni controls. Sempre amb una imatge de reserva per a connexions lentes.</p></div>
+      <div class="rule"><h3>Bucle sense costura</h3><p>Cap vídeo té principi ni final visibles. Es grava o es genera perquè l'últim fotograma coincideixi amb el primer: el moviment surt d'un punt de repòs i hi torna. Entre 5 i 8 segons, càmera fixa, fons quiet. Si es nota el tall, no es publica.</p></div>
+      <div class="rule"><h3>Moviment reduït</h3><p>Si el sistema demana menys moviment, les escenes no es claven, els vídeos són fotos i tot el contingut és visible a l'instant. Mateix contingut, cap animació.</p></div>
+      <div class="rule"><h3>Rendiment</h3><p>Només <span class="kbd">transform</span> i <span class="kbd">opacity</span> s'animen. Cap animació que canviï mides o posicions de maquetació. 60 imatges per segon en un mòbil de gamma mitjana, o es treu.</p></div>
     </div>
     <div class="motion" aria-hidden="true">
-      <div class="track"><div class="dot fast"></div></div><small>200 ms · resposta</small>
-      <div class="track"><div class="dot base"></div></div><small>500 ms · canvi d'estat</small>
-      <div class="track"><div class="dot slow"></div></div><small>900 ms · entrada d'escena · passa el ratolí per sobre per veure-ho</small>
+      <div class="track"><div class="dot fast"></div></div><span class="small">200 ms · resposta</span>
+      <div class="track"><div class="dot base"></div></div><span class="small">500 ms · canvi d'estat</span>
+      <div class="track"><div class="dot slow"></div></div><span class="small">900 ms · entrada d'escena. Passa el ratolí per sobre per veure-ho.</span>
     </div>
   </section>
 
   <section id="components">
     <div class="sec-head">
-      <p class="eyebrow">les peces</p>
-      <h2>components.</h2>
+      <p class="label">Les peces</p>
+      <h2>Components</h2>
       <p class="lead">Poques peces, sempre iguals. Si una pàgina necessita una peça nova, primer es defineix aquí.</p>
     </div>
 
-    <h3>botons</h3>
-    <p class="t-small" style="margin:8px 0 16px">Un de principal per pantalla, com a màxim. Sempre amb fletxa: el botó porta a algun lloc.</p>
+    <h3>Botons i enllaços</h3>
+    <p class="small" style="margin:8px 0 16px">Un de principal per pantalla, com a màxim. Sempre amb fletxa: el botó porta a algun lloc.</p>
     <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <a class="btn btn-primary" href="#">explica'm el teu projecte <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn-secondary" href="#">veure projectes <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn-ghost" href="#">llegir el cas <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-primary" href="#">Explica'm el teu projecte <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-secondary" href="#">Veure projectes <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="link" href="#">Llegir el cas <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
 
-    <h3 style="margin-top:48px">els quatre pilars</h3>
-    <p class="t-small" style="margin:8px 0 16px">Sempre en aquest ordre. Com a etiqueta, com a botó de filtre i com a casella del formulari.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <span class="pill"><i></i>presència</span><span class="pill"><i></i>gestió</span><span class="pill"><i></i>venda</span><span class="pill"><i></i>comunicació</span>
+    <h3 style="margin-top:48px">Els quatre pilars</h3>
+    <p class="small" style="margin:8px 0 16px">Sempre en aquest ordre. Com a etiqueta, com a botó de filtre i com a casella del formulari.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="pill"><i></i>Presència</span><span class="pill"><i></i>Gestió</span><span class="pill"><i></i>Venda</span><span class="pill"><i></i>Comunicació</span>
     </div>
 
-    <h3 style="margin-top:48px">xifres</h3>
-    <p class="t-small" style="margin:8px 0 16px">Una xifra només si és real, amb què és i des de quan. Sense font no hi ha xifra.</p>
-    <div class="grid g4">
-      <div class="stat"><b>10,9</b><span>posició mitjana a Google</span><small>era 28,7 el 4 de setembre</small></div>
-      <div class="stat"><b>143</b><span>pàgines a Google</span><small>el 4 de setembre n'hi havia 111</small></div>
-      <div class="stat"><b>56</b><span>classes setmanals</span><small>a la graella del Backstage</small></div>
-      <div class="stat"><b>39 €</b><span>al mes, un sol pla</span><small>Brachfield Academy</small></div>
+    <h3 style="margin-top:48px">Xifres</h3>
+    <p class="small" style="margin:8px 0 16px">Una xifra només si és real, amb què és i des de quan. Sense font no hi ha xifra. La xifra és l'únic text gran que pot anar en taronja.</p>
+    <div class="grid g3">
+      <div class="stat"><b>10,9</b><span>Posició mitjana a Google</span><small>Era 28,7 el 4 de setembre</small></div>
+      <div class="stat"><b>143</b><span>Pàgines a Google</span><small>El 4 de setembre n'hi havia 111</small></div>
+      <div class="stat"><b>56</b><span>Classes setmanals</span><small>A la graella del Backstage</small></div>
+      <div class="stat"><b>39 €</b><span>Al mes, un sol pla</span><small>Brachfield Academy</small></div>
     </div>
 
-    <h3 style="margin-top:48px">targetes</h3>
-    <p class="t-small" style="margin:8px 0 16px">Superfície, línia, radi 24. En passar-hi per sobre, la línia passa a tinta. Res més.</p>
+    <h3 style="margin-top:48px">Targetes</h3>
+    <p class="small" style="margin:8px 0 16px">Fons de targeta, línia, radi 16. En passar-hi per sobre, la línia passa a tinta. Res més.</p>
     <div class="grid g2">
-      <div class="card"><span class="t-label">presència</span><h3>la teva marca en digital</h3><p class="t-small">Que qui et busca trobi una empresa viva i entengui en deu segons què fas.</p></div>
-      <div class="card"><span class="t-label">gestió</span><h3>les eines que porten el negoci per dins</h3><p class="t-small">Fetes a mida quan l'excel ja no dona més de si.</p></div>
+      <div class="card"><span class="label">Presència</span><h3>La teva marca en digital</h3><p class="small">Que qui et busca trobi una empresa viva i entengui en deu segons què fas.</p></div>
+      <div class="card"><span class="label">Gestió</span><h3>Les eines que porten el negoci per dins</h3><p class="small">Fetes a mida quan l'excel ja no dona més de si.</p></div>
     </div>
 
-    <h3 style="margin-top:48px">formulari</h3>
-    <p class="t-small" style="margin:8px 0 16px">L'única acció de la web. Camps grans, etiquetes a sobre, error explicat en una frase.</p>
+    <h3 style="margin-top:48px">Formulari</h3>
+    <p class="small" style="margin:8px 0 16px">L'única acció de la web. Camps grans, etiquetes a sobre, error explicat en una frase.</p>
     <div class="grid g2" style="max-width:760px">
-      <label class="field">nom <input id="demo-nom" placeholder="com et dius"></label>
-      <label class="field">empresa <input id="demo-empresa" placeholder="com es diu el negoci"></label>
+      <label class="field">Nom <input id="demo-nom" placeholder="Com et dius"></label>
+      <label class="field">Empresa <input id="demo-empresa" placeholder="Com es diu el negoci"></label>
     </div>
-    <div style="margin-top:16px;display:grid;gap:8px;font-size:14px;font-weight:600">on et fa mal?
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <label class="check"><input type="checkbox" id="demo-p1">presència</label>
-        <label class="check"><input type="checkbox" id="demo-p2" checked>gestió</label>
-        <label class="check"><input type="checkbox" id="demo-p3">venda</label>
-        <label class="check"><input type="checkbox" id="demo-p4">comunicació</label>
-        <label class="check"><input type="checkbox" id="demo-p5">no ho sé, per això escric</label>
+    <div style="margin-top:16px;display:grid;gap:8px;font-size:14px;font-weight:600">On et fa mal?
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <label class="check"><input type="checkbox" id="demo-p1">Presència</label>
+        <label class="check"><input type="checkbox" id="demo-p2" checked>Gestió</label>
+        <label class="check"><input type="checkbox" id="demo-p3">Venda</label>
+        <label class="check"><input type="checkbox" id="demo-p4">Comunicació</label>
+        <label class="check"><input type="checkbox" id="demo-p5">No ho sé, per això escric</label>
       </div>
     </div>
   </section>
 
   <section id="rules">
     <div class="sec-head">
-      <p class="eyebrow">les normes de la casa</p>
-      <h2>deu regles.</h2>
+      <p class="label">Les normes de la casa</p>
+      <h2>Deu regles</h2>
     </div>
     <div class="rules">
-      <div class="rule"><h3>1 · tot en minúscula</h3><p>Titulars, etiquetes, menús i botons, com el logotip. Els noms propis i el cos de text, amb majúscules normals.</p></div>
-      <div class="rule"><h3>2 · el taronja, d'accent</h3><p>Botons, el punt del logo, xifres grans i estats de focus. Mai de fons. El fosc per a text petit; sobre el viu, sempre tinta.</p></div>
-      <div class="rule"><h3>3 · vídeo, no foto</h3><p>Les persones i els projectes es mouen. Curt, mut, en bucle sense costura (l'últim fotograma és el primer), amb imatge de reserva.</p></div>
-      <div class="rule"><h3>4 · quatre pilars, un ordre</h3><p>presència, gestió, venda, comunicació. Sempre. A la portada, als serveis, al formulari i als casos.</p></div>
-      <div class="rule"><h3>5 · una escena per pilar</h3><p>A la portada cada pilar és una transformació que es veu, no un paràgraf que es llegeix.</p></div>
-      <div class="rule"><h3>6 · xifres amb data i font</h3><p>Cap número sense el "des de quan" i el "segons qui". Si no es pot dir, no es posa.</p></div>
-      <div class="rule"><h3>7 · una sola acció</h3><p>Tot porta al formulari. Cap telèfon, cap "reserva una trucada", cap preu.</p></div>
-      <div class="rule"><h3>8 · el scroll mana</h3><p>Les escenes segueixen la mà de la persona. Res no segresta la roda ni congela la pàgina.</p></div>
-      <div class="rule"><h3>9 · primer el mòbil</h3><p>Cada escena es dissenya primer a 390 píxels d'ample. L'ordinador és la versió ampliada, no al revés.</p></div>
-      <div class="rule"><h3>10 · la IA és transversal</h3><p>No té secció ni icona. Apareix dins de cada pilar i s'explica a "com treballo".</p></div>
+      <div class="rule"><h3>1 · Només el logotip en minúscula</h3><p>".emoloc" és l'única paraula que va sempre en minúscula. La resta de textos, amb caixa alta inicial normal, també titulars, botons i etiquetes.</p></div>
+      <div class="rule"><h3>2 · El taronja, d'accent</h3><p>Punt del logo, botó principal, xifres grans i estats de focus. Mai de fons, mai per a text petit, i sobre el taronja sempre tinta.</p></div>
+      <div class="rule"><h3>3 · Vídeo, no foto</h3><p>Les persones i els projectes es mouen. Curt, mut, en bucle sense costura, amb imatge de reserva.</p></div>
+      <div class="rule"><h3>4 · Quatre pilars, un ordre</h3><p>Presència, gestió, venda, comunicació. Sempre. A la portada, als serveis, al formulari i als casos.</p></div>
+      <div class="rule"><h3>5 · Una escena per pilar</h3><p>A la portada cada pilar és una transformació que es veu, no un paràgraf que es llegeix.</p></div>
+      <div class="rule"><h3>6 · Xifres amb data i font</h3><p>Cap número sense el "des de quan" i el "segons qui". Si no es pot dir, no es posa.</p></div>
+      <div class="rule"><h3>7 · Una sola acció</h3><p>Tot porta al formulari. Cap telèfon, cap "reserva una trucada", cap preu.</p></div>
+      <div class="rule"><h3>8 · El scroll mana</h3><p>Les escenes segueixen la mà de la persona. Res no segresta la roda ni congela la pàgina.</p></div>
+      <div class="rule"><h3>9 · Primer el mòbil</h3><p>Cada escena es dissenya primer a 390 píxels d'ample. L'ordinador és la versió ampliada, no al revés.</p></div>
+      <div class="rule"><h3>10 · La IA és transversal</h3><p>No té secció ni icona. Apareix dins de cada pilar i s'explica a "com treballo".</p></div>
     </div>
   </section>
 
   <section>
-    <p class="t-small">emoloc · guia d'estils · document intern, no indexat · s'actualitza amb el producte.</p>
+    <p class="small">emoloc · Guia d'estils · Document intern, no indexat · S'actualitza amb el producte.</p>
   </section>
 </div>

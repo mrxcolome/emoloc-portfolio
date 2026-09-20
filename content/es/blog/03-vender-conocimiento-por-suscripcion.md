@@ -7,11 +7,11 @@ fecha: 2026-09
 
 Si eres experto en algo, alguien te ha dicho que deberías hacer un curso online. Y tiene razón a medias. Vender un curso una vez es una cosa. Construir una academia por suscripción, donde la gente paga cada mes porque encuentra valor cada mes, es otra. La segunda es mejor negocio y mucho más exigente.
 
-## lo que la gente piensa que es
+## Lo que la gente piensa que es
 
 Unos cuantos vídeos grabados, una pasarela de pago y una página con un botón de "comprar". Eso es una tienda de cursos, y funciona para un lanzamiento. Pero al cabo de tres meses los alumnos lo han visto todo y se dan de baja.
 
-## lo que es de verdad
+## Lo que es de verdad
 
 Una membresía que aguanta tiene tres trabajos para el alumno, y los tres tienen que funcionar:
 
@@ -28,7 +28,7 @@ Y detrás, cuatro cosas que no se ven pero lo sostienen todo:
 - **Un panel que te explique qué pasa.** Alumnos activos, altas y bajas, qué se busca y qué no se encuentra. Las búsquedas sin resultado son la mejor lista de contenido pendiente.
 - **Automatización donde ahorra trabajo.** Un tablón de noticias que se alimenta solo cada mañana, recordatorios de las sesiones en directo, emails de bienvenida.
 
-## lo que tienes que poner tú
+## Lo que tienes que poner tú
 
 La plataforma no sustituye lo que te hace experto. Necesitas tres cosas antes de abrir:
 
@@ -36,7 +36,7 @@ La plataforma no sustituye lo que te hace experto. Necesitas tres cosas antes de
 2. **Un precio sencillo.** Un solo plan, sin permanencia, es más fácil de vender y de explicar que tres niveles.
 3. **Un compromiso con el "cada mes".** Una sesión en directo al mes, o una pieza nueva a la semana. Poco y constante gana a mucho y esporádico.
 
-## qué puedes hacer mañana por la mañana
+## Qué puedes hacer mañana por la mañana
 
 - **Escribe las diez preguntas que más te hacen los clientes.** Cada una es una pieza de contenido.
 - **Mira cuánto tiempo dedicas a responderlas una a una.** Ese tiempo es el que la membresía te ahorrará.

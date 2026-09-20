@@ -6,8 +6,8 @@ Reglas que siguen todos los textos de la web. Sirven también para la traducció
 - **Frases cortas.** Una idea por frase. Nada de subordinadas encadenadas.
 - **Concreto antes que abstracto.** "El excel de las cuotas" en lugar de "los procesos de gestión".
 - **Sin jerga.** Si hace falta una palabra técnica, se explica en la misma frase.
-- **Titulares en minúscula**, como el logotipo. Los nombres propios conservan la mayúscula (Google, Castañer, Pere Brachfield).
-- **Los cuerpos de texto con mayúsculas normales.** La minúscula es para los titulares y etiquetas, no para la lectura larga.
+- **Solo el logotipo en minúscula:** ".emoloc". Todo el resto de textos, titulares, botones y etiquetas incluidos, con mayúscula inicial normal.
+- **Titulares sin punto final.** Las frases del cuerpo, con punto.
 - **La IA es transversal.** No se vende como servicio: aparece dentro de cada pilar y se explica en "cómo trabajo".
 - **Nada de precios.** Cada propuesta es personalizada. La llamada a la acción es siempre el formulario.
 - **Cifras solo cuando son reales** y con la fecha y la fuente al lado.
@@ -15,4 +15,4 @@ Reglas que siguen todos los textos de la web. Sirven también para la traducció
 
 Frase de misión (fija, no se toca):
 
-> emoloc. la ayuda con la transformación digital que necesita tu empresa: presencia, gestión, venta y comunicación.
+> emoloc. La ayuda con la transformación digital que necesita tu empresa: presencia, gestión, venta y comunicación.

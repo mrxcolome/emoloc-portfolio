@@ -1,12 +1,12 @@
-# contacto
+# Contacto
 
-## cabecera
+## Cabecera
 
-### hablemos.
+### Hablemos.
 
 Cuéntame tu proyecto en cuatro líneas: qué haces, qué te hace perder tiempo o clientes, y qué te gustaría que pasara. La primera conversación es sin compromiso y sirve para saber si tengo sentido para lo que necesitas. Cada propuesta es a medida.
 
-## formulario
+## Formulario
 
 Campos (por orden):
 
@@ -26,23 +26,23 @@ Campos (por orden):
 
 Protección contra robots sin molestar a la persona (campo oculto o comprobación invisible). Lo decidiremos en el paso 4.
 
-## mensajes del formulario
+## Mensajes del formulario
 
-- **enviado:** gracias, ya lo tengo. Te respondo en uno o dos días laborables desde xavi@emoloc.com. Si no lo ves, mira la carpeta de correo no deseado.
-- **error:** no se ha podido enviar. Vuelve a intentarlo en un momento o escríbeme directamente a xavi@emoloc.com.
-- **campo vacío:** este campo es necesario.
-- **email no válido:** revisa la dirección de correo.
-- **consentimiento:** hay que aceptar la política de privacidad para enviar el formulario.
+- **Enviado:** gracias, ya lo tengo. Te respondo en uno o dos días laborables desde xavi@emoloc.com. Si no lo ves, mira la carpeta de correo no deseado.
+- **Error:** no se ha podido enviar. Vuelve a intentarlo en un momento o escríbeme directamente a xavi@emoloc.com.
+- **Campo vacío:** este campo es necesario.
+- **Email no válido:** revisa la dirección de correo.
+- **Consentimiento:** hay que aceptar la política de privacidad para enviar el formulario.
 
-## otras maneras de contactar
+## Otras maneras de contactar
 
 El formulario es el único canal de contacto de la web. No hay teléfono.
 
-- **email:** xavi@emoloc.com, solo como alternativa si el formulario falla y en el pie de página
-- **linkedin:** linkedin.com/in/xavicolome
-- **dónde estoy:** Barcelona. Trabajo a distancia con empresas de toda Cataluña y del resto de España.
+- **Email:** xavi@emoloc.com, solo como alternativa si el formulario falla y en el pie de página
+- **Linkedin:** linkedin.com/in/xavicolome
+- **Dónde estoy:** Barcelona. Trabajo a distancia con empresas de toda Cataluña y del resto de España.
 
-## email de confirmación automático (a quien escribe)
+## Email de confirmación automático (a quien escribe)
 
 Asunto: he recibido tu mensaje · emoloc
 
@@ -55,7 +55,7 @@ Si mientras tanto se te ocurre algo más, responde a este mismo email.
 Xavi Colomé
 emoloc · emoloc.com
 
-## email de aviso (a ti)
+## Email de aviso (a ti)
 
 Asunto: nuevo contacto · [nombre] · [empresa]
 

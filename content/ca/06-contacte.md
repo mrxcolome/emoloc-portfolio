@@ -1,12 +1,12 @@
-# contacte
+# Contacte
 
-## capçalera
+## Capçalera
 
-### parlem.
+### Parlem.
 
 Explica'm el teu projecte en quatre ratlles: què fas, què et fa perdre temps o clients, i què t'agradaria que passés. La primera conversa és sense compromís i serveix per saber si tinc sentit per al que necessites. Cada proposta és a mida.
 
-## formulari
+## Formulari
 
 Camps (per ordre):
 
@@ -26,23 +26,23 @@ Camps (per ordre):
 
 Protecció contra robots sense molestar la persona (camp ocult o comprovació invisible). Ho decidirem al pas 4.
 
-## missatges del formulari
+## Missatges del formulari
 
-- **enviat:** gràcies, ja ho tinc. Et responc en un o dos dies laborables des de xavi@emoloc.com. Si no ho veus, mira la carpeta de correu no desitjat.
-- **error:** no s'ha pogut enviar. Torna-ho a provar en un moment o escriu-me directament a xavi@emoloc.com.
-- **camp buit:** aquest camp és necessari.
-- **email no vàlid:** revisa l'adreça de correu.
-- **consentiment:** cal acceptar la política de privacitat per enviar el formulari.
+- **Enviat:** gràcies, ja ho tinc. Et responc en un o dos dies laborables des de xavi@emoloc.com. Si no ho veus, mira la carpeta de correu no desitjat.
+- **Error:** no s'ha pogut enviar. Torna-ho a provar en un moment o escriu-me directament a xavi@emoloc.com.
+- **Camp buit:** aquest camp és necessari.
+- **Email no vàlid:** revisa l'adreça de correu.
+- **Consentiment:** cal acceptar la política de privacitat per enviar el formulari.
 
-## altres maneres de contactar
+## Altres maneres de contactar
 
 El formulari és l'únic canal de contacte de la web. No hi ha telèfon.
 
-- **email:** xavi@emoloc.com, només com a alternativa si el formulari falla i al peu de pàgina
-- **linkedin:** linkedin.com/in/xavicolome
-- **on sóc:** Barcelona. Treballo a distància amb empreses de tot Catalunya i de la resta de l'Estat.
+- **Email:** xavi@emoloc.com, només com a alternativa si el formulari falla i al peu de pàgina
+- **Linkedin:** linkedin.com/in/xavicolome
+- **On sóc:** Barcelona. Treballo a distància amb empreses de tot Catalunya i de la resta de l'Estat.
 
-## email de confirmació automàtic (a qui escriu)
+## Email de confirmació automàtic (a qui escriu)
 
 Assumpte: he rebut el teu missatge · emoloc
 
@@ -55,7 +55,7 @@ Si mentrestant et ve al cap alguna cosa més, respon aquest mateix email.
 Xavi Colomé
 emoloc · emoloc.com
 
-## email d'avís (a tu)
+## Email d'avís (a tu)
 
 Assumpte: nou contacte · [nom] · [empresa]
 

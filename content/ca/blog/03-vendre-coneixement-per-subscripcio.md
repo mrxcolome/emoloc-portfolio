@@ -7,11 +7,11 @@ data: 2026-09
 
 Si ets expert en alguna cosa, algú t'ha dit que hauries de fer un curs en línia. I té raó a mitges. Vendre un curs una vegada és una cosa. Construir una acadèmia per subscripció, on la gent paga cada mes perquè hi troba valor cada mes, és una altra. La segona és millor negoci i molt més exigent.
 
-## el que la gent es pensa que és
+## El que la gent es pensa que és
 
 Uns quants vídeos gravats, una passarel·la de pagament i una pàgina amb un botó de "compra". Això és una botiga de cursos, i funciona per a un llançament. Però al cap de tres mesos els alumnes ho han vist tot i es donen de baixa.
 
-## el que és de debò
+## El que és de debò
 
 Una membresia que aguanta té tres feines per a l'alumne, i les tres han de funcionar:
 
@@ -28,7 +28,7 @@ I al darrere, quatre coses que no es veuen però ho aguanten tot:
 - **Un panell que t'expliqui què passa.** Alumnes actius, altes i baixes, què es busca i què no es troba. Les cerques sense resultat són la millor llista de contingut pendent.
 - **Automatització on estalvia feina.** Un tauler de notícies que s'alimenta sol cada matí, recordatoris de les sessions en directe, emails de benvinguda.
 
-## el que has de posar tu
+## El que has de posar tu
 
 La plataforma no substitueix el que et fa expert. Necessites tres coses abans d'obrir:
 
@@ -36,7 +36,7 @@ La plataforma no substitueix el que et fa expert. Necessites tres coses abans d'
 2. **Un preu senzill.** Un sol pla, sense permanència, és més fàcil de vendre i d'explicar que tres nivells.
 3. **Un compromís amb el "cada mes".** Una sessió en directe al mes, o una peça nova a la setmana. Poc i constant guanya a molt i esporàdic.
 
-## què pots fer demà al matí
+## Què pots fer demà al matí
 
 - **Escriu les deu preguntes que et fan més els clients.** Cada una és una peça de contingut.
 - **Mira quant temps dediques a respondre-les una a una.** Aquest temps és el que la membresia t'estalviarà.

@@ -9,7 +9,7 @@ Durant vint anys, ser trobat volia dir sortir a Google. Encara és així, però 
 
 Sortir en aquests dos o tres noms no és màgia. És fer bé les mateixes coses que ja demanava Google, i alguna més.
 
-## com decideix Google
+## Com decideix Google
 
 Google vol ensenyar la millor resposta a cada cerca. Per decidir quina és, mira tres coses:
 
@@ -19,7 +19,7 @@ Google vol ensenyar la millor resposta a cada cerca. Per decidir quina és, mira
 
 **Si altres hi confien.** Ressenyes a Google Business, mencions en altres webs, enllaços. Per a un negoci local, les ressenyes pesen més que res.
 
-## com decideixen els assistents d'IA
+## Com decideixen els assistents d'IA
 
 Els assistents llegeixen la web com un lector molt ràpid i molt literal. Recomanen negocis quan:
 
@@ -28,18 +28,18 @@ Els assistents llegeixen la web com un lector molt ràpid i molt literal. Recoma
 - **Hi ha contingut que demostra que en saps.** Un blog que respon les preguntes del sector fa que l'assistent et consideri una font.
 - **No està bloquejada.** Moltes webs prohibeixen, sense saber-ho, que els assistents les llegeixin.
 
-## el que no funciona
+## El que no funciona
 
 Omplir la web de paraules clau, comprar enllaços, escriure articles buits perquè "cal publicar". Google fa anys que ho detecta i els assistents, que llegeixen el sentit i no les paraules, encara més.
 
-## què pots fer demà al matí
+## Què pots fer demà al matí
 
 - **Busca't a Google en una finestra d'incògnit** amb les paraules que faria servir un client. Anota on surts i qui surt abans que tu.
 - **Pregunta a ChatGPT** "quina [el teu tipus de negoci] em recomanes a [el teu barri]". Si no hi ets, ja saps per on començar.
 - **Revisa la fitxa de Google Business.** Completa, amb fotos d'aquest any i totes les ressenyes contestades.
 - **Demana ressenyes.** Als clients contents, aquesta setmana. És la palanca més barata que existeix.
 
-## i mesura-ho
+## I mesura-ho
 
 Res d'això té sentit si no ho mesures. Google Search Console és gratuït i diu quantes pàgines tens indexades, en quina posició surts i quantes visites arriben. Una revisió al mes, amb les xifres al costat de les del mes anterior, és tot el que cal per saber si vas bé.
 

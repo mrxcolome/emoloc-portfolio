@@ -1,30 +1,30 @@
-# cas · brachfield academy
+# Cas · brachfield academy
 
 > Vistiplau del Pere Brachfield rebut (setembre 2026).
 > Fora del text públic, a propòsit: la llista de passos pendents del propietari. Es presenta com "en prellançament".
 
-## fitxa
-- **client:** Brachfield Academy · Pere Brachfield
-- **sector:** formació B2B en línia · credit management
-- **període:** 2026 · en prellançament
-- **abast:** lloc públic i identitat · registre i pagament recurrent · zona d'alumnes · actualitat automàtica amb IA · sala de professors i administració
-- **pilars:** venda · presència · comunicació
-- **web:** brachfieldacademy.com
-- **imatge de portada:** portada amb el retrat del Pere i el botó "Quiero ser alumno"
+## Fitxa
+- **Client:** Brachfield Academy · Pere Brachfield
+- **Sector:** formació B2B en línia · credit management
+- **Període:** 2026 · en prellançament
+- **Abast:** lloc públic i identitat · registre i pagament recurrent · zona d'alumnes · actualitat automàtica amb IA · sala de professors i administració
+- **Pilars:** venda · presència · comunicació
+- **Web:** brachfieldacademy.com
+- **Imatge de portada:** portada amb el retrat del Pere i el botó "Quiero ser alumno"
 
-## titular
+## Titular
 
-### una escola en línia de credit management, per subscripció.
+### Una escola en línia de credit management, per subscripció.
 
 Pere Brachfield, referència del credit management amb més de 35 anys d'experiència i 32 llibres publicats, volia una acadèmia en línia per a responsables financers i de cobraments. Vam construir la plataforma sencera: lloc públic, pagaments, zona d'alumnes, un tauler de notícies que s'alimenta sol i una sala perquè l'equip publiqui sense tocar res tècnic.
 
-## xifres de capçalera
-- **+35** anys d'experiència del Pere en morositat i crèdit
-- **32** llibres publicats sobre la matèria
-- **10** tipologies de contingut: el curs i nou peces més
-- **39 €** al mes, un sol pla, tot inclòs
+## Xifres de capçalera
+- **+35** Anys d'experiència del Pere en morositat i crèdit
+- **32** Llibres publicats sobre la matèria
+- **10** Tipologies de contingut: el curs i nou peces més
+- **39 €** Al mes, un sol pla, tot inclòs
 
-## el punt de partida
+## El punt de partida
 
 Pere Brachfield és una de les veus més reconegudes del credit management a Espanya: prevenir impagaments, gestionar el crèdit i cobrar el que et deuen. Volia convertir aquest coneixement en una escola en línia per a credit managers, responsables financers i de cobraments.
 
@@ -32,10 +32,10 @@ El model havia de ser senzill: un únic pla de 39 € al mes amb IVA, sense perm
 
 I una condició: que el Pere i el seu equip poguessin publicar contingut sense dependre de ningú.
 
-## el lloc públic
+## El lloc públic
 *la cara comercial · pilar: presència*
 
-### un lloc que demostra que l'acadèmia és viva.
+### Un lloc que demostra que l'acadèmia és viva.
 
 Presenta el Pere amb el seu retrat d'estudi i els seus sis llibres de referència, i porta a un únic botó: "Quiero ser alumno". La portada ensenya les últimes notícies reals del tauler i es regenera sola cada hora, així que sempre sembla acabada de fer.
 
@@ -45,10 +45,10 @@ La identitat és tancada: paleta, escala tipogràfica de quatre mides i componen
 
 *imatge:* la roda del cicle de vida del crèdit ("les set etapes cobertes, dibuixades com el cicle que són")
 
-## la zona d'alumnes
+## La zona d'alumnes
 *pilar: venda*
 
-### aprendre, consultar i estar al dia.
+### Aprendre, consultar i estar al dia.
 
 Menú de sis entrades, cercador global i un tour guiat a la primera visita. Cursos amb progrés i "continua on ho vas deixar", un catàleg amb jerarquia clara (cursos en gran, i a sota consells, articles, entrevistes, guies, plantilles i casos), sessions en directe amb reserva de plaça i recordatori el dia abans, favorits i descàrregues llestes per adaptar.
 
@@ -56,10 +56,10 @@ El cercador entén el que busques encara que no posis accents: "buro" troba "bur
 
 *imatge:* inici de la zona d'alumnes ("el primer aterratge: la benvinguda amb el tour guiat sobre el menú real")
 
-## l'actualitat
+## L'actualitat
 *el tauler que s'alimenta sol · pilar: comunicació*
 
-### contingut nou cada dia, sense feina editorial.
+### Contingut nou cada dia, sense feina editorial.
 
 Cada matí a les 7:30 un procés automàtic llegeix la premsa econòmica espanyola i un curador amb intel·ligència artificial, amb criteri de credit manager, tria la notícia o dues que de debò afecten qui gestiona el cobrament.
 
@@ -67,10 +67,10 @@ Cada notícia surt amb la seva imatge real, l'etiqueta temàtica, una frase did�
 
 *imatge:* la retícula de notícies ("imatge, tema, la clave para ti i enllaç a la font")
 
-## la sala de professors i l'administració
+## La sala de professors i l'administració
 *pilar: gestió*
 
-### publicar sense tocar el gestor tècnic.
+### Publicar sense tocar el gestor tècnic.
 
 La Sala és un assistent pas a pas: crear un curs (títol, lliçons, portada, publicar) o una peça de qualsevol de les nou tipologies, amb el vídeo pujat directament des del navegador. Si hi ha alumnes amb progrés o favorits, avisa amb la xifra abans d'esborrar res. Tot queda registrat, i el gestor complet segueix disponible com a "mode expert".
 
@@ -78,7 +78,7 @@ El panell d'administració mostra alumnes actius, altes, descàrregues, reserves
 
 *imatge:* la Sala ("crear, editar, publicar, retirar i esborrar cursos i peces, en mode concentració")
 
-## sota el capó
+## Sota el capó
 
 Tecnologia moderna i de cost contingut, explicada en una línia per peça.
 
@@ -94,15 +94,15 @@ Tecnologia moderna i de cost contingut, explicada en una línia per peça.
 | PostHog + Sentry | Analítica d'ús sense galetes de rastreig i alertes si alguna cosa falla. |
 | Qualitat | 73 proves automàtiques (54 unitàries i 19 de recorregut complet, accessibilitat inclosa) abans de cada publicació. |
 
-## estat del projecte
+## Estat del projecte
 
 **Construït i funcionant.** Lloc públic, registre, pagament i benvinguda, zona d'alumnes sencera, tauler automàtic de notícies, Sala de professors, panell d'administració, emails, analítica i proves automàtiques. Domini i correu propis connectats, i contingut de demostració carregat per ensenyar el producte.
 
 **En prellançament.** La plataforma està completa. L'obertura al públic depèn del contingut real del Pere i dels últims passos de posada en marxa: pagaments en mode real, textos legals i indexació a Google.
 
-## tancament de pàgina
+## Tancament de pàgina
 
-### vols vendre coneixement per subscripció?
-[botó] explica'm el teu projecte
+### Vols vendre coneixement per subscripció?
+[botó] Explica'm el teu projecte
 
 (enllaç al cas anterior: Escola de dansa Cristina Colomé)

@@ -9,7 +9,7 @@ Casi todas las empresas pequeñas que conozco funcionan con un excel. O con cuat
 
 Hasta que un día deja de funcionar. Y suele pasar sin avisar.
 
-## las señales
+## Las señales
 
 **Solo lo entiende una persona.** Si esa persona está enferma o de vacaciones, nadie sabe emitir los recibos. El negocio depende de una memoria, no de un sistema.
 
@@ -21,11 +21,11 @@ Hasta que un día deja de funcionar. Y suele pasar sin avisar.
 
 **Nadie sabe qué pasó.** ¿Quién cambió esta cuota y cuándo? El excel no lo recuerda.
 
-## por qué los programas del mercado no lo arreglan
+## Por qué los programas del mercado no lo arreglan
 
 La reacción habitual es buscar "un programa". Y hay muchos. Pero están hechos para un negocio mediano imaginario, no para el tuyo. Tienen cincuenta funciones que no necesitas y les falta la que haces cada día. Al final, el equipo vuelve al excel porque "es más rápido".
 
-## la alternativa: una herramienta hecha para ti
+## La alternativa: una herramienta hecha para ti
 
 Una herramienta de gestión propia no es un lujo de gran empresa. Es, literalmente, tu excel convertido en una aplicación:
 
@@ -37,7 +37,7 @@ Una herramienta de gestión propia no es un lujo de gran empresa. Es, literalmen
 
 Con la inteligencia artificial como equipo de desarrollo, una herramienta así se construye en semanas, no en meses, y cuesta una fracción de lo que costaba hace cinco años.
 
-## qué puedes hacer mañana por la mañana
+## Qué puedes hacer mañana por la mañana
 
 - **Haz la lista de tus excels.** Cuántos hay, quién los toca, qué se calcula a mano.
 - **Cronometra un cierre de mes.** Cuántas horas se van en emitir recibos o cuotas. Ese es el coste real del excel.
