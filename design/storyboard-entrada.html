@@ -1,0 +1,244 @@
+<title>emoloc storyboard entrada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap">
+<style>
+  :root{--paper:#fff;--surface:#f6f4f0;--ink:#1b1815;--muted:#6b6157;--line:#e2ddd5;--accent:#f26b1f;--soft:#ffe4d3;--font:"DM Sans","Helvetica Neue",Arial,sans-serif;--gutter:clamp(16px,5vw,64px)}
+  html{color-scheme:light only}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.55;padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,p{margin:0}
+  h1{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em}
+  h3{font-size:18px;line-height:1.55;font-weight:600}
+  .suau{color:var(--muted)}
+  .petit{font-size:14px;line-height:1.5}
+  .wrap{max-width:1120px;margin:0 auto}
+  header.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px;border-bottom:1px solid var(--line)}
+  .logo{font-weight:800;font-size:24px;letter-spacing:.04em}.logo b{color:var(--accent)}
+  section{padding-block:64px;border-bottom:1px solid var(--line)}
+  .head{display:grid;gap:12px;margin-bottom:32px}
+  .meta{display:flex;gap:24px;flex-wrap:wrap}
+  .meta span{font-size:14px;line-height:1.5;color:var(--muted)}
+  .meta b{color:var(--ink);font-weight:600}
+  .frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .frame{display:grid;gap:10px}
+  .screen{position:relative;aspect-ratio:16/9;background:#fff;border:1px solid var(--ink);border-radius:6px;overflow:hidden;font-size:11px;line-height:1.3}
+  .screen.dark{background:var(--ink);color:#fff}
+  .frame p{font-size:14px;line-height:1.5;color:var(--muted)}
+  .frame p b{color:var(--ink);font-weight:600}
+  .arrow{position:absolute;color:var(--accent);font-weight:800;font-size:14px}
+  /* peces de wireframe */
+  .vid{position:absolute;inset:0;background:repeating-linear-gradient(135deg,#e9e6e0 0 6px,#f3f1ec 6px 12px);display:grid;place-items:center;color:var(--muted)}
+  .vid.dim{opacity:.35}
+  .vid.small{inset:auto;width:22%;aspect-ratio:1;right:6%;bottom:8%;border-radius:8px}
+  .blk{position:absolute;background:#e3e0d9;border-radius:3px}
+  .blk.o{background:var(--accent)}
+  .blk.d{background:#3a352f}
+  .txt{position:absolute;font-weight:800;letter-spacing:-.02em;line-height:.95}
+  .txt.xl{font-size:34px}.txt.l{font-size:20px}.txt.m{font-size:13px;font-weight:600}
+  .txt.o{color:var(--accent)}.txt.g{color:#c9c4bb}
+  .cap{position:absolute;left:5%;bottom:8%;max-width:60%;font-weight:800;font-size:15px;line-height:1.05;letter-spacing:-.02em}
+  .cap small{display:block;font-weight:400;font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:0}
+  .dark .cap small{color:rgba(255,255,255,.7)}
+  .shot{position:absolute;background:#d9d5cd;border:1px solid #b8b2a8;border-radius:4px;display:grid;place-items:center;color:var(--muted);text-align:center;padding:4px}
+  .shot.dark{background:#2a2622;border-color:#4a443d;color:#bbb}
+  .phone{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14%;aspect-ratio:9/19;background:#d9d5cd;border:3px solid #1b1815;border-radius:10px}
+  .nav{position:absolute;top:0;left:0;right:0;height:9%;display:flex;align-items:center;justify-content:space-between;padding:0 4%;font-weight:800;font-size:10px;letter-spacing:.04em}
+  .nav .dots{display:flex;gap:3px}.nav .dots i{width:4px;height:4px;border-radius:50%;background:#d6d1c8;display:block}.nav .dots i.on{background:var(--accent)}
+  .nav .cta{background:var(--accent);border-radius:99px;padding:2px 7px;font-weight:600;font-size:8px;letter-spacing:0}
+  .prog{position:absolute;top:0;left:0;height:2px;background:var(--accent)}
+  .hint{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);font-size:8px;color:var(--muted);font-weight:600}
+  .grid-x{position:absolute;inset:8% 6% 30% 6%;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(6,1fr);gap:2px;transform:perspective(300px) rotateX(48deg) rotateZ(-8deg) scale(1.2);transform-origin:50% 60%}
+  .grid-x i{display:block;border:1px solid #d6d1c8;background:#fbfaf8}
+  .grid-x i.e{background:#fde7e7;border-color:#f0b4b4}
+  .grid-x.flat{transform:none;inset:10% 6% 20% 6%}
+  .pill{position:absolute;background:var(--soft);border-radius:99px;padding:3px 8px;font-size:9px;font-weight:600}
+  .pillw{position:absolute;background:#fff;color:var(--ink);border-radius:99px;padding:3px 8px;font-size:9px;font-weight:600}
+  .line{position:absolute;left:6%;right:6%;top:30%;height:45%}
+  .line svg{width:100%;height:100%;overflow:visible}
+  .hcards{position:absolute;left:5%;top:38%;display:flex;gap:6px;width:200%}
+  .hcards i{display:grid;align-content:end;width:22%;aspect-ratio:4/3;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:5px;font-style:normal;font-size:8px}
+  .hcards i b{font-size:18px;color:var(--accent);font-weight:800;line-height:1}
+  .hcards i.ia{background:var(--ink);color:#fff}
+  .panel{position:absolute;left:0;right:0;height:60%;background:#d9d5cd;border-top:1px solid #b8b2a8}
+  .form{position:absolute;right:6%;top:14%;width:44%;display:grid;gap:4px}
+  .form i{display:block;height:9%;min-height:10px;border:1px solid #cfc9bf;border-radius:3px;background:#fff}
+  .form .chk{display:flex;gap:3px}.form .chk i{flex:1;border-radius:99px}.form .chk i.on{background:var(--soft);border-color:var(--accent)}
+  .form .btn{background:var(--accent);border:0;width:40%}
+  .mobile{aspect-ratio:9/19;max-width:180px}
+  .legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}
+  .legend span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+  .legend i{width:18px;height:12px;border-radius:2px;display:inline-block}
+  @media (max-width:640px){section{padding-block:40px}}
+</style>
+
+<div class="wrap">
+  <header class="top"><div class="logo"><b>.</b>emoloc</div><div class="petit suau">Storyboard de l'entrada · v1 · setembre 2026</div></header>
+
+  <section>
+    <div class="head">
+      <h1>L'entrada, fotograma a fotograma</h1>
+      <p class="suau">Cada escena ocupa tota la pantalla i queda clavada mentre el scroll la fa avançar. Aquí es veu l'estructura de cada moment, no el moviment. Els fotogrames són a 16:9 (ordinador); al mòbil tot s'apila en vertical amb la mateixa seqüència.</p>
+    </div>
+    <div class="legend">
+      <span><i style="background:repeating-linear-gradient(135deg,#e9e6e0 0 4px,#f3f1ec 4px 8px)"></i>Vídeo en bucle</span>
+      <span><i style="background:#d9d5cd;border:1px solid #b8b2a8"></i>Captura o gravació de pantalla del client</span>
+      <span><i style="background:#e3e0d9"></i>Element de wireframe (plantilla, excel)</span>
+      <span><i style="background:var(--accent)"></i>Taronja: l'únic accent</span>
+      <span><i style="background:var(--ink)"></i>Text en tinta / pantalla fosca</span>
+    </div>
+  </section>
+
+  <!-- 0 -->
+  <section>
+    <div class="head"><h2>0 · Pantalla zero</h2><div class="meta"><span><b>Durada</b> abans de fer scroll</span><span><b>Mitjà</b> el teu vídeo en bucle, a sang</span><span><b>Text</b> només el logotip</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="vid">vídeo Xavi · bucle · a sang</div><div class="txt xl" style="left:50%;top:50%;transform:translate(-50%,-50%)"><span style="color:var(--accent)">.</span>emoloc</div><div class="hint">Baixa ↓</div></div>
+        <p><b>Ordinador.</b> Cap menú, cap frase, cap botó. Tres segons de "qui és aquest".</p>
+      </div>
+      <div class="frame">
+        <div class="screen mobile"><div class="vid">vídeo vertical</div><div class="txt l" style="left:50%;top:50%;transform:translate(-50%,-50%)"><span style="color:var(--accent)">.</span>emoloc</div><div class="hint">Baixa ↓</div></div>
+        <p><b>Mòbil.</b> El mateix, amb el vídeo en vertical (es grava en 4:5 i es retalla).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 -->
+  <section>
+    <div class="head"><h2>1 · La frase</h2><div class="meta"><span><b>Durada</b> 3 pantalles de scroll</span><span><b>Mitjà</b> el vídeo s'atenua cap al blanc</span><span><b>Text</b> la missió, paraula a paraula, en Titular</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="vid dim">vídeo atenuat</div><div class="txt l" style="left:50%;top:14%;transform:translateX(-50%)"><span style="color:var(--accent)">.</span>emoloc</div><div class="arrow" style="left:50%;top:32%;transform:translateX(-50%)">↑ el logotip puja i s'encongeix</div><div class="txt l g" style="left:8%;right:8%;top:48%;text-align:center">L'ajuda amb la transformació digital que necessita la teva empresa</div></div>
+        <p><b>Inici.</b> El vídeo es clava i perd força. La frase és a la pantalla però apagada.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="vid dim" style="opacity:.15"></div><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i></i><i></i><i></i><i></i></span></div><div class="txt l" style="left:8%;right:8%;top:40%;text-align:center"><span>L'ajuda amb la transformació digital</span> <span class="g">que necessita la teva empresa</span></div></div>
+        <p><b>Meitat.</b> Cada paraula s'encén al ritme del scroll. El logotip ja és al menú, amb quatre punts apagats.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i></i><i></i><i></i><i></i></span></div><div class="txt xl" style="left:8%;top:30%;font-size:22px;line-height:1.15"><span class="o">.</span>presència<br><span class="o">.</span>gestió<br><span class="o">.</span>venda<br><span class="o">.</span>comunicació</div><div class="txt m suau" style="right:8%;bottom:12%;max-width:40%;text-align:right;font-weight:400">Una empresa no necessita "una web". Necessita quatre coses.</div></div>
+        <p><b>Final.</b> Els quatre pilars entren un a un, cadascun amb el punt taronja al davant, com quatre logotips.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="head"><h2>2 · Presència</h2><div class="meta"><span><b>Durada</b> 4 pantalles de scroll</span><span><b>Mitjà</b> plantilla de wireframe → gravació d'escoladansa.com</span><span><b>Text</b> dos titulars que es rellevem</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i class="on"></i><i></i><i></i><i></i></span></div><div class="blk" style="left:6%;right:6%;top:14%;height:6%"></div><div class="blk" style="left:6%;right:6%;top:23%;height:36%"></div><div class="blk" style="left:6%;width:27%;top:62%;height:16%"></div><div class="blk" style="left:36.5%;width:27%;top:62%;height:16%"></div><div class="blk" style="left:67%;width:27%;top:62%;height:16%"></div><div class="cap">Una web de plantilla diu que l'empresa no hi és<small>01 · Presència</small></div></div>
+        <p><b>Inici.</b> Una web genèrica omple la pantalla: barra, bloc gran, tres targetes. Tot gris.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="blk" style="left:2%;width:30%;top:6%;height:6%;transform:rotate(-12deg);opacity:.5"></div><div class="blk" style="right:0;width:30%;top:30%;height:20%;transform:rotate(9deg);opacity:.4"></div><div class="blk" style="left:0;width:20%;top:70%;height:14%;transform:rotate(6deg);opacity:.4"></div><div class="phone"></div><div class="arrow" style="left:60%;top:46%">← el mòbil creix</div></div>
+        <p><b>Meitat.</b> Les peces de la plantilla surten volant. Del centre neix un mòbil amb la portada real de l'escola.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="shot" style="inset:0;border:0;border-radius:0">gravació d'escoladansa.com · a sang · el seu vídeo granat en marxa</div><div class="cap" style="color:#fff">Una web a mida diu just el contrari<small style="color:#eee">Pensada primer per al mòbil, en les llengües dels teus clients</small></div></div>
+        <p><b>Final.</b> La captura d'escriptori ocupa tota la pantalla. El titular canvia. Un enllaç petit: "escoladansa.com, el cas".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="head"><h2>3 · Gestió</h2><div class="meta"><span><b>Durada</b> 4 pantalles de scroll</span><span><b>Mitjà</b> excel en perspectiva → gravació del Backstage</span><span><b>Detall</b> el rellotge del Backstage avança amb el scroll</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i></i><i class="on"></i><i></i><i></i></span></div><div class="grid-x"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="e"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="e"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="e"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cap" style="bottom:auto;top:14%">L'excel que porta el teu negoci<small>02 · Gestió · Fins al dia que només l'entén una persona</small></div></div>
+        <p><b>Inici.</b> Un full de càlcul gegant vist en perspectiva, amb cel·les #REF! en vermell.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="grid-x flat" style="opacity:.5"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="e"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shot" style="left:20%;right:20%;top:45%;bottom:-10%">Backstage · puja</div><div class="arrow" style="left:50%;top:36%;transform:translateX(-50%)">↑ l'excel es plega, el Backstage puja</div></div>
+        <p><b>Meitat.</b> El full gira fins a quedar pla i es plega fila a fila. Sota, puja el Backstage.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="shot" style="left:6%;right:6%;top:12%;bottom:0">gravació del Backstage · inici amb classes en marxa</div><div class="pillw" style="left:9%;top:16%;background:var(--ink);color:#fff">18:11 · Dimarts</div><div class="shot" style="right:8%;bottom:6%;width:34%;height:34%;background:#e8e4dd">fitxa d'alumne · quota calculada</div><div class="cap" style="max-width:42%">Una eina feta per a tu i per a ningú més<small>Els mateixos camps que el teu excel. Els càlculs, automàtics.</small></div></div>
+        <p><b>Final.</b> El Backstage a pantalla completa, el rellotge avançant, i la fitxa amb la quota que surt sola.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="head"><h2>4 · Venda</h2><div class="meta"><span><b>Durada</b> 4 pantalles de scroll</span><span><b>Mitjà</b> l'única pantalla en tinta: la roda del crèdit → gravació de Brachfield</span><span><b>Detall</b> el 39 € compta fins a quedar gegant</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen dark"><div class="nav" style="color:#fff"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i></i><i></i><i class="on"></i><i></i></span></div><div style="position:absolute;left:50%;top:52%;width:38%;aspect-ratio:1;border-radius:50%;background:#f7f4ee;transform:translate(-50%,-50%);display:grid;place-items:center;color:#8a8378;font-size:9px">roda del crèdit · gira</div><div class="cap" style="bottom:auto;top:14%;color:#fff">Vendre en línia no és obrir una botiga<small>03 · Venda</small></div></div>
+        <p><b>Inici.</b> Tot passa a tinta. La roda de les set etapes del crèdit gira al centre.</p>
+      </div>
+      <div class="frame">
+        <div class="screen dark"><div style="position:absolute;left:8%;top:14%;width:14%;aspect-ratio:1;border-radius:50%;background:#f7f4ee;opacity:.8"></div><div class="txt xl o" style="left:50%;top:48%;transform:translate(-50%,-50%);font-size:56px">39 €</div><div class="txt m" style="left:50%;top:76%;transform:translateX(-50%);color:#ccc;font-weight:400">Al mes · Un sol pla · Tot inclòs</div></div>
+        <p><b>Meitat.</b> La roda s'aparta a un racó i el preu compta de 0 a 39 fins a quedar gegant, en taronja.</p>
+      </div>
+      <div class="frame">
+        <div class="screen dark"><div class="txt l o" style="left:50%;top:12%;transform:translateX(-50%);font-size:18px">39 €</div><div class="shot dark" style="left:12%;right:12%;top:34%;bottom:-4%">gravació de brachfieldacademy.com · puja des de baix</div><div class="pillw" style="right:16%;bottom:12%;background:#172b49;color:#fff">Quiero ser alumno →</div><div class="cap" style="color:#fff;max-width:36%;bottom:auto;top:20%">És tenir-ho tot lligat<small>Pagaments, zona d'alumnes, directes i una sala per publicar sense tocar res tècnic.</small></div></div>
+        <p><b>Final.</b> El preu s'encongeix a dalt i la portada de Brachfield puja des de baix, amb el seu botó.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="head"><h2>5 · Comunicació</h2><div class="meta"><span><b>Durada</b> 3 pantalles de scroll</span><span><b>Mitjà</b> cap captura: la línia i les xifres són el mitjà</span><span><b>Detall</b> 28,7 → 10,9 i 111 → 143 comptant</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i></i><i></i><i></i><i class="on"></i></span></div><div class="txt xl o" style="left:6%;top:16%;font-size:44px">28,7</div><div class="txt m" style="left:6%;top:52%;font-weight:600">Posició mitjana a Google</div><div class="line"><svg viewBox="0 0 100 40"><line x1="0" y1="38" x2="100" y2="38" stroke="#e2ddd5" stroke-width=".5"/></svg></div><div class="cap">Que sàpiguen que existeixes<small>04 · Comunicació</small></div></div>
+        <p><b>Inici.</b> Una xifra enorme en taronja i un eix buit de banda a banda.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="txt xl o" style="left:6%;top:16%;font-size:44px">18,4</div><div class="txt l" style="right:6%;top:16%;text-align:right">127<br><span class="m" style="font-size:9px;font-weight:600">Pàgines a Google</span></div><div class="line"><svg viewBox="0 0 100 40"><path d="M0,6 C20,6 30,14 50,24" fill="none" stroke="#f26b1f" stroke-width="1.6" stroke-linecap="round"/><line x1="0" y1="38" x2="100" y2="38" stroke="#e2ddd5" stroke-width=".5"/></svg></div><div class="arrow" style="left:56%;top:52%">→ la línia es dibuixa amb el scroll</div></div>
+        <p><b>Meitat.</b> La línia baixa d'esquerra a dreta mentre les dues xifres canvien al mateix ritme.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="txt xl o" style="left:6%;top:16%;font-size:44px">10,9</div><div class="txt l" style="right:6%;top:16%;text-align:right">143<br><span class="m" style="font-size:9px;font-weight:600">Pàgines a Google</span></div><div class="line"><svg viewBox="0 0 100 40"><path d="M0,6 C20,6 30,14 50,24 C70,33 85,36 100,36.5" fill="none" stroke="#f26b1f" stroke-width="1.6" stroke-linecap="round"/><circle cx="100" cy="36.5" r="2" fill="#f26b1f"/><line x1="0" y1="38" x2="100" y2="38" stroke="#e2ddd5" stroke-width=".5"/></svg></div><div class="pill" style="left:50%;top:60%;transform:translateX(-50%)">"escola de dansa" · Posició 5,9 · Primera pàgina</div><div class="cap" style="left:auto;right:5%;text-align:right;max-width:40%">En quinze dies<small>4 → 19 de setembre · Google Search Console</small></div></div>
+        <p><b>Final.</b> La línia arriba a 10,9 amb un punt, apareix la píndola de la primera pàgina i la data amb la font.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- després -->
+  <section>
+    <div class="head"><h2>Després de l'entrada</h2><div class="meta"><span><b>Durada</b> 2 pantalles de scroll cadascuna</span><span><b>To</b> més tranquil: aquí ja saben què fas</span></div></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="txt l" style="left:5%;top:12%">Com treballo</div><div class="hcards"><i><b>1</b>Escoltar el negoci</i><i><b>2</b>Construir per fases</i><i><b>3</b>Mesurar de debò</i><i><b>4</b>Deixar-ho documentat</i><i class="ia"><b>IA</b>Com a equip</i></div><div class="arrow" style="right:4%;bottom:8%">← les targetes llisquen amb el scroll vertical</div></div>
+        <p><b>Com treballo.</b> Galeria horitzontal clavada: quatre passos i una cinquena targeta fosca per a la IA.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="vid">segon vídeo Xavi · més proper</div><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(27,24,21,.85),transparent 60%)"></div><div class="cap" style="color:#fff">Sóc en Xavi Colomé<small style="color:#ddd">Més de 25 anys en digital. Director digital de Castañer.</small></div></div>
+        <p><b>Qui hi ha darrere.</b> Vídeo a sang amb ombra a baix i el text a l'esquerra. Enllaç a "Sobre mi".</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="panel" style="top:0;height:100%;background:#cfcabf"></div><div class="panel" style="top:44%">&nbsp;</div><div class="cap" style="color:#fff;bottom:6%">Escola de dansa Cristina Colomé<small style="color:#eee">10,9 posició mitjana · Llegir el cas →</small></div><div class="arrow" style="right:4%;top:48%">↑ el segon panell tapa el primer</div></div>
+        <p><b>Projectes.</b> Dos panells a sang que s'apilen l'un sobre l'altre en baixar. Cada un amb la seva xifra.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="txt l" style="left:5%;top:14%;max-width:40%">Tens un projecte al cap?</div><div class="txt m suau" style="left:5%;top:44%;max-width:40%;font-weight:400">Explica-me'l en quatre ratlles. Sense compromís.</div><div class="form"><i></i><i></i><i></i><div class="chk"><i></i><i class="on"></i><i></i><i></i></div><i style="height:18%"></i><i class="btn"></i></div><div class="arrow" style="left:52%;bottom:30%;font-size:10px">← "Gestió" ja ve marcat: és l'últim pilar que has mirat</div></div>
+        <p><b>Formulari.</b> L'única acció de la web. El pilar de l'última escena vista ja apareix marcat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><h2>Mecànica comuna a tota l'entrada</h2></div>
+    <div class="frames">
+      <div class="frame">
+        <div class="screen"><div class="prog" style="width:38%"></div><div class="nav"><span><span style="color:var(--accent)">.</span>emoloc</span><span class="dots"><i class="on"></i><i></i><i></i><i></i></span><span class="cta">Parlem</span></div><div class="txt m suau" style="left:5%;top:40%;font-weight:400;max-width:90%">Barra de progrés taronja a dalt. Quatre punts que s'encenen segons l'escena. El botó "Parlem" sempre a mà.</div></div>
+        <p><b>Menú.</b> Apareix a partir de l'escena 1. Mai tapa el mitjà: fons blanc translúcid.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="shot" style="inset:12% 6% 0 6%">passar el ratolí o el dit per sobre atura l'escena i deixa mirar la captura</div><div class="txt m suau" style="left:6%;top:3%;font-weight:400">Si pares, para. Si tornes enrere, torna enrere.</div></div>
+        <p><b>Scroll.</b> Suau però mai segrestat. Cada escena va lligada a la posició del scroll, no a temporitzadors.</p>
+      </div>
+      <div class="frame">
+        <div class="screen"><div class="txt m suau" style="left:6%;top:10%;font-weight:400;max-width:88%">Moviment reduït al sistema o connexió lenta: cada escena mostra el seu fotograma final, en pàgina normal, sense clavar-se. Mateix contingut, cap animació.</div><div class="shot" style="left:6%;right:6%;top:48%;bottom:8%">fotograma final de cada escena, apilat</div></div>
+        <p><b>Reserva.</b> Qui no pot o no vol moviment veu la mateixa història, quieta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section><p class="petit suau">emoloc · Storyboard de l'entrada · Document intern · Els fotogrames són esquemes: les proporcions reals les fixa la guia d'estils.</p></section>
+</div>
