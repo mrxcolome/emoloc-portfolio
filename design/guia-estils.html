@@ -15,7 +15,7 @@
   *{box-sizing:border-box}
   /* ---- els quatre estils de text, i cap més ---- */
   .titular{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
-  .titular-2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
   .text{font-size:18px;line-height:1.55;font-weight:400}
   .petit{font-size:14px;line-height:1.5;font-weight:400}
   .suau{color:var(--muted)}
@@ -161,14 +161,14 @@
     </div>
     <div>
       <div class="type-row"><small>Titular · 72 / 1.0 · 800</small><h1>Digital que funciona</h1></div>
-      <div class="type-row"><small>Titular 2 · 40 / 1.1 · 800</small><h2>Presència, gestió, venda i comunicació</h2></div>
+      <div class="type-row"><small>Subtitular · 40 / 1.1 · 800</small><h2>Presència, gestió, venda i comunicació</h2></div>
       <div class="type-row"><small>Text · 18 / 1.55 · 400</small><p>Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
       <div class="type-row"><small>Petit · 14 / 1.5 · 400</small><p class="petit">Etiquetes, peus de foto, notes i la font d'una xifra. Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
     </div>
     <p class="small" style="margin-top:24px">Quatre estils i cap més: tot el text d'aquesta guia i de la web és un d'aquests quatre. El color és un eix a part: qualsevol estil pot anar en tinta o en tinta suau. El paràgraf que segueix un titular és Text en tinta suau; el títol d'una targeta o d'una regla és Text en tinta. Els botons, els menús, les etiquetes de pilar i les caselles del formulari posen el Petit en gruix 600: és l'única excepció, i pertany al component, no a l'escala.</p>
     <div class="weights">
       <div><span style="font-weight:400">Aa</span><span class="small">400 · Text i Petit</span></div>
-      <div><span style="font-weight:800">Aa</span><span class="small">800 · Titular, Titular 2 i xifres</span></div>
+      <div><span style="font-weight:800">Aa</span><span class="small">800 · Titular, Subtitular i xifres</span></div>
     </div>
     <ul class="dont">
       <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
@@ -185,7 +185,7 @@
     </div>
     <div class="grid g2">
       <div>
-        <h3 class="titular-2">Espai</h3>
+        <h3 class="subtitular">Espai</h3>
         <div style="margin-top:8px">
           <div class="space-row"><span>8</span><div class="bar" style="width:8px"></div></div>
           <div class="space-row"><span>16</span><div class="bar" style="width:16px"></div></div>
@@ -196,13 +196,13 @@
         <p class="small" style="margin-top:16px">8 entre etiqueta i titular. 16 entre elements d'una llista. 24 dins d'una targeta. 48 entre blocs d'una secció. 96 entre seccions (48 al mòbil).</p>
       </div>
       <div>
-        <h3 class="titular-2">Radis</h3>
+        <h3 class="subtitular">Radis</h3>
         <div class="radius-row" style="margin-top:16px">
           <div style="border-radius:8px">8 · camps, notes</div>
           <div style="border-radius:16px">16 · targetes, escenes</div>
           <div style="border-radius:999px;width:180px">píndola · botons</div>
         </div>
-        <h3 class="titular-2" style="margin-top:48px">Retícula</h3>
+        <h3 class="subtitular" style="margin-top:48px">Retícula</h3>
         <p class="small" style="margin-top:8px">Amplada màxima de contingut 1120 px. Marges laterals que creixen amb la pantalla, de 16 px al mòbil a 64 a l'ordinador. Dues columnes a l'ordinador quan hi ha text i imatge; una al mòbil.</p>
       </div>
     </div>
@@ -235,7 +235,7 @@
       <p class="lead">Poques peces, sempre iguals. Si una pàgina necessita una peça nova, primer es defineix aquí.</p>
     </div>
 
-    <h3 class="titular-2">Botons i enllaços</h3>
+    <h3 class="subtitular">Botons i enllaços</h3>
     <p class="small" style="margin:8px 0 16px">Un de principal per pantalla, com a màxim. Sempre amb fletxa: el botó porta a algun lloc.</p>
     <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
       <a class="btn btn-primary" href="#">Explica'm el teu projecte <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -243,13 +243,13 @@
       <a class="link" href="#">Llegir el cas <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
 
-    <h3 class="titular-2" style="margin-top:48px">Els quatre pilars</h3>
+    <h3 class="subtitular" style="margin-top:48px">Els quatre pilars</h3>
     <p class="small" style="margin:8px 0 16px">Sempre en aquest ordre. Com a etiqueta, com a botó de filtre i com a casella del formulari.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <span class="pill"><i></i>Presència</span><span class="pill"><i></i>Gestió</span><span class="pill"><i></i>Venda</span><span class="pill"><i></i>Comunicació</span>
     </div>
 
-    <h3 class="titular-2" style="margin-top:48px">Xifres</h3>
+    <h3 class="subtitular" style="margin-top:48px">Xifres</h3>
     <p class="small" style="margin:8px 0 16px">Una xifra només si és real, amb què és i des de quan. Sense font no hi ha xifra. La xifra és l'únic text gran que pot anar en taronja.</p>
     <div class="grid g3">
       <div class="stat"><b>10,9</b><span>Posició mitjana a Google</span><small>Era 28,7 el 4 de setembre</small></div>
@@ -258,14 +258,14 @@
       <div class="stat"><b>39 €</b><span>Al mes, un sol pla</span><small>Brachfield Academy</small></div>
     </div>
 
-    <h3 class="titular-2" style="margin-top:48px">Targetes</h3>
+    <h3 class="subtitular" style="margin-top:48px">Targetes</h3>
     <p class="small" style="margin:8px 0 16px">Fons de targeta, línia, radi 16. Dins: una etiqueta en Petit, el títol en Text i la descripció en Petit. En passar-hi per sobre, la línia passa a tinta. Res més.</p>
     <div class="grid g2">
       <div class="card"><span class="small">Presència</span><h3>La teva marca en digital</h3><p class="small">Que qui et busca trobi una empresa viva i entengui en deu segons què fas.</p></div>
       <div class="card"><span class="small">Gestió</span><h3>Les eines que porten el negoci per dins</h3><p class="small">Fetes a mida quan l'excel ja no dona més de si.</p></div>
     </div>
 
-    <h3 class="titular-2" style="margin-top:48px">Formulari</h3>
+    <h3 class="subtitular" style="margin-top:48px">Formulari</h3>
     <p class="small" style="margin:8px 0 16px">L'única acció de la web. Camps grans, etiquetes a sobre, error explicat en una frase.</p>
     <div class="grid g2" style="max-width:760px">
       <label class="field">Nom <input id="demo-nom" placeholder="Com et dius"></label>
