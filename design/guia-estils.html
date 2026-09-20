@@ -54,11 +54,6 @@
   .type-row:first-child{border-top:0}
   .type-row .nom{display:grid;gap:2px;font-size:18px;line-height:1.55;font-weight:400;color:var(--ink)}
   .type-row .nom small{display:block;color:var(--muted);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
-  /* spacing & radius */
-  .bar{background:var(--accent);height:12px;border-radius:2px}
-  .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--muted)}
-  .radius-row{display:flex;gap:24px;flex-wrap:wrap}
-  .radius-row div{width:140px;height:88px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:14px;line-height:1.5;color:var(--muted)}
   /* components: botons, enllaços, etiquetes i caselles van en Text negreta; el Petit només per a aclariments */
   .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:600;font-size:18px;line-height:1.55;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-1px)}
@@ -111,7 +106,7 @@
   <section>
     <div class="sec-head">
       <h1>Guia d'estils emoloc</h1>
-      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en quatre estils, un moviment, i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
+      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en quatre estils, un moviment, els components i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
     </div>
     <p class="note">Frase de missió, fixa: <strong>emoloc. L'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.</strong></p>
   </section>
@@ -170,36 +165,6 @@
       <li>Xifres sempre tabulars (<span class="kbd">font-variant-numeric: tabular-nums</span>) perquè comptin sense ballar.</li>
       <li>Els textos descriptius ocupen tota l'amplada del contenidor, fins a 1120 px. Res en majúscules sostingudes ni amb espaiat obert, tret del logotip.</li>
     </ul>
-  </section>
-
-  <section id="space">
-    <div class="sec-head">
-      <h2>Cinc espais, tres radis</h2>
-      <p class="lead">Base de 8 píxels. Molt d'aire entre seccions, poc entre coses que van juntes. Els radis diuen què és cada cosa: petit per a camps i notes, mitjà per a targetes i escenes, píndola per a botons i etiquetes.</p>
-    </div>
-    <div class="grid g2">
-      <div>
-        <h3>Espai</h3>
-        <div style="margin-top:8px">
-          <div class="space-row"><span>8</span><div class="bar" style="width:8px"></div></div>
-          <div class="space-row"><span>16</span><div class="bar" style="width:16px"></div></div>
-          <div class="space-row"><span>24</span><div class="bar" style="width:24px"></div></div>
-          <div class="space-row"><span>48</span><div class="bar" style="width:48px"></div></div>
-          <div class="space-row"><span>96</span><div class="bar" style="width:96px"></div></div>
-        </div>
-        <p class="lead" style="margin-top:16px">8 entre etiqueta i titular. 16 entre elements d'una llista. 24 dins d'una targeta. 48 entre blocs d'una secció. 96 entre seccions (48 al mòbil).</p>
-      </div>
-      <div>
-        <h3>Radis</h3>
-        <div class="radius-row" style="margin-top:16px">
-          <div style="border-radius:8px">8 · camps, notes</div>
-          <div style="border-radius:16px">16 · targetes, escenes</div>
-          <div style="border-radius:999px;width:180px">píndola · botons</div>
-        </div>
-        <h3 style="margin-top:48px">Retícula</h3>
-        <p class="lead" style="margin-top:8px">Amplada màxima de contingut 1120 px. Marges laterals que creixen amb la pantalla, de 16 px al mòbil a 64 a l'ordinador. Dues columnes a l'ordinador quan hi ha text i imatge; una al mòbil.</p>
-      </div>
-    </div>
   </section>
 
   <section id="motion">
