@@ -1,12 +1,12 @@
 <title>emoloc guia d'estils</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap">
 <style>
   :root{
     --paper:#f2f1ec; --surface:#ffffff; --ink:#14161c; --muted:#5f6474; --line:#dcdad2;
     --accent:#1f3ff0; --on-accent:#ffffff; --accent-soft:#e4e8ff;
     --ok:#1b7f4d; --warn:#b7791f;
-    --font:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --font:"DM Sans", "Helvetica Neue", Arial, sans-serif;
     --r-s:6px; --r-m:12px; --r-l:24px; --r-pill:999px;
     --ease:cubic-bezier(.2,.8,.2,1); --t-fast:200ms; --t-base:500ms; --t-slow:900ms;
     --gutter:clamp(16px, 5vw, 64px);
@@ -117,7 +117,7 @@
 <div class="wrap">
   <header class="top">
     <div class="logo">emoloc<b>.</b></div>
-    <div class="t-small">guia d'estils · v1 · setembre 2026</div>
+    <div class="t-small">guia d'estils · v1.1 · setembre 2026</div>
   </header>
 
   <section>
@@ -180,8 +180,8 @@
   <section id="type">
     <div class="sec-head">
       <p class="eyebrow">una sola lletra, tres gruixos</p>
-      <h2>Bricolage Grotesque.</h2>
-      <p class="lead">Una grotesca amb caràcter: geomètrica però amb detalls que la fan humana, i amb mida òptica, així que es dibuixa diferent en un titular gegant que en un peu de foto. Tres gruixos i prou: 400 per llegir, 600 per etiquetar, 800 per titular.</p>
+      <h2>DM Sans.</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gegant es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Funciona igual de bé en minúscula, que és la nostra veu. Tres gruixos i prou: 400 per llegir, 600 per etiquetar, 800 per titular.</p>
     </div>
     <div>
       <div class="type-row"><small>display · 104 / 0.95</small><div class="t-display">emoloc.</div></div>
@@ -250,6 +250,7 @@
       <div class="rule"><h3>tres durades</h3><p>200 ms per a respostes (hover, focus). 500 ms per a canvis d'estat (obrir, tancar). 900 ms per a entrades d'escena. El scroll no té durada: la persona la posa.</p></div>
       <div class="rule"><h3>el scroll mana</h3><p>Les escenes de la portada van lligades a la posició del scroll, no a temporitzadors. Si t'atures, s'atura. Si tornes enrere, torna enrere. El scroll és suau (Lenis) però mai segrestat: la roda sempre mou la pàgina.</p></div>
       <div class="rule"><h3>vídeo, no foto</h3><p>Les persones i els projectes es mostren en vídeo curt, mut, en bucle, sense so ni controls. Sempre amb una imatge de reserva per a connexions lentes.</p></div>
+      <div class="rule"><h3>bucle sense costura</h3><p>Cap vídeo té principi ni final visibles. Es grava o es genera perquè l'últim fotograma coincideixi amb el primer: el moviment surt d'un punt de repòs i hi torna. Entre 5 i 8 segons, càmera fixa, fons quiet. Si es nota el tall, no es publica.</p></div>
       <div class="rule"><h3>moviment reduït</h3><p>Si el sistema demana menys moviment, les escenes no es claven, els vídeos són fotos i tot el contingut és visible a l'instant. Mateix contingut, cap animació.</p></div>
       <div class="rule"><h3>rendiment</h3><p>Només <span class="kbd">transform</span> i <span class="kbd">opacity</span> s'animen. Cap animació que canviï mides o posicions de maquetació. 60 imatges per segon en un mòbil de gamma mitjana, o es treu.</p></div>
     </div>
@@ -322,7 +323,7 @@
     <div class="rules">
       <div class="rule"><h3>1 · tot en minúscula</h3><p>Titulars, etiquetes, menús i botons, com el logotip. Els noms propis i el cos de text, amb majúscules normals.</p></div>
       <div class="rule"><h3>2 · el blau, d'accent</h3><p>Botons, el punt del logo, dades destacades i estats de focus. Mai de fons.</p></div>
-      <div class="rule"><h3>3 · vídeo, no foto</h3><p>Les persones i els projectes es mouen. Curt, mut, en bucle, amb imatge de reserva.</p></div>
+      <div class="rule"><h3>3 · vídeo, no foto</h3><p>Les persones i els projectes es mouen. Curt, mut, en bucle sense costura (l'últim fotograma és el primer), amb imatge de reserva.</p></div>
       <div class="rule"><h3>4 · quatre pilars, un ordre</h3><p>presència, gestió, venda, comunicació. Sempre. A la portada, als serveis, al formulari i als casos.</p></div>
       <div class="rule"><h3>5 · una escena per pilar</h3><p>A la portada cada pilar és una transformació que es veu, no un paràgraf que es llegeix.</p></div>
       <div class="rule"><h3>6 · xifres amb data i font</h3><p>Cap número sense el "des de quan" i el "segons qui". Si no es pot dir, no es posa.</p></div>
