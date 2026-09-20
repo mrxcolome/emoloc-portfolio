@@ -48,7 +48,8 @@
   .swatch .meta b{font-weight:600}
   .swatch .meta code{color:var(--muted)}
   /* type */
-  .type-row{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:baseline;padding-block:24px;border-top:1px solid var(--line)}
+  .type-row{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:start;padding-block:24px;border-top:1px solid var(--line)}
+  .type-row>*{margin:0;align-self:start}
   .type-row:first-child{border-top:0}
   .type-row .nom{display:grid;gap:2px;font-size:18px;line-height:1.55;font-weight:400;color:var(--ink)}
   .type-row .nom small{display:block;color:var(--muted);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
