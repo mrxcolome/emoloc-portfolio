@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap">
 <style>
   :root{
-    --paper:#f2f1ec; --surface:#ffffff; --ink:#14161c; --muted:#5f6474; --line:#dcdad2;
-    --accent:#1f3ff0; --on-accent:#ffffff; --accent-soft:#e4e8ff;
+    --paper:#f4f1eb; --surface:#ffffff; --ink:#1b1815; --muted:#6b6157; --line:#ddd6cc;
+    --accent:#f26b1f; --accent-text:#b8460a; --on-accent:#1b1815; --accent-soft:#ffe4d3;
     --ok:#1b7f4d; --warn:#b7791f;
     --font:"DM Sans", "Helvetica Neue", Arial, sans-serif;
     --r-s:6px; --r-m:12px; --r-l:24px; --r-pill:999px;
@@ -13,13 +13,13 @@
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#0f1117; --surface:#171a22; --ink:#eef0f5; --muted:#9aa0b4; --line:#262a35;
-      --accent:#8fa0ff; --on-accent:#0f1117; --accent-soft:#1a2050;
+      --paper:#141210; --surface:#1c1916; --ink:#f3ede6; --muted:#a89d90; --line:#2c2823;
+      --accent:#ff8a4d; --accent-text:#ffa46e; --on-accent:#141210; --accent-soft:#3a2214;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#0f1117; --surface:#171a22; --ink:#eef0f5; --muted:#9aa0b4; --line:#262a35;
-    --accent:#8fa0ff; --on-accent:#0f1117; --accent-soft:#1a2050;
+    --paper:#141210; --surface:#1c1916; --ink:#f3ede6; --muted:#a89d90; --line:#2c2823;
+    --accent:#ff8a4d; --accent-text:#ffa46e; --on-accent:#141210; --accent-soft:#3a2214;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased}
@@ -33,7 +33,7 @@
   header.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px;border-bottom:1px solid var(--line)}
   .logo{font-weight:800;font-size:24px;letter-spacing:-.03em}
   .logo b{color:var(--accent);font-weight:800}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
   .lead{font-size:clamp(18px,2vw,22px);color:var(--muted)}
   section{padding-block:72px;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
@@ -59,7 +59,7 @@
   .t-lead{font-size:22px;color:var(--muted)}
   .t-body{font-size:17px}
   .t-small{font-size:14px;color:var(--muted)}
-  .t-label{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .t-label{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text)}
   .weights{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px}
   .weights div{display:grid;gap:4px}
   .weights span{font-size:64px;line-height:1}
@@ -108,7 +108,7 @@
   .note{background:var(--accent-soft);border-radius:var(--r-m);padding:16px 18px;font-size:15px}
   .dont{display:grid;gap:8px;padding:0;margin:0;list-style:none}
   .dont li{display:flex;gap:10px;color:var(--muted)}
-  .dont li::before{content:"×";color:var(--accent);font-weight:800}
+  .dont li::before{content:"×";color:var(--accent-text);font-weight:800}
   .kbd{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
   @media (max-width:640px){.type-row,.rule{grid-template-columns:1fr;gap:6px}.t-h2{font-size:36px}.t-h3{font-size:26px}}
@@ -117,7 +117,7 @@
 <div class="wrap">
   <header class="top">
     <div class="logo">emoloc<b>.</b></div>
-    <div class="t-small">guia d'estils · v1.1 · setembre 2026</div>
+    <div class="t-small">guia d'estils · v1.2 · setembre 2026</div>
   </header>
 
   <section>
@@ -148,30 +148,34 @@
 
   <section id="color">
     <div class="sec-head">
-      <p class="eyebrow">sis colors, i prou</p>
-      <h2>paper, tinta i un blau.</h2>
-      <p class="lead">Fons de paper lleugerament càlid, tinta blavosa gairebé negra, i un únic accent: un blau elèctric que només apareix on cal decidir o mirar. Els grisos tiren cap al blau, no són grisos neutres.</p>
+      <p class="eyebrow">set colors, i prou</p>
+      <h2>paper, tinta i un taronja.</h2>
+      <p class="lead">Fons de paper càlid, tinta gairebé negra amb un punt de terra, i un únic accent: un taronja viu que només apareix on cal decidir o mirar. Els grisos tiren cap al càlid, no són grisos neutres. El taronja té dues tonalitats perquè el viu no aguanta text petit: el viu per a fons, punt del logo i xifres grans, sempre amb la tinta a sobre; el fosc per a etiquetes i enllaços.</p>
     </div>
     <div class="grid g3">
-      <div class="swatch"><div class="chip" style="background:#f2f1ec"></div><div class="meta"><b>paper</b><code>#f2f1ec</code><span>el fons de tot</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#f4f1eb"></div><div class="meta"><b>paper</b><code>#f4f1eb</code><span>el fons de tot</span></div></div>
       <div class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid var(--line)"></div><div class="meta"><b>superfície</b><code>#ffffff</code><span>targetes, camps, capes</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#14161c"></div><div class="meta"><b>tinta</b><code>#14161c</code><span>text i titulars</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#5f6474"></div><div class="meta"><b>tinta suau</b><code>#5f6474</code><span>text secundari, peus</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#dcdad2"></div><div class="meta"><b>línia</b><code>#dcdad2</code><span>vores i separadors</span></div></div>
-      <div class="swatch"><div class="chip" style="background:#1f3ff0"></div><div class="meta"><b>blau emoloc</b><code>#1f3ff0</code><span>l'únic accent: botons, punt del logo, dades</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#1b1815"></div><div class="meta"><b>tinta</b><code>#1b1815</code><span>text i titulars</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#6b6157"></div><div class="meta"><b>tinta suau</b><code>#6b6157</code><span>text secundari, peus</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#ddd6cc"></div><div class="meta"><b>línia</b><code>#ddd6cc</code><span>vores i separadors</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#f26b1f"></div><div class="meta"><b>taronja emoloc</b><code>#f26b1f</code><span>botons (amb text en tinta), punt del logo, xifres grans</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#b8460a"></div><div class="meta"><b>taronja de text</b><code>#b8460a</code><span>etiquetes, enllaços i text petit en taronja</span></div></div>
     </div>
     <h3 style="margin-top:48px">en fosc</h3>
-    <p class="t-small" style="margin-bottom:16px">La web respecta el mode fosc del sistema. Mateixos papers, invertits, i el blau s'aclareix perquè aguanti el contrast.</p>
+    <p class="t-small" style="margin-bottom:16px">La web respecta el mode fosc del sistema. Mateixos papers, invertits, i el taronja s'aclareix perquè aguanti el contrast; en fosc, el text del botó és el paper fosc.</p>
     <div class="grid g3">
-      <div class="swatch"><div class="chip" style="background:#0f1117"></div><div class="meta"><b>paper fosc</b><code>#0f1117</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#171a22"></div><div class="meta"><b>superfície fosca</b><code>#171a22</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#eef0f5"></div><div class="meta"><b>tinta clara</b><code>#eef0f5</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#9aa0b4"></div><div class="meta"><b>tinta suau clara</b><code>#9aa0b4</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#262a35"></div><div class="meta"><b>línia fosca</b><code>#262a35</code></div></div>
-      <div class="swatch"><div class="chip" style="background:#8fa0ff"></div><div class="meta"><b>blau emoloc clar</b><code>#8fa0ff</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#141210"></div><div class="meta"><b>paper fosc</b><code>#141210</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1c1916"></div><div class="meta"><b>superfície fosca</b><code>#1c1916</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#f3ede6"></div><div class="meta"><b>tinta clara</b><code>#f3ede6</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#a89d90"></div><div class="meta"><b>tinta suau clara</b><code>#a89d90</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#2c2823"></div><div class="meta"><b>línia fosca</b><code>#2c2823</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#ff8a4d"></div><div class="meta"><b>taronja emoloc clar</b><code>#ff8a4d</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#ffa46e"></div><div class="meta"><b>taronja de text clar</b><code>#ffa46e</code></div></div>
     </div>
     <ul class="dont" style="margin-top:24px">
-      <li>El blau mai de fons d'una secció sencera. És accent, no ambient.</li>
+      <li>El taronja mai de fons d'una secció sencera. És accent, no ambient.</li>
+      <li>Sobre el taronja viu, el text sempre en tinta, mai en blanc: el blanc no arriba al contrast mínim.</li>
+      <li>El taronja viu mai per a text de menys de 24 píxels: per a això hi ha el taronja de text.</li>
       <li>Cap degradat, cap ombra de color. La profunditat la fan el paper, la superfície i la línia.</li>
       <li>El color dels projectes (el granat de l'escola, el blau marí de Brachfield) només apareix dins de les seves captures i vídeos.</li>
     </ul>
@@ -322,7 +326,7 @@
     </div>
     <div class="rules">
       <div class="rule"><h3>1 · tot en minúscula</h3><p>Titulars, etiquetes, menús i botons, com el logotip. Els noms propis i el cos de text, amb majúscules normals.</p></div>
-      <div class="rule"><h3>2 · el blau, d'accent</h3><p>Botons, el punt del logo, dades destacades i estats de focus. Mai de fons.</p></div>
+      <div class="rule"><h3>2 · el taronja, d'accent</h3><p>Botons, el punt del logo, xifres grans i estats de focus. Mai de fons. El fosc per a text petit; sobre el viu, sempre tinta.</p></div>
       <div class="rule"><h3>3 · vídeo, no foto</h3><p>Les persones i els projectes es mouen. Curt, mut, en bucle sense costura (l'últim fotograma és el primer), amb imatge de reserva.</p></div>
       <div class="rule"><h3>4 · quatre pilars, un ordre</h3><p>presència, gestió, venda, comunicació. Sempre. A la portada, als serveis, al formulari i als casos.</p></div>
       <div class="rule"><h3>5 · una escena per pilar</h3><p>A la portada cada pilar és una transformació que es veu, no un paràgraf que es llegeix.</p></div>
