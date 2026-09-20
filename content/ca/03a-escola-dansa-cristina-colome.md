@@ -1,6 +1,6 @@
 # cas · escola de dansa cristina colomé
 
-> Pendent de vistiplau de la Cristina Colomé abans de publicar.
+> Vistiplau de la Cristina Colomé rebut (setembre 2026).
 > Fora del text públic, a propòsit: tarifes concretes, noms de l'equip, detall de rebuts i remeses.
 
 ## fitxa

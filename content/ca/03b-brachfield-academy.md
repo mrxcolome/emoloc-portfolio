@@ -1,6 +1,6 @@
 # cas · brachfield academy
 
-> Pendent de vistiplau del Pere Brachfield abans de publicar.
+> Vistiplau del Pere Brachfield rebut (setembre 2026).
 > Fora del text públic, a propòsit: la llista de passos pendents del propietari. Es presenta com "en prellançament".
 
 ## fitxa
