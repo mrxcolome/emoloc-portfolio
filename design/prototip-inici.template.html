@@ -10,11 +10,8 @@
     --gutter:clamp(16px,5vw,64px);
     --nav-h:64px;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
-  }
-  :root[data-theme="dark"]{--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
 
+  html{color-scheme:light only}
   *{box-sizing:border-box}
   .hero .wrap>*,.scene .sticky .wrap>*,.who .wrap>*,.contact .wrap>*,.cards>*{min-width:0}
   html{scroll-behavior:auto}

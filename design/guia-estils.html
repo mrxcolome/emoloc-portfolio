@@ -10,11 +10,8 @@
     --ease:cubic-bezier(.2,.8,.2,1); --t-fast:200ms; --t-base:500ms; --t-slow:900ms;
     --gutter:clamp(16px,5vw,64px);
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
-  }
-  :root[data-theme="dark"]{--paper:#141210;--surface:#1c1916;--ink:#f3ede6;--muted:#a89d90;--line:#2c2823;--accent:#ff8a4d;--on-accent:#141210;--accent-soft:#3a2214}
 
+  html{color-scheme:light only}
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased}
   h1,h2,h3{margin:0;text-wrap:balance}
@@ -102,7 +99,7 @@
 <div class="wrap">
   <header class="top">
     <div class="logo"><b>.</b>emoloc</div>
-    <div class="small">Guia d'estils · v2 · setembre 2026</div>
+    <div class="small">Guia d'estils · v2.1 · setembre 2026</div>
   </header>
 
   <section>
@@ -122,7 +119,7 @@
     </div>
     <div class="grid g2">
       <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--paper)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b>.</b>emoloc</div></div>
-      <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--ink);color:var(--paper);border-color:var(--ink)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b style="color:var(--accent)">.</b>emoloc</div></div>
+      <div class="card" style="align-items:center;justify-items:center;padding:56px;background:var(--ink);color:#ffffff;border-color:var(--ink)"><div class="logo" style="font-size:clamp(48px,8vw,96px)"><b style="color:var(--accent)">.</b>emoloc</div></div>
     </div>
     <ul class="dont">
       <li>Mai en majúscula, mai "Emoloc", mai sense el punt. El punt sempre al davant.</li>
@@ -145,8 +142,8 @@
       <div class="swatch"><div class="chip" style="background:#e2ddd5"></div><div class="meta"><b>Línia</b><code>#e2ddd5</code><span>Vores, separadors i, més clar, fons de targeta (#f6f4f0)</span></div></div>
       <div class="swatch"><div class="chip" style="background:#f26b1f"></div><div class="meta"><b>Taronja emoloc</b><code>#f26b1f</code><span>Punt del logo, botó principal, xifres grans</span></div></div>
     </div>
-    <h3 style="margin-top:48px">En fosc</h3>
-    <p class="small" style="margin:8px 0 16px">La web respecta el mode fosc del sistema: fons #141210, tinta #f3ede6, tinta suau #a89d90, línia #2c2823 i el taronja s'aclareix a #ff8a4d. El text del botó principal passa a ser el fons fosc.</p>
+    <h3 style="margin-top:48px">Sempre en blanc</h3>
+    <p class="small" style="margin:8px 0 16px">La web no té mode fosc: el fons és blanc sigui quin sigui l'ajust del sistema del visitant. L'única superfície fosca de tota la marca és la versió del logotip sobre tinta, per a fons de vídeo o de tercers.</p>
     <ul class="dont">
       <li>El taronja mai de fons d'una secció sencera. És accent, no ambient.</li>
       <li>Sobre el taronja, el text sempre en tinta, mai en blanc: el blanc no arriba al contrast mínim.</li>
