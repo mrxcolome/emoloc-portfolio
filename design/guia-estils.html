@@ -18,13 +18,14 @@
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
   .text{font-size:18px;line-height:1.55;font-weight:400}
   .petit{font-size:14px;line-height:1.5;font-weight:400}
+  .negreta{font-weight:600}   /* variant de Text i de Petit */
   .suau{color:var(--muted)}
   /* ---- base: cada element hereta un dels quatre ---- */
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.55}
   h1,h2,h3,p{margin:0}
   h1{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
   h2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
-  h3{font-size:18px;line-height:1.55;font-weight:400;text-wrap:balance}   /* Text, en tinta */
+  h3{font-size:18px;line-height:1.55;font-weight:600;text-wrap:balance}   /* Text negreta, en tinta */
   p{text-wrap:pretty}   /* els textos descriptius ocupen tota l'amplada del contenidor */
   a{color:inherit}
   code,.kbd{font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.5}
@@ -58,7 +59,7 @@
   .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--muted)}
   .radius-row{display:flex;gap:24px;flex-wrap:wrap}
   .radius-row div{width:140px;height:88px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:14px;line-height:1.5;color:var(--muted)}
-  /* components: el Petit en gruix 600 és l'única excepció, i és del component */
+  /* components: botons, etiquetes i caselles van en Petit negreta */
   .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:600;font-size:14px;line-height:1.5;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--accent);color:var(--on-accent)}
@@ -154,14 +155,14 @@
 
   <section id="type">
     <div class="sec-head">
-      <h2>DM Sans, dos gruixos, quatre estils</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Dos gruixos: 400 per al text i 800 per als titulars i les xifres.</p>
+      <h2>DM Sans, quatre estils</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Els titulars van en 800. Text i Petit van en 400 i tenen una variant negreta en 600 per destacar un títol de bloc, una frase o una etiqueta.</p>
     </div>
     <div>
       <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 800</small></div><h1>Digital que funciona</h1></div>
       <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · 800</small></div><h2>Presència, gestió, venda i comunicació</h2></div>
-      <div class="type-row"><div class="nom">Text<small>18 / 1.55 · 400</small></div><p>Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
-      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 400</small></div><p class="petit">Etiquetes, peus de foto, notes i la font d'una xifra. Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
+      <div class="type-row"><div class="nom">Text<small>18 / 1.55 · 400 · negreta 600</small></div><p><span class="negreta">Una empresa no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 400 · negreta 600</small></div><p class="petit"><span class="negreta">Peus de foto, notes i la font d'una xifra.</span> Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console. En negreta: botons, etiquetes i caselles.</p></div>
     </div>
     <ul class="dont">
       <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
