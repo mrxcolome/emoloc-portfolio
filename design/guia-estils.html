@@ -13,20 +13,29 @@
 
   html{color-scheme:light only}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{margin:0;text-wrap:balance}
-  h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em}
-  h2{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.015em}
-  h3{font-size:24px;font-weight:600;line-height:1.2}
-  p{margin:0;text-wrap:pretty;max-width:62ch}
+  /* ---- els cinc estils de text, i cap més ---- */
+  .titular-gran{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  .titular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  .subtitol{font-size:24px;line-height:1.2;font-weight:600;text-wrap:balance}
+  .text{font-size:17px;line-height:1.55;font-weight:400}
+  .petit{font-size:14px;line-height:1.5;font-weight:400}
+  .suau{color:var(--muted)}
+  /* ---- base: cada element hereta un dels cinc ---- */
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.55}
+  h1,h2,h3,p{margin:0}
+  h1{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+  h2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
+  h3{font-size:24px;line-height:1.2;font-weight:600;text-wrap:balance}
+  p{text-wrap:pretty;max-width:62ch}
   a{color:inherit}
+  code,.kbd{font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.5}
   .wrap{max-width:1120px;margin:0 auto}
   header.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px;border-bottom:1px solid var(--line)}
-  .logo{font-weight:800;font-size:24px;letter-spacing:.04em}
+  .logo{font-weight:800;font-size:24px;line-height:1;letter-spacing:.04em}
   .logo b{color:var(--accent);font-weight:800}
-  .label{font-size:14px;font-weight:600;color:var(--muted)}
-  .lead{font-size:24px;line-height:1.35;color:var(--muted);font-weight:400}
-  .small{font-size:14px;color:var(--muted)}
+  .label{font-size:14px;line-height:1.5;font-weight:400;color:var(--muted)}      /* Petit, tinta suau */
+  .lead{font-size:17px;line-height:1.55;font-weight:400;color:var(--muted)}      /* Text, tinta suau */
+  .small{font-size:14px;line-height:1.5;font-weight:400;color:var(--muted)}      /* Petit, tinta suau */
   section{padding-block:96px;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
   .sec-head{display:grid;gap:16px;margin-bottom:48px}
@@ -37,49 +46,48 @@
   /* colors */
   .swatch{border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:var(--paper)}
   .swatch .chip{height:96px}
-  .swatch .meta{padding:16px;display:grid;gap:2px;font-size:14px}
+  .swatch .meta{padding:16px;display:grid;gap:2px;font-size:14px;line-height:1.5}
   .swatch .meta b{font-weight:600}
-  .swatch .meta code{color:var(--muted);font-family:ui-monospace,Menlo,monospace;font-size:13px}
+  .swatch .meta code{color:var(--muted)}
   /* type */
   .type-row{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:baseline;padding-block:24px;border-top:1px solid var(--line)}
   .type-row:first-child{border-top:0}
-  .type-row small{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+  .type-row small{color:var(--muted);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
   .weights{display:flex;gap:48px;flex-wrap:wrap;margin-top:24px}
   .weights div{display:grid;gap:8px}
-  .weights span{font-size:64px;line-height:1}
+  .weights span{font-size:clamp(40px,6vw,72px);line-height:1}
   /* spacing & radius */
   .bar{background:var(--accent);height:12px;border-radius:2px}
-  .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;font-variant-numeric:tabular-nums;color:var(--muted)}
+  .space-row{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding-block:8px;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--muted)}
   .radius-row{display:flex;gap:24px;flex-wrap:wrap}
-  .radius-row div{width:140px;height:88px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:14px;color:var(--muted)}
-  /* components */
-  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
+  .radius-row div{width:140px;height:88px;border:2px solid var(--accent);display:grid;place-items:end start;padding:8px;font-size:14px;line-height:1.5;color:var(--muted)}
+  /* components: el Petit en gruix 600 és l'única excepció, i és del component */
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:600;font-size:14px;line-height:1.5;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--accent);color:var(--on-accent)}
   .btn-secondary{background:var(--paper);color:var(--ink);border-color:var(--line)}
   .btn-secondary:hover{border-color:var(--ink)}
   .btn svg{width:14px;height:14px}
-  .link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;text-decoration:none;text-underline-offset:4px}
+  .link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;line-height:1.5;text-decoration:none;text-underline-offset:4px}
   .link:hover{text-decoration:underline}
   .link svg{width:14px;height:14px}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:24px;display:grid;gap:8px;transition:border-color var(--t-fast) var(--ease)}
   .card:hover{border-color:var(--ink)}
-  .pill{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:8px 16px;font-size:14px;font-weight:600;background:var(--accent-soft);color:var(--ink)}
+  .pill{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:8px 16px;font-size:14px;line-height:1.5;font-weight:600;background:var(--accent-soft);color:var(--ink)}
   .pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
   .stat{display:grid;gap:4px}
   .stat b{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
-  .stat span{font-weight:600;font-size:14px}
-  .stat small{color:var(--muted);font-size:14px}
-  .field{display:grid;gap:8px;font-size:14px;font-weight:600}
-  .field input,.field textarea{font:inherit;font-weight:400;font-size:17px;padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
+  .stat span{font-size:14px;line-height:1.5;font-weight:400}
+  .stat small{color:var(--muted);font-size:14px;line-height:1.5}
+  .field{display:grid;gap:8px;font-size:14px;line-height:1.5;font-weight:600}
+  .field input,.field textarea{font:inherit;font-weight:400;font-size:17px;line-height:1.55;padding:14px 16px;border-radius:var(--r-s);border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
   .field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
-  .check{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--r-pill);padding:10px 16px;font-weight:600;font-size:14px;background:var(--paper);cursor:pointer;user-select:none}
+  .check{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--r-pill);padding:10px 16px;font-weight:600;font-size:14px;line-height:1.5;background:var(--paper);cursor:pointer;user-select:none}
   .check input{accent-color:var(--accent);width:16px;height:16px;margin:0}
   .check:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
   .rules{display:grid}
   .rule{display:grid;grid-template-columns:minmax(160px,240px) 1fr;gap:24px;padding-block:24px;border-top:1px solid var(--line)}
   .rule:first-child{border-top:0}
-  .rule h3{font-size:17px;font-weight:600}
   .rule p{color:var(--muted)}
   .motion{display:grid;gap:8px;margin-top:24px}
   .motion .track{position:relative;height:56px;border-radius:var(--r-s);background:var(--surface);border:1px solid var(--line);overflow:hidden}
@@ -87,11 +95,11 @@
   .motion:hover .dot.fast{transform:translateX(min(60vw,700px));transition:transform var(--t-fast) var(--ease)}
   .motion:hover .dot.base{transform:translateX(min(60vw,700px));transition:transform var(--t-base) var(--ease)}
   .motion:hover .dot.slow{transform:translateX(min(60vw,700px));transition:transform var(--t-slow) var(--ease)}
-  .note{background:var(--accent-soft);border-radius:var(--r-s);padding:16px;font-size:14px}
-  .dont{display:grid;gap:8px;padding:0;margin:24px 0 0;list-style:none;font-size:14px}
+  .note{background:var(--accent-soft);border-radius:var(--r-s);padding:16px;font-size:17px;line-height:1.55}
+  .dont{display:grid;gap:8px;padding:0;margin:24px 0 0;list-style:none;font-size:14px;line-height:1.5}
   .dont li{display:flex;gap:8px;color:var(--muted)}
   .dont li::before{content:"×";color:var(--accent);font-weight:800}
-  .kbd{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+  .kbd{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
   @media (max-width:640px){.type-row,.rule{grid-template-columns:1fr;gap:8px}section{padding-block:48px}}
 </style>
@@ -99,14 +107,14 @@
 <div class="wrap">
   <header class="top">
     <div class="logo"><b>.</b>emoloc</div>
-    <div class="small">Guia d'estils · v2.2 · setembre 2026</div>
+    <div class="small">Guia d'estils · v2.3 · setembre 2026</div>
   </header>
 
   <section>
     <div class="sec-head">
       <p class="label">El vestuari</p>
       <h1>Guia d'estils emoloc</h1>
-      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en tres gruixos i cinc mides, un moviment, i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí.</p>
+      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en cinc estils, un moviment, i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
     </div>
     <p class="note">Frase de missió, fixa: <strong>emoloc. L'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.</strong></p>
   </section>
@@ -155,19 +163,17 @@
   <section id="type">
     <div class="sec-head">
       <p class="label">Una sola lletra</p>
-      <h2>DM Sans, tres gruixos, cinc mides, set estils</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Tres gruixos: 400 per llegir, 600 per etiquetar i per als botons, 800 per als titulars i les xifres.</p>
+      <h2>DM Sans, tres gruixos, cinc estils</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Tres gruixos: 400 per al Text i el Petit, 600 per al Subtítol, 800 per als titulars i les xifres.</p>
     </div>
     <div>
       <div class="type-row"><small>Titular gran · 72 / 1.0 · 800</small><h1>Digital que funciona</h1></div>
       <div class="type-row"><small>Titular · 40 / 1.1 · 800</small><h2>Presència, gestió, venda i comunicació</h2></div>
       <div class="type-row"><small>Subtítol · 24 / 1.2 · 600</small><h3>Una web feta per a l'escola, no per a una plantilla</h3></div>
       <div class="type-row"><small>Text · 17 / 1.55 · 400</small><p>Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
-      <div class="type-row"><small>Entradeta · 24 / 1.35 · 400</small><p class="lead">L'ajuda amb la transformació digital que necessita la teva empresa.</p></div>
-      <div class="type-row"><small>Etiqueta · 14 / 1.5 · 600</small><p class="label">Una sola lletra</p></div>
-      <div class="type-row"><small>Petit · 14 / 1.5 · 400</small><p class="small">Peus de foto, notes i la font d'una xifra. Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
+      <div class="type-row"><small>Petit · 14 / 1.5 · 400</small><p class="petit">Etiquetes, peus de foto, notes i la font d'una xifra. Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
     </div>
-    <p class="small" style="margin-top:24px">Cinc mides (72, 40, 24, 17 i 14) i set estils. L'entradeta és la mida del subtítol en gruix 400 i tinta suau. L'etiqueta és la mida del petit en gruix 600: és el text que precedeix cada titular, i també el dels botons, els menús i les caselles del formulari.</p>
+    <p class="small" style="margin-top:24px">Cinc estils i cap més: tot el text d'aquesta guia i de la web és un d'aquests cinc. El color és un eix a part: qualsevol estil pot anar en tinta o en tinta suau. L'entradeta que segueix un titular és Text en tinta suau. L'etiqueta que precedeix un titular és Petit en tinta suau. Els botons, els menús, les etiquetes de pilar i les caselles del formulari posen el Petit en gruix 600: és l'única excepció, i pertany al component, no a l'escala.</p>
     <div class="weights">
       <div><span style="font-weight:400">Aa</span><span class="small">400 · el text de lectura</span></div>
       <div><span style="font-weight:600">Aa</span><span class="small">600 · etiquetes, menús, botons</span></div>
