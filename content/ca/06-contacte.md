@@ -36,11 +36,11 @@ Protecció contra robots sense molestar la persona (camp ocult o comprovació in
 
 ## altres maneres de contactar
 
-- **email:** xavi@emoloc.com
+El formulari és l'únic canal de contacte de la web. No hi ha telèfon.
+
+- **email:** xavi@emoloc.com, només com a alternativa si el formulari falla i al peu de pàgina
 - **linkedin:** linkedin.com/in/xavicolome
 - **on sóc:** Barcelona. Treballo a distància amb empreses de tot Catalunya i de la resta de l'Estat.
-
-*(decisió teva: el telèfon 689 760 782 surt al currículum públic. El posem també aquí o només l'email i el formulari?)*
 
 ## email de confirmació automàtic (a qui escriu)
 
