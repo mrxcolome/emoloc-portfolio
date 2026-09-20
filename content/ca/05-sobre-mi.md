@@ -2,7 +2,7 @@
 
 ## Capçalera
 
-### Sobre mi.
+### Sobre mi
 
 Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital i he passat per totes les cadires: programador i dissenyador en agència, director de comptes, responsable de marketing digital i ecommerce en marques globals i, des del 2019, director digital de Castañer.
 

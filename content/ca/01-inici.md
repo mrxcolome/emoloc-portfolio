@@ -2,9 +2,9 @@
 
 ## 1. Capçalera
 
-**Emoloc.**
+**emoloc.**
 
-l'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.
+L'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.
 
 [botó principal] Explica'm el teu projecte → contacte
 [botó secundari] Veure projectes → projectes
@@ -15,7 +15,7 @@ Xavi Colomé · més de 25 anys en digital · director digital a Castañer · ab
 
 ## 3. Els quatre pilars
 
-### Què faig.
+### Què faig
 
 Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix. Ho ordeno en quatre pilars.
 
@@ -35,7 +35,7 @@ Inversió en marca i en resultats: Google, Meta, email, i que et trobin també C
 
 ## 4. Com treballo
 
-### Com treballo.
+### Com treballo
 
 Quatre passos, sempre els mateixos. Els he après en marques grans i funcionen igual de bé en una empresa de deu persones.
 
@@ -56,7 +56,7 @@ La faig servir en tot: per escriure el primer esborrany d'un article, per progra
 
 ## 5. Projectes
 
-### Projectes recents.
+### Projectes recents
 
 Dos casos explicats de dalt a baix: el punt de partida, què vam construir i què ha passat després.
 
@@ -74,7 +74,7 @@ Xifra destacada: 39 € al mes, un sol pla, tot inclòs.
 
 ## 6. Qui hi ha darrere
 
-### Qui hi ha darrere.
+### Qui hi ha darrere
 
 Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital: primer com a programador i dissenyador en agències, després dirigint marketing digital i ecommerce a Tous i Textura, i des del 2019 com a director digital de Castañer.
 
@@ -84,7 +84,7 @@ emoloc és la manera de portar aquesta experiència a empreses que no tenen depa
 
 ## 7. Blog
 
-### Del blog.
+### Del blog
 
 (els tres articles més recents: títol, entradeta, data)
 

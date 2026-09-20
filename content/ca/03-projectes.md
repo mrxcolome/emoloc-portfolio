@@ -2,7 +2,7 @@
 
 ## Capçalera
 
-### Projectes.
+### Projectes
 
 Casos reals, explicats amb el mateix detall que el dossier que rep cada client: el punt de partida, què vam construir, com i amb quines eines, i què ha passat després. Amb xifres quan n'hi ha, i amb l'estat real quan encara no n'hi ha.
 

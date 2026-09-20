@@ -14,7 +14,7 @@
 
 ## Titular
 
-### La escuela, en digital.
+### La escuela, en digital
 
 Una escuela de barrio con más de 25 años de historia pasa de un WordPress genérico y cuatro excels a una web propia bilingüe, un blog semanal y una herramienta de gestión hecha a medida. En tres meses.
 
@@ -35,7 +35,7 @@ El encargo era doble: que las familias encontraran la escuela y se apuntaran sin
 ## La web
 *el escenario · escoladansa.com · pilar: presencia*
 
-### Una web hecha para la escuela, no para una plantilla.
+### Una web hecha para la escuela, no para una plantilla
 
 Oscura, granate, con el vídeo de las clases en la portada y pensada ante todo para el móvil, que es donde la miran las madres y los padres. Carga rápido, está en catalán y castellano y cualquier cambio se publica solo en un par de minutos.
 
@@ -54,7 +54,7 @@ Cada disciplina tiene su página con horarios, preguntas frecuentes y un botón 
 ## El blog
 *el diario · escoladansa.com/blog · pilar: presencia*
 
-### Un artículo cada semana, que responde a lo que preguntan las familias.
+### Un artículo cada semana, que responde a lo que preguntan las familias
 
 Veintiún artículos en catalán y castellano, desde "¿a qué edad puede empezar mi hijo a hacer danza?" hasta "bailar a los 50, a los 60 y más allá", pasando por "qué hay que llevar el primer día" o "qué son los exámenes RAD". Hacen dos trabajos: dan confianza a quien lee antes de apuntarse, y hacen que Google y los asistentes de IA vean la escuela como la que sabe.
 
@@ -65,7 +65,7 @@ Los redactamos con la ayuda de la inteligencia artificial y dos personas de la e
 ## La guía de estilos
 *el vestuario · pilar: presencia*
 
-### Seis colores, una letra y las normas de la casa.
+### Seis colores, una letra y las normas de la casa
 
 Para que todo parezca de la misma escuela, la web tiene un manual interno con las reglas del juego: seis colores y basta, la Montserrat en tres grosores, todo en minúscula como el logotipo, el granate solo de acento y nunca de fondo, la bailarina una sola vez. Cualquier cosa nueva que se añada tiene que salir de aquí. El Backstage habla el mismo idioma.
 
@@ -74,7 +74,7 @@ Para que todo parezca de la misma escuela, la web tiene un manual interno con la
 ## El Backstage
 *entre bambalinas · backstage.escoladansa.com · pilar: gestión*
 
-### La herramienta de gestión hecha para la escuela y para nadie más.
+### La herramienta de gestión hecha para la escuela y para nadie más
 
 Se entra con usuario propio y está pensada para el ordenador del mostrador. Está todo el día a día: alumnos, clases, profesores, tarifas, la parrilla y los recibos. Cada actividad tiene su color, el mismo de la hoja de horarios impresa que el equipo usaba antes, para que nadie tenga que reaprender nada.
 
@@ -95,7 +95,7 @@ La cuota de cada alumno se calcula sola a partir de sus clases: el pack por núm
 ## Cómo nos encuentra Google
 *pilar: comunicación*
 
-### Primera lectura, 19 de septiembre de 2026.
+### Primera lectura, 19 de septiembre de 2026
 
 Datos de Google Search Console, once días después de empezar el seguimiento.
 

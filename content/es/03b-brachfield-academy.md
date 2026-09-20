@@ -14,7 +14,7 @@
 
 ## Titular
 
-### Una escuela en línea de credit management, por suscripción.
+### Una escuela en línea de credit management, por suscripción
 
 Pere Brachfield, referencia del credit management con más de 35 años de experiencia y 32 libros publicados, quería una academia en línea para responsables financieros y de cobros. Construimos la plataforma entera: sitio público, pagos, zona de alumnos, un tablón de noticias que se alimenta solo y una sala para que el equipo publique sin tocar nada técnico.
 
@@ -35,7 +35,7 @@ Y una condición: que Pere y su equipo pudieran publicar contenido sin depender 
 ## El sitio público
 *la cara comercial · pilar: presencia*
 
-### Un sitio que demuestra que la academia está viva.
+### Un sitio que demuestra que la academia está viva
 
 Presenta a Pere con su retrato de estudio y sus seis libros de referencia, y lleva a un único botón: "Quiero ser alumno". La portada muestra las últimas noticias reales del tablón y se regenera sola cada hora, así que siempre parece recién hecha.
 
@@ -48,7 +48,7 @@ La identidad es cerrada: paleta, escala tipográfica de cuatro tamaños y compon
 ## La zona de alumnos
 *pilar: venta*
 
-### Aprender, consultar y estar al día.
+### Aprender, consultar y estar al día
 
 Menú de seis entradas, buscador global y un tour guiado en la primera visita. Cursos con progreso y "continúa donde lo dejaste", un catálogo con jerarquía clara (cursos en grande, y debajo consejos, artículos, entrevistas, guías, plantillas y casos), sesiones en directo con reserva de plaza y recordatorio el día antes, favoritos y descargas listas para adaptar.
 
@@ -59,7 +59,7 @@ El buscador entiende lo que buscas aunque no pongas acentos: "buro" encuentra "b
 ## La actualidad
 *el tablón que se alimenta solo · pilar: comunicación*
 
-### Contenido nuevo cada día, sin trabajo editorial.
+### Contenido nuevo cada día, sin trabajo editorial
 
 Cada mañana a las 7:30 un proceso automático lee la prensa económica española y un curador con inteligencia artificial, con criterio de credit manager, elige la noticia o dos que de verdad afectan a quien gestiona el cobro.
 
@@ -70,7 +70,7 @@ Cada noticia sale con su imagen real, la etiqueta temática, una frase didáctic
 ## La sala de profesores y la administración
 *pilar: gestión*
 
-### Publicar sin tocar el gestor técnico.
+### Publicar sin tocar el gestor técnico
 
 La Sala es un asistente paso a paso: crear un curso (título, lecciones, portada, publicar) o una pieza de cualquiera de las nueve tipologías, con el vídeo subido directamente desde el navegador. Si hay alumnos con progreso o favoritos, avisa con la cifra antes de borrar nada. Todo queda registrado, y el gestor completo sigue disponible como "modo experto".
 

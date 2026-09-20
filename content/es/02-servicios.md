@@ -2,7 +2,7 @@
 
 ## Cabecera
 
-### Servicios.
+### Servicios
 
 Cuatro pilares, siempre en el mismo orden: presencia, gestión, venta y comunicación. Normalmente uno duele más que los otros, y por ahí empezamos. Pero se miran todos, porque están conectados: de poco sirve invertir en Google si la web no convierte, o vender más si la gestión no lo aguanta.
 
@@ -12,7 +12,7 @@ Cada pilar tiene un ejemplo real detrás. Y todos acaban igual: con una herramie
 
 ## Presencia
 
-### Presencia: tu marca en digital.
+### Presencia: tu marca en digital
 
 Quien te busca en Google o llega desde Instagram se forma una opinión en diez segundos. La web tiene que decir qué haces, para quién y cómo contactarte, y tiene que hacerlo bien en el móvil, que es donde la mira casi todo el mundo. Una web de plantilla que nadie toca desde hace años dice justo lo contrario: que la empresa no está.
 
@@ -38,7 +38,7 @@ escoladansa.com: una escuela con 16 actividades y 56 clases semanales, con una w
 
 ## Gestión
 
-### Gestión: las herramientas que llevan el negocio por dentro.
+### Gestión: las herramientas que llevan el negocio por dentro
 
 Casi todas las empresas pequeñas funcionan con un excel, o con cuatro. Alumnos, clientes, cuotas, recibos, horarios, pedidos. Funciona hasta que deja de funcionar: cuando hay dos versiones del archivo, cuando la persona que lo conoce está de vacaciones, cuando hay que hacer cuentas a mano cada mes.
 
@@ -64,7 +64,7 @@ El Backstage de escoladansa.com: alumnos, 56 clases semanales, profesores, tarif
 
 ## Venta
 
-### Venta: los canales que facturan.
+### Venta: los canales que facturan
 
 Vender online no es abrir una tienda. Es tener el catálogo bien estructurado, los pagos y la logística atados, la atención al cliente resuelta y un cuadro de mando que diga qué funciona. Lo he hecho durante más de diez años para marcas como Tous, Textura y Castañer, y la disciplina es la misma a cualquier escala.
 
@@ -89,7 +89,7 @@ Brachfield Academy: una escuela online de credit management con un solo plan de 
 
 ## Comunicación
 
-### Comunicación: que sepan que existes.
+### Comunicación: que sepan que existes
 
 Hay dos maneras de invertir en comunicación y las dos hacen falta: en marca, para que te conozcan y te recuerden, y en resultados, para que quien te busca te encuentre y compre. Google, Meta, email y, cada vez más, los asistentes de inteligencia artificial: cuando alguien pregunta a ChatGPT qué escuela o qué despacho le recomienda, conviene salir ahí.
 

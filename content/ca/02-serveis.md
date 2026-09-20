@@ -2,7 +2,7 @@
 
 ## Capçalera
 
-### Serveis.
+### Serveis
 
 Quatre pilars, sempre en el mateix ordre: presència, gestió, venda i comunicació. Normalment un fa més mal que els altres, i per aquí comencem. Però es miren tots, perquè estan connectats: de poc serveix invertir a Google si la web no converteix, o vendre més si la gestió no ho aguanta.
 
@@ -12,7 +12,7 @@ Cada pilar té un exemple real al darrere. I tots acaben igual: amb una eina que
 
 ## Presència
 
-### Presència: la teva marca en digital.
+### Presència: la teva marca en digital
 
 Qui et busca a Google o arriba des d'Instagram es forma una opinió en deu segons. La web ha de dir què fas, per a qui i com contactar-te, i ho ha de fer bé al mòbil, que és on la mira gairebé tothom. Una web de plantilla que ningú toca des de fa anys diu just el contrari: que l'empresa no hi és.
 
@@ -38,7 +38,7 @@ escoladansa.com: una escola amb 16 activitats i 56 classes setmanals, amb una we
 
 ## Gestió
 
-### Gestió: les eines que porten el negoci per dins.
+### Gestió: les eines que porten el negoci per dins
 
 Gairebé totes les empreses petites funcionen amb un excel, o amb quatre. Alumnes, clients, quotes, rebuts, horaris, comandes. Funciona fins que deixa de funcionar: quan hi ha dues versions del fitxer, quan la persona que el coneix està de vacances, quan cal fer comptes a mà cada mes.
 
@@ -64,7 +64,7 @@ El Backstage d'escoladansa.com: alumnes, 56 classes setmanals, professors, tarif
 
 ## Venda
 
-### Venda: els canals que facturen.
+### Venda: els canals que facturen
 
 Vendre en línia no és obrir una botiga. És tenir el catàleg ben estructurat, els pagaments i la logística lligats, l'atenció al client resolta i un quadre de comandament que digui què funciona. Ho he fet durant més de deu anys per a marques com Tous, Textura i Castañer, i la disciplina és la mateixa a qualsevol escala.
 
@@ -89,7 +89,7 @@ Brachfield Academy: una escola en línia de credit management amb un sol pla de 
 
 ## Comunicació
 
-### Comunicació: que sàpiguen que existeixes.
+### Comunicació: que sàpiguen que existeixes
 
 Hi ha dues maneres d'invertir en comunicació i les dues fan falta: en marca, perquè et coneguin i et recordin, i en resultats, perquè qui et busca et trobi i compri. Google, Meta, email i, cada cop més, els assistents d'intel·ligència artificial: quan algú pregunta a ChatGPT quina escola o quin despatx li recomana, convé sortir-hi.
 

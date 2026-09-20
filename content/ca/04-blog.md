@@ -2,7 +2,7 @@
 
 ## Capçalera
 
-### Blog.
+### Blog
 
 Articles curts per a qui té una empresa i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.
 

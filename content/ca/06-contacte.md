@@ -2,7 +2,7 @@
 
 ## Capçalera
 
-### Parlem.
+### Parlem
 
 Explica'm el teu projecte en quatre ratlles: què fas, què et fa perdre temps o clients, i què t'agradaria que passés. La primera conversa és sense compromís i serveix per saber si tinc sentit per al que necessites. Cada proposta és a mida.
 

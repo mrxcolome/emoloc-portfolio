@@ -2,7 +2,7 @@
 
 ## Cabecera
 
-### Sobre mí.
+### Sobre mí
 
 Soy Xavi Colomé. Llevo más de 25 años trabajando en digital y he pasado por todas las sillas: programador y diseñador en agencia, director de cuentas, responsable de marketing digital y ecommerce en marcas globales y, desde 2019, director digital de Castañer.
 

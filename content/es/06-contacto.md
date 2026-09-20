@@ -2,7 +2,7 @@
 
 ## Cabecera
 
-### Hablemos.
+### Hablemos
 
 Cuéntame tu proyecto en cuatro líneas: qué haces, qué te hace perder tiempo o clientes, y qué te gustaría que pasara. La primera conversación es sin compromiso y sirve para saber si tengo sentido para lo que necesitas. Cada propuesta es a medida.
 

@@ -14,7 +14,7 @@
 
 ## Titular
 
-### Una escola en línia de credit management, per subscripció.
+### Una escola en línia de credit management, per subscripció
 
 Pere Brachfield, referència del credit management amb més de 35 anys d'experiència i 32 llibres publicats, volia una acadèmia en línia per a responsables financers i de cobraments. Vam construir la plataforma sencera: lloc públic, pagaments, zona d'alumnes, un tauler de notícies que s'alimenta sol i una sala perquè l'equip publiqui sense tocar res tècnic.
 
@@ -35,7 +35,7 @@ I una condició: que el Pere i el seu equip poguessin publicar contingut sense d
 ## El lloc públic
 *la cara comercial · pilar: presència*
 
-### Un lloc que demostra que l'acadèmia és viva.
+### Un lloc que demostra que l'acadèmia és viva
 
 Presenta el Pere amb el seu retrat d'estudi i els seus sis llibres de referència, i porta a un únic botó: "Quiero ser alumno". La portada ensenya les últimes notícies reals del tauler i es regenera sola cada hora, així que sempre sembla acabada de fer.
 
@@ -48,7 +48,7 @@ La identitat és tancada: paleta, escala tipogràfica de quatre mides i componen
 ## La zona d'alumnes
 *pilar: venda*
 
-### Aprendre, consultar i estar al dia.
+### Aprendre, consultar i estar al dia
 
 Menú de sis entrades, cercador global i un tour guiat a la primera visita. Cursos amb progrés i "continua on ho vas deixar", un catàleg amb jerarquia clara (cursos en gran, i a sota consells, articles, entrevistes, guies, plantilles i casos), sessions en directe amb reserva de plaça i recordatori el dia abans, favorits i descàrregues llestes per adaptar.
 
@@ -59,7 +59,7 @@ El cercador entén el que busques encara que no posis accents: "buro" troba "bur
 ## L'actualitat
 *el tauler que s'alimenta sol · pilar: comunicació*
 
-### Contingut nou cada dia, sense feina editorial.
+### Contingut nou cada dia, sense feina editorial
 
 Cada matí a les 7:30 un procés automàtic llegeix la premsa econòmica espanyola i un curador amb intel·ligència artificial, amb criteri de credit manager, tria la notícia o dues que de debò afecten qui gestiona el cobrament.
 
@@ -70,7 +70,7 @@ Cada notícia surt amb la seva imatge real, l'etiqueta temàtica, una frase did�
 ## La sala de professors i l'administració
 *pilar: gestió*
 
-### Publicar sense tocar el gestor tècnic.
+### Publicar sense tocar el gestor tècnic
 
 La Sala és un assistent pas a pas: crear un curs (títol, lliçons, portada, publicar) o una peça de qualsevol de les nou tipologies, amb el vídeo pujat directament des del navegador. Si hi ha alumnes amb progrés o favorits, avisa amb la xifra abans d'esborrar res. Tot queda registrat, i el gestor complet segueix disponible com a "mode expert".
 

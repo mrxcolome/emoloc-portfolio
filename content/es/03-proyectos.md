@@ -2,7 +2,7 @@
 
 ## Cabecera
 
-### Proyectos.
+### Proyectos
 
 Casos reales, explicados con el mismo detalle que el dosier que recibe cada cliente: el punto de partida, qué construimos, cómo y con qué herramientas, y qué ha pasado después. Con cifras cuando las hay, y con el estado real cuando todavía no las hay.
 

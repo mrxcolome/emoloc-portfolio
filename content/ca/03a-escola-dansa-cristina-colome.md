@@ -14,7 +14,7 @@
 
 ## Titular
 
-### L'escola, en digital.
+### L'escola, en digital
 
 Una escola de barri amb més de 25 anys d'història passa d'un WordPress genèric i quatre excels a una web pròpia bilingüe, un blog setmanal i una eina de gestió feta a mida. En tres mesos.
 
@@ -35,7 +35,7 @@ L'encàrrec era doble: que les famílies trobessin l'escola i s'hi apuntessin se
 ## La web
 *l'escenari · escoladansa.com · pilar: presència*
 
-### Una web feta per a l'escola, no per a una plantilla.
+### Una web feta per a l'escola, no per a una plantilla
 
 Fosca, granat, amb el vídeo de les classes a la portada i pensada abans que res per al mòbil, que és on la miren les mares i els pares. Carrega ràpid, està en català i castellà i qualsevol canvi es publica sol en un parell de minuts.
 
@@ -54,7 +54,7 @@ Cada disciplina té la seva pàgina amb horaris, preguntes freqüents i un botó
 ## El blog
 *el diari · escoladansa.com/blog · pilar: presència*
 
-### Un article cada setmana, que respon el que pregunten les famílies.
+### Un article cada setmana, que respon el que pregunten les famílies
 
 Vint-i-un articles en català i castellà, des de "a quina edat pot començar el meu fill a fer dansa?" fins a "ballar als 50, als 60 i més enllà", passant per "què cal portar el primer dia" o "què són els exàmens RAD". Fan dues feines: donen confiança a qui llegeix abans d'apuntar-se, i fan que Google i els assistents d'IA vegin l'escola com la que en sap.
 
@@ -65,7 +65,7 @@ Els redactem amb l'ajuda de la intel·ligència artificial i dues persones de l'
 ## La guia d'estils
 *el vestuari · pilar: presència*
 
-### Sis colors, una lletra i les normes de la casa.
+### Sis colors, una lletra i les normes de la casa
 
 Perquè tot sembli de la mateixa escola, la web té un manual intern amb les regles del joc: sis colors i prou, la Montserrat en tres gruixos, tot en minúscula com el logotip, el granat només d'accent i mai de fons, la ballarina un sol cop. Qualsevol cosa nova que s'hi afegeixi ha de sortir d'aquí. El Backstage parla el mateix idioma.
 
@@ -74,7 +74,7 @@ Perquè tot sembli de la mateixa escola, la web té un manual intern amb les reg
 ## El Backstage
 *entre bambolines · backstage.escoladansa.com · pilar: gestió*
 
-### L'eina de gestió feta per a l'escola i per a ningú més.
+### L'eina de gestió feta per a l'escola i per a ningú més
 
 S'hi entra amb usuari propi i està pensada per a l'ordinador del taulell. Hi ha tot el dia a dia: alumnes, classes, professors, tarifes, la graella i els rebuts. Cada activitat té el seu color, el mateix del full d'horaris imprès que l'equip feia servir abans, perquè ningú hagi de reaprendre res.
 
@@ -95,7 +95,7 @@ La quota de cada alumne es calcula sola a partir de les seves classes: el pack p
 ## Com ens troba Google
 *pilar: comunicació*
 
-### Primera lectura, 19 de setembre de 2026.
+### Primera lectura, 19 de setembre de 2026
 
 Dades de Google Search Console, onze dies després de començar el seguiment.
 

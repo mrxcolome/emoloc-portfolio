@@ -2,7 +2,7 @@
 
 ## Cabecera
 
-### Blog.
+### Blog
 
 Artículos cortos para quien tiene una empresa y no tiene departamento digital. Responden preguntas reales, sin jerga, y acaban siempre con qué puedes hacer mañana por la mañana.
 

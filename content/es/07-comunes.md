@@ -40,7 +40,7 @@
 - Web
 
 ## Página 404
-### Esta página no existe.
+### Esta página no existe
 Puede que la dirección haya cambiado. Desde el inicio encontrarás todo lo que hay.
 [botón] Ir al inicio
 
