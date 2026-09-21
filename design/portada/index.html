@@ -27,16 +27,16 @@
   img,video{display:block}
   .titular{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
-  .text{font-size:18px;line-height:1.55;font-weight:400}
+  .text{font-size:20px;line-height:1.55;font-weight:400}
   .petit{font-size:14px;line-height:1.5;font-weight:400}
   .negreta{font-weight:600}
   .suau{color:var(--muted)}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:18px;line-height:1;transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);border:0;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:20px;line-height:1;transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);border:0;cursor:pointer}
   .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(242,107,31,.3)}
   .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
   .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px currentColor}
   .link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}
-  .pillar{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:18px}
+  .pillar{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:20px}
   .pillar i{width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none}
   .wrap{padding:0 var(--gutter)}
 
@@ -72,7 +72,7 @@
   #zero .pillars{display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;margin-top:40px}
   #zero .pillars .p{display:flex;align-items:center;gap:12px;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.015em;opacity:0}
   #zero .pillars .p i{width:12px;height:12px;border-radius:50%;background:var(--accent)}
-  #zero .order{margin-top:36px;opacity:0;max-width:880px;font-size:clamp(20px,2vw,26px);line-height:1.4;color:var(--ink)}
+  #zero .order{margin-top:36px;opacity:0;max-width:720px;color:var(--ink)}
   #zero .hint{position:absolute;right:var(--gutter);bottom:12vh;color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;gap:12px}
   .hint i{display:block;width:1px;height:48px;background:rgba(255,255,255,.6);position:relative;overflow:hidden}
   .hint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:#fff;animation:drop 1.8s var(--ease) infinite}
@@ -366,12 +366,12 @@
   #contacte .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:start}
   form{display:grid;gap:18px}
   .f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  label.fld{display:grid;gap:8px;font-weight:600;font-size:18px}
+  label.fld{display:grid;gap:8px;font-weight:600;font-size:20px}
   label.fld small{font-weight:400;color:var(--muted);font-size:14px}
-  input[type=text],input[type=email],textarea{font:inherit;font-size:18px;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-s);background:#fff;color:var(--ink);width:100%}
+  input[type=text],input[type=email],textarea{font:inherit;font-size:20px;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-s);background:#fff;color:var(--ink);width:100%}
   input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
   .checks{display:grid;gap:10px}
-  .checks label{display:flex;align-items:center;gap:12px;font-size:18px}
+  .checks label{display:flex;align-items:center;gap:12px;font-size:20px}
   .checks input{width:20px;height:20px;accent-color:var(--accent)}
   .consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
   .consent input{width:20px;height:20px;accent-color:var(--accent);flex:none;margin-top:2px}
@@ -403,7 +403,6 @@
     .dock .cap{display:none}
     #gestio .copy .l2,#gestio .copy .l3{top:calc(88px + 22.5vw + 20px);bottom:auto}
     .subtitular{font-size:clamp(26px,7.4vw,34px)}
-    .text{font-size:17px}
     #metode .track{flex-direction:column}
     #metode .step{flex:none;min-height:0}
   }
@@ -449,7 +448,7 @@
     <div class="hint" id="zhint"><span>Desplaça't</span><i></i></div>
     <div class="scene1" id="scene1">
       <h1 class="titular" id="s1title">La transformació digital que necessita la teva empresa.</h1>
-      <p class="order">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida.<br><br>Mira com ho fem amb el Forn Baltà.</p>
+      <p class="text order">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida.<br><br>Mira com ho fem amb el Forn Baltà.</p>
     </div>
   </div>
 </section>
