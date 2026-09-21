@@ -14,3 +14,13 @@ Mitjans que espera la plantilla: DANSA_WEB, DANSA_MOBIL, DANSA_BACKSTAGE, DANSA_
   El fitxer construït (`escena-presencia.html`, uns 12 MB amb el vídeo incrustat) no es versiona.
 
 Mitjans que espera la plantilla: VIDEO (clip Kling 5 s, 16:9), POSTER, HERO, PA, CROISSANT, COCA (fotos Seedream de Forn Baltà) i les llibreries LIB_GSAP, LIB_ST, LIB_LENIS.
+
+## Portada sencera (v4)
+
+- `portada/index.html`: la portada completa amb el motor d'escenes. Pantalla zero amb el vídeo del Xavi, la frase que creix i els quatre pilars,
+  una escena per pilar (vídeo a pantalla completa que es converteix en la pantalla d'un dispositiu del Forn Baltà, marca fictícia) i, després,
+  com treballo, projectes, qui hi ha darrere, blog, formulari i peu.
+- `portada/libs/`: GSAP, ScrollTrigger i Lenis.
+- `portada/media/`: vídeos i fotos (no es versionen, uns 40 MB). Es publiquen com a fitxers adjunts de l'artefacte.
+
+Sense JavaScript o amb "reduir el moviment" activat, la pàgina es mostra en versió estàtica (`html.no-motion`).
