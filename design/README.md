@@ -6,3 +6,11 @@
   es genera substituint els marcadors per data URIs de les imatges de `content/` i del vídeo del retrat.
 
 Mitjans que espera la plantilla: DANSA_WEB, DANSA_MOBIL, DANSA_BACKSTAGE, DANSA_FITXA, BRACH_CICLE, BRACH_LANDING, BRACH_ALUMNE, RETRAT, POSTER, VIDEO.
+
+## Escena de presència (v4, alta fidelitat)
+
+- `escena-presencia.template.html`: només l'escena del pilar presència, construïda amb el nivell que ha de tenir la portada final.
+  Vídeo d'ambient a pantalla completa que es converteix en la web d'una marca fictícia (Forn Baltà) i un mòbil amb la cerca de Google.
+  El fitxer construït (`escena-presencia.html`, uns 12 MB amb el vídeo incrustat) no es versiona.
+
+Mitjans que espera la plantilla: VIDEO (clip Kling 5 s, 16:9), POSTER, HERO, PA, CROISSANT, COCA (fotos Seedream de Forn Baltà) i les llibreries LIB_GSAP, LIB_ST, LIB_LENIS.
