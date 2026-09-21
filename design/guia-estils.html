@@ -14,7 +14,7 @@
   html{color-scheme:light only}
   *{box-sizing:border-box}
   /* ---- els quatre estils de text, i cap més ---- */
-  .titular{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
+  .titular{font-size:clamp(46px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
   .text{font-size:20px;line-height:1.55;font-weight:400}
   .petit{font-size:14px;line-height:1.5;font-weight:400}
@@ -23,7 +23,7 @@
   /* ---- base: cada element hereta un dels quatre ---- */
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:20px;line-height:1.55}
   h1,h2,h3,p{margin:0}
-  h1{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
+  h1{font-size:clamp(46px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   h2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:800;letter-spacing:-.015em;text-wrap:balance}
   h3{font-size:20px;line-height:1.55;font-weight:600;text-wrap:balance}   /* Text negreta, en tinta */
   p{text-wrap:pretty}   /* els textos descriptius ocupen tota l'amplada del contenidor */
@@ -31,7 +31,7 @@
   code,.kbd{font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.5}
   .wrap{max-width:1120px;margin:0 auto}
   header.top{display:flex;justify-content:space-between;align-items:center;padding-block:24px;border-bottom:1px solid var(--line)}
-  .logo{font-weight:800;font-size:24px;line-height:1;letter-spacing:.04em}
+  .logo{font-weight:800;font-size:32px;line-height:1;letter-spacing:.04em}
   .logo b{color:var(--accent);font-weight:800}
   .lead{font-size:20px;line-height:1.55;font-weight:400;color:var(--muted)}      /* Text, tinta suau */
   .small{font-size:14px;line-height:1.5;font-weight:400;color:var(--muted)}      /* Petit, tinta suau */
@@ -69,7 +69,7 @@
   .pill{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:8px 16px;font-size:20px;line-height:1.55;font-weight:600;background:var(--accent-soft);color:var(--ink)}
   .pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
   .stat{display:grid;gap:4px}
-  .stat b{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
+  .stat b{font-size:clamp(46px,12vw,72px);font-weight:800;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
   .stat span{font-size:20px;line-height:1.55;font-weight:400}
   .stat small{color:var(--muted);font-size:14px;line-height:1.5}
   .field{display:grid;gap:8px;font-size:20px;line-height:1.55;font-weight:600}
@@ -152,7 +152,7 @@
       <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. El Titular va en 1000 i el Subtitular en 800. Text i Petit van en 400 i tenen una variant negreta en 600. Tota la interfície (botons, enllaços, etiquetes de pilar, caselles, menús) és Text negreta. Del Petit gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</p>
     </div>
     <div>
-      <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000</small></div><h1>Digital que funciona</h1></div>
+      <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000 · mòbil 46</small></div><h1>Digital que funciona</h1></div>
       <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · 800</small></div><h2>Presència, gestió, venda i comunicació</h2></div>
       <div class="type-row"><div class="nom">Text<small>20 / 1.55 · 400 · negreta 600</small></div><p><span class="negreta">Una empresa no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
       <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 400 · negreta 600</small></div><p class="petit"><span class="negreta">Gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</span> Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
