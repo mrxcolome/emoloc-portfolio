@@ -72,7 +72,7 @@
   #zero .pillars{display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;margin-top:40px}
   #zero .pillars .p{display:flex;align-items:center;gap:12px;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.015em;opacity:0}
   #zero .pillars .p i{width:12px;height:12px;border-radius:50%;background:var(--accent)}
-  #zero .order{margin-top:22px;opacity:0;max-width:720px}
+  #zero .order{margin-top:36px;opacity:0;max-width:880px;font-size:clamp(20px,2vw,26px);line-height:1.4;color:var(--ink)}
   #zero .hint{position:absolute;right:var(--gutter);bottom:12vh;color:#fff;font-weight:600;font-size:14px;display:flex;align-items:center;gap:12px}
   .hint i{display:block;width:1px;height:48px;background:rgba(255,255,255,.6);position:relative;overflow:hidden}
   .hint i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:#fff;animation:drop 1.8s var(--ease) infinite}
@@ -413,7 +413,7 @@
   html.no-motion .stage{height:auto;min-height:0;overflow:visible;padding:96px var(--gutter) 64px}
   html.no-motion #zero .stage{height:100svh;padding:0}
   html.no-motion #zero .scene1{position:static;opacity:1;padding:96px var(--gutter) 64px;background:var(--paper)}
-  html.no-motion #zero .pillars .p,html.no-motion #zero .order{opacity:1}
+  html.no-motion #zero .order{opacity:1}
   html.no-motion .copy{position:static;pointer-events:auto}
   html.no-motion .copy .line{position:static;opacity:1;transform:none;width:auto;max-width:640px;margin-bottom:40px}
   html.no-motion .copy .l0,html.no-motion .hint,html.no-motion .bg,html.no-motion .dock{display:none}
@@ -449,10 +449,7 @@
     <div class="hint" id="zhint"><span>Desplaça't</span><i></i></div>
     <div class="scene1" id="scene1">
       <h1 class="titular" id="s1title">La transformació digital que necessita la teva empresa.</h1>
-      <div class="pillars">
-        <div class="p"><i></i>Presència</div><div class="p"><i></i>Gestió</div><div class="p"><i></i>Venda</div><div class="p"><i></i>Comunicació</div>
-      </div>
-      <p class="text suau order">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida. Mira com ho fem amb el Forn Baltà.</p>
+      <p class="order">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida. Mira com ho fem amb el Forn Baltà.</p>
     </div>
   </div>
 </section>
@@ -787,16 +784,15 @@
       const a = mission.getBoundingClientRect(), b = title.getBoundingClientRect();
       return { x: b.left - a.left, y: b.bottom - a.bottom, scale: sb / sa };
     };
-    const tl = gsap.timeline({ defaults:{ ease:'none' }, scrollTrigger:{ trigger:'#zero', start:'top top', end:'+=170%', pin:'#zstage', scrub:.6, invalidateOnRefresh:true, anticipatePin:1 } });
+    const tl = gsap.timeline({ defaults:{ ease:'none' }, scrollTrigger:{ trigger:'#zero', start:'top top', end:'+=150%', pin:'#zstage', scrub:.6, invalidateOnRefresh:true, anticipatePin:1 } });
     tl.to(['#zcta','#zhint'], { opacity:0, duration:.3 }, 0)
       .to('#zwhite', { opacity:1, duration:1.1, ease:'power1.inOut' }, .2)
       .fromTo(nav, { color:WHITE }, { color:INK, duration:.6, immediateRender:false }, .5)
       .to(mission, { x:()=>flip().x, y:()=>flip().y, scale:()=>flip().scale, color:INK, duration:1.4, ease:'power2.inOut' }, .2)
       .to(mission, { opacity:0, duration:.5 }, 1.1)
       .to('#scene1', { opacity:1, duration:.5 }, 1.3)
-      .fromTo('#zero .pillars .p', { opacity:0, y:24 }, { opacity:1, y:0, duration:.5, stagger:.22, ease:'power2.out' }, 1.7)
-      .fromTo('#zero .order', { opacity:0, y:16 }, { opacity:1, y:0, duration:.5 }, 2.6)
-      .to({}, { duration:.6 }, 3.1);
+      .fromTo('#zero .order', { opacity:0, y:20 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, 1.8)
+      .to({}, { duration:.6 }, 2.6);
   })();
 
   /* ---- motor d'escenes ---- */
