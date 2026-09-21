@@ -4,7 +4,7 @@
 
 **emoloc.**
 
-La transformación digital que necesita tu empresa: presencia, gestión, venta y comunicación.
+La transformación digital que necesita tu empresa.
 
 [botón principal] Cuéntame tu proyecto → contacto
 [botón secundario] Ver proyectos → proyectos
