@@ -24,3 +24,6 @@ Mitjans que espera la plantilla: VIDEO (clip Kling 5 s, 16:9), POSTER, HERO, PA,
 - `portada/media/`: vídeos i fotos (no es versionen, uns 40 MB). Es publiquen com a fitxers adjunts de l'artefacte.
 
 Sense JavaScript o amb "reduir el moviment" activat, la pàgina es mostra en versió estàtica (`html.no-motion`).
+
+Nota de publicació: el vídeo de fons de l'entrada (`media/fons-digital.mp4`, 16 MB) supera el límit de fitxer adjunt de l'artefacte
+i es puja com a actiu; a la còpia publicada la ruta se substitueix per l'adreça de l'actiu. Al repositori la referència és la local.
