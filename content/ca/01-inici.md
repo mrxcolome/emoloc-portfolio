@@ -4,7 +4,7 @@
 
 **emoloc.**
 
-L'ajuda amb la transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.
+La transformació digital que necessita la teva empresa: presència, gestió, venda i comunicació.
 
 [botó principal] Explica'm el teu projecte → contacte
 [botó secundari] Veure projectes → projectes

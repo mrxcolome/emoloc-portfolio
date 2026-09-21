@@ -10,7 +10,7 @@
 - [botón] hablemos
 
 ## Pie de página
-- emoloc. la ayuda con la transformación digital que necesita tu empresa.
+- emoloc. La transformación digital que necesita tu empresa.
 - Xavi Colomé · Barcelona
 - Xavi@emoloc.com
 - Linkedin · instagram

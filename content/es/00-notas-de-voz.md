@@ -15,4 +15,4 @@ Reglas que siguen todos los textos de la web. Sirven también para la traducció
 
 Frase de misión (fija, no se toca):
 
-> emoloc. La ayuda con la transformación digital que necesita tu empresa: presencia, gestión, venta y comunicación.
+> emoloc. La transformación digital que necesita tu empresa: presencia, gestión, venta y comunicación.
