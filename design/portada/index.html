@@ -346,24 +346,45 @@
   .qf-list li{position:relative;padding-left:24px;font-size:20px;line-height:1.4}
   .qf-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
   /* vinyetes */
-  .vig{position:relative;height:220px;border-radius:var(--r-m);background:var(--surface);padding:22px;overflow:hidden}
-  .vig-p .bar{display:flex;gap:6px;align-items:center;margin-bottom:14px}
-  .vig-p .bar i{width:8px;height:8px;border-radius:50%;background:var(--line)} .vig-p .bar b{flex:1;height:10px;border-radius:999px;background:#fff;max-width:200px;margin-left:8px}
-  .vig-p .hero{height:86px;border-radius:10px;background:#fff;padding:16px;display:grid;align-content:center;gap:8px}
-  .vig-p .hero .ttl{width:55%;height:12px;border-radius:6px;background:var(--ink)} .vig-p .hero .sub{width:38%;height:8px;border-radius:6px;background:var(--line)} .vig-p .hero .cta{width:70px;height:16px;border-radius:999px;background:var(--accent)}
-  .vig-p .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px} .vig-p .cards span{height:48px;border-radius:8px;background:#fff}
-  .vig-p .pin{position:absolute;right:18px;top:16px;padding:6px 10px;border-radius:999px;background:#fff;font-size:14px;font-weight:600;box-shadow:0 6px 18px rgba(27,24,21,.12)}
-  .vig-g .row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;padding:9px 12px;background:#fff;border-radius:8px;margin-bottom:6px;font-size:14px;font-variant-numeric:tabular-nums}
-  .vig-g .row span:nth-child(n+2){text-align:right} .vig-g .row.h{background:transparent;color:var(--muted);padding-top:0;padding-bottom:2px} .vig-g .row.t{font-weight:600;background:var(--accent-soft)}
-  .vig-g .tag-in{justify-self:end;padding:2px 8px;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;font-weight:600}
-  .vig-v .tag{position:absolute;right:18px;bottom:16px;padding:6px 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:14px;font-weight:600}
-  .vig-v .prod{position:absolute;left:22px;top:22px;width:150px;padding:12px;border-radius:12px;background:#fff;display:grid;gap:8px}
-  .vig-v .prod .img{height:60px;border-radius:8px;background:var(--line)} .vig-v .prod .ttl{width:70%;height:10px;border-radius:6px;background:var(--ink)} .vig-v .prod .price{font-weight:600;font-size:18px} .vig-v .prod .btn{padding:8px 0;font-size:14px;font-weight:600;text-align:center;background:var(--accent);border-radius:999px}
-  .vig-v .chart{position:absolute;left:200px;right:22px;top:30px;bottom:56px;display:flex;align-items:flex-end;gap:8px}
-  .vig-v .chart i{flex:1;height:var(--h);border-radius:6px 6px 0 0;background:var(--line);transform-origin:bottom} .vig-v .chart i:last-child{background:var(--accent)}
-  .vig-c .q{display:inline-block;padding:10px 14px;border-radius:14px 14px 4px 14px;background:#fff;font-size:15px;font-weight:600;margin-left:auto;float:right;max-width:70%}
-  .vig-c .a{clear:both;margin-top:12px;padding:12px 14px;border-radius:14px 14px 14px 4px;background:var(--ink);color:#fff;font-size:15px;line-height:1.4;max-width:84%} .vig-c .a b{color:var(--accent)}
-  .vig-c .res{position:absolute;left:22px;bottom:16px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted)} .vig-c .res .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  .vig{position:relative;height:250px;border-radius:var(--r-m);background:var(--surface);padding:18px;overflow:hidden;font-family:var(--font)}
+  .vig img{display:block;width:100%;height:100%;object-fit:cover}
+  /* presència: la web en miniatura */
+  .vig-p .win{position:absolute;left:18px;top:18px;right:120px;bottom:0;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 14px 40px rgba(27,24,21,.12);overflow:hidden}
+  .vig-p .bar{display:flex;gap:5px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)}
+  .vig-p .bar i{width:7px;height:7px;border-radius:50%;background:var(--line)} .vig-p .bar b{margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--surface);font-size:10px;font-weight:600;color:var(--muted)}
+  .vig-p .hero{position:relative;height:120px}
+  .vig-p .hero-t{position:absolute;inset:0;padding:12px 14px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;background:linear-gradient(to top,rgba(20,12,6,.7),rgba(20,12,6,.05));color:#fff}
+  .vig-p .hero-t .logo{position:absolute;left:14px;top:10px;font-family:var(--fb-serif);font-size:12px;font-weight:700}
+  .vig-p .hero-t .ttl{font-family:var(--fb-serif);font-size:15px;line-height:1.1;max-width:75%}
+  .vig-p .hero-t .cta{align-self:flex-start;padding:4px 9px;border-radius:999px;background:#fff;color:var(--fb-brown);font-size:9px;font-weight:600}
+  .vig-p .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 12px;background:var(--fb-cream)}
+  .vig-p .cards span{height:52px;border-radius:6px;overflow:hidden;background:#fff}
+  .vig-p .pin{position:absolute;right:16px;top:56px;width:112px;padding:10px 12px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(27,24,21,.16);font-size:12px;line-height:1.3}
+  .vig-p .pin b{display:block;font-weight:600} .vig-p .pin span{color:#188038}
+  /* gestió: l'eina interna */
+  .vig-g{display:grid;grid-template-columns:96px 1fr;gap:12px}
+  .vig-g aside{display:grid;align-content:start;gap:4px;background:#fff;border-radius:10px;padding:10px 8px;font-size:12px;color:var(--muted)}
+  .vig-g aside b{font-weight:800;color:var(--ink);margin-bottom:6px;padding:0 6px} .vig-g aside span{padding:5px 6px;border-radius:6px} .vig-g aside span.on{background:var(--surface);color:var(--ink);font-weight:600}
+  .vig-g .row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;padding:8px 12px;background:#fff;border-radius:8px;margin-bottom:5px;font-size:13px;font-variant-numeric:tabular-nums}
+  .vig-g .row span:nth-child(n+2){text-align:right} .vig-g .row.h{background:transparent;color:var(--muted);padding-top:0;padding-bottom:2px;font-size:12px} .vig-g .row.t{font-weight:600;background:var(--accent-soft)}
+  .vig-g .tag-in{justify-self:end;padding:2px 8px;border-radius:999px;background:var(--ink);color:#fff;font-size:11px;font-weight:600}
+  /* venda: producte i panell */
+  .vig-v{display:grid;grid-template-columns:150px 1fr;gap:14px}
+  .vig-v .prod{background:#fff;border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
+  .vig-v .prod .img{height:96px;border-radius:8px;overflow:hidden;background:var(--fb-cream)} .vig-v .prod .ttl{font-family:var(--fb-serif);font-size:14px} .vig-v .prod .price{font-weight:600;font-size:15px;color:var(--fb-toast)} .vig-v .prod .btn{padding:7px 8px;font-size:10px;font-weight:600;text-align:center;background:var(--fb-brown);color:#fff;border-radius:999px}
+  .vig-v .panel{background:#fff;border-radius:12px;padding:12px 14px;display:grid;grid-template-rows:auto 1fr auto;gap:8px}
+  .vig-v .lbl{font-size:12px;color:var(--muted);font-weight:600}
+  .vig-v .chart{display:flex;align-items:flex-end;gap:6px;min-height:0}
+  .vig-v .chart i{flex:1;height:var(--h);border-radius:5px 5px 0 0;background:var(--line);transform-origin:bottom} .vig-v .chart i:last-child{background:var(--accent)}
+  .vig-v .kpi{font-size:13px;color:var(--muted)} .vig-v .kpi b{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em} .vig-v .kpi em{font-style:normal;color:#188038;font-weight:600}
+  /* comunicació: xarxes i assistents */
+  .vig-c{display:grid;grid-template-columns:150px 1fr;gap:14px}
+  .vig-c .post{position:relative;border-radius:12px;overflow:hidden;background:#fff}
+  .vig-c .post .likes{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);color:#fff;font-size:12px;font-weight:600}
+  .vig-c .chatv{display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
+  .vig-c .q{align-self:flex-end;padding:8px 12px;border-radius:14px 14px 4px 14px;background:#fff;font-size:13px;font-weight:600;max-width:85%}
+  .vig-c .a{padding:10px 12px;border-radius:14px 14px 14px 4px;background:var(--ink);color:#fff;font-size:13px;line-height:1.4;max-width:92%} .vig-c .a b{color:var(--accent)}
+  .vig-c .res{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);margin-top:4px} .vig-c .res .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
   /* qui */
   .qui{display:grid;grid-template-columns:minmax(0,380px) minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
   .qui .vidbox{aspect-ratio:2/3;border-radius:var(--r-m);overflow:hidden;background:var(--ink)} .qui video{width:100%;height:100%;object-fit:cover}
@@ -377,9 +398,11 @@
     .qf-tab{padding:10px 12px;font-size:17px}
     .qf-panel{min-height:0;height:calc(100svh - 300px)}
     .qf-pane h3{font-size:24px;margin-top:16px} .qf-pane .text{display:none} .qf-list{margin-top:12px;gap:6px} .qf-list li{font-size:17px}
-    .vig{height:196px;padding:14px}
-    .vig-g .row{padding:7px 10px;margin-bottom:4px}
-    .vig-v .chart{left:170px;top:20px;bottom:50px}
+    .vig{height:210px;padding:12px}
+    .vig-p .win{left:12px;top:12px;right:12px} .vig-p .pin{display:none} .vig-p .hero{height:100px} .vig-p .cards span{height:42px}
+    .vig-g{grid-template-columns:1fr} .vig-g aside{display:none} .vig-g .row{padding:7px 10px;margin-bottom:4px}
+    .vig-v{grid-template-columns:120px 1fr;gap:10px} .vig-v .prod .img{height:70px}
+    .vig-c{grid-template-columns:110px 1fr;gap:10px} .vig-c .a{font-size:12px}
     .qui{grid-template-columns:1fr;gap:20px}
     .qui .vidbox{aspect-ratio:4/3;width:100%}
     .qui-copy .suau{display:none}
@@ -523,25 +546,25 @@
       </div>
       <div class="qf-panel" id="qfpanel">
         <div class="qf-pane on" data-i="0">
-          <div class="vig vig-p"><div class="bar"><i></i><i></i><i></i><b></b></div><div class="hero"><span class="ttl"></span><span class="sub"></span><span class="cta"></span></div><div class="cards"><span></span><span></span><span></span></div><div class="pin">4,9 ★</div></div>
+          <div class="vig vig-p"><div class="win"><div class="bar"><i></i><i></i><i></i><b>fornbalta.cat</b></div><div class="hero"><img src="media/hero.jpg" alt=""><div class="hero-t"><span class="logo">Forn Baltà</span><span class="ttl">Pa de llenya, cada matí des del 1962</span><span class="cta">Fes un encàrrec</span></div></div><div class="cards"><span><img src="media/pa.jpg" alt=""></span><span><img src="media/croissant.jpg" alt=""></span><span><img src="media/coca.jpg" alt=""></span></div></div><div class="pin"><b>Forn Baltà</b><span>4,9 ★★★★★ · Obert</span></div></div>
           <h3>La teva marca en digital</h3>
           <p class="text suau">La web, la identitat, el contingut. Que qui et busca trobi una empresa viva i entengui en deu segons què fas.</p>
           <ul class="qf-list"><li>Web a mida, pensada primer per al mòbil</li><li>En català, castellà o les llengües dels teus clients</li><li>Ressenyes de Google, WhatsApp, formulari i mapa integrats</li></ul>
         </div>
         <div class="qf-pane" data-i="1">
-          <div class="vig vig-g"><div class="row h"><span>Alumne</span><span>Classes</span><span>Quota</span></div><div class="row"><span>Marta R.</span><span>2</span><span data-n="64">64 €</span></div><div class="row"><span>Joan P.</span><span>3</span><span data-n="86">86 €</span></div><div class="row"><span>Núria S.</span><span>1</span><span data-n="38">38 €</span></div><div class="row t"><span>Rebuts del mes</span><span class="tag-in">Calculat sol</span><span data-n="188">188 €</span></div></div>
+          <div class="vig vig-g"><aside><b>Backstage</b><span class="on">Alumnes</span><span>Rebuts</span><span>Horaris</span><span>Equip</span></aside><div class="main"><div class="row h"><span>Alumne</span><span>Classes</span><span>Quota</span></div><div class="row"><span>Marta R.</span><span>2</span><span data-n="64">64 €</span></div><div class="row"><span>Joan P.</span><span>3</span><span data-n="86">86 €</span></div><div class="row"><span>Núria S.</span><span>1</span><span data-n="38">38 €</span></div><div class="row t"><span>Rebuts del mes</span><span class="tag-in">Calculat sol</span><span data-n="188">188 €</span></div></div></div>
           <h3>Les eines que porten el negoci per dins</h3>
           <p class="text suau">Alumnes, clients, quotes, rebuts, horaris. Fetes a mida quan l'excel ja no dona més de si.</p>
           <ul class="qf-list"><li>Els mateixos camps que el teu excel, amb els càlculs fets</li><li>Rebuts, remeses bancàries i estat de cobrament</li><li>Usuaris amb rols: qui edita i qui només consulta</li></ul>
         </div>
         <div class="qf-pane" data-i="2">
-          <div class="vig vig-v"><div class="prod"><span class="img"></span><span class="ttl"></span><span class="price">39 €</span><span class="btn">Pagar</span></div><div class="chart"><i style="--h:30%"></i><i style="--h:45%"></i><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:92%"></i></div><div class="tag">+31 % aquest mes</div></div>
+          <div class="vig vig-v"><div class="prod"><span class="img"><img src="media/coca.jpg" alt=""></span><span class="ttl">Coca de pinyons</span><span class="price">4,50 €</span><span class="btn">Afegir · recollida ds 9–10 h</span></div><div class="panel"><span class="lbl">Comandes de la setmana</span><div class="chart"><i style="--h:30%"></i><i style="--h:45%"></i><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:92%"></i><i style="--h:100%"></i></div><span class="kpi"><b data-n="148" data-s="">148</b> comandes · <em>+31 %</em></span></div></div>
           <h3>Els canals que facturen</h3>
           <p class="text suau">Botiga en línia, membresies, formació per subscripció. Amb els pagaments, la logística i l'atenció al client ben lligats.</p>
           <ul class="qf-list"><li>Botiga en línia: catàleg, pagaments i logística</li><li>Plataformes de membresia i formació per subscripció</li><li>Quadre de comandament: trànsit, conversió, tiquet mitjà</li></ul>
         </div>
         <div class="qf-pane" data-i="3">
-          <div class="vig vig-c"><div class="q">Quin forn em recomanes a Gràcia?</div><div class="a">A Gràcia, una bona opció és el <b>Forn Baltà</b>: pa de massa mare i encàrrecs en línia.</div><div class="res"><span class="dot"></span><span>fornbalta.cat · posició 1</span></div></div>
+          <div class="vig vig-c"><div class="post"><img src="media/santjoan.jpg" alt=""><span class="likes">♡ 312 · fornbalta</span></div><div class="chatv"><div class="q">Quin forn em recomanes a Gràcia?</div><div class="a">A Gràcia, una bona opció és el <b>Forn Baltà</b>: pa de massa mare i encàrrecs en línia.</div><div class="res"><span class="dot"></span><span>Google · «forn de pa a Gràcia» · posició 1</span></div></div></div>
           <h3>Inversió en marca i en resultats</h3>
           <p class="text suau">Google, Meta, email, i que et trobin també ChatGPT i Gemini. Amb pla, pressupost i mesura.</p>
           <ul class="qf-list"><li>Campanyes a Google i Meta, email i automatitzacions</li><li>SEO i fitxa de Google Business</li><li>Seguiment mensual amb xifres que s'entenen</li></ul>
@@ -970,7 +993,7 @@
         panes.forEach((p,k) => p.classList.toggle('on', k === i));
         const pane = panes[i];
         gsap.fromTo(pane.querySelectorAll('.vig > *, h3, .text, .qf-list li'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.5, stagger:.06, ease:'power2.out' });
-        pane.querySelectorAll('[data-n]').forEach(el => { const o = { v:0 }; gsap.to(o, { v:+el.dataset.n, duration:1.2, ease:'power3.out', onUpdate:() => el.textContent = Math.round(o.v) + ' €' }); });
+        pane.querySelectorAll('[data-n]').forEach(el => { const o = { v:0 }; gsap.to(o, { v:+el.dataset.n, duration:1.2, ease:'power3.out', onUpdate:() => el.textContent = Math.round(o.v) + (el.dataset.s ?? ' €') }); });
         pane.querySelectorAll('.chart i').forEach((b,k) => gsap.fromTo(b, { scaleY:0 }, { scaleY:1, duration:.7, delay:.2 + k*.08, ease:'power3.out' }));
       };
       const start = () => { stop(); timer = setInterval(() => show((cur + 1) % tabs.length), 5000); };
