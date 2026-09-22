@@ -344,9 +344,12 @@
   #metode .ia p+p{margin-top:12px}
 
   #projectes .cases{display:grid;gap:24px;margin-top:8px}
-  .case{position:sticky;top:96px;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--surface);border-radius:var(--r-m);padding:clamp(24px,3vw,40px);box-shadow:0 -1px 0 var(--line)}
+  .case{position:sticky;top:96px;display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:clamp(24px,4vw,56px);align-items:start;background:var(--surface);border-radius:var(--r-m);padding:clamp(24px,3vw,40px);box-shadow:0 -1px 0 var(--line)}
   .case:nth-child(2){top:120px}
-  .case .shot{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(27,24,21,.18);aspect-ratio:16/10;background:#fff}
+  .case .shot{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(27,24,21,.18);aspect-ratio:4/3;background:#fff}
+  .case .body{max-width:760px}
+  .case .body p+p{margin-top:12px}
+  .case .body .lead{margin-top:12px}
   .case .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transform-origin:50% 0}
   .case h3{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.015em}
   .case .fig{margin:24px 0 8px;display:flex;align-items:baseline;gap:12px}
@@ -355,7 +358,7 @@
   .case .actions{margin-top:20px}
   @media (max-width:820px){.case{grid-template-columns:1fr;position:static}}
 
-  #qui .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:center}
+  #qui .grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,680px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
   #qui .vidbox{aspect-ratio:2/3;width:min(100%,440px);border-radius:var(--r-m);overflow:hidden;background:var(--ink)}
   #qui video{width:100%;height:100%;object-fit:cover}
   #qui p+p{margin-top:16px}
@@ -365,7 +368,9 @@
   #blog .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
   #blog article{border-top:2px solid var(--ink);padding-top:20px;transition:transform var(--t-base) var(--ease)}
   #blog article:hover{transform:translateY(-4px)}
-  #blog article h3{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:10px 0 12px;line-height:1.15}
+  #blog article h3{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:0 0 12px;line-height:1.15}
+  #blog article .petit{margin-bottom:10px}
+  #blog article .text{margin-bottom:16px}
   @media (max-width:820px){#blog .posts{grid-template-columns:1fr}}
 
   #contacte{background:var(--surface)}
@@ -687,8 +692,8 @@
   <h2 class="subtitular reveal">Projectes recents</h2>
   <p class="text suau intro reveal">Dos casos explicats de dalt a baix: el punt de partida, què vam construir i què ha passat després.</p>
   <div class="cases">
-    <article class="case"><div class="shot"><img src="media/dansa_web.jpg" alt=""></div><div><h3>Escola de dansa Cristina Colomé</h3><p class="text suau" style="margin-top:12px">D'un WordPress genèric i quatre excels a una web bilingüe, un blog setmanal i una eina de gestió pròpia. En tres mesos.</p><div class="fig"><b data-count="28,7>10,9">10,9</b><span class="petit suau">posició mitjana a Google, era 28,7 quinze dies abans · Search Console, setembre 2026</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
-    <article class="case"><div class="shot"><img src="media/brach_landing.webp" alt=""></div><div><h3>Brachfield Academy</h3><p class="text suau" style="margin-top:12px">Una escola en línia de credit management per subscripció, construïda sencera: lloc públic, pagaments, zona d'alumnes i un tauler de notícies que s'alimenta sol.</p><div class="fig"><b data-count="0>39 €">39 €</b><span class="petit suau">al mes, un sol pla, tot inclòs</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
+    <article class="case"><div class="shot"><img src="media/dansa_web.jpg" alt=""></div><div class="body"><h3>Escola de dansa Cristina Colomé</h3><p class="text lead">Una escola de barri amb més de 25 anys d'història passa d'un WordPress genèric i quatre excels a una web pròpia bilingüe, un blog setmanal i una eina de gestió feta a mida. En tres mesos.</p><p class="text suau">La web era un WordPress genèric que no explicava res de les 16 activitats i les 56 classes setmanals. El dia a dia, alumnes, quotes, rebuts i horaris, vivia en quatre excels i un full imprès al taulell.</p><p class="text suau">Vam fer una web pensada per al mòbil, amb una pàgina per disciplina, horaris, preguntes freqüents i WhatsApp; un blog amb 21 articles en dues llengües que respon el que pregunten les famílies; i el Backstage, una eina pròpia on la quota de cada alumne es calcula sola i els rebuts surten en un clic.</p><div class="fig"><b data-count="28,7>10,9">10,9</b><span class="petit suau">posició mitjana a Google, era 28,7 quinze dies abans · Search Console, setembre 2026</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
+    <article class="case"><div class="shot"><img src="media/brach_landing.webp" alt=""></div><div class="body"><h3>Brachfield Academy</h3><p class="text lead">Pere Brachfield, referència del credit management amb més de 35 anys d'experiència i 32 llibres publicats, volia una acadèmia en línia per a responsables financers i de cobraments. Vam construir la plataforma sencera.</p><p class="text suau">Un únic pla de 39 € al mes, sense permanència, i tres feines per a l'alumne: aprendre amb cursos, consultar guies i plantilles, i estar al dia amb notícies del sector i sessions en directe amb el Pere.</p><p class="text suau">Lloc públic amb el seu retrat i els seus llibres, registre i pagament recurrent, zona d'alumnes, un tauler d'actualitat que s'alimenta sol amb IA cada hora, i una sala de professors perquè l'equip publiqui sense tocar res tècnic.</p><div class="fig"><b data-count="0>39 €">39 €</b><span class="petit suau">al mes, un sol pla, tot inclòs</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
   </div>
   <p style="margin-top:32px"><a class="link" href="#">Tots els projectes</a></p>
 </section>
@@ -708,9 +713,9 @@
   <h2 class="subtitular reveal">Del blog</h2>
   <p class="text suau intro reveal">Articles curts per a qui té una empresa i no té departament digital. Sense argot, i acaben sempre amb què pots fer demà al matí.</p>
   <div class="posts">
-    <article class="reveal"><h3>Quan una web de WordPress ja no serveix, i com saber-ho</h3><a class="link" href="#">Llegir l'article</a></article>
-    <article class="reveal"><h3>L'excel que porta el teu negoci: quan deixa de ser una solució</h3><a class="link" href="#">Llegir l'article</a></article>
-    <article class="reveal"><h3>Com et troben Google i ChatGPT, i què hi pots fer</h3><a class="link" href="#">Llegir l'article</a></article>
+    <article class="reveal"><p class="petit suau">Setembre 2026 · Presència</p><h3>Quan una web de WordPress ja no serveix, i com saber-ho</h3><p class="text suau">No cal ser tècnic per saber si la teva web ha caducat. Hi ha cinc senyals que es veuen des del mòbil en dos minuts.</p><a class="link" href="#">Llegir l'article</a></article>
+    <article class="reveal"><p class="petit suau">Setembre 2026 · Gestió</p><h3>L'excel que porta el teu negoci: quan deixa de ser una solució</h3><p class="text suau">Un excel és una eina magnífica fins al dia que només l'entén una persona. Com saber si has arribat a aquest dia, i què fer-hi.</p><a class="link" href="#">Llegir l'article</a></article>
+    <article class="reveal"><p class="petit suau">Setembre 2026 · Comunicació</p><h3>Com et troben Google i ChatGPT, i què hi pots fer</h3><p class="text suau">Cada cop més gent pregunta a un assistent d'IA quina escola o quin despatx li recomana. Si la teva web no es pot llegir, no hi sortiràs.</p><a class="link" href="#">Llegir l'article</a></article>
   </div>
   <p style="margin-top:32px"><a class="link" href="#">Tots els articles</a></p>
 </section>
