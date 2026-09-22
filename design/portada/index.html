@@ -6,7 +6,7 @@
 <title>emoloc portada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800;9..40,1000&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800;9..40,1000&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Syne:wght@800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#ffffff; --surface:#f6f4f0; --ink:#1b1815; --muted:#6b6157; --line:#e2ddd5;
@@ -346,45 +346,52 @@
   .qf-list li{position:relative;padding-left:24px;font-size:20px;line-height:1.4}
   .qf-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
   /* vinyetes */
-  .vig{position:relative;height:250px;border-radius:var(--r-m);background:var(--surface);padding:18px;overflow:hidden;font-family:var(--font)}
+  .vig{position:relative;height:260px;border-radius:var(--r-m);background:var(--surface);padding:16px;overflow:hidden;font-family:var(--font)}
   .vig img{display:block;width:100%;height:100%;object-fit:cover}
-  /* presència: la web en miniatura */
-  .vig-p .win{position:absolute;left:18px;top:18px;right:120px;bottom:0;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 14px 40px rgba(27,24,21,.12);overflow:hidden}
-  .vig-p .bar{display:flex;gap:5px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)}
-  .vig-p .bar i{width:7px;height:7px;border-radius:50%;background:var(--line)} .vig-p .bar b{margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--surface);font-size:10px;font-weight:600;color:var(--muted)}
-  .vig-p .hero{position:relative;height:120px}
-  .vig-p .hero-t{position:absolute;inset:0;padding:12px 14px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;background:linear-gradient(to top,rgba(20,12,6,.7),rgba(20,12,6,.05));color:#fff}
-  .vig-p .hero-t .logo{position:absolute;left:14px;top:10px;font-family:var(--fb-serif);font-size:12px;font-weight:700}
-  .vig-p .hero-t .ttl{font-family:var(--fb-serif);font-size:15px;line-height:1.1;max-width:75%}
-  .vig-p .hero-t .cta{align-self:flex-start;padding:4px 9px;border-radius:999px;background:#fff;color:var(--fb-brown);font-size:9px;font-weight:600}
-  .vig-p .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 12px;background:var(--fb-cream)}
-  .vig-p .cards span{height:52px;border-radius:6px;overflow:hidden;background:#fff}
-  .vig-p .pin{position:absolute;right:16px;top:56px;width:112px;padding:10px 12px;border-radius:12px;background:#fff;box-shadow:0 10px 30px rgba(27,24,21,.16);font-size:12px;line-height:1.3}
-  .vig-p .pin b{display:block;font-weight:600} .vig-p .pin span{color:#188038}
-  /* gestió: l'eina interna */
-  .vig-g{display:grid;grid-template-columns:96px 1fr;gap:12px}
-  .vig-g aside{display:grid;align-content:start;gap:4px;background:#fff;border-radius:10px;padding:10px 8px;font-size:12px;color:var(--muted)}
-  .vig-g aside b{font-weight:800;color:var(--ink);margin-bottom:6px;padding:0 6px} .vig-g aside span{padding:5px 6px;border-radius:6px} .vig-g aside span.on{background:var(--surface);color:var(--ink);font-weight:600}
-  .vig-g .row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;padding:8px 12px;background:#fff;border-radius:8px;margin-bottom:5px;font-size:13px;font-variant-numeric:tabular-nums}
-  .vig-g .row span:nth-child(n+2){text-align:right} .vig-g .row.h{background:transparent;color:var(--muted);padding-top:0;padding-bottom:2px;font-size:12px} .vig-g .row.t{font-weight:600;background:var(--accent-soft)}
-  .vig-g .tag-in{justify-self:end;padding:2px 8px;border-radius:999px;background:var(--ink);color:#fff;font-size:11px;font-weight:600}
-  /* venda: producte i panell */
-  .vig-v{display:grid;grid-template-columns:150px 1fr;gap:14px}
-  .vig-v .prod{background:#fff;border-radius:12px;padding:10px;display:grid;gap:6px;align-content:start}
-  .vig-v .prod .img{height:96px;border-radius:8px;overflow:hidden;background:var(--fb-cream)} .vig-v .prod .ttl{font-family:var(--fb-serif);font-size:14px} .vig-v .prod .price{font-weight:600;font-size:15px;color:var(--fb-toast)} .vig-v .prod .btn{padding:7px 8px;font-size:10px;font-weight:600;text-align:center;background:var(--fb-brown);color:#fff;border-radius:999px}
-  .vig-v .panel{background:#fff;border-radius:12px;padding:12px 14px;display:grid;grid-template-rows:auto 1fr auto;gap:8px}
-  .vig-v .lbl{font-size:12px;color:var(--muted);font-weight:600}
-  .vig-v .chart{display:flex;align-items:flex-end;gap:6px;min-height:0}
-  .vig-v .chart i{flex:1;height:var(--h);border-radius:5px 5px 0 0;background:var(--line);transform-origin:bottom} .vig-v .chart i:last-child{background:var(--accent)}
-  .vig-v .kpi{font-size:13px;color:var(--muted)} .vig-v .kpi b{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em} .vig-v .kpi em{font-style:normal;color:#188038;font-weight:600}
-  /* comunicació: xarxes i assistents */
-  .vig-c{display:grid;grid-template-columns:150px 1fr;gap:14px}
-  .vig-c .post{position:relative;border-radius:12px;overflow:hidden;background:#fff}
-  .vig-c .post .likes{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);color:#fff;font-size:12px;font-weight:600}
-  .vig-c .chatv{display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
-  .vig-c .q{align-self:flex-end;padding:8px 12px;border-radius:14px 14px 4px 14px;background:#fff;font-size:13px;font-weight:600;max-width:85%}
-  .vig-c .a{padding:10px 12px;border-radius:14px 14px 14px 4px;background:var(--ink);color:#fff;font-size:13px;line-height:1.4;max-width:92%} .vig-c .a b{color:var(--accent)}
-  .vig-c .res{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);margin-top:4px} .vig-c .res .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+  /* presència: logotips de marques inventades */
+  .vig-p .logos{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;height:100%}
+  .vig-p .lg{position:relative;display:flex;align-items:center;justify-content:center;gap:4px;background:#fff;border-radius:12px;font-size:22px;line-height:1;transition:box-shadow var(--t-base) var(--ease)}
+  .vig-p .lg.on{box-shadow:0 0 0 2px var(--accent),0 12px 30px rgba(27,24,21,.12)}
+  .vig-p .l1{font-family:"Syne",var(--font);font-weight:800;color:#1f4d3a} .vig-p .l1 i{width:9px;height:9px;background:var(--accent);margin-left:2px}
+  .vig-p .l2{font-family:var(--fb-serif);font-style:italic;font-weight:500;color:#7a1f2b;font-size:19px}
+  .vig-p .l3{font-weight:1000;letter-spacing:.14em;color:#111;padding-left:.14em} .vig-p .l3 em,.vig-p .l6 em{font-style:normal;color:var(--accent)}
+  .vig-p .l4{font-family:"Caveat",cursive;font-weight:600;font-size:34px;color:#1c4fa0}
+  .vig-p .l5{font-weight:600;color:#0f7c7c;letter-spacing:-.02em;flex-direction:column;gap:0} .vig-p .l5 small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0f7c7c;opacity:.8}
+  .vig-p .l6{font-weight:800;letter-spacing:.22em;color:#1a2440;font-size:18px;padding-left:.22em}
+  .vig-p .chips{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#fff;box-shadow:0 8px 24px rgba(27,24,21,.14);font-size:12px;font-weight:600;color:var(--muted);opacity:0}
+  .vig-p .chips i{width:12px;height:12px;border-radius:50%;background:var(--c,#ccc)}
+  /* gestió: panell viu */
+  .vig-g{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
+  .vig-g .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .vig-g .kpis div{background:#fff;border-radius:10px;padding:10px 12px} .vig-g .kpis b{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .vig-g .kpis span{font-size:11px;color:var(--muted)}
+  .vig-g .feed{position:relative;overflow:hidden;background:#fff;border-radius:10px;padding:6px 8px}
+  .vig-g .fr{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:7px 6px;border-bottom:1px solid var(--surface);font-size:13px;font-variant-numeric:tabular-nums}
+  .vig-g .fr em{font-style:normal;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px} .vig-g .fr .ok{background:#e3f4e8;color:#1e6b3a} .vig-g .fr .w{background:var(--accent-soft);color:#8a3c0c} .vig-g .fr .new{background:var(--ink);color:#fff}
+  .vig-g .prog{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:12px;font-weight:600;color:var(--muted)}
+  .vig-g .prog i{display:block;height:8px;border-radius:999px;background:#fff;overflow:hidden} .vig-g .prog b{display:block;height:100%;background:var(--accent)}
+  /* venda: botiga */
+  .vig-v{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
+  .vig-v .shop-bar{display:flex;justify-content:space-between;align-items:center;font-weight:1000;letter-spacing:.12em;font-size:16px} .vig-v .shop-bar em{font-style:normal;color:var(--accent)}
+  .vig-v .cart{position:relative;font-size:18px;letter-spacing:0} .vig-v .cart i{position:absolute;top:-6px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:800;font-style:normal;display:grid;place-items:center}
+  .vig-v .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;min-height:0}
+  .vig-v .pc{background:#fff;border-radius:10px;padding:8px;display:grid;grid-template-rows:1fr auto auto auto;gap:3px;font-size:12px;min-height:0}
+  .vig-v .pc img{border-radius:6px;min-height:0} .vig-v .pc span{font-weight:600} .vig-v .pc small{font-size:12px;color:var(--muted)}
+  .vig-v .pc button{font:inherit;font-size:11px;font-weight:600;padding:5px 0;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);transition:all var(--t-fast) var(--ease)}
+  .vig-v .pc button.done{background:var(--ink);color:#fff}
+  .vig-v .checkout{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:8px 10px;font-size:12px;color:var(--muted)} .vig-v .checkout b{font-weight:600;color:var(--ink)} .vig-v .buy{padding:6px 14px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:600;font-size:12px}
+  .vig-v .fly{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none}
+  /* comunicació: anuncis */
+  .vig-c{display:grid;grid-template-columns:1.15fr .62fr;grid-template-rows:1fr auto;gap:10px}
+  .vig-c .ad{background:#fff;border-radius:12px;overflow:hidden;position:relative;min-height:0}
+  .vig-c .feed{grid-column:1;grid-row:1;display:grid;grid-template-rows:auto 1fr auto auto}
+  .vig-c .hd{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:11px;line-height:1.1} .vig-c .hd i{width:20px;height:20px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)} .vig-c .hd b{font-weight:600} .vig-c .hd small{display:block;color:#737373;font-size:10px} .vig-c .hd span{margin-left:auto;color:#737373}
+  .vig-c .feed .img{min-height:0} .vig-c .feed .img img{object-position:center 70%}
+  .vig-c .cta{display:flex;justify-content:space-between;padding:7px 10px;background:#0095f6;color:#fff;font-size:12px;font-weight:600}
+  .vig-c .ft{padding:6px 10px;font-size:12px}
+  .vig-c .story{grid-column:2;grid-row:1/3} .vig-c .story img{position:absolute;inset:0;object-position:center}
+  .vig-c .st-hd{position:absolute;left:8px;top:8px;display:flex;align-items:center;gap:6px;color:#fff;font-size:11px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.5)} .vig-c .st-hd i{width:16px;height:16px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)}
+  .vig-c .st-cta{position:absolute;left:8px;right:8px;bottom:8px;padding:7px 0;border-radius:999px;background:#fff;color:#111;font-size:11px;font-weight:600;text-align:center}
+  .vig-c .metrics{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);gap:6px} .vig-c .metrics div{background:#fff;border-radius:8px;padding:6px 8px} .vig-c .metrics b{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .vig-c .metrics span{font-size:10px;color:var(--muted)}
   /* qui */
   .qui{display:grid;grid-template-columns:minmax(0,380px) minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
   .qui .vidbox{aspect-ratio:2/3;border-radius:var(--r-m);overflow:hidden;background:var(--ink)} .qui video{width:100%;height:100%;object-fit:cover}
@@ -398,11 +405,11 @@
     .qf-tab{padding:10px 12px;font-size:17px}
     .qf-panel{min-height:0;height:calc(100svh - 300px)}
     .qf-pane h3{font-size:24px;margin-top:16px} .qf-pane .text{display:none} .qf-list{margin-top:12px;gap:6px} .qf-list li{font-size:17px}
-    .vig{height:210px;padding:12px}
-    .vig-p .win{left:12px;top:12px;right:12px} .vig-p .pin{display:none} .vig-p .hero{height:100px} .vig-p .cards span{height:42px}
-    .vig-g{grid-template-columns:1fr} .vig-g aside{display:none} .vig-g .row{padding:7px 10px;margin-bottom:4px}
-    .vig-v{grid-template-columns:120px 1fr;gap:10px} .vig-v .prod .img{height:70px}
-    .vig-c{grid-template-columns:110px 1fr;gap:10px} .vig-c .a{font-size:12px}
+    .vig{height:230px;padding:12px}
+    .vig-p .lg{font-size:17px} .vig-p .l4{font-size:26px} .vig-p .l2{font-size:15px} .vig-p .chips{display:none}
+    .vig-g .kpis{grid-template-columns:repeat(2,1fr);gap:6px} .vig-g .kpis div{padding:6px 10px} .vig-g .kpis b{font-size:16px} .vig-g .fr:nth-child(n+3){display:none}
+    .vig-v .pc{font-size:11px} .vig-v .pc small{display:none}
+    .vig-c{grid-template-columns:1fr .58fr} .vig-c .metrics{grid-template-columns:repeat(2,1fr)} .vig-c .metrics div:nth-child(n+3){display:none}
     .qui{grid-template-columns:1fr;gap:20px}
     .qui .vidbox{aspect-ratio:4/3;width:100%}
     .qui-copy .suau{display:none}
@@ -546,25 +553,44 @@
       </div>
       <div class="qf-panel" id="qfpanel">
         <div class="qf-pane on" data-i="0">
-          <div class="vig vig-p"><div class="win"><div class="bar"><i></i><i></i><i></i><b>fornbalta.cat</b></div><div class="hero"><img src="media/hero.jpg" alt=""><div class="hero-t"><span class="logo">Forn Baltà</span><span class="ttl">Pa de llenya, cada matí des del 1962</span><span class="cta">Fes un encàrrec</span></div></div><div class="cards"><span><img src="media/pa.jpg" alt=""></span><span><img src="media/croissant.jpg" alt=""></span><span><img src="media/coca.jpg" alt=""></span></div></div><div class="pin"><b>Forn Baltà</b><span>4,9 ★★★★★ · Obert</span></div></div>
+          <div class="vig vig-p"><div class="logos">
+            <span class="lg l1"><b>Terral</b><i></i></span>
+            <span class="lg l2"><b>Bruna &amp; Fills</b></span>
+            <span class="lg l3"><b>KŌA</b><em>.</em></span>
+            <span class="lg l4"><b>Vela</b></span>
+            <span class="lg l5"><b>atlas</b><small>fisio</small></span>
+            <span class="lg l6"><b>NORD</b><em>.</em></span>
+          </div><div class="chips"><i></i><i></i><i></i><span>Identitat · guia d'estils</span></div></div>
           <h3>La teva marca en digital</h3>
           <p class="text suau">La web, la identitat, el contingut. Que qui et busca trobi una empresa viva i entengui en deu segons què fas.</p>
           <ul class="qf-list"><li>Web a mida, pensada primer per al mòbil</li><li>En català, castellà o les llengües dels teus clients</li><li>Ressenyes de Google, WhatsApp, formulari i mapa integrats</li></ul>
         </div>
         <div class="qf-pane" data-i="1">
-          <div class="vig vig-g"><aside><b>Backstage</b><span class="on">Alumnes</span><span>Rebuts</span><span>Horaris</span><span>Equip</span></aside><div class="main"><div class="row h"><span>Alumne</span><span>Classes</span><span>Quota</span></div><div class="row"><span>Marta R.</span><span>2</span><span data-n="64">64 €</span></div><div class="row"><span>Joan P.</span><span>3</span><span data-n="86">86 €</span></div><div class="row"><span>Núria S.</span><span>1</span><span data-n="38">38 €</span></div><div class="row t"><span>Rebuts del mes</span><span class="tag-in">Calculat sol</span><span data-n="188">188 €</span></div></div></div>
+          <div class="vig vig-g">
+            <div class="kpis"><div><b data-k="alumnes">214</b><span>alumnes</span></div><div><b data-k="rebuts">188</b><span>rebuts emesos</span></div><div><b data-k="import">6.420 €</b><span>aquest mes</span></div><div><b data-k="pend">3</b><span>pendents</span></div></div>
+            <div class="feed"><div class="fr"><span>#1041 · Joan P.</span><span>86 €</span><em class="ok">cobrat</em></div><div class="fr"><span>#1040 · Núria S.</span><span>38 €</span><em class="ok">cobrat</em></div><div class="fr"><span>#1039 · Marta R.</span><span>64 €</span><em class="w">pendent</em></div></div>
+            <div class="prog"><span>Cobrat</span><i><b style="width:92%"></b></i><span data-k="pct">92 %</span></div>
+          </div>
           <h3>Les eines que porten el negoci per dins</h3>
           <p class="text suau">Alumnes, clients, quotes, rebuts, horaris. Fetes a mida quan l'excel ja no dona més de si.</p>
           <ul class="qf-list"><li>Els mateixos camps que el teu excel, amb els càlculs fets</li><li>Rebuts, remeses bancàries i estat de cobrament</li><li>Usuaris amb rols: qui edita i qui només consulta</li></ul>
         </div>
         <div class="qf-pane" data-i="2">
-          <div class="vig vig-v"><div class="prod"><span class="img"><img src="media/coca.jpg" alt=""></span><span class="ttl">Coca de pinyons</span><span class="price">4,50 €</span><span class="btn">Afegir · recollida ds 9–10 h</span></div><div class="panel"><span class="lbl">Comandes de la setmana</span><div class="chart"><i style="--h:30%"></i><i style="--h:45%"></i><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:92%"></i><i style="--h:100%"></i></div><span class="kpi"><b data-n="148" data-s="">148</b> comandes · <em>+31 %</em></span></div></div>
+          <div class="vig vig-v">
+            <div class="shop-bar"><b>KŌA<em>.</em></b><span class="cart">🛒<i data-k="badge">0</i></span></div>
+            <div class="grid3"><div class="pc"><img src="media/sneaker.jpg" alt=""><span>Sneaker Sorra</span><small>89 €</small><button>Afegir</button></div><div class="pc"><img src="media/backpack.jpg" alt=""><span>Motxilla Roure</span><small>129 €</small><button>Afegir</button></div><div class="pc"><img src="media/sunglasses.jpg" alt=""><span>Ulleres Cala</span><small>69 €</small><button>Afegir</button></div></div>
+            <div class="checkout"><span>Cistella · <b data-k="n">0</b> articles · <b data-k="tot">0 €</b></span><b class="buy">Comprar</b></div>
+          </div>
           <h3>Els canals que facturen</h3>
           <p class="text suau">Botiga en línia, membresies, formació per subscripció. Amb els pagaments, la logística i l'atenció al client ben lligats.</p>
           <ul class="qf-list"><li>Botiga en línia: catàleg, pagaments i logística</li><li>Plataformes de membresia i formació per subscripció</li><li>Quadre de comandament: trànsit, conversió, tiquet mitjà</li></ul>
         </div>
         <div class="qf-pane" data-i="3">
-          <div class="vig vig-c"><div class="post"><img src="media/santjoan.jpg" alt=""><span class="likes">♡ 312 · fornbalta</span></div><div class="chatv"><div class="q">Quin forn em recomanes a Gràcia?</div><div class="a">A Gràcia, una bona opció és el <b>Forn Baltà</b>: pa de massa mare i encàrrecs en línia.</div><div class="res"><span class="dot"></span><span>Google · «forn de pa a Gràcia» · posició 1</span></div></div></div>
+          <div class="vig vig-c">
+            <div class="ad feed"><div class="hd"><i></i><div><b>koa.shop</b><small>Patrocinat</small></div><span>···</span></div><div class="img"><img src="media/ad.jpg" alt=""></div><div class="cta"><span>Compra ara</span><span>›</span></div><div class="ft">♡ 1.284 &nbsp; ◯ 96 &nbsp; ➤</div></div>
+            <div class="ad story"><img src="media/sneaker.jpg" alt=""><div class="st-hd"><i></i><b>koa.shop</b></div><div class="st-cta">Més informació</div></div>
+            <div class="metrics"><div><b data-k="abast">48.200</b><span>abast</span></div><div><b data-k="clics">1.540</b><span>clics</span></div><div><b data-k="ctr">3,2 %</b><span>CTR</span></div><div><b data-k="cpa">4,1 €</b><span>per venda</span></div></div>
+          </div>
           <h3>Inversió en marca i en resultats</h3>
           <p class="text suau">Google, Meta, email, i que et trobin també ChatGPT i Gemini. Amb pla, pressupost i mesura.</p>
           <ul class="qf-list"><li>Campanyes a Google i Meta, email i automatitzacions</li><li>SEO i fitxa de Google Business</li><li>Seguiment mensual amb xifres que s'entenen</li></ul>
@@ -992,10 +1018,66 @@
         tabs.forEach((b,k) => { b.classList.toggle('on', k === i); b.classList.remove('hold'); if (k === i) { const bar = b.querySelector('i'); bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; } });
         panes.forEach((p,k) => p.classList.toggle('on', k === i));
         const pane = panes[i];
-        gsap.fromTo(pane.querySelectorAll('.vig > *, h3, .text, .qf-list li'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.5, stagger:.06, ease:'power2.out' });
-        pane.querySelectorAll('[data-n]').forEach(el => { const o = { v:0 }; gsap.to(o, { v:+el.dataset.n, duration:1.2, ease:'power3.out', onUpdate:() => el.textContent = Math.round(o.v) + (el.dataset.s ?? ' €') }); });
-        pane.querySelectorAll('.chart i').forEach((b,k) => gsap.fromTo(b, { scaleY:0 }, { scaleY:1, duration:.7, delay:.2 + k*.08, ease:'power3.out' }));
+        if (live) { live.kill(); live = null; }
+        gsap.fromTo(pane.querySelectorAll('h3, .text, .qf-list li'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.5, stagger:.06, ease:'power2.out' });
+        live = fx[i](pane);
       };
+      let live = null;
+      const k = (pane, name) => pane.querySelector('[data-k="'+name+'"]');
+      const fx = [
+        // presència: els logotips entren i, un a un, s'il·luminen amb la seva paleta
+        pane => {
+          const lgs = [...pane.querySelectorAll('.lg')], chips = pane.querySelector('.chips'), pal = [['#1f4d3a','#f26b1f','#f4efe6'],['#7a1f2b','#e8c9b0','#fff8f2'],['#111111','#f26b1f','#ffffff'],['#1c4fa0','#9fc4ff','#eef4ff'],['#0f7c7c','#bfe8e3','#f2fbfa'],['#1a2440','#f26b1f','#eceff5']];
+          const tl = gsap.timeline({ repeat:-1 });
+          tl.fromTo(lgs, { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.5, stagger:.08, ease:'back.out(1.6)' });
+          lgs.forEach((lg, j) => tl.add(() => { lgs.forEach(x => x.classList.remove('on')); lg.classList.add('on'); chips.querySelectorAll('i').forEach((c, n) => c.style.setProperty('--c', pal[j][n])); }, '+=.2').to(chips, { opacity:1, duration:.3 }, '<').to({}, { duration:1.3 }));
+          return tl;
+        },
+        // gestió: cada dos segons entra un rebut nou i les xifres pugen
+        pane => {
+          const feed = pane.querySelector('.feed'), names = ['Pau G.','Laia M.','Ona R.','Biel T.','Aina C.','Marc V.'], imps = [64,86,38,52,64,42];
+          let n = 1041, rebuts = 188, total = 6420, idx = 0;
+          const tl = gsap.timeline({ repeat:-1, repeatDelay:1.7 });
+          tl.fromTo(pane.querySelectorAll('.kpis div, .feed, .prog'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
+          tl.add(() => {
+            n++; rebuts++; total += imps[idx % 6];
+            const row = document.createElement('div'); row.className = 'fr'; row.innerHTML = '<span>#' + n + ' · ' + names[idx % 6] + '</span><span>' + imps[idx % 6] + ' €</span><em class="new">ara</em>';
+            feed.prepend(row); gsap.from(row, { height:0, opacity:0, duration:.45, ease:'power2.out' });
+            const old = feed.querySelectorAll('.fr'); if (old.length > 4) old[old.length - 1].remove();
+            setTimeout(() => { const e = row.querySelector('em'); e.className = 'ok'; e.textContent = 'cobrat'; }, 1200);
+            k(pane,'rebuts').textContent = rebuts; k(pane,'import').textContent = total.toLocaleString('ca-ES') + ' €';
+            gsap.fromTo([k(pane,'rebuts'), k(pane,'import')], { color:'#f26b1f' }, { color:'#1b1815', duration:1.2 });
+            idx++;
+          });
+          return tl;
+        },
+        // venda: els productes s'afegeixen sols a la cistella
+        pane => {
+          const cards = [...pane.querySelectorAll('.pc')], prices = [89,129,69], badge = k(pane,'badge'), cart = pane.querySelector('.cart');
+          let n = 0, tot = 0;
+          const tl = gsap.timeline({ repeat:-1, repeatDelay:2 });
+          tl.fromTo(pane.querySelectorAll('.shop-bar, .pc, .checkout'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
+          cards.forEach((c, j) => tl.add(() => {
+            const b = c.querySelector('button'); b.classList.add('done'); b.textContent = 'Afegit ✓';
+            const fly = document.createElement('i'); fly.className = 'fly'; pane.appendChild(fly);
+            const r0 = b.getBoundingClientRect(), r1 = cart.getBoundingClientRect(), rp = pane.getBoundingClientRect();
+            gsap.fromTo(fly, { x:r0.left - rp.left + r0.width/2, y:r0.top - rp.top }, { x:r1.left - rp.left + r1.width/2, y:r1.top - rp.top + 6, duration:.6, ease:'power2.in', onComplete:() => { fly.remove(); n++; tot += prices[j]; badge.textContent = n; k(pane,'n').textContent = n; k(pane,'tot').textContent = tot + ' €'; gsap.fromTo(cart, { scale:1.3 }, { scale:1, duration:.4, ease:'back.out(2)' }); } });
+          }, '+=1.1'));
+          tl.add(() => { gsap.fromTo(pane.querySelector('.buy'), { scale:1 }, { scale:1.08, duration:.3, yoyo:true, repeat:3 }); }, '+=.8');
+          tl.add(() => { n = 0; tot = 0; badge.textContent = 0; k(pane,'n').textContent = 0; k(pane,'tot').textContent = '0 €'; cards.forEach(c => { const b = c.querySelector('button'); b.classList.remove('done'); b.textContent = 'Afegir'; }); }, '+=2');
+          return tl;
+        },
+        // comunicació: els anuncis entren, el botó crida i les mètriques pugen
+        pane => {
+          const tl = gsap.timeline({ repeat:-1, repeatDelay:.5 });
+          tl.fromTo(pane.querySelectorAll('.ad, .metrics div'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
+          const o = { a:0, c:0, r:0, p:0 };
+          tl.to(o, { a:48200, c:1540, r:3.2, p:4.1, duration:1.6, ease:'power3.out', onUpdate:() => { k(pane,'abast').textContent = Math.round(o.a).toLocaleString('ca-ES'); k(pane,'clics').textContent = Math.round(o.c).toLocaleString('ca-ES'); k(pane,'ctr').textContent = o.r.toFixed(1).replace('.', ',') + ' %'; k(pane,'cpa').textContent = o.p.toFixed(1).replace('.', ',') + ' €'; } }, '-=.2');
+          tl.fromTo(pane.querySelectorAll('.cta, .st-cta'), { scale:1 }, { scale:1.04, duration:.35, yoyo:true, repeat:5, ease:'sine.inOut' }, '-=.5');
+          tl.to({}, { duration:2 });
+          return tl;
+        }
+      ];
       const start = () => { stop(); timer = setInterval(() => show((cur + 1) % tabs.length), 5000); };
       const stop = () => { clearInterval(timer); timer = null; };
       tabs.forEach((b,i) => b.addEventListener('click', () => { show(i); stop(); tabs[i].classList.add('hold'); clearTimeout(hold); hold = setTimeout(start, 12000); }));
@@ -1004,7 +1086,7 @@
         gsap.fromTo(tabs, { opacity:0, x:-12 }, { opacity:1, x:0, duration:.5, stagger:.08, delay:.3, ease:'power2.out' });
         show(0); start();
       };
-      sec._reset = () => { stop(); clearTimeout(hold); };
+      sec._reset = () => { stop(); clearTimeout(hold); if (live) { live.kill(); live = null; } };
     })();
     // pas "qui hi ha darrere"
     (function(){
