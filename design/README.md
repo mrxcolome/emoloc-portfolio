@@ -27,3 +27,8 @@ Sense JavaScript o amb "reduir el moviment" activat, la pàgina es mostra en ver
 
 Nota de publicació: el vídeo de fons de l'entrada (`media/fons-digital.mp4`, 16 MB) supera el límit de fitxer adjunt de l'artefacte
 i es puja com a actiu; a la còpia publicada la ruta se substitueix per l'adreça de l'actiu. Al repositori la referència és la local.
+
+## Blog (v1)
+
+- `blog/index.html`: llistat d'articles amb filtre per pilar i la pàgina d'article (el primer, amb el text real), en una sola pàgina
+  amb dues vistes. Els textos surten dels fitxers de `content/ca/blog/`.
