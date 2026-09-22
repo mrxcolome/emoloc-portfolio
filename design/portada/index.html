@@ -151,7 +151,7 @@
   .stars{color:#e0a100;letter-spacing:.1em}
   .obrador{display:grid;grid-template-columns:1.1fr 1fr;gap:3cqw;align-items:center;padding:3.4cqw 4cqw 4cqw;background:#fff}
   .obrador .ph{aspect-ratio:4/3;border-radius:1.4cqw;overflow:hidden}
-  .obrador img{width:100%;height:100%;object-fit:cover}
+  .obrador img,.obrador video{width:100%;height:100%;object-fit:cover}
   .obrador h2{font-family:var(--fb-serif);font-weight:500;font-size:3.2cqw;letter-spacing:-.02em}
   .obrador p{margin-top:1.2cqw;font-size:1.4cqw;line-height:1.5;color:#5b4632}
   .obrador span{display:inline-block;margin-top:1.6cqw;font-size:1.25cqw;font-weight:600;border-bottom:1px solid currentColor}
@@ -238,8 +238,7 @@
   .app .bar i{display:block;height:100%;background:var(--accent);width:78%}
   .dock{position:absolute;left:var(--edge);top:110px;width:min(400px,30vw);aspect-ratio:16/9;border-radius:16px}
   .dock .cap{position:absolute;left:0;right:0;bottom:-30px;font-size:14px;color:var(--muted);opacity:0}
-  #gestio .copy .stack{top:auto;bottom:10vh;transform:none}
-
+  
   /* botiga (venda) */
   .shop{padding:2.6cqw 4cqw 3cqw;background:#fff}
   .shop .crumbs{font-size:1.15cqw;color:#8a7a68}
@@ -403,7 +402,6 @@
     .browser.dev2{left:4vw;right:auto;bottom:4vh;width:92vw;transform:translateY(130%) rotate(-3deg)}
     .dock{top:88px;width:40vw;border-radius:10px}
     .dock .cap{display:none}
-    #gestio .copy .stack{top:calc(88px + 22.5vw + 20px);bottom:auto}
     .subtitular{font-size:clamp(26px,7.4vw,34px)}
     #metode .track{flex-direction:column}
     #metode .step{flex:none;min-height:0}
@@ -484,7 +482,7 @@
                 </div>
               </section>
               <div class="strip"><span><b>4,9</b> <span class="stars">★★★★★</span> 212 ressenyes a Google</span><span>Català · Castellano · English</span></div>
-              <section class="obrador"><div class="ph"><img src="media/hero.jpg" alt=""></div><div><h2>L'obrador</h2><p>Farina de proximitat, massa mare de 24 hores i forn de llenya. Tres generacions fent el mateix pa, a la mateixa cantonada.</p><span>Com treballem</span></div></section>
+              <section class="obrador" data-scroll-to><div class="ph"><video muted loop playsinline preload="metadata" poster="media/gestio.jpg" data-src="media/gestio.mp4"></video></div><div><h2>L'obrador</h2><p>Farina de proximitat, massa mare de 24 hores i forn de llenya. Tres generacions fent el mateix pa, a la mateixa cantonada.</p><span>Com treballem</span></div></section>
             </div>
           </div>
         </div>
@@ -504,12 +502,10 @@
 </section>
 
 <!-- ============ gestió ============ -->
-<section class="scene alt" id="gestio" data-pillar="1">
+<section class="scene alt" id="gestio" data-pillar="1" data-novideo>
   <div class="stage">
     <div class="bg"></div>
     <div class="copy">
-      <div class="slot dock"><div class="vid"><video muted loop playsinline preload="metadata" poster="media/gestio.jpg" data-src="media/gestio.mp4"></video><div class="shade"></div><div class="shade2"></div></div><p class="cap fx-late">La llibreta d'encàrrecs, a les cinc del matí</p></div>
-      <div class="line l0"><p class="subtitular">A les cinc del matí, el Forn Baltà ja treballa</p><p class="text">Els encàrrecs, en una llibreta. Els torns, en un excel.</p></div>
       <div class="stack">
       <div class="line l2"><p class="subtitular">Una eina feta per al forn i per a ningú més</p><p class="text suau">Els mateixos camps que la llibreta, però els comptes es fan sols: quant pa cal coure demà i què deu cada restaurant.</p></div>
       <div class="line l3"><p class="subtitular">I la feina pesada, que se la faci la màquina</p><p class="text suau">Rebuts i remeses al banc, recordatoris als clients i un resum del dia escrit per la IA. Qui pot editar i qui només consulta, definit.</p></div>
@@ -797,10 +793,11 @@
   mm.add({ mobile:'(max-width: 820px)', desktop:'(min-width: 821px)' }, (ctx) => {
     const mobile = ctx.conditions.mobile;
     document.querySelectorAll('.scene').forEach(scene => {
-      const stage = scene.querySelector('.stage'), slot = scene.querySelector('.slot'), vid = slot.querySelector('.vid');
+      const stage = scene.querySelector('.stage'), slot = scene.querySelector('.slot'), vid = slot && slot.querySelector('.vid');
+      const noVideo = scene.hasAttribute('data-novideo');
       const l0 = scene.querySelector('.copy .l0'), l2 = scene.querySelector('.copy .l2'), l3 = scene.querySelector('.copy .l3');
       const dev1 = scene.querySelector('.dev1'), dev2 = scene.querySelector('.dev2');
-      const scroller = scene.querySelector('[data-scroll]'), target = scene.querySelector('[data-scroll-to]');
+      const scroller = scene.querySelector('[data-scroll]'), stops = [...scene.querySelectorAll('[data-scroll-to]')];
       const pillar = +scene.dataset.pillar, alt = scene.classList.contains('alt');
       const q = s => scene.querySelectorAll(s);
       const overflowEls = [slot, ...(dev1 ? [dev1, dev1.querySelector('.viewport'), dev1.querySelector('.main'), dev1.querySelector('.screen:not(.fx-frame)')].filter(Boolean) : [])];
@@ -808,37 +805,46 @@
       // entrada: l'escena cobreix l'anterior
       gsap.fromTo(stage, { scale:.92, borderRadius:28 }, { scale:1, borderRadius:0, ease:'none', immediateRender:false,
         scrollTrigger:{ trigger:scene, start:'top bottom', end:'top top', scrub:true } });
-      gsap.fromTo(nav, { color:INK }, { color:WHITE, ease:'none', immediateRender:false,
-        scrollTrigger:{ trigger:scene, start:'top 30%', end:'top top', scrub:true } });
-
-      gsap.set(vid, { scale:()=>fullBleed(stage, slot).scale, x:()=>fullBleed(stage, slot).x, y:()=>fullBleed(stage, slot).y });
-      gsap.set(l0, { opacity:1 });
+      if (!noVideo) {
+        gsap.fromTo(nav, { color:INK }, { color:WHITE, ease:'none', immediateRender:false,
+          scrollTrigger:{ trigger:scene, start:'top 30%', end:'top top', scrub:true } });
+        gsap.set(vid, { scale:()=>fullBleed(stage, slot).scale, x:()=>fullBleed(stage, slot).x, y:()=>fullBleed(stage, slot).y });
+        gsap.set(l0, { opacity:1 });
+      } else {
+        gsap.set([...q('.fx-frame'), ...q('.fx-chrome'), ...q('.fx-late'), ...q('.below'), scene.querySelector('.bg')], { opacity:1 });
+        gsap.set(overflowEls, { overflow:'hidden' });
+      }
+      const wakeVideos = () => scene.querySelectorAll('video[data-src]').forEach(v => { if (!v.src) { v.src = v.dataset.src; v.load(); } v.play().catch(()=>{}); });
 
       // bucle autònom: vídeo, desplaçament fins al producte, pausa, i tornada
       let loop = null;
-      if (scroller && target) {
-        const dist = () => -Math.min(target.offsetTop, Math.max(0, scroller.scrollHeight - scroller.parentElement.clientHeight));
+      if (scroller && stops.length) {
+        const dist = el => () => -Math.min(el.offsetTop, Math.max(0, scroller.scrollHeight - scroller.parentElement.clientHeight));
         loop = gsap.timeline({ repeat:-1, paused:true, defaults:{ ease:'power2.inOut' } })
           .set(scroller, { y:0 }).set(q('.pop'), { y:40, opacity:0 }).set(q('.pcard img'), { scale:1.06 })
-          .to({}, { duration:5 })
-          .to(scroller, { y:dist, duration:1.3 })
-          .to(q('.pop'), { y:0, opacity:1, duration:.6, stagger:.1, ease:'power2.out' }, '-=.5')
-          .to(q('.pcard img'), { scale:1, duration:1.4, ease:'power2.out' }, '<')
-          .to({}, { duration:4 })
-          .to(scroller, { y:0, duration:1.3 })
-          .to(q('.pop'), { opacity:0, duration:.3 }, '<');
+          .to({}, { duration:5 });
+        stops.forEach((el, i) => {
+          loop.to(scroller, { y:dist(el), duration:1.3 });
+          if (i === 0) loop.to(q('.pop'), { y:0, opacity:1, duration:.6, stagger:.1, ease:'power2.out' }, '-=.5').to(q('.pcard img'), { scale:1, duration:1.4, ease:'power2.out' }, '<');
+          loop.to({}, { duration:4 });
+        });
+        loop.to(scroller, { y:0, duration:1.3 }).to(q('.pop'), { opacity:0, duration:.3 }, '<');
       } else {
         gsap.set(q('.pop'), { y:0, opacity:1 });
       }
-      const LOOP_FROM = 2.4, TOTAL = 4.6;
+      const LOOP_FROM = noVideo ? 0 : 2.4, TOTAL = noVideo ? 2.0 : 4.6;
 
       const tl = gsap.timeline({ defaults:{ ease:'none' },
-        scrollTrigger:{ trigger:scene, start:'top top', end:'+=280%', pin:stage, scrub:.6, invalidateOnRefresh:true, anticipatePin:1,
-          onEnter:()=>setPillar(pillar), onEnterBack:()=>setPillar(pillar),
+        scrollTrigger:{ trigger:scene, start:'top top', end: noVideo ? '+=160%' : '+=280%', pin:stage, scrub:.6, invalidateOnRefresh:true, anticipatePin:1,
+          onEnter:()=>{ setPillar(pillar); wakeVideos(); }, onEnterBack:()=>{ setPillar(pillar); wakeVideos(); },
           onUpdate:self => { if (!loop) return; const on = self.progress * TOTAL >= LOOP_FROM; if (on && loop.paused()) loop.restart(); else if (!on && !loop.paused()) { loop.pause(0); } },
           onLeave:()=>loop && loop.pause(), onLeaveBack:()=>loop && loop.pause(0) } });
 
-      tl.to(l0, { opacity:0, y:-16, duration:.4 }, .8)
+      let T2 = 2.8, T3 = 3.0;
+      if (noVideo) {
+        T2 = .5; T3 = .7;
+        tl.fromTo(l2, { opacity:0, y:24 }, { opacity:1, y:0, duration:.3 }, 0);
+      } else tl.to(l0, { opacity:0, y:-16, duration:.4 }, .8)
         .to(vid, { scale:1, x:0, y:0, duration:1.6, ease:'power2.inOut' }, .8)
         .to(q('.shade'), { opacity:0, duration:.9 }, 1.1)
         .to(q('.shade2'), { opacity:1, duration:.8 }, 1.6)
@@ -851,13 +857,13 @@
         .to(q('.below'), { opacity:1, duration:.3 }, 2.1)
         .set(overflowEls, { overflow:'hidden' }, 2.3);
       // segon pas: el segon dispositiu i el segon bloc de text
-      if (dev1 && dev1.hasAttribute('data-shift')) tl.to(dev1, { xPercent:(mobile || alt) ? 0 : -8, scale:.94, duration:1.1, ease:'power2.inOut' }, 2.8);
-      if (dev2) tl.to(dev2, { y:0, rotate:0, duration:1.2, ease:'power3.out' }, 2.8);
+      if (dev1 && dev1.hasAttribute('data-shift')) tl.to(dev1, { xPercent:(mobile || alt) ? 0 : -8, scale:.94, duration:1.1, ease:'power2.inOut' }, T2);
+      if (dev2) tl.to(dev2, { y:0, rotate:0, duration:1.2, ease:'power3.out' }, T2);
       if (mobile) {
-        tl.to(l2, { opacity:0, y:-16, duration:.4 }, 2.8)
-          .fromTo(l3, { opacity:0, y:24 }, { opacity:1, y:0, duration:.6 }, 3.1);
+        tl.to(l2, { opacity:0, y:-16, duration:.4 }, T2)
+          .fromTo(l3, { opacity:0, y:24 }, { opacity:1, y:0, duration:.6 }, T3 + .1);
       } else {
-        tl.fromTo(l3, { height:0, opacity:0, marginTop:0 }, { height:'auto', opacity:1, marginTop:32, duration:.9, ease:'power2.out' }, 3.0);
+        tl.fromTo(l3, { height:0, opacity:0, marginTop:0 }, { height:'auto', opacity:1, marginTop:32, duration:.9, ease:'power2.out' }, T3);
       }
       tl.to({}, { duration:.6 }, TOTAL - .6);
     });
