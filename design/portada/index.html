@@ -553,11 +553,10 @@
 </section>
 
 <!-- ============ venda ============ -->
-<section class="scene" id="venda" data-pillar="2">
+<section class="scene" id="venda" data-pillar="2" data-novideo>
   <div class="stage">
     <div class="bg"></div>
     <div class="copy">
-      <div class="line l0"><p class="subtitular">Els dissabtes, la coca s'acaba a les deu</p><p class="text">Qui arriba tard marxa sense res. I no sempre torna.</p></div>
       <div class="stack">
       <div class="line l2"><p class="subtitular">Encàrrecs en línia, recollida a l'obrador</p><p class="text suau">Catàleg, franja de recollida i pagament lligats amb la producció: el que es ven a la nit ja compta per a demà.</p></div>
       <div class="line l3"><p class="subtitular">I un panell que digui què funciona</p><p class="text suau">Comandes, tiquet mitjà, productes que s'esgoten i marge per producte. Cada setmana, sense fer comptes a mà.</p></div>
@@ -800,7 +799,7 @@
       const scroller = scene.querySelector('[data-scroll]'), stops = [...scene.querySelectorAll('[data-scroll-to]')];
       const pillar = +scene.dataset.pillar, alt = scene.classList.contains('alt');
       const q = s => scene.querySelectorAll(s);
-      const overflowEls = [slot, ...(dev1 ? [dev1, dev1.querySelector('.viewport'), dev1.querySelector('.main'), dev1.querySelector('.screen:not(.fx-frame)')].filter(Boolean) : [])];
+      const overflowEls = [slot, ...(dev1 ? [dev1, dev1.querySelector('.viewport'), dev1.querySelector('.main'), dev1.querySelector('.screen:not(.fx-frame)')] : [])].filter(Boolean);
 
       // entrada: l'escena cobreix l'anterior
       gsap.fromTo(stage, { scale:.92, borderRadius:28 }, { scale:1, borderRadius:0, ease:'none', immediateRender:false,
