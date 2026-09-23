@@ -81,15 +81,15 @@ main = '<main class="wrap">\n' + lst + ''.join(art(a) for a in arts) + '</main>'
 cur = open(OUT, encoding='utf-8').read()
 head, rest = cur.split('<main class="wrap">', 1)
 _, tail = rest.split('</main>', 1)
-# nav + footer order
-for old, new in [
-    ('<ul><li>Inici</li><li>Serveis</li><li>Projectes</li><li class="on">Blog</li><li>Sobre mi</li><li>Contacte</li></ul>',
-     '<ul><li><a href="../portada/index.html#zero">Inici</a></li><li><a href="../portada/index.html#quefem">Serveis</a></li><li><a href="../portada/index.html#qui">Sobre mi</a></li><li><a href="../portada/index.html#projectes">Projectes</a></li><li class="on"><a href="#">Blog</a></li><li><a href="../portada/index.html#contacte">Contacte</a></li></ul>'),
-    ('<a class="parlem" href="#">Parlem</a>', '<a class="parlem" href="../portada/index.html#contacte">Parlem</a>'),
-    ('<ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Projectes</li><li>Blog</li><li>Sobre mi</li><li>Contacte</li></ul>',
-     '<ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>'),
-]:
-    head = head.replace(old, new); tail = tail.replace(old, new)
+# nav + footer: es tornen a escriure sempre
+NAV = ('<nav class="topnav"><a class="emoloc" href="../portada/index.html"><b>.</b>emoloc</a><ul>'
+       '<li><a href="../portada/index.html#zero">Inici</a></li><li><a href="../portada/index.html#quefem">Serveis</a></li>'
+       '<li><a href="../portada/index.html#presencia">Com ho fem</a></li><li><a href="../portada/index.html#qui">Sobre mi</a></li>'
+       '<li><a href="../portada/index.html#projectes">Projectes</a></li><li class="on"><a href="#">Blog</a></li>'
+       '<li><a href="../portada/index.html#contacte">Contacte</a></li></ul><a class="parlem" href="../portada/index.html#contacte">Parlem</a></nav>')
+head = re.sub(r'<nav class="topnav">.*?</nav>', NAV, head, flags=re.S)
+tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Com ho fem</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>', tail, count=1, flags=re.S)
+head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.topnav ul .on{color:var(--accent)}')
 # CSS for thumbs / hero (idempotent)
 css = '''  .card .thumb{display:block;aspect-ratio:3/2;border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--surface)} .card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--t-slow) var(--ease)} .card:hover .thumb img{transform:scale(1.04)}
   .art .hero{margin-top:40px;border-radius:var(--r-m);overflow:hidden;aspect-ratio:21/9;max-width:1120px} .art .hero img{width:100%;height:100%;object-fit:cover;display:block}

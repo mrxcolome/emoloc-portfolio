@@ -47,6 +47,7 @@
   .emoloc{font-weight:800;letter-spacing:.04em;font-size:26px;line-height:1}
   .emoloc b{color:var(--accent)}
   .topnav ul{display:flex;gap:28px;font-weight:600;font-size:16px}
+  .topnav ul a.on, .menu a.on{color:var(--accent)}
   .topnav .parlem{padding:10px 18px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:16px}
   .topnav .burger{display:none;width:40px;height:40px;border:0;background:none;color:inherit;cursor:pointer}
   .topnav .burger span{display:block;height:2px;background:currentColor;margin:6px 8px;border-radius:2px}
@@ -529,11 +530,11 @@
 
 <nav class="topnav" id="topnav">
   <a class="emoloc" href="#zero"><b>.</b>emoloc</a>
-  <ul><li><a href="#zero">Inici</a></li><li><a href="#quefem">Serveis</a></li><li><a href="#qui">Sobre mi</a></li><li><a href="#projectes">Projectes</a></li><li><a href="#blog">Blog</a></li><li><a href="#contacte">Contacte</a></li></ul>
+  <ul><li><a href="#zero">Inici</a></li><li><a href="#quefem">Serveis</a></li><li><a href="#presencia">Com ho fem</a></li><li><a href="#qui">Sobre mi</a></li><li><a href="#projectes">Projectes</a></li><li><a href="#blog">Blog</a></li><li><a href="#contacte">Contacte</a></li></ul>
   <div style="display:flex;align-items:center;gap:8px"><a class="parlem" href="#contacte">Parlem</a><button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button></div>
 </nav>
 <div class="menu" id="menu">
-  <a href="#zero">Inici</a><a href="#quefem">Serveis</a><a href="#qui">Sobre mi</a><a href="#projectes">Projectes</a><a href="#blog">Blog</a><a href="#contacte">Contacte</a>
+  <a href="#zero">Inici</a><a href="#quefem">Serveis</a><a href="#presencia">Com ho fem</a><a href="#qui">Sobre mi</a><a href="#projectes">Projectes</a><a href="#blog">Blog</a><a href="#contacte">Contacte</a>
   <span class="lang">Ca / es</span>
 </div>
 
@@ -926,7 +927,7 @@
 
 <footer>
   <div><a class="emoloc" href="#zero"><b>.</b>emoloc</a><p class="text suau">La transformació digital que necessita la teva empresa.</p><p class="text">Xavi Colomé · Barcelona<br>xavi@emoloc.com</p></div>
-  <ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Projectes</li><li>Blog</li><li>Sobre mi</li><li>Contacte</li></ul>
+  <ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Com ho fem</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>
   <ul class="text negreta"><li>Linkedin</li><li>Instagram</li><li>Ca / es</li></ul>
   <div class="legal petit"><span>Avís legal</span><span>Política de privacitat</span><span>Galetes</span><span>© 2026 emoloc</span><span style="margin-left:auto">Forn Baltà és una marca fictícia, creada per il·lustrar els serveis.</span></div>
 </footer>
@@ -1158,8 +1159,10 @@
   let current = 0, locked = false, inZone = true;
   const zoneEnd = () => { const l = steps[steps.length - 1]; return l.offsetTop + l.offsetHeight; };
   function setZone(on){ inZone = on; html.classList.toggle('steps-locked', on); if (on) lenis.stop(); else lenis.start(); }
+  const navFor = el => '#' + (el.classList.contains('scene') ? 'presencia' : el.id);
+  function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === hash)); }
   function activate(i, dir = 1){
-    const el = steps[i];
+    const el = steps[i]; setNavActive(navFor(el));
     gsap.set(nav, { color:(el.classList.contains('scene') && !el.hasAttribute('data-novideo')) ? WHITE : INK });
     if (i === 0) zeroTl.restart(); else if (el._play) { if (el.dataset.pillar) setPillar(+el.dataset.pillar); el._play(dir); }
   }
@@ -1171,7 +1174,7 @@
     if (byInput && steps[current] && steps[current]._step && steps[current]._step(i - current)) return;
     const prev = current; current = i; locked = true;
     const target = i === steps.length ? free : steps[i];
-    if (i < steps.length) activate(i, byInput ? i - prev : 1);
+    if (i < steps.length) activate(i, byInput ? i - prev : 1); else setNavActive('#contacte');
     lenis.scrollTo(target, { duration:1.1, force:true, lock:true, onComplete:() => {
       locked = false;
       if (prev !== i && prev > 0 && prev < steps.length) steps[prev]._reset && steps[prev]._reset();
