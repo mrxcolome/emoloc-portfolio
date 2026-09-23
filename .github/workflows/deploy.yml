@@ -23,7 +23,12 @@ jobs:
         id: carpeta
         env:
           FTP_CARPETA: ${{ secrets.FTP_CARPETA }}
-        run: echo "dir=${FTP_CARPETA%/}/" >> "$GITHUB_OUTPUT"
+        run: |
+          dir="${FTP_CARPETA%/}/"
+          # PROTECCIÓ MENTRE ÉS DE PROVA: només es publica dins d'una carpeta /test/.
+          # Quan passem a l'arrel, treu aquestes tres línies.
+          if [[ "$dir" != */test/ ]]; then echo "::error::La carpeta de destí no acaba en /test/ (té ${#dir} caràcters). Aturo el desplegament per no tocar la web actual."; exit 1; fi
+          echo "dir=$dir" >> "$GITHUB_OUTPUT"
 
       - name: diagnòstic de connexió (no mostra cap valor secret)
         env:
@@ -37,11 +42,7 @@ jobs:
           echo "contrasenya: ${#FTP_CONTRASENYA} caràcters, espais o salts de línia: $([[ "$FTP_CONTRASENYA" =~ [[:space:]] ]] && echo SÍ || echo no)"
           echo "carpeta: ${#FTP_CARPETA} caràcters"
           echo "--- prova d'entrada amb FTPS explícit (port 21) ---"
-          curl -sS --ssl-reqd --insecure --max-time 30 --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" | head -20 && echo "ENTRADA CORRECTA (FTPS)" || echo "ENTRADA REBUTJADA (FTPS), codi $?"
-          echo "--- prova d'entrada amb FTP sense xifrar (només diagnòstic) ---"
-          curl -sS --max-time 30 --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" | head -5 && echo "ENTRADA CORRECTA (FTP)" || echo "ENTRADA REBUTJADA (FTP), codi $?"
-          echo "--- prova d'entrada amb SFTP (port 22) ---"
-          curl -sS --insecure --max-time 30 --list-only "sftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" | head -5 && echo "ENTRADA CORRECTA (SFTP)" || echo "ENTRADA REBUTJADA (SFTP), codi $?"
+          if curl -sS --ssl-reqd --insecure --max-time 30 --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" > /tmp/llista.txt; then echo "ENTRADA CORRECTA (FTPS), $(wc -l < /tmp/llista.txt) entrades a l'arrel del compte"; else echo "ENTRADA REBUTJADA (FTPS)"; fi
 
       - name: sincronitzar per FTPS (només fitxers canviats)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
