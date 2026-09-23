@@ -84,6 +84,7 @@
   #zero .white{position:absolute;inset:0;background:var(--paper);opacity:.5}
     #zero .scene1{position:absolute;inset:0;display:grid;align-content:center;justify-content:start;padding:96px var(--edge) 64px}
   #zero .scene1 .titular{max-width:22ch}
+  .order-m{display:none}
   #zero .pillars{display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;margin-top:40px}
   #zero .pillars .p{display:flex;align-items:center;gap:12px;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.015em;opacity:0}
   #zero .pillars .p i{width:12px;height:12px;border-radius:50%;background:var(--accent)}
@@ -95,6 +96,7 @@
   @media (max-width:820px){
     #zero .hint{bottom:6vh}
     #zero .scene1{align-content:start;padding-top:16vh}
+    .order-d{display:none} .order-m{display:block}
     #zero video{object-position:78% 50%}
   }
 
@@ -415,12 +417,12 @@
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
   .qf-bridge{max-width:520px} .qf-bridge-d{margin-top:36px} .qf-bridge-m{display:none}
   @media (max-width:820px){
-    .pstep .stage{padding:88px var(--gutter) 24px;align-content:start}
+    .pstep .stage{padding:60px var(--gutter) 24px;align-content:start}
     .qf{grid-template-columns:1fr;gap:20px}
     .qf-copy .text{display:none}
     .qf-tabs{grid-template-columns:1fr 1fr;gap:6px;margin-top:16px}
     .qf-tab{padding:10px 12px;font-size:17px}
-    .qf-panel{min-height:0;height:calc(100svh - 372px)}
+    .qf-panel{min-height:0;height:calc(100svh - 344px)}
     .qf-pane h3{font-size:24px;margin-top:16px} .qf-pane .text{display:none} .qf-list{margin-top:12px;gap:6px} .qf-list li{font-size:17px}
     .vig{height:230px;padding:12px}
     .vig-p .lg{font-size:17px} .vig-p .l4{font-size:26px} .vig-p .l2{font-size:15px} .vig-p .chips{display:none}
@@ -505,7 +507,7 @@
   @media (max-width:820px){
     .text{line-height:1.3}
     .copy .line{width:calc(100% - 2*var(--gutter))}
-    .copy .stack{top:96px;transform:none;width:calc(100% - 2*var(--gutter))}
+    .copy .stack{top:64px;transform:none;width:calc(100% - 2*var(--gutter))}
     .copy .stack .line{position:absolute;top:0;left:0;width:100%}
     .copy .stack .l3{height:auto;overflow:visible;margin-top:0}
     .copy .l0{bottom:14vh}
@@ -562,7 +564,8 @@
     <div class="white" id="zwhite"></div>
     <div class="scene1" id="scene1">
       <h1 class="titular" id="s1title">La transformació digital que necessita la teva empresa.</h1>
-      <p class="text order">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida.</p>
+      <p class="text order order-d">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida.</p>
+      <p class="text order order-m">A emoloc t'acompanyem amb les eines per tenir millor imatge, gestionar amb eficiència, vendre més i comunicar amb estratègia.</p>
     </div>
     <a class="hint" id="zhint" href="#presencia"><span>Desplaça't</span><i></i></a>
   </div>
