@@ -14,6 +14,7 @@ def cap(s): return s[:1].upper() + s[1:]
 def inline(t):
     t = html.escape(t, quote=False)
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+    t = re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'<a class="link" href="\2" target="_blank" rel="noopener">\1</a>', t)
     return t
 
 def md2html(body):

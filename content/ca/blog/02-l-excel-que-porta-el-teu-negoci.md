@@ -43,4 +43,4 @@ Amb la intel·ligència artificial com a equip de desenvolupament, una eina aix�
 - **Cronometra un tancament de mes.** Quantes hores es van en emetre rebuts o quotes. Aquest és el cost real de l'excel.
 - **Pregunta a l'equip què els fa perdre més temps.** La resposta sol ser la primera funció de l'eina.
 
-A l'escola de dansa Cristina Colomé, el Backstage va substituir quatre excels i un full imprès: alumnes, 56 classes setmanals, professors, tarifes i rebuts, amb la quota de cada alumne calculada sola. [enllaç al cas]
+A l'escola de dansa Cristina Colomé, el Backstage va substituir quatre excels i un full imprès: alumnes, 56 classes setmanals, professors, tarifes i rebuts, amb la quota de cada alumne calculada sola. [escoladansa.com](https://escoladansa.com)

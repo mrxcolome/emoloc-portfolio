@@ -42,4 +42,4 @@ La plataforma no substitueix el que et fa expert. Necessites tres coses abans d'
 - **Mira quant temps dediques a respondre-les una a una.** Aquest temps és el que la membresia t'estalviarà.
 - **Decideix un preu i digue'l en veu alta a tres persones.** Si no fan cara estranya, és bo.
 
-Per a Brachfield Academy vam construir tot això sencer: lloc públic, pagaments, zona d'alumnes, tauler de notícies automàtic i sala de professors, amb un únic pla de 39 € al mes. [enllaç al cas]
+Per a Brachfield Academy vam construir tot això sencer: lloc públic, pagaments, zona d'alumnes, tauler de notícies automàtic i sala de professors, amb un únic pla de 39 € al mes. [brachfieldacademy.com](https://brachfieldacademy.com)

@@ -39,4 +39,4 @@ El problema no és WordPress. És que la web es va tractar com un tràmit que es
 
 Una web nova no és un projecte de mesos. Amb una bona anàlisi de què fas i què pregunten els clients, la primera versió pot estar en línia en poques setmanes, pensada per al mòbil i en les llengües dels teus clients. La resta s'afegeix per fases, i qualsevol canvi es publica sol.
 
-A l'escola de dansa Cristina Colomé vam passar d'un WordPress genèric a una web pròpia amb una pàgina per activitat, blog i seguiment de Google en menys de tres mesos. [enllaç al cas]
+A l'escola de dansa Cristina Colomé vam passar d'un WordPress genèric a una web pròpia amb una pàgina per activitat, blog i seguiment de Google en menys de tres mesos. [escoladansa.com](https://escoladansa.com)

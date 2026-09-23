@@ -43,4 +43,4 @@ Omplir la web de paraules clau, comprar enllaços, escriure articles buits perqu
 
 Res d'això té sentit si no ho mesures. Google Search Console és gratuït i diu quantes pàgines tens indexades, en quina posició surts i quantes visites arriben. Una revisió al mes, amb les xifres al costat de les del mes anterior, és tot el que cal per saber si vas bé.
 
-A l'escola de dansa Cristina Colomé, quinze dies després d'arrencar el seguiment, la web havia passat de 111 a 143 pàgines a Google i de la posició mitjana 28,7 a la 10,9. Primera pàgina per a "escola de dansa". [enllaç al cas]
+A l'escola de dansa Cristina Colomé, quinze dies després d'arrencar el seguiment, la web havia passat de 111 a 143 pàgines a Google i de la posició mitjana 28,7 a la 10,9. Primera pàgina per a "escola de dansa". [escoladansa.com](https://escoladansa.com)
