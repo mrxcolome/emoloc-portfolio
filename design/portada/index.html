@@ -425,19 +425,24 @@
 
 
   #projectes .cases{display:grid;gap:24px;margin-top:8px}
-  .case{position:sticky;top:96px;display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:clamp(24px,4vw,56px);align-items:start;background:var(--surface);border-radius:var(--r-m);padding:clamp(24px,3vw,40px);box-shadow:0 -1px 0 var(--line)}
+  .case{position:sticky;top:96px;display:grid;grid-template-columns:minmax(220px,380px) 1fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--surface);border-radius:var(--r-m);padding:clamp(24px,3vw,40px);box-shadow:0 -1px 0 var(--line)}
   .case:nth-child(2){top:120px}
-  .case .shot{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(27,24,21,.18);aspect-ratio:4/3;background:#fff}
-  .case .body{max-width:760px}
-  .case .body p+p{margin-top:12px}
-  .case .body .lead{margin-top:12px}
-  .case .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transform-origin:50% 0}
+  .case .shot{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(27,24,21,.18);aspect-ratio:4/3;background:#fff}
+  .case .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .7s ease;transform-origin:50% 0}
+  .case .shot img.on{opacity:1}
+  .case .body{max-width:640px}
   .case h3{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.015em}
-  .case .fig{margin:24px 0 8px;display:flex;align-items:baseline;gap:12px}
-  .case .fig b{font-size:clamp(36px,12vw,72px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--accent)}
-  .case .fig span{max-width:220px}
-  .case .actions{margin-top:20px}
-  @media (max-width:820px){.case{grid-template-columns:1fr;position:static}}
+  .case .body>.text{margin-top:4px;font-size:17px}
+  .pil{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:4px}
+  .pil li{position:relative;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:12px;cursor:pointer;overflow:hidden;transition:background .4s;opacity:0}
+  .pil li.on{background:#fff}
+  .pil .n{font-size:13px;font-weight:700;color:var(--muted);padding-top:3px;transition:color .3s} .pil li.on .n{color:var(--accent)}
+  .pil b{display:block;font-size:18px;font-weight:700;letter-spacing:-.01em}
+  .pil p{font-size:17px;line-height:1.4;color:var(--muted);transition:color .3s} .pil li.on p{color:var(--ink)}
+  .pil p a{border-bottom:2px solid var(--accent);font-weight:600}
+  .pil .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent)} .pil li.on .bar{animation:fill 3.6s linear forwards}
+  .case .actions{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap}
+  @media (max-width:820px){.case{grid-template-columns:1fr;position:static;gap:18px} .case .shot{aspect-ratio:16/10} .pil li{padding:10px 12px} .pil b{font-size:17px} .pil p{font-size:16px}}
 
 
   #blog .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
@@ -830,10 +835,46 @@
 
 <section class="block" id="projectes">
   <h2 class="subtitular reveal">Projectes recents</h2>
-  <p class="text suau intro reveal">Dos casos explicats de dalt a baix: el punt de partida, què vam construir i què ha passat després.</p>
+  <p class="text suau intro reveal">Dos projectes reals, explicats amb els mateixos quatre pilars.</p>
   <div class="cases">
-    <article class="case"><div class="shot"><img src="media/dansa_web.jpg" alt=""></div><div class="body"><h3>Escola de dansa Cristina Colomé</h3><p class="text lead">Una escola de barri amb més de 25 anys d'història passa d'un WordPress genèric i quatre excels a una web pròpia bilingüe, un blog setmanal i una eina de gestió feta a mida. En tres mesos.</p><p class="text suau">La web era un WordPress genèric que no explicava res de les 16 activitats i les 56 classes setmanals. El dia a dia, alumnes, quotes, rebuts i horaris, vivia en quatre excels i un full imprès al taulell.</p><p class="text suau">Vam fer una web pensada per al mòbil, amb una pàgina per disciplina, horaris, preguntes freqüents i WhatsApp; un blog amb 21 articles en dues llengües que respon el que pregunten les famílies; i el Backstage, una eina pròpia on la quota de cada alumne es calcula sola i els rebuts surten en un clic.</p><div class="fig"><b data-count="28,7>10,9">10,9</b><span class="petit suau">posició mitjana a Google, era 28,7 quinze dies abans · Search Console, setembre 2026</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
-    <article class="case"><div class="shot"><img src="media/brach_landing.webp" alt=""></div><div class="body"><h3>Brachfield Academy</h3><p class="text lead">Pere Brachfield, referència del credit management amb més de 35 anys d'experiència i 32 llibres publicats, volia una acadèmia en línia per a responsables financers i de cobraments. Vam construir la plataforma sencera.</p><p class="text suau">Un únic pla de 39 € al mes, sense permanència, i tres feines per a l'alumne: aprendre amb cursos, consultar guies i plantilles, i estar al dia amb notícies del sector i sessions en directe amb el Pere.</p><p class="text suau">Lloc públic amb el seu retrat i els seus llibres, registre i pagament recurrent, zona d'alumnes, un tauler d'actualitat que s'alimenta sol amb IA cada hora, i una sala de professors perquè l'equip publiqui sense tocar res tècnic.</p><div class="fig"><b data-count="0>39 €">39 €</b><span class="petit suau">al mes, un sol pla, tot inclòs</span></div><div class="actions"><a class="link" href="#">Llegir el cas</a></div></div></article>
+    <article class="case">
+      <div class="shot">
+        <img src="media/dansa_web.jpg" alt="" class="on">
+        <img src="media/dansa_backstage.jpg" alt="" loading="lazy">
+        <img src="media/dansa_fitxa.jpg" alt="" loading="lazy">
+        <img src="media/dansa_mobil.jpg" alt="" loading="lazy">
+      </div>
+      <div class="body">
+        <h3>Escola de Dansa</h3>
+        <p class="text suau">Cristina Colomé · Barcelona</p>
+        <ol class="pil">
+          <li class="on"><span class="n">01</span><div><b>Presència</b><p>Web corporativa i <a href="https://escoladansa.com/blog" target="_blank" rel="noopener">blog</a></p></div><i class="bar"></i></li>
+          <li><span class="n">02</span><div><b>Gestió</b><p>Eina d'administració: alumnes, horaris, pagaments…</p></div><i class="bar"></i></li>
+          <li><span class="n">03</span><div><b>Venda</b><p>Inscripcions en línia</p></div><i class="bar"></i></li>
+          <li><span class="n">04</span><div><b>Comunicació</b><p>SEO, paid media (Google, Meta), ressenyes…</p></div><i class="bar"></i></li>
+        </ol>
+        <div class="actions"><a class="link" href="https://escoladansa.com" target="_blank" rel="noopener">escoladansa.com</a><a class="link" href="#">Llegir el cas</a></div>
+      </div>
+    </article>
+    <article class="case">
+      <div class="shot">
+        <img src="media/brach_landing.webp" alt="" class="on">
+        <img src="media/brach_cicle.webp" alt="" loading="lazy" style="object-position:center">
+        <img src="media/brach_alumne.webp" alt="" loading="lazy">
+        <img src="media/brach_landing.webp" alt="" loading="lazy">
+      </div>
+      <div class="body">
+        <h3>Brachfield Academy</h3>
+        <p class="text suau">Pere Brachfield · credit management</p>
+        <ol class="pil">
+          <li class="on"><span class="n">01</span><div><b>Presència</b><p>Web comercial i <a href="https://brachfieldacademy.com/blog" target="_blank" rel="noopener">blog</a></p></div><i class="bar"></i></li>
+          <li><span class="n">02</span><div><b>Gestió</b><p>Eina d'administració de cursos i formació</p></div><i class="bar"></i></li>
+          <li><span class="n">03</span><div><b>Venda</b><p>Subscripció mensual a l'acadèmia</p></div><i class="bar"></i></li>
+          <li><span class="n">04</span><div><b>Comunicació</b><p>SEO, paid media (Google, Meta), ressenyes…</p></div><i class="bar"></i></li>
+        </ol>
+        <div class="actions"><a class="link" href="https://brachfieldacademy.com" target="_blank" rel="noopener">brachfieldacademy.com</a><a class="link" href="#">Llegir el cas</a></div>
+      </div>
+    </article>
   </div>
   <p style="margin-top:32px"><a class="link" href="#">Tots els projectes</a></p>
 </section>
@@ -1155,8 +1196,20 @@
   /* ---- després ---- */
   gsap.utils.toArray('section.block, footer').forEach(el => ScrollTrigger.create({ trigger:el, start:'top 72px', end:'bottom 72px', toggleClass:{ targets:nav, className:'solid' } }));
   gsap.utils.toArray('.reveal').forEach(el => gsap.to(el, { opacity:1, y:0, duration:.9, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 88%' } }));
-  // projectes: les captures respiren i les xifres compten
+  // projectes: cada cas es munta sol, passa pels quatre pilars i canvia la captura
   gsap.utils.toArray('.case .shot img').forEach(img => gsap.to(img, { scale:1.06, duration:9, repeat:-1, yoyo:true, ease:'sine.inOut' }));
+  document.querySelectorAll('.case').forEach(c => {
+    const rows = [...c.querySelectorAll('.pil li')], imgs = [...c.querySelectorAll('.shot img')];
+    let i = 0, timer = null, hold = 0, built = false;
+    const set = n => { i = n; rows.forEach((r, k) => r.classList.toggle('on', k === n)); imgs.forEach((im, k) => im.classList.toggle('on', k === Math.min(n, imgs.length - 1))); };
+    const start = () => {
+      if (!built) { built = true; gsap.fromTo(rows, { opacity:0, y:14 }, { opacity:1, y:0, duration:.5, stagger:.12, ease:'power2.out' }); }
+      if (timer) return; set(i); timer = setInterval(() => { if (Date.now() > hold) set((i + 1) % rows.length); }, 3600);
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    rows.forEach((r, k) => r.addEventListener('click', e => { if (e.target.closest('a')) return; set(k); hold = Date.now() + 9000; }));
+    ScrollTrigger.create({ trigger:c, start:'top 85%', end:'bottom 5%', onEnter:start, onEnterBack:start, onLeave:stop, onLeaveBack:stop });
+  });
   gsap.utils.toArray('[data-count]').forEach(el => {
     const [from, to] = el.dataset.count.split('>'); const suffix = to.replace(/[\d.,]/g, ''); const dec = (to.match(/,(\d+)/) || [,''])[1].length;
     const f = parseFloat(from.replace(',', '.')), n = parseFloat(to.replace(',', '.'));
