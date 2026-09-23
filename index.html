@@ -70,7 +70,7 @@
   .menu a{font-size:clamp(28px,8vw,40px);font-weight:800;letter-spacing:-.015em;padding:10px 0;border-bottom:1px solid var(--line)}
   .menu .lang{margin-top:24px;font-weight:600;color:var(--muted)}
   @media (max-width:900px){.topnav ul{display:none}.topnav .burger{display:block}.emoloc{font-size:30px}
-    .topnav .emoloc,.topnav .parlem{transition:opacity .45s var(--ease),transform .45s var(--ease)} .topnav.compact .emoloc,.topnav.compact .parlem{opacity:0;transform:translateY(-28px);pointer-events:none}}
+    .topnav .emoloc,.topnav .parlem{transition:transform .9s var(--ease)} .topnav.compact .emoloc,.topnav.compact .parlem{transform:translateY(-110px);pointer-events:none}}
   html.menu-open .topnav{color:var(--ink)!important}
   html.steps-locked{overscroll-behavior:none}
   .topnav::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity var(--t-base) var(--ease);z-index:-1;border-bottom:1px solid rgba(27,24,21,.06)}
@@ -1179,7 +1179,7 @@
   function activate(i, dir = 1){
     const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0);
     gsap.set(nav, { color:(el.classList.contains('scene') && !el.hasAttribute('data-novideo')) ? WHITE : INK });
-    if (i === 0) { zeroTl.restart(); gsap.fromTo('#zhint', { y:44, opacity:0 }, { y:0, opacity:1, duration:.7, delay:.7, ease:'power2.out', overwrite:true }); } else if (el._play) { if (el.dataset.pillar) setPillar(+el.dataset.pillar); el._play(dir); }
+    if (i === 0) { zeroTl.restart(); gsap.fromTo('#zhint', { y:120, visibility:'visible' }, { y:0, duration:.8, delay:.5, ease:'power2.out', overwrite:true }); } else if (el._play) { if (el.dataset.pillar) setPillar(+el.dataset.pillar); el._play(dir); }
   }
   function go(i, byInput = false){
     if (locked) return;
@@ -1188,7 +1188,11 @@
     // passos amb sub-passos interns (projectes): el cop de rodeta el consumeix el pas
     if (byInput && steps[current] && steps[current]._step && steps[current]._step(i - current)) return;
     const prev = current; current = i; locked = true;
-    if (prev === 0 && i > 0) gsap.to('#zhint', { y:44, opacity:0, duration:.5, ease:'power2.in', overwrite:true });
+    if (prev === 0 && i > 0) { // el "Desplaça't" marxa cap avall mentre la pàgina puja: el fixem a la pantalla i el baixem
+      const hint = document.getElementById('zhint'), r = hint.getBoundingClientRect();
+      gsap.set(hint, { position:'fixed', top:r.top, left:r.left, right:'auto', bottom:'auto', y:0 });
+      gsap.to(hint, { y:window.innerHeight - r.top + 20, duration:1, ease:'power2.in', overwrite:true, onComplete:() => gsap.set(hint, { clearProps:'position,top,left,right,bottom', y:120, visibility:'hidden' }) });
+    }
     const target = i === steps.length ? free : steps[i];
     if (i < steps.length) activate(i, byInput ? i - prev : 1); else { setNavActive('#contacte'); nav.classList.add('compact'); }
     lenis.scrollTo(target, { duration:1.1, force:true, lock:true, onComplete:() => {
