@@ -40,7 +40,8 @@ jobs:
           echo "servidor: ${#FTP_SERVIDOR} caràcters, resol a $(getent hosts "$FTP_SERVIDOR" | awk '{print $1}' | head -1)"
           echo "usuari: ${#FTP_USUARI} caràcters, porta arrova: $([[ "$FTP_USUARI" == *@* ]] && echo sí || echo no), espais o salts de línia: $([[ "$FTP_USUARI" =~ [[:space:]] ]] && echo SÍ || echo no)"
           echo "contrasenya: ${#FTP_CONTRASENYA} caràcters, espais o salts de línia: $([[ "$FTP_CONTRASENYA" =~ [[:space:]] ]] && echo SÍ || echo no)"
-          echo "carpeta: ${#FTP_CARPETA} caràcters"
+          echo "carpeta: ${#FTP_CARPETA} caràcters$([[ "$FTP_CARPETA" == /test/ || "$FTP_CARPETA" == /test ]] && echo ' (és /test/)')"
+          echo "adreça pública d'aquest executor de GitHub: $(curl -s --max-time 10 https://api.ipify.org || echo desconeguda)"
           echo "--- qui respon al port 21: banner i certificat TLS ---"
           for h in "$FTP_SERVIDOR" emoloc.com escoladansa.com; do
             echo "· $h -> $(getent hosts "$h" | awk '{print $1}' | head -1)"
@@ -49,7 +50,7 @@ jobs:
             timeout 15 curl -sS --max-time 12 -v "ftp://$h/" --user "x:y" 2>&1 | grep -E "^< (220|530|421)" | head -3
           done
           echo "--- prova d'entrada amb FTPS explícit (port 21) ---"
-          if curl -sS --ssl-reqd --insecure --max-time 30 --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" > /tmp/llista.txt; then echo "ENTRADA CORRECTA (FTPS), $(wc -l < /tmp/llista.txt) entrades a l'arrel del compte"; else echo "ENTRADA REBUTJADA (FTPS)"; fi
+          if curl -sS --ssl-reqd --insecure --max-time 30 --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" > /tmp/llista.txt; then echo "ENTRADA CORRECTA (FTPS), $(wc -l < /tmp/llista.txt) entrades a l'arrel del compte"; else echo "ENTRADA REBUTJADA (FTPS); diàleg amb el servidor:"; curl -sS --ssl-reqd --insecure --max-time 30 -v --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" 2>&1 | grep -E "^[<>] " | grep -viE "^> PASS" | head -30; fi
 
       - name: sincronitzar per FTPS (només fitxers canviats)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
