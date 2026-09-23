@@ -1,8 +1,9 @@
 # Redireccions canòniques: tot cap a https://emoloc.com (sense www)
 RewriteEngine On
 
-# 1) www -> sense www
+# 1) www -> sense www (no s'aplica mentre la web viu a /test/)
 RewriteCond %{HTTP_HOST} ^www\.emoloc\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/test/
 RewriteRule ^ https://emoloc.com%{REQUEST_URI} [L,R=301]
 
 # 2) http -> https (condicions dobles per evitar bucles darrere del proxy/caché de Webempresa)
@@ -12,6 +13,12 @@ RewriteRule ^ https://emoloc.com%{REQUEST_URI} [L,R=301]
 
 # Pàgina 404 pròpia
 ErrorDocument 404 /404.html
+
+# Mentre la web és de prova a /test/, que els cercadors no la indexin
+SetEnvIf Request_URI ^/test/ NOINDEX
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
+</IfModule>
 
 # Tipus i compressió
 AddType image/svg+xml .svg
