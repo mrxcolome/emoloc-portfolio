@@ -93,6 +93,7 @@ tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="te
 head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.topnav ul .on{color:var(--accent)}')
 tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><li>Ca / es</li></ul>', '', tail)
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
+tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
 # CSS for thumbs / hero (idempotent)
 css = '''  .card .thumb{display:block;aspect-ratio:3/2;border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--surface)} .card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--t-slow) var(--ease)} .card:hover .thumb img{transform:scale(1.04)}
   .art .hero{margin-top:40px;border-radius:var(--r-m);overflow:hidden;aspect-ratio:21/9;max-width:1120px} .art .hero img{width:100%;height:100%;object-fit:cover;display:block}
