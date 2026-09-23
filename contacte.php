@@ -4,14 +4,14 @@ header('Content-Type: application/json; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo '{"ok":false}'; exit; }
 
 // neteja per a valors que van a capçaleres (anti header-injection)
-function neteja($v) { return trim(str_replace(["\r", "\n"], ' ', $v ?? '')); }
+function neteja($v) { return trim(str_replace(array("\r", "\n"), ' ', $v === null ? '' : $v)); }
 
 $nom      = mb_substr(neteja($_POST['nom'] ?? ''), 0, 120);
 $empresa  = mb_substr(neteja($_POST['empresa'] ?? ''), 0, 120);
 $email    = mb_substr(neteja($_POST['email'] ?? ''), 0, 160);
 $telefon  = mb_substr(neteja($_POST['telefon'] ?? ''), 0, 40);
 $missatge = mb_substr(trim($_POST['missatge'] ?? ''), 0, 4000);
-$pilars   = array_slice(array_map('neteja', (array) ($_POST['p'] ?? [])), 0, 5);
+$pilars   = array_slice(array_map('neteja', (array) (isset($_POST['p']) ? $_POST['p'] : array())), 0, 5);
 $priv     = ($_POST['privacitat'] ?? '') === '1';
 $honeypot = $_POST['web'] ?? '';
 $torn     = (int) ($_POST['torn'] ?? 0);
@@ -22,8 +22,10 @@ if ($honeypot !== '' || $torn < 3 || $nom === '' || $missatge === '' || !$priv |
     exit;
 }
 
-$noms = ['presencia' => 'presència', 'gestio' => 'gestió', 'venda' => 'venda', 'comunicacio' => 'comunicació', 'nose' => 'no ho sap'];
-$pil = implode(', ', array_map(fn($k) => $noms[$k] ?? $k, $pilars));
+$noms = array('presencia' => 'presència', 'gestio' => 'gestió', 'venda' => 'venda', 'comunicacio' => 'comunicació', 'nose' => 'no ho sap');
+$llegibles = array();
+foreach ($pilars as $k) { $llegibles[] = isset($noms[$k]) ? $noms[$k] : $k; }
+$pil = implode(', ', $llegibles);
 
 $cos = "Nou missatge del formulari de contacte d'emoloc.com\n\n"
      . "Nom: $nom\n"
@@ -40,4 +42,4 @@ $capceleres = "From: Web emoloc.com <xavi@emoloc.com>\r\n"
 
 $assumpte = mb_encode_mimeheader("Consulta web: $nom" . ($empresa !== '' ? " ($empresa)" : ''), 'UTF-8');
 $ok = mail('xavi@emoloc.com', $assumpte, $cos, $capceleres);
-echo json_encode(['ok' => (bool) $ok]);
+echo json_encode(array('ok' => (bool) $ok));
