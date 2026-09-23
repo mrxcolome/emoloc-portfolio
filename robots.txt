@@ -1,0 +1,7 @@
+# emoloc vol aparèixer a cercadors i a les respostes dels assistents d'IA
+User-agent: *
+Allow: /
+Disallow: /design/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://emoloc.com/sitemap.xml

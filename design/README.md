@@ -17,11 +17,7 @@ Mitjans que espera la plantilla: VIDEO (clip Kling 5 s, 16:9), POSTER, HERO, PA,
 
 ## Portada sencera (v4)
 
-- `portada/index.html`: la portada completa amb el motor d'escenes. Pantalla zero amb el vídeo del Xavi, la frase que creix i els quatre pilars,
-  una escena per pilar (vídeo a pantalla completa que es converteix en la pantalla d'un dispositiu del Forn Baltà, marca fictícia) i, després,
-  com treballo, projectes, qui hi ha darrere, blog, formulari i peu.
-- `portada/libs/`: GSAP, ScrollTrigger i Lenis.
-- `portada/media/`: vídeos i fotos (no es versionen, uns 40 MB). Es publiquen com a fitxers adjunts de l'artefacte.
+- La portada i el blog viuen ara a l'arrel del repositori (`/index.html`, `/blog/`), amb els mitjans a `/assets/` i les llibreries a `/libs/`.
 
 Sense JavaScript o amb "reduir el moviment" activat, la pàgina es mostra en versió estàtica (`html.no-motion`).
 
@@ -30,6 +26,4 @@ i es puja com a actiu; a la còpia publicada la ruta se substitueix per l'adreç
 
 ## Blog (v1)
 
-- `blog/index.html`: llistat d'articles amb filtre per pilar i la pàgina de cada article, en una sola pàgina amb dues vistes
-  (encaminament per `#article/<slug>`). Es genera amb `python3 design/blog/build.py` a partir de `content/ca/blog/*.md`;
-  les imatges dels articles són a `portada/media/blog-*.jpg`.
+- `blog/build.py` (a l'arrel) regenera el blog a partir de `content/ca/blog/*.md`.

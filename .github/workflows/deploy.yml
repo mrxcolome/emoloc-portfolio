@@ -1,0 +1,44 @@
+# Desplegament automàtic a Webempresa: cada push a main sincronitza la web per FTPS.
+# Credencials als Secrets del repo (Settings -> Secrets and variables -> Actions):
+#   FTP_SERVIDOR, FTP_USUARI, FTP_CONTRASENYA, FTP_CARPETA (p. ex. /www/)
+name: desplegar a webempresa
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # permet llançar-lo a mà des de la pestanya Actions
+
+concurrency:
+  group: desplegament
+  cancel-in-progress: false
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar el codi
+        uses: actions/checkout@v4
+
+      - name: normalitzar la carpeta de destí (ha d'acabar amb /)
+        id: carpeta
+        env:
+          FTP_CARPETA: ${{ secrets.FTP_CARPETA }}
+        run: echo "dir=${FTP_CARPETA%/}/" >> "$GITHUB_OUTPUT"
+
+      - name: sincronitzar per FTPS (només fitxers canviats)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVIDOR }}
+          username: ${{ secrets.FTP_USUARI }}
+          password: ${{ secrets.FTP_CONTRASENYA }}
+          protocol: ftps
+          server-dir: ${{ steps.carpeta.outputs.dir }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            content/**
+            design/**
+            blog/build.py
+            .gitignore
+            README.md
