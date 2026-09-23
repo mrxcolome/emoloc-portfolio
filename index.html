@@ -69,7 +69,8 @@
   .menu.open{display:flex}
   .menu a{font-size:clamp(28px,8vw,40px);font-weight:800;letter-spacing:-.015em;padding:10px 0;border-bottom:1px solid var(--line)}
   .menu .lang{margin-top:24px;font-weight:600;color:var(--muted)}
-  @media (max-width:900px){.topnav ul{display:none}.topnav .burger{display:block}.emoloc{font-size:30px}}
+  @media (max-width:900px){.topnav ul{display:none}.topnav .burger{display:block}.emoloc{font-size:30px}
+    .topnav .emoloc,.topnav .parlem{transition:opacity .35s var(--ease)} .topnav.compact .emoloc,.topnav.compact .parlem{opacity:0;pointer-events:none}}
   html.menu-open .topnav{color:var(--ink)!important}
   html.steps-locked{overscroll-behavior:none}
   .topnav::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity var(--t-base) var(--ease);z-index:-1;border-bottom:1px solid rgba(27,24,21,.06)}
@@ -408,8 +409,8 @@
   .vig-c .st-cta{position:absolute;left:8px;right:8px;bottom:8px;padding:7px 0;border-radius:999px;background:#fff;color:#111;font-size:11px;font-weight:600;text-align:center}
   .vig-c .metrics{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);gap:6px} .vig-c .metrics div{background:#fff;border-radius:8px;padding:6px 8px} .vig-c .metrics b{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .vig-c .metrics span{font-size:10px;color:var(--muted)}
   /* qui */
-  .qui{display:grid;grid-template-columns:minmax(0,380px) minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
-  .qui .vidbox{aspect-ratio:2/3;border-radius:var(--r-m);overflow:hidden;background:var(--ink)} .qui video{width:100%;height:100%;object-fit:cover}
+  .qui{display:grid;grid-template-columns:auto minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
+  .qui .vidbox{aspect-ratio:9/16;height:min(calc(100svh - 200px),620px);width:auto;border-radius:var(--r-m);overflow:hidden;background:var(--surface)} .qui video{width:100%;height:100%;object-fit:cover}
   .qui-copy .text{margin-top:16px}
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
   .qf-bridge{max-width:520px} .qf-bridge-d{margin-top:36px} .qf-bridge-m{display:none}
@@ -426,8 +427,8 @@
     .vig-g .kpis{grid-template-columns:repeat(2,1fr);gap:6px} .vig-g .kpis div{padding:6px 10px} .vig-g .kpis b{font-size:16px} .vig-g .fr:nth-child(n+3){display:none}
     .vig-v .pc{font-size:11px} .vig-v .pc small{display:none}
     .vig-c{grid-template-columns:1fr .58fr} .vig-c .metrics{grid-template-columns:repeat(2,1fr)} .vig-c .metrics div:nth-child(n+3){display:none}
-    .qui{grid-template-columns:1fr;gap:20px}
-    .qui .vidbox{aspect-ratio:4/3;width:100%}
+    .qui{grid-template-columns:1fr;gap:18px;justify-items:start}
+    .qui .vidbox{aspect-ratio:9/16;height:min(44svh,380px);width:auto}
     .qui-copy .suau{display:none}
     .qf-bridge-d{display:none} .qf-bridge-m{display:block;margin-top:4px;font-size:20px}
   }
@@ -1176,7 +1177,7 @@
   const navFor = el => '#' + (el.classList.contains('scene') ? 'presencia' : el.id);
   function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', (a.dataset.step || a.getAttribute('href')) === hash)); }
   function activate(i, dir = 1){
-    const el = steps[i]; setNavActive(navFor(el));
+    const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0);
     gsap.set(nav, { color:(el.classList.contains('scene') && !el.hasAttribute('data-novideo')) ? WHITE : INK });
     if (i === 0) zeroTl.restart(); else if (el._play) { if (el.dataset.pillar) setPillar(+el.dataset.pillar); el._play(dir); }
   }
@@ -1188,7 +1189,7 @@
     if (byInput && steps[current] && steps[current]._step && steps[current]._step(i - current)) return;
     const prev = current; current = i; locked = true;
     const target = i === steps.length ? free : steps[i];
-    if (i < steps.length) activate(i, byInput ? i - prev : 1); else setNavActive('#contacte');
+    if (i < steps.length) activate(i, byInput ? i - prev : 1); else { setNavActive('#contacte'); nav.classList.add('compact'); }
     lenis.scrollTo(target, { duration:1.1, force:true, lock:true, onComplete:() => {
       locked = false;
       if (prev !== i && prev > 0 && prev < steps.length) steps[prev]._reset && steps[prev]._reset();
