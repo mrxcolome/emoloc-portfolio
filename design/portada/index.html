@@ -396,14 +396,15 @@
   .qui{display:grid;grid-template-columns:minmax(0,380px) minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
   .qui .vidbox{aspect-ratio:2/3;border-radius:var(--r-m);overflow:hidden;background:var(--ink)} .qui video{width:100%;height:100%;object-fit:cover}
   .qui-copy .text{margin-top:16px}
-  .qui-copy .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
+  .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
+  .qf-bridge{max-width:520px} .qf-bridge-d{margin-top:36px} .qf-bridge-m{display:none}
   @media (max-width:820px){
     .pstep .stage{padding:88px var(--gutter) 24px;align-content:start}
     .qf{grid-template-columns:1fr;gap:20px}
     .qf-copy .text{display:none}
     .qf-tabs{grid-template-columns:1fr 1fr;gap:6px;margin-top:16px}
     .qf-tab{padding:10px 12px;font-size:17px}
-    .qf-panel{min-height:0;height:calc(100svh - 300px)}
+    .qf-panel{min-height:0;height:calc(100svh - 372px)}
     .qf-pane h3{font-size:24px;margin-top:16px} .qf-pane .text{display:none} .qf-list{margin-top:12px;gap:6px} .qf-list li{font-size:17px}
     .vig{height:230px;padding:12px}
     .vig-p .lg{font-size:17px} .vig-p .l4{font-size:26px} .vig-p .l2{font-size:15px} .vig-p .chips{display:none}
@@ -413,7 +414,7 @@
     .qui{grid-template-columns:1fr;gap:20px}
     .qui .vidbox{aspect-ratio:4/3;width:100%}
     .qui-copy .suau{display:none}
-    .qui-copy .bridge{margin-top:20px}
+    .qf-bridge-d{display:none} .qf-bridge-m{display:block;margin-top:4px;font-size:20px}
   }
 
   /* ---------- després ---------- */
@@ -561,6 +562,7 @@
           <button class="qf-tab" data-i="2"><span class="n">03</span><span class="t">Venda</span><i></i></button>
           <button class="qf-tab" data-i="3"><span class="n">04</span><span class="t">Comunicació</span><i></i></button>
           </div>
+        <p class="bridge qf-bridge qf-bridge-d">Per veure com ho fem, agafem un forn de barri: el Forn Baltà.</p>
       </div>
       <div class="qf-panel" id="qfpanel">
         <div class="qf-pane on" data-i="0">
@@ -607,26 +609,12 @@
           <ul class="qf-list"><li>Campanyes a Google i Meta, email i automatitzacions</li><li>SEO i fitxa de Google Business</li><li>Seguiment mensual amb xifres que s'entenen</li></ul>
         </div>
       </div>
+      <p class="bridge qf-bridge qf-bridge-m">Per veure com ho fem, agafem un forn de barri: el Forn Baltà.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ qui hi ha darrere ============ -->
-<section class="pstep" id="qui">
-  <div class="stage">
-    <div class="qui">
-      <div class="vidbox"><video muted loop playsinline preload="metadata" poster="media/xavi.jpg" data-src="media/xavi.mp4"></video></div>
-      <div class="qui-copy">
-        <h2 class="subtitular">Qui hi ha darrere</h2>
-        <p class="text">Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital: primer com a programador i dissenyador en agències, després dirigint marketing digital i ecommerce a Tous i Textura, i des del 2019 com a director digital de Castañer.</p>
-        <p class="text suau">emoloc és la manera de portar aquesta experiència a empreses que no tenen departament digital però necessiten el mateix rigor. No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.</p>
-        <p class="bridge">Per veure com ho fem, agafem un forn de barri: el Forn Baltà.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ presència ============ -->
 <section class="scene" id="presencia" data-pillar="0">
   <div class="stage">
     <div class="bg"></div>
@@ -839,6 +827,20 @@
 
 <!-- ============ després ============ -->
 
+<section class="pstep" id="qui">
+  <div class="stage">
+    <div class="qui">
+      <div class="vidbox"><video muted loop playsinline preload="metadata" poster="media/xavi.jpg" data-src="media/xavi.mp4"></video></div>
+      <div class="qui-copy">
+        <h2 class="subtitular">Qui hi ha darrere</h2>
+        <p class="text">Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital: primer com a programador i dissenyador en agències, després dirigint marketing digital i ecommerce a Tous i Textura, i des del 2019 com a director digital de Castañer.</p>
+        <p class="text suau">emoloc és la manera de portar aquesta experiència a empreses que no tenen departament digital però necessiten el mateix rigor. No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ presència ============ -->
 <section class="pstep proj" id="projectes">
   <div class="stage">
     <h2 class="subtitular">Projectes recents <span class="pn">1/2</span></h2>
@@ -975,7 +977,7 @@
   }
 
   const scenes = [...document.querySelectorAll('.scene')];
-  const steps = [document.getElementById('zero'), document.getElementById('quefem'), document.getElementById('qui'), ...scenes, document.getElementById('projectes'), document.getElementById('blog')];
+  const steps = [document.getElementById('zero'), document.getElementById('quefem'), ...scenes, document.getElementById('qui'), document.getElementById('projectes'), document.getElementById('blog')];
   const free = document.getElementById('contacte');
   const mm = gsap.matchMedia();
   mm.add({ mobile:'(max-width: 820px)', desktop:'(min-width: 821px)' }, (ctx) => {
@@ -1133,6 +1135,7 @@
       sec._play = () => {
         gsap.fromTo(sec.querySelectorAll('.qf-copy > *'), { opacity:0, y:20 }, { opacity:1, y:0, duration:.7, stagger:.12, ease:'power2.out' });
         gsap.fromTo(tabs, { opacity:0, x:-12 }, { opacity:1, x:0, duration:.5, stagger:.08, delay:.3, ease:'power2.out' });
+        gsap.fromTo(sec.querySelectorAll('.qf-bridge'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.7, delay:1, ease:'power2.out' });
         show(0); start();
       };
       sec._reset = () => { stop(); clearTimeout(hold); if (live) { live.kill(); live = null; } };
