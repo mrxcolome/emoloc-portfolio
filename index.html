@@ -159,9 +159,9 @@
   @media (max-width:820px){
     .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
     .qs-panel{padding:22px var(--gutter) 24px} .qs-prog{left:var(--gutter);top:24px} .qs-head{padding-top:26px}
-    .qs-grid{grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start}
+    .qs-grid{grid-template-columns:1fr;grid-template-rows:minmax(132px,auto) auto auto;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start} /* fila del titular fixa també a mòbil */
     .qs-prog i{width:80px} .qs h2{margin-top:10px}
-    .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px}
+    .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px;line-height:1.3} /* Text compacte */
     .vig{height:min(36svh,300px);padding:12px}
     @media (max-height:720px){.vig{height:min(24svh,300px)}} /* mòbils baixos: la targeta cedeix espai a la llista */
     .v1{gap:8px} .v1 .tx,.v1 .nav{display:none}
@@ -596,7 +596,7 @@
         t.set(panels[n], { visibility:'visible' }, at).call(() => panels[n].classList.add('on'), null, at);
         t.fromTo(q.h2, { opacity:0, x:70 * dir }, { opacity:1, x:0, duration:.8, ease:'power3.out' }, at);
         if (q.claim) t.fromTo(q.claim, { opacity:0, y:-14 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, at + .1);
-        t.fromTo(q.lis, { opacity:0, y:26 }, { opacity:1, y:0, duration:.55, stagger:.16, ease:'power2.out' }, at + .3);
+        t.fromTo(q.lis, { opacity:0, x:0, y:26 }, { opacity:1, x:0, y:0, duration:.55, stagger:.16, ease:'power2.out' }, at + .3); // x:0 perquè en marxar s'havien desplaçat de costat
         t.fromTo(q.vig, { opacity:0, y:70, scale:.97 }, { opacity:1, y:0, scale:1, duration:1.2, ease:'power2.out' }, at + .2);
         t.call(() => { tl = VIG[n](q.vig); tl.pause(0); }, null, at); // es crea ja amagada, abans que la targeta es vegi
         t.call(() => { if (tl) tl.play(); }, null, at + .7);
@@ -609,7 +609,7 @@
         t.to(q.vig, { opacity:0, y:-50, scale:.98, duration:.55, ease:'power2.in' }, 0);
         t.call(() => { panels[n].classList.remove('on'); }, null, .6);
       };
-      const hide = pn => { const q = parts(pn); pn.classList.remove('on'); gsap.set([q.h2, q.claim, q.vig, ...q.lis].filter(Boolean), { opacity:0 }); };
+      const hide = pn => { const q = parts(pn); pn.classList.remove('on'); gsap.set([q.h2, q.claim, q.vig, ...q.lis].filter(Boolean), { opacity:0, x:0, y:0 }); };
       panels.forEach(hide);
       sec._step = dir => {
         if (anim) return true;

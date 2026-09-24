@@ -19,10 +19,11 @@
 
   html{color-scheme:light only}
   *{box-sizing:border-box}
-  /* ---- els quatre estils de text, i cap més ---- */
+  /* ---- els cinc estils de text, i cap més ---- */
   .titular{font-size:clamp(36px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
   .text{font-size:20px;line-height:1.6;font-weight:400}
+  .compacte{font-size:20px;line-height:1.3;font-weight:400}   /* Text compacte: només a mòbil, dins de targetes */
   .petit{font-size:14px;line-height:1.5;font-weight:400}
   .negreta{font-weight:600}   /* variant de Text i de Petit */
   .suau{color:var(--muted)}
@@ -113,7 +114,7 @@
   <section>
     <div class="sec-head">
       <h1>Guia d'estils emoloc</h1>
-      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Sis colors, una lletra en quatre estils, un moviment, els components i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
+      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Sis colors, una lletra en cinc estils, un moviment, els components i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
     </div>
   </section>
 
@@ -157,13 +158,14 @@
 
   <section id="type">
     <div class="sec-head">
-      <h2>DM Sans, quatre estils</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Titular i Subtitular van en 1000. Text i Petit van en 400 i tenen una variant negreta en 600. Tota la interfície (botons, enllaços, menú superior, comptadors) és Text negreta. El menú desplegat del mòbil és Subtitular. El Text és el mateix a tot arreu i en tots els dispositius: la frase d'inici, les llistes, els paràgrafs de «Sobre mi», les targetes de projecte i el formulari. Del Petit gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</p>
+      <h2>DM Sans, cinc estils</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Titular i Subtitular van en 1000. Text i Petit van en 400 i tenen una variant negreta en 600. El Text compacte és el Text amb la meitat d'aire entre línies: només a mòbil i només dins de targetes (els conceptes de «Com ho fem»), on l'espai és just. Tota la interfície (botons, enllaços, menú superior, comptadors) és Text negreta. El menú desplegat del mòbil és Subtitular. El Text és el mateix a tot arreu i en tots els dispositius: la frase d'inici, les llistes, els paràgrafs de «Sobre mi», les targetes de projecte i el formulari. Del Petit gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</p>
     </div>
     <div>
       <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000 · mòbil 36</small></div><h1>Digital que funciona</h1></div>
       <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · 1000</small></div><h2>Presència, gestió, venda i comunicació</h2></div>
       <div class="type-row"><div class="nom">Text<small>20 / 1.6 · 400 · negreta 600 · igual a mòbil</small></div><p><span class="negreta">Un negoci no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><div class="nom">Text compacte<small>20 / 1.3 · 400 · només mòbil, dins de targetes</small></div><p class="compacte" style="max-width:34ch">Si vens en línia, comanda, pagament i enviament sense feina afegida.</p></div>
       <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 400 · negreta 600</small></div><p class="petit"><span class="negreta">Gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</span> Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
     </div>
     <ul class="dont">
