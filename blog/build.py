@@ -48,7 +48,7 @@ for f in sorted(glob.glob(os.path.join(REPO, 'content/ca/blog/*.md'))):
 def card(a, full=True):
     t = '<p class="text suau">%s</p>' % html.escape(a['entradeta'], quote=False) if full else ''
     return ('<article class="card%s" data-pilar="%s"><a class="thumb" href="#article/%s"><img src="%s" alt="" loading="lazy"></a>'
-            '<p class="petit suau">%s · %s</p><h3>%s</h3>%s<a class="link" href="#article/%s">Llegir l\'article</a></article>'
+            '<p class="petit suau">%s · %s</p><h3>%s</h3>%s<a class="btn sec" href="#article/%s">Llegir l\'article <span aria-hidden="true">→</span></a></article>'
             % (' reveal' if full else '', a['pilar'], a['slug'], a['img'], a['data'], a['pilar'], html.escape(a['titol'], quote=False), t, a['slug']))
 
 filters = ''.join('<button%s data-f="%s">%s</button>' % (' class="on"' if i == 0 else '', f, f) for i, f in enumerate(['Tots', 'Presència', 'Gestió', 'Venda', 'Comunicació']))
@@ -100,6 +100,7 @@ tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="
 tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
 head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
 head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}').replace('.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--muted)}', '.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4}')
+head = head.replace('.card{border-top:2px solid var(--ink);padding:20px 0 8px;', '.card{padding:0 0 8px;display:flex;flex-direction:column;align-items:stretch;').replace('  .card .text{margin-bottom:16px}\n', '  .card .text{margin-bottom:16px} .card .btn{align-self:flex-start;margin-top:auto}\n')  # sense ratlles negres; botons al mateix peu
 if '.btn.sec{' not in head:
     head = head.replace('  .link{font-weight:600}\n', '  .link{font-weight:600}\n  .btn.sec{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)} .btn.sec:hover{box-shadow:inset 0 0 0 1px var(--ink)}\n')  # botó secundari, com a la portada.replace('.text{font-size:20px;line-height:1.55;font-weight:400}', '.text{font-size:20px;line-height:1.6;font-weight:400}')  # text sempre en tinta, Text 20/1.6
 # head meta (idempotent)
