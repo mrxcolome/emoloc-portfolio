@@ -176,7 +176,7 @@
     .qui .vidbox{order:1;flex:1;min-height:0;width:100%;height:auto;aspect-ratio:auto;border-radius:0;background:var(--surface)}
     .qui video{width:100%;height:100%;object-fit:cover;object-position:50% 47%} /* el punt fix són els ulls (al 47 % de l'alçada del vídeo): queden sempre a mitja alçada del requadre, sigui quin sigui el mòbil */
     .qui-copy h2 + .text{margin-top:16px} .qui-copy .text + .text{margin-top:16px} .qui-copy .text{line-height:1.3} /* Text compacte */
-    @media (max-height:760px){.qui-copy .text + .text{display:none}} /* mòbils baixos: només el primer paràgraf */
+    .qui-copy .text + .text{display:none} /* a mòbil només el primer paràgraf: el vídeo guanya alçada i la cara es veu més lluny */
   }
 
   /* ---------- després ---------- */
