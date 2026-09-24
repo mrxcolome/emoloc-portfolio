@@ -4,7 +4,7 @@
 
 **emoloc.**
 
-La transformació digital que necessita la teva empresa.
+La transformació digital que necessita el teu negoci.
 
 [botó principal] Explica'm el teu projecte → contacte
 [botó secundari] Veure projectes → projectes

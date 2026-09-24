@@ -96,6 +96,7 @@ head = head.replace('.emoloc{font-weight:800;letter-spacing:.04em;', '.emoloc{fo
 tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><li>Ca / es</li></ul>', '', tail)
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
 tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
+tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
 # head meta (idempotent)
 if '<link rel="canonical"' not in head:
     head = head.replace('<title>emoloc blog</title>', """<title>Blog · emoloc</title>

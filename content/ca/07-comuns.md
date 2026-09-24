@@ -10,7 +10,7 @@
 - [botó] parlem
 
 ## Peu de pàgina
-- emoloc. La transformació digital que necessita la teva empresa.
+- emoloc. La transformació digital que necessita el teu negoci.
 - Xavi Colomé · Barcelona
 - Xavi@emoloc.com
 - Linkedin · instagram
