@@ -600,7 +600,8 @@
         if (q.claim) t.fromTo(q.claim, { opacity:0, y:-14 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, at + .1);
         t.fromTo(q.lis, { opacity:0, y:26 }, { opacity:1, y:0, duration:.55, stagger:.16, ease:'power2.out' }, at + .3);
         t.fromTo(q.vig, { opacity:0, y:70, scale:.97 }, { opacity:1, y:0, scale:1, duration:1.2, ease:'power2.out' }, at + .2);
-        t.call(() => { tl = VIG[n](q.vig); }, null, at + .7);
+        t.call(() => { tl = VIG[n](q.vig); tl.pause(0); }, null, at); // es crea ja amagada, abans que la targeta es vegi
+        t.call(() => { if (tl) tl.play(); }, null, at + .7);
       };
       const leave = (n, dir, t) => { // cada element marxa per un costat diferent del que entra
         const q = parts(panels[n]);
