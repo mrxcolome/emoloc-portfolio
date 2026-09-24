@@ -94,7 +94,7 @@ head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.t
 head = head.replace('.link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}', '.link{font-weight:600}')
 head = head.replace('.emoloc{font-weight:800;letter-spacing:.04em;', '.emoloc{font-weight:800;letter-spacing:0;').replace('.emoloc{font-weight:800;letter-spacing:.01em;', '.emoloc{font-weight:800;letter-spacing:0;')
 head = head.replace('qui té una empresa i no té departament digital', 'qui té un negoci i no té departament digital')
-head = head.replace('.emoloc{font-weight:800;letter-spacing:0;', '.emoloc{font-weight:900;letter-spacing:0;').replace('.emoloc{font-weight:900;letter-spacing:0;', '.emoloc{font-weight:1000;letter-spacing:0;').replace('9..40,800;9..40,1000&display', '9..40,800;9..40,900;9..40,1000&display')
+head = head.replace('.emoloc{font-weight:800;letter-spacing:0;', '.emoloc{font-weight:900;letter-spacing:0;').replace('.emoloc{font-weight:900;letter-spacing:0;', '.emoloc{font-weight:1000;letter-spacing:0;').replace('.emoloc{font-weight:1000;letter-spacing:0;', '.emoloc{font-weight:1000;letter-spacing:-.015em;').replace('9..40,800;9..40,1000&display', '9..40,800;9..40,900;9..40,1000&display')
 tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><li>Ca / es</li></ul>', '', tail)
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
 tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
