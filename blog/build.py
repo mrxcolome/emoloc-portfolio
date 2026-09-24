@@ -64,7 +64,7 @@ lst = '''  <section class="list" id="list">
 def art(a):
     others = [b for b in arts if b is not a][:3]
     return '''  <section class="art" data-slug="%s">
-    <p><a class="link" href="#">Tots els articles</a></p>
+    <p><a class="btn sec" href="#"><span aria-hidden="true">←</span> Tots els articles</a></p>
     <header style="margin-top:40px"><p class="petit suau">%s · %s</p><h1 class="titular" style="margin-top:12px">%s</h1><p class="lead">%s</p><div class="meta text negreta suau"><span>Xavi Colomé</span><span>·</span><span>%d minuts de lectura</span><span>·</span><span>Ca / es</span></div></header>
     <div class="hero"><img src="%s" alt=""></div>
     <div class="body">
@@ -99,7 +99,9 @@ head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px
 tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
 tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
 head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
-head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}').replace('.text{font-size:20px;line-height:1.55;font-weight:400}', '.text{font-size:20px;line-height:1.6;font-weight:400}')  # text sempre en tinta, Text 20/1.6
+head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}').replace('.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--muted)}', '.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4}')
+if '.btn.sec{' not in head:
+    head = head.replace('  .link{font-weight:600}\n', '  .link{font-weight:600}\n  .btn.sec{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)} .btn.sec:hover{box-shadow:inset 0 0 0 1px var(--ink)}\n')  # botó secundari, com a la portada.replace('.text{font-size:20px;line-height:1.55;font-weight:400}', '.text{font-size:20px;line-height:1.6;font-weight:400}')  # text sempre en tinta, Text 20/1.6
 # head meta (idempotent)
 if '<link rel="canonical"' not in head:
     head = head.replace('<title>emoloc blog</title>', """<title>Blog · emoloc</title>
