@@ -53,7 +53,7 @@ def card(a, full=True):
 
 filters = ''.join('<button%s data-f="%s">%s</button>' % (' class="on"' if i == 0 else '', f, f) for i, f in enumerate(['Tots', 'Presència', 'Gestió', 'Venda', 'Comunicació']))
 lst = '''  <section class="list" id="list">
-    <div class="head"><h1 class="titular">Blog</h1><p class="text suau">Articles curts per a qui té un negoci i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.</p></div>
+    <div class="head"><h1 class="titular">Blog</h1><p class="text">Articles curts per entendre què pot aportar la transformació digital al teu negoci.</p></div>
     <div class="filters" id="filters">%s</div>
     <div class="grid" id="grid">
       %s
@@ -70,7 +70,7 @@ def art(a):
     <div class="body">
 %s
     </div>
-    <div class="cta"><div><p class="subtitular" style="font-size:28px">Tens un projecte al cap?</p><p class="text suau" style="margin-top:8px">La primera conversa és sense compromís i serveix per saber si tinc sentit per al que necessites.</p></div><a class="btn" href="../#contacte">Parlem</a></div>
+    <div class="cta"><div><p class="subtitular" style="font-size:28px">Creus que et podem ajudar?</p><p class="text" style="margin-top:8px">La primera conversa és sense compromís i serveix per veure si t'hi podem ajudar.</p></div><a class="btn" href="../#contacte">Parlem</a></div>
     <div class="more"><p class="subtitular" style="font-size:28px;margin-bottom:8px">Més articles</p><div class="grid">
         %s
     </div></div>
@@ -98,15 +98,17 @@ tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
 tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
 tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
+head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
+head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}').replace('.text{font-size:20px;line-height:1.55;font-weight:400}', '.text{font-size:20px;line-height:1.6;font-weight:400}')  # text sempre en tinta, Text 20/1.6
 # head meta (idempotent)
 if '<link rel="canonical"' not in head:
     head = head.replace('<title>emoloc blog</title>', """<title>Blog · emoloc</title>
-<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">
+<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">
 <link rel="canonical" href="https://emoloc.com/blog/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="emoloc">
 <meta property="og:title" content="Blog · emoloc">
-<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">
+<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">
 <meta property="og:url" content="https://emoloc.com/blog/">
 <meta property="og:image" content="https://emoloc.com/assets/og.jpg">
 <meta property="og:locale" content="ca_ES">
