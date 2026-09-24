@@ -84,12 +84,11 @@ head, rest = cur.split('<main class="wrap">', 1)
 _, tail = rest.split('</main>', 1)
 # nav + footer: es tornen a escriure sempre
 NAV = ('<nav class="topnav"><a class="emoloc" href="../"><b>.</b>emoloc</a><ul>'
-       '<li><a href="../#zero">Inici</a></li><li><a href="../#quefem">Serveis</a></li>'
-       '<li><a href="../#presencia">Com ho fem</a></li><li><a href="../#qui">Sobre mi</a></li>'
+       '<li><a href="../#zero">Inici</a></li><li><a href="../#quefem">Com ho fem</a></li><li><a href="../#qui">Sobre mi</a></li>'
        '<li><a href="../#projectes">Projectes</a></li><li class="on"><a href="#">Blog</a></li>'
        '<li><a href="../#contacte">Contacte</a></li></ul><a class="parlem" href="../#contacte">Parlem</a></nav>')
 head = re.sub(r'<nav class="topnav">.*?</nav>', NAV, head, flags=re.S)
-tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Com ho fem</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>', tail, count=1, flags=re.S)
+tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="text negreta"><li>Inici</li><li>Com ho fem</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>', tail, count=1, flags=re.S)
 head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.topnav ul .on{color:var(--accent)}')
 head = head.replace('.link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}', '.link{font-weight:600}')
 head = head.replace('.emoloc{font-weight:800;letter-spacing:.04em;', '.emoloc{font-weight:800;letter-spacing:0;').replace('.emoloc{font-weight:800;letter-spacing:.01em;', '.emoloc{font-weight:800;letter-spacing:0;')
