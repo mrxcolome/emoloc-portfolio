@@ -343,96 +343,68 @@
 
   /* ---------- passos estàtics: què fem, qui ---------- */
   .pstep .stage{display:grid;align-content:center;padding:96px var(--edge) 48px}
-  .qf{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
-  .qf-copy .text{margin-top:20px}
-  .qf-tabs{display:grid;gap:6px;margin-top:32px}
-  .qf-tab{position:relative;display:flex;align-items:center;gap:16px;padding:14px 16px;border:0;border-radius:var(--r-s);background:transparent;font:inherit;font-size:20px;font-weight:600;color:var(--muted);text-align:left;cursor:pointer;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease);overflow:hidden}
-  .qf-tab .n{font-variant-numeric:tabular-nums;font-size:14px;font-weight:600;color:var(--muted);width:24px}
-  .qf-tab i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent)}
-  .qf-tab:hover{background:var(--surface);color:var(--ink)}
-  .qf-tab.on{background:var(--surface);color:var(--ink)}
-  .qf-tab.on .n{color:var(--accent)}
-  .qf-tab.on i{animation:fill 5s linear forwards}
-  .qf-tab.on.hold i{animation:none;width:100%}
-  @keyframes fill{to{width:100%}}
-  .qf-panel{position:relative;min-height:520px}
-  .qf-pane{position:absolute;inset:0;opacity:0;pointer-events:none}
-  .qf-pane.on{opacity:1;pointer-events:auto}
-  .qf-pane h3{font-size:clamp(24px,2.4vw,30px);font-weight:1000;letter-spacing:-.015em;line-height:1.1;margin-top:28px}
-  .qf-pane .text{margin-top:10px}
-  .qf-list{margin-top:18px;display:grid;gap:8px}
-  .qf-list li{position:relative;padding-left:24px;font-size:20px;line-height:1.4}
-  .qf-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-  /* vinyetes */
-  .vig{position:relative;height:260px;border-radius:var(--r-m);background:var(--surface);padding:16px;overflow:hidden;font-family:var(--font)}
+  /* què fem: quatre passos */
+  .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:center}
+  .qs-head{grid-area:head;align-self:end} .qs-body{grid-area:body;align-self:start} .qs .vig{grid-area:vig}
+  .qs-prog{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+  .qs-prog i{display:block;width:120px;height:2px;background:var(--line);position:relative;overflow:hidden} .qs-prog i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p);background:var(--accent)}
+  .qs-claim{margin-top:22px;font-size:20px;line-height:1.4;font-weight:600;color:var(--muted);max-width:34ch}
+  .qs h2{margin-top:18px}
+  .qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+  .qs-list li{position:relative;padding-left:26px;font-size:20px;line-height:1.4}
+  .qs-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  .qs-res{margin-top:28px;font-size:clamp(22px,2vw,26px);font-weight:1000;letter-spacing:-.015em;line-height:1.2} .qs-res b{color:var(--accent);font-weight:1000}
+  .vig{position:relative;height:min(56vh,480px);border-radius:var(--r-m);background:var(--surface);padding:18px;overflow:hidden;font-family:var(--font)}
   .vig img{display:block;width:100%;height:100%;object-fit:cover}
-  /* presència: logotips de marques inventades */
-  .vig-p .logos{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;height:100%}
-  .vig-p .lg{position:relative;display:flex;align-items:center;justify-content:center;gap:4px;background:#fff;border-radius:12px;font-size:22px;line-height:1;transition:box-shadow var(--t-base) var(--ease)}
-  .vig-p .lg.on{box-shadow:0 0 0 2px var(--accent),0 12px 30px rgba(27,24,21,.12)}
-  .vig-p .l1{font-family:"Syne",var(--font);font-weight:800;color:#1f4d3a} .vig-p .l1 i{width:9px;height:9px;background:var(--accent);margin-left:2px}
-  .vig-p .l2{font-family:var(--fb-serif);font-style:italic;font-weight:500;color:#7a1f2b;font-size:19px}
-  .vig-p .l3{font-weight:1000;letter-spacing:.14em;color:#111;padding-left:.14em} .vig-p .l3 em,.vig-p .l6 em{font-style:normal;color:var(--accent)}
-  .vig-p .l4{font-family:"Caveat",cursive;font-weight:600;font-size:34px;color:#1c4fa0}
-  .vig-p .l5{font-weight:600;color:#0f7c7c;letter-spacing:-.02em;flex-direction:column;gap:0} .vig-p .l5 small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#0f7c7c;opacity:.8}
-  .vig-p .l6{font-weight:800;letter-spacing:.22em;color:#1a2440;font-size:18px;padding-left:.22em}
-  .vig-p .chips{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#fff;box-shadow:0 8px 24px rgba(27,24,21,.14);font-size:12px;font-weight:600;color:var(--muted);opacity:0}
-  .vig-p .chips i{width:12px;height:12px;border-radius:50%;background:var(--c,#ccc)}
-  /* gestió: panell viu */
-  .vig-g{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
-  .vig-g .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-  .vig-g .kpis div{background:#fff;border-radius:10px;padding:10px 12px} .vig-g .kpis b{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .vig-g .kpis span{font-size:11px;color:var(--muted)}
-  .vig-g .feed{position:relative;overflow:hidden;background:#fff;border-radius:10px;padding:6px 8px}
-  .vig-g .fr{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:7px 6px;border-bottom:1px solid var(--surface);font-size:13px;font-variant-numeric:tabular-nums}
-  .vig-g .fr em{font-style:normal;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px} .vig-g .fr .ok{background:#e3f4e8;color:#1e6b3a} .vig-g .fr .w{background:var(--accent-soft);color:#8a3c0c} .vig-g .fr .new{background:var(--ink);color:#fff}
-  .vig-g .prog{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:12px;font-weight:600;color:var(--muted)}
-  .vig-g .prog i{display:block;height:8px;border-radius:999px;background:#fff;overflow:hidden} .vig-g .prog b{display:block;height:100%;background:var(--accent)}
-  /* venda: botiga */
-  .vig-v{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
-  .vig-v .shop-bar{display:flex;justify-content:space-between;align-items:center;font-weight:1000;letter-spacing:.12em;font-size:16px} .vig-v .shop-bar em{font-style:normal;color:var(--accent)}
-  .vig-v .cart{position:relative;font-size:18px;letter-spacing:0} .vig-v .cart i{position:absolute;top:-6px;right:-10px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:800;font-style:normal;display:grid;place-items:center}
-  .vig-v .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;min-height:0}
-  .vig-v .pc{background:#fff;border-radius:10px;padding:8px;display:grid;grid-template-rows:1fr auto auto auto;gap:3px;font-size:12px;min-height:0}
-  .vig-v .pc img{border-radius:6px;min-height:0} .vig-v .pc span{font-weight:600} .vig-v .pc small{font-size:12px;color:var(--muted)}
-  .vig-v .pc button{font:inherit;font-size:11px;font-weight:600;padding:5px 0;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);transition:all var(--t-fast) var(--ease)}
-  .vig-v .pc button.done{background:var(--ink);color:#fff}
-  .vig-v .checkout{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:10px;padding:8px 10px;font-size:12px;color:var(--muted)} .vig-v .checkout b{font-weight:600;color:var(--ink)} .vig-v .buy{padding:6px 14px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:600;font-size:12px}
-  .vig-v .fly{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none}
-  /* comunicació: anuncis */
-  .vig-c{display:grid;grid-template-columns:1.15fr .62fr;grid-template-rows:1fr auto;gap:10px}
-  .vig-c .ad{background:#fff;border-radius:12px;overflow:hidden;position:relative;min-height:0}
-  .vig-c .feed{grid-column:1;grid-row:1;display:grid;grid-template-rows:auto 1fr auto auto}
-  .vig-c .hd{display:flex;align-items:center;gap:8px;padding:7px 10px;font-size:11px;line-height:1.1} .vig-c .hd i{width:20px;height:20px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)} .vig-c .hd b{font-weight:600} .vig-c .hd small{display:block;color:#737373;font-size:10px} .vig-c .hd span{margin-left:auto;color:#737373}
-  .vig-c .feed .img{min-height:0} .vig-c .feed .img img{object-position:center 70%}
-  .vig-c .cta{display:flex;justify-content:space-between;padding:7px 10px;background:#0095f6;color:#fff;font-size:12px;font-weight:600}
-  .vig-c .ft{padding:6px 10px;font-size:12px}
-  .vig-c .story{grid-column:2;grid-row:1/3} .vig-c .story img{position:absolute;inset:0;object-position:center}
-  .vig-c .st-hd{position:absolute;left:8px;top:8px;display:flex;align-items:center;gap:6px;color:#fff;font-size:11px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.5)} .vig-c .st-hd i{width:16px;height:16px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)}
-  .vig-c .st-cta{position:absolute;left:8px;right:8px;bottom:8px;padding:7px 0;border-radius:999px;background:#fff;color:#111;font-size:11px;font-weight:600;text-align:center}
-  .vig-c .metrics{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);gap:6px} .vig-c .metrics div{background:#fff;border-radius:8px;padding:6px 8px} .vig-c .metrics b{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .vig-c .metrics span{font-size:10px;color:var(--muted)}
+  .pop{opacity:0}
+  /* v1: la mateixa imatge a tot arreu */
+  .v1{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr auto;gap:12px}
+  .v1 .srf{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(27,24,21,.06);display:grid;grid-template-rows:auto auto 1fr auto;min-height:0}
+  .v1 .web{grid-row:1/3} .v1 .bar{display:flex;align-items:center;gap:5px;padding:8px 10px;background:#f3efe9;font-size:10px;color:var(--muted)} .v1 .bar i{width:7px;height:7px;border-radius:50%;background:#ddd6cc} .v1 .bar span{margin-left:6px;background:#fff;border-radius:6px;padding:2px 8px}
+  .v1 .hd{display:flex;justify-content:space-between;align-items:center;padding:10px 12px 6px} .v1 .brand{font-weight:900;letter-spacing:.06em;font-size:16px} .v1 .brand em{font-style:normal;color:var(--accent)} .v1 .nav{font-size:9px;color:var(--muted)}
+  .v1 .img{min-height:0;overflow:hidden} .v1 .tx{padding:8px 12px 10px;font-size:11px;line-height:1.3;color:var(--ink)}
+  .v1 .from{display:flex;align-items:center;gap:8px;padding:10px 12px 6px;font-size:11px} .v1 .from i{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;font-size:11px;flex:none} .v1 .from b{font-weight:800;letter-spacing:.04em} .v1 .from small{display:block;color:var(--muted);font-size:9px}
+  .v1 .mail .from>div{display:grid} .v1 .tag{grid-column:1/-1;justify-self:start;background:var(--ink);color:#fff;font-size:11px;font-weight:600;padding:7px 12px;border-radius:999px}
+  /* v2: tasques que es fan soles */
+  .v2 .panel{height:100%;background:#fff;border-radius:12px;padding:14px 16px;display:grid;grid-template-rows:auto 1fr auto;gap:10px;box-shadow:0 8px 30px rgba(27,24,21,.06)}
+  .v2 .ph{display:flex;justify-content:space-between;align-items:baseline;font-size:13px} .v2 .ph b{font-weight:800} .v2 .ph span{color:var(--muted)} .v2 .ph span b{color:var(--accent);font-variant-numeric:tabular-nums}
+  .v2 .tasks{list-style:none;margin:0;padding:0;display:grid;gap:8px;align-content:start;overflow:hidden}
+  .v2 .tasks li{display:flex;align-items:center;gap:10px;font-size:12.5px;line-height:1.25;padding:9px 10px;border-radius:9px;background:var(--surface);opacity:0}
+  .v2 .tasks i{width:18px;height:18px;border-radius:50%;border:2px solid #d7d0c6;flex:none;position:relative;background:#fff} .v2 .tasks li.ok i{background:var(--accent);border-color:var(--accent)} .v2 .tasks li.ok i::after{content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)} .v2 .tasks li.ok span{color:var(--muted)}
+  .v2 .pf{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--muted)} .v2 .pf b{font-size:26px;font-weight:1000;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+  /* v3: Google, mapa, ChatGPT i retorn */
+  .v3{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
+  .v3 .srch{background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 30px rgba(27,24,21,.06)} .v3 .box{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;min-height:32px} .v3 .box i{width:12px;height:12px;border:2px solid #9a9088;border-radius:50%;position:relative;flex:none} .v3 .box i::after{content:"";position:absolute;width:5px;height:2px;background:#9a9088;right:-4px;bottom:-2px;transform:rotate(45deg)} .v3 .q::after{content:"|";color:var(--accent);animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .v3 .rs{display:grid;gap:6px;margin-top:10px} .v3 .r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px;border-radius:9px;font-size:12px} .v3 .r b{display:block;font-weight:700} .v3 .r small{color:var(--muted);font-size:10px} .v3 .r.top{background:#fff4ec;box-shadow:inset 0 0 0 1.5px var(--accent)}
+  .v3 .map{width:64px;height:40px;border-radius:7px;flex:none;background:linear-gradient(135deg,#e9f1e4,#dfe8f5);position:relative;overflow:hidden} .v3 .map::before{content:"";position:absolute;inset:0;background:linear-gradient(#fff 1px,transparent 1px) 0 0/100% 9px,linear-gradient(90deg,#fff 1px,transparent 1px) 0 0/11px 100%;opacity:.8} .v3 .map i{position:absolute;left:28px;top:9px;width:10px;height:10px;background:var(--accent);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+  .v3 .gpt{background:#fff;border-radius:12px;padding:12px;display:grid;gap:8px;align-content:start;box-shadow:0 8px 30px rgba(27,24,21,.06);min-height:0} .v3 .u{justify-self:end;background:var(--surface);border-radius:12px 12px 2px 12px;padding:8px 11px;font-size:12px;max-width:80%} .v3 .a{display:flex;gap:8px;font-size:12px;line-height:1.35;max-width:92%} .v3 .a i{width:18px;height:18px;border-radius:50%;background:var(--ink);flex:none;margin-top:2px}
+  .v3 .roi{display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:12px} .v3 .roi em{font-style:normal;color:var(--accent)} .v3 .roi b{font-size:22px;font-weight:1000;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
+  /* v4: fidelitzar */
+  .v4{display:grid;grid-template-rows:auto 1fr auto auto;gap:10px}
+  .v4 .cli{display:flex;gap:10px;align-items:center;background:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 8px 30px rgba(27,24,21,.06)} .v4 .cli i{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;flex:none} .v4 .cli b{display:block;font-size:13px} .v4 .cli small{display:block;font-size:10px;color:var(--muted);line-height:1.35}
+  .v4 .wa{background:#e9f4e6;border-radius:12px;padding:12px;display:grid;gap:8px;align-content:start;min-height:0;overflow:hidden} .v4 .m{max-width:86%;padding:8px 11px;border-radius:12px;font-size:12px;line-height:1.35;background:#fff} .v4 .m.out{justify-self:start;background:#dcf5c8;border-top-left-radius:2px} .v4 .m.in{justify-self:end;border-top-right-radius:2px}
+  .v4 .rev{background:#fff;border-radius:12px;padding:10px 12px;font-size:12px;display:grid;gap:3px;box-shadow:0 8px 30px rgba(27,24,21,.06)} .v4 .rev b{color:var(--accent);letter-spacing:.1em;font-size:13px} .v4 .rev small{color:var(--muted);font-size:10px}
+  .v4 .kpi{display:flex;justify-content:space-between;align-items:baseline;background:var(--ink);color:#fff;border-radius:12px;padding:10px 14px;font-size:12px} .v4 .kpi b{font-size:22px;font-weight:1000;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
   /* qui */
   .qui{display:grid;grid-template-columns:auto minmax(0,640px);gap:clamp(32px,5vw,72px);align-items:center;justify-content:start}
   .qui .vidbox{aspect-ratio:9/16;height:min(calc(100svh - 200px),620px);width:auto;border-radius:var(--r-m);overflow:hidden;background:var(--surface)} .qui video{width:100%;height:100%;object-fit:cover}
   .qui-copy .text{margin-top:16px}
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
-  .qf-bridge{max-width:520px} .qf-bridge-d{margin-top:36px} .qf-bridge-m{display:none}
   @media (max-width:820px){
     .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
-    .qf{grid-template-columns:1fr;gap:20px}
-    .qf-copy .text{display:none}
-    .qf-tabs{grid-template-columns:1fr 1fr;gap:6px;margin-top:36px}
-    .qf-tab{padding:10px 12px;font-size:17px}
-    .qf-panel{min-height:0;height:calc(100svh - 326px)}
-    .qf-pane h3{font-size:24px;margin-top:16px} .qf-pane .text{display:none} .qf-list{margin-top:12px;gap:6px} .qf-list li{font-size:17px}
-    .vig{height:230px;padding:12px}
-    .vig-p .lg{font-size:17px} .vig-p .l4{font-size:26px} .vig-p .l2{font-size:15px} .vig-p .chips{display:none}
-    .vig-g .kpis{grid-template-columns:repeat(2,1fr);gap:6px} .vig-g .kpis div{padding:6px 10px} .vig-g .kpis b{font-size:16px} .vig-g .fr:nth-child(n+3){display:none}
-    .vig-v .pc{font-size:11px} .vig-v .pc small{display:none}
-    .vig-c{grid-template-columns:1fr .58fr} .vig-c .metrics{grid-template-columns:repeat(2,1fr)} .vig-c .metrics div:nth-child(n+3){display:none}
+    .qs-grid{grid-template-columns:1fr;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start}
+    .qs-head,.qs-body{align-self:auto} .qs-prog i{width:80px} .qs-claim{margin-top:10px;font-size:16px;line-height:1.3} .qs h2{margin-top:10px}
+    .qs-list{margin-top:0;gap:8px} .qs-list li{font-size:17px;line-height:1.3;padding-left:22px} .qs-list li::before{width:8px;height:8px;top:.5em}
+    .qs-res{margin-top:14px;font-size:20px}
+    .vig{height:min(36svh,300px);padding:12px}
+    .v1{gap:8px} .v1 .tx,.v1 .nav{display:none} .v1 .tag{font-size:10px;padding:5px 10px}
+    .v2 .tasks li{font-size:11.5px;padding:7px 9px} .v2 .tasks li:nth-child(n+5){display:none} .v2 .pf b{font-size:22px}
+    .v3{gap:8px} .v3 .rs .r:not(.top){display:none} .v3 .gpt{padding:10px} .v3 .roi{padding:8px 12px}
+    .v4 .cli small:last-child{display:none} .v4 .rev{display:none}
     .qui{grid-template-columns:1fr;gap:18px;justify-items:start} .qui-copy .text{margin-top:22px}
     .qui .vidbox{aspect-ratio:9/16;height:min(44svh,380px);width:auto}
     .qui-copy .suau{display:none}
-    .qf-bridge-d{display:none} .qf-bridge-m{display:block;margin-top:4px;font-size:20px}
   }
 
   /* ---------- després ---------- */
@@ -572,67 +544,116 @@
   </div>
 </section>
 
-<!-- ============ què fem ============ -->
-<section class="pstep" id="quefem">
+<!-- ============ què fem: quatre passos ============ -->
+<section class="pstep qs" id="quefem">
   <div class="stage">
-    <div class="qf">
-      <div class="qf-copy">
-        <h2 class="subtitular">Què fem</h2>
-        <p class="text suau">Un negoci no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix. Ho ordeno en quatre pilars.</p>
-        <div class="qf-tabs" id="qftabs">
-          <button class="qf-tab on" data-i="0"><span class="n">01</span><span class="t">Presència</span><i></i></button>
-          <button class="qf-tab" data-i="1"><span class="n">02</span><span class="t">Gestió</span><i></i></button>
-          <button class="qf-tab" data-i="2"><span class="n">03</span><span class="t">Venda</span><i></i></button>
-          <button class="qf-tab" data-i="3"><span class="n">04</span><span class="t">Comunicació</span><i></i></button>
-          </div>
-        <p class="bridge qf-bridge qf-bridge-d">Per veure com ho fem, agafem un forn de barri: el Forn Baltà.</p>
+    <div class="qs-grid">
+      <div class="qs-head">
+        <p class="qs-prog"><span>01 / 04</span><i style="--p:25%"></i></p>
+      <p class="qs-claim">Fem que el teu negoci funcioni millor gràcies a la transformació digital.</p>
+        <h2 class="subtitular">Una presència digital coherent.</h2>
       </div>
-      <div class="qf-panel" id="qfpanel">
-        <div class="qf-pane on" data-i="0">
-          <div class="vig vig-p"><div class="logos">
-            <span class="lg l1"><b>Terral</b><i></i></span>
-            <span class="lg l2"><b>Bruna &amp; Fills</b></span>
-            <span class="lg l3"><b>KŌA</b><em>.</em></span>
-            <span class="lg l4"><b>Vela</b></span>
-            <span class="lg l5"><b>atlas</b><small>fisio</small></span>
-            <span class="lg l6"><b>NORD</b><em>.</em></span>
-          </div><div class="chips"><i></i><i></i><i></i><span>Identitat · guia d'estils</span></div></div>
-          <h3>La teva marca en digital</h3>
-          <p class="text suau">La web, la identitat, el contingut. Que qui et busca trobi un negoci viu i entengui en deu segons què fas.</p>
-          <ul class="qf-list"><li>Web a mida, pensada primer per al mòbil</li><li>En català, castellà o les llengües dels teus clients</li><li>Ressenyes de Google, WhatsApp, formulari i mapa integrats</li></ul>
-        </div>
-        <div class="qf-pane" data-i="1">
-          <div class="vig vig-g">
-            <div class="kpis"><div><b data-k="alumnes">214</b><span>alumnes</span></div><div><b data-k="rebuts">188</b><span>rebuts emesos</span></div><div><b data-k="import">6.420 €</b><span>aquest mes</span></div><div><b data-k="pend">3</b><span>pendents</span></div></div>
-            <div class="feed"><div class="fr"><span>#1041 · Joan P.</span><span>86 €</span><em class="ok">cobrat</em></div><div class="fr"><span>#1040 · Núria S.</span><span>38 €</span><em class="ok">cobrat</em></div><div class="fr"><span>#1039 · Marta R.</span><span>64 €</span><em class="w">pendent</em></div></div>
-            <div class="prog"><span>Cobrat</span><i><b style="width:92%"></b></i><span data-k="pct">92 %</span></div>
-          </div>
-          <h3>Les eines que porten el negoci per dins</h3>
-          <p class="text suau">Alumnes, clients, quotes, rebuts, horaris. Fetes a mida quan l'excel ja no dona més de si.</p>
-          <ul class="qf-list"><li>Els mateixos camps que el teu excel, amb els càlculs fets</li><li>Rebuts, remeses bancàries i estat de cobrament</li><li>Usuaris amb rols: qui edita i qui només consulta</li></ul>
-        </div>
-        <div class="qf-pane" data-i="2">
-          <div class="vig vig-v">
-            <div class="shop-bar"><b>KŌA<em>.</em></b><span class="cart">🛒<i data-k="badge">0</i></span></div>
-            <div class="grid3"><div class="pc"><img src="assets/sneaker.jpg" alt=""><span>Sneaker Sorra</span><small>89 €</small><button>Afegir</button></div><div class="pc"><img src="assets/backpack.jpg" alt=""><span>Motxilla Roure</span><small>129 €</small><button>Afegir</button></div><div class="pc"><img src="assets/sunglasses.jpg" alt=""><span>Ulleres Cala</span><small>69 €</small><button>Afegir</button></div></div>
-            <div class="checkout"><span>Cistella · <b data-k="n">0</b> articles · <b data-k="tot">0 €</b></span><b class="buy">Comprar</b></div>
-          </div>
-          <h3>Els canals que facturen</h3>
-          <p class="text suau">Botiga en línia, membresies, formació per subscripció. Amb els pagaments, la logística i l'atenció al client ben lligats.</p>
-          <ul class="qf-list"><li>Botiga en línia: catàleg, pagaments i logística</li><li>Plataformes de membresia i formació per subscripció</li><li>Quadre de comandament: trànsit, conversió, tiquet mitjà</li></ul>
-        </div>
-        <div class="qf-pane" data-i="3">
-          <div class="vig vig-c">
-            <div class="ad feed"><div class="hd"><i></i><div><b>koa.shop</b><small>Patrocinat</small></div><span>···</span></div><div class="img"><img src="assets/ad.jpg" alt=""></div><div class="cta"><span>Compra ara</span><span>›</span></div><div class="ft">♡ 1.284 &nbsp; ◯ 96 &nbsp; ➤</div></div>
-            <div class="ad story"><img src="assets/sneaker.jpg" alt=""><div class="st-hd"><i></i><b>koa.shop</b></div><div class="st-cta">Més informació</div></div>
-            <div class="metrics"><div><b data-k="abast">48.200</b><span>abast</span></div><div><b data-k="clics">1.540</b><span>clics</span></div><div><b data-k="ctr">3,2 %</b><span>CTR</span></div><div><b data-k="cpa">4,1 €</b><span>per venda</span></div></div>
-          </div>
-          <h3>Inversió en marca i en resultats</h3>
-          <p class="text suau">Google, Meta, email, i que et trobin també ChatGPT i Gemini. Amb pla, pressupost i mesura.</p>
-          <ul class="qf-list"><li>Campanyes a Google i Meta, email i automatitzacions</li><li>SEO i fitxa de Google Business</li><li>Seguiment mensual amb xifres que s'entenen</li></ul>
+      <div class="vig v1">
+        <div class="srf web"><div class="bar"><i></i><i></i><i></i><span>koa.shop</span></div><div class="hd"><b class="brand pop">KŌA<em>.</em></b><span class="nav pop">Botiga · Nosaltres · Contacte</span></div><div class="img pop"><img src="assets/sneaker.jpg" alt=""></div><p class="tx pop">Calçat fet a mà a Mataró. Des de 1998.</p></div>
+        <div class="srf mail"><div class="from"><i class="pop">K</i><div><b class="pop">KŌA.</b><small class="pop">Novetats de tardor · avui</small></div></div><div class="img pop"><img src="assets/backpack.jpg" alt=""></div><p class="tx pop">Ha arribat la motxilla Roure.</p></div>
+        <div class="srf post"><div class="from"><i class="pop">K</i><b class="pop">koa.shop</b></div><div class="img pop"><img src="assets/sunglasses.jpg" alt=""></div><p class="tx pop">♡ 312 · Ulleres Cala, de nou en estoc</p></div>
+        <div class="tag pop">Mateixa imatge, mateix to, a tot arreu</div>
+      </div>
+      <div class="qs-body">
+        <ul class="qs-list">
+        <li>Una imatge i un to propis, iguals a tot arreu.</li>
+        <li>Continguts que expliquen què fas i per què tu.</li>
+        <li>Els canals on ser-hi, ben triats: web, xarxes, correu.</li>
+        </ul>
+        <p class="qs-res"><b>Resultat:</b> qui et mira, confia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pstep qs" id="quefem-2">
+  <div class="stage">
+    <div class="qs-grid">
+      <div class="qs-head">
+        <p class="qs-prog"><span>02 / 04</span><i style="--p:50%"></i></p>
+        <h2 class="subtitular">Més eficiència: els processos mecànics, automatitzats.</h2>
+      </div>
+      <div class="vig v2">
+        <div class="panel"><div class="ph"><b>Fet sol, avui</b><span><b data-k="n">0</b> tasques</span></div>
+          <ul class="tasks">
+            <li><i></i><span>Rebuts de setembre enviats a 214 clients</span></li>
+            <li><i></i><span>Recordatori de cita a 18 persones per demà</span></li>
+            <li><i></i><span>Comanda setmanal al proveïdor feta</span></li>
+            <li><i></i><span>Avís d'enviament a 9 comandes en línia</span></li>
+            <li><i></i><span>Factura 1042 emesa i enviada</span></li>
+            <li><i></i><span>Fitxa de client actualitzada després de la compra</span></li>
+          </ul>
+          <div class="pf"><span>Hores estalviades aquest mes</span><b data-k="h">0</b></div>
         </div>
       </div>
-      <p class="bridge qf-bridge qf-bridge-m">Per veure com ho fem, agafem un forn de barri: el Forn Baltà.</p>
+      <div class="qs-body">
+        <ul class="qs-list">
+        <li>Rebuts, avisos, comandes i recordatoris es fan sols.</li>
+        <li>Tota la informació en un sol lloc, sense excels duplicats.</li>
+        <li>Si vens en línia, comanda, pagament i enviament sense feina afegida.</li>
+        </ul>
+        <p class="qs-res"><b>Resultat:</b> temps i errors que t'estalvies cada mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pstep qs" id="quefem-3">
+  <div class="stage">
+    <div class="qs-grid">
+      <div class="qs-head">
+        <p class="qs-prog"><span>03 / 04</span><i style="--p:75%"></i></p>
+        <h2 class="subtitular">Que et trobin: inversió que torna.</h2>
+      </div>
+      <div class="vig v3">
+        <div class="srch"><div class="box"><i></i><span class="q"></span></div>
+          <div class="rs">
+            <div class="r top pop"><div><b>atlas fisio · Gràcia</b><small>4,9 ★ (212) · Obert fins a les 20 h</small></div><div class="map"><i></i></div></div>
+            <div class="r pop"><b>Centre de fisioteràpia …</b><small>4,2 ★ (38)</small></div>
+            <div class="r pop"><b>Clínica …</b><small>3,9 ★ (61)</small></div>
+          </div>
+        </div>
+        <div class="gpt"><div class="u pop">Quin fisio em recomanes a Gràcia?</div><div class="a pop"><i></i><span class="ans"></span></div></div>
+        <div class="roi pop"><span>1 € en anuncis</span><em>→</em><b data-k="roi">1,0 €</b><span>en vendes</span></div>
+      </div>
+      <div class="qs-body">
+        <ul class="qs-list">
+        <li>Sortir a Google i al mapa quan busquen el que fas.</li>
+        <li>Sortir també quan ho preguntin a ChatGPT.</li>
+        <li>Publicitat com a inversió: cada euro mesurat i que torni multiplicat.</li>
+        </ul>
+        <p class="qs-res"><b>Resultat:</b> més clients nous, i saber què t'ha costat cadascun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pstep qs" id="quefem-4">
+  <div class="stage">
+    <div class="qs-grid">
+      <div class="qs-head">
+        <p class="qs-prog"><span>04 / 04</span><i style="--p:100%"></i></p>
+        <h2 class="subtitular">Fidelitzar els clients actuals.</h2>
+      </div>
+      <div class="vig v4">
+        <div class="cli"><i>M</i><div><b>Marta R.</b><small>Clienta des de 2023 · última compra fa 3 setmanes</small><small>Li agraden: ulleres, edicions limitades</small></div></div>
+        <div class="wa"><div class="m out pop">Hola Marta! Han arribat les ulleres Cala noves, com les que et van agradar. Les tens amb un 10 % fins diumenge.</div><div class="m in pop">Genial, passo dissabte!</div></div>
+        <div class="rev pop"><b>★★★★★</b><span>"Sempre m'avisen del que m'interessa, mai del que no."</span><small>Marta R. · Google</small></div>
+        <div class="kpi pop"><span>Clients que repeteixen</span><b data-k="rep">41 %</b></div>
+      </div>
+      <div class="qs-body">
+        <ul class="qs-list">
+        <li>Conèixer cada client: què compra, quan i què li agrada.</li>
+        <li>Parlar-hi quan toca: novetats, ofertes, recordatoris, pel canal que fa servir.</li>
+        <li>Premiar que repeteixin: avantatges, atenció ràpida, escoltar el que diuen.</li>
+        </ul>
+        <p class="qs-res"><b>Resultat:</b> clients que repeteixen i et recomanen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -998,7 +1019,8 @@
   }
 
   const scenes = [...document.querySelectorAll('.scene')];
-  const steps = [document.getElementById('zero'), document.getElementById('quefem'), ...scenes, document.getElementById('qui'), document.getElementById('projectes'), document.getElementById('blog')];
+  const qsteps = [...document.querySelectorAll('.qs')];
+  const steps = [document.getElementById('zero'), ...qsteps, ...scenes, document.getElementById('qui'), document.getElementById('projectes'), document.getElementById('blog')];
   const free = document.getElementById('contacte');
   const mm = gsap.matchMedia();
   mm.add({ mobile:'(max-width: 820px)', desktop:'(min-width: 821px)' }, (ctx) => {
@@ -1080,87 +1102,75 @@
       scene._play = () => { scene.querySelectorAll('video[data-src]').forEach(v => { if (!v.src) { v.src = v.dataset.src; v.load(); } v.play().catch(()=>{}); }); tl.restart(); };
       scene._reset = () => { idle.splice(0).forEach(a => a.kill()); if (dev2) gsap.set(dev2, { clearProps:'y' }); if (dev1) gsap.set(dev1, { clearProps:'y' }); tl.pause(0); if (loop) loop.pause(0); gsap.set(nav, { color:INK }); };
     });
-    // pas "què fem": pilars que s'encenen sols i es poden triar
-    (function(){
-      const sec = document.getElementById('quefem');
-      const tabs = [...sec.querySelectorAll('.qf-tab')], panes = [...sec.querySelectorAll('.qf-pane')];
-      let cur = -1, timer = null, hold = null;
-      const show = i => {
-        cur = i;
-        tabs.forEach((b,k) => { b.classList.toggle('on', k === i); b.classList.remove('hold'); if (k === i) { const bar = b.querySelector('i'); bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; } });
-        panes.forEach((p,k) => p.classList.toggle('on', k === i));
-        const pane = panes[i];
-        if (live) { live.kill(); live = null; }
-        gsap.fromTo(pane.querySelectorAll('h3, .text, .qf-list li'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.5, stagger:.06, ease:'power2.out' });
-        live = fx[i](pane);
-      };
-      let live = null;
-      const k = (pane, name) => pane.querySelector('[data-k="'+name+'"]');
-      const fx = [
-        // presència: els logotips entren i, un a un, s'il·luminen amb la seva paleta
-        pane => {
-          const lgs = [...pane.querySelectorAll('.lg')], chips = pane.querySelector('.chips'), pal = [['#1f4d3a','#f26b1f','#f4efe6'],['#7a1f2b','#e8c9b0','#fff8f2'],['#111111','#f26b1f','#ffffff'],['#1c4fa0','#9fc4ff','#eef4ff'],['#0f7c7c','#bfe8e3','#f2fbfa'],['#1a2440','#f26b1f','#eceff5']];
-          const tl = gsap.timeline({ repeat:-1 });
-          tl.fromTo(lgs, { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.5, stagger:.08, ease:'back.out(1.6)' });
-          lgs.forEach((lg, j) => tl.add(() => { lgs.forEach(x => x.classList.remove('on')); lg.classList.add('on'); chips.querySelectorAll('i').forEach((c, n) => c.style.setProperty('--c', pal[j][n])); }, '+=.2').to(chips, { opacity:1, duration:.3 }, '<').to({}, { duration:1.3 }));
-          return tl;
-        },
-        // gestió: cada dos segons entra un rebut nou i les xifres pugen
-        pane => {
-          const feed = pane.querySelector('.feed'), names = ['Pau G.','Laia M.','Ona R.','Biel T.','Aina C.','Marc V.'], imps = [64,86,38,52,64,42];
-          let n = 1041, rebuts = 188, total = 6420, idx = 0;
-          const tl = gsap.timeline({ repeat:-1, repeatDelay:1.7 });
-          tl.fromTo(pane.querySelectorAll('.kpis div, .feed, .prog'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
-          tl.add(() => {
-            n++; rebuts++; total += imps[idx % 6];
-            const row = document.createElement('div'); row.className = 'fr'; row.innerHTML = '<span>#' + n + ' · ' + names[idx % 6] + '</span><span>' + imps[idx % 6] + ' €</span><em class="new">ara</em>';
-            feed.prepend(row); gsap.from(row, { height:0, opacity:0, duration:.45, ease:'power2.out' });
-            const old = feed.querySelectorAll('.fr'); if (old.length > 4) old[old.length - 1].remove();
-            setTimeout(() => { const e = row.querySelector('em'); e.className = 'ok'; e.textContent = 'cobrat'; }, 1200);
-            k(pane,'rebuts').textContent = rebuts; k(pane,'import').textContent = total.toLocaleString('ca-ES') + ' €';
-            gsap.fromTo([k(pane,'rebuts'), k(pane,'import')], { color:'#f26b1f' }, { color:'#1b1815', duration:1.2 });
-            idx++;
-          });
-          return tl;
-        },
-        // venda: els productes s'afegeixen sols a la cistella
-        pane => {
-          const cards = [...pane.querySelectorAll('.pc')], prices = [89,129,69], badge = k(pane,'badge'), cart = pane.querySelector('.cart');
-          let n = 0, tot = 0;
-          const tl = gsap.timeline({ repeat:-1, repeatDelay:2 });
-          tl.fromTo(pane.querySelectorAll('.shop-bar, .pc, .checkout'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
-          cards.forEach((c, j) => tl.add(() => {
-            const b = c.querySelector('button'); b.classList.add('done'); b.textContent = 'Afegit ✓';
-            const fly = document.createElement('i'); fly.className = 'fly'; pane.appendChild(fly);
-            const r0 = b.getBoundingClientRect(), r1 = cart.getBoundingClientRect(), rp = pane.getBoundingClientRect();
-            gsap.fromTo(fly, { x:r0.left - rp.left + r0.width/2, y:r0.top - rp.top }, { x:r1.left - rp.left + r1.width/2, y:r1.top - rp.top + 6, duration:.6, ease:'power2.in', onComplete:() => { fly.remove(); n++; tot += prices[j]; badge.textContent = n; k(pane,'n').textContent = n; k(pane,'tot').textContent = tot + ' €'; gsap.fromTo(cart, { scale:1.3 }, { scale:1, duration:.4, ease:'back.out(2)' }); } });
-          }, '+=1.1'));
-          tl.add(() => { gsap.fromTo(pane.querySelector('.buy'), { scale:1 }, { scale:1.08, duration:.3, yoyo:true, repeat:3 }); }, '+=.8');
-          tl.add(() => { n = 0; tot = 0; badge.textContent = 0; k(pane,'n').textContent = 0; k(pane,'tot').textContent = '0 €'; cards.forEach(c => { const b = c.querySelector('button'); b.classList.remove('done'); b.textContent = 'Afegir'; }); }, '+=2');
-          return tl;
-        },
-        // comunicació: els anuncis entren, el botó crida i les mètriques pugen
-        pane => {
-          const tl = gsap.timeline({ repeat:-1, repeatDelay:.5 });
-          tl.fromTo(pane.querySelectorAll('.ad, .metrics div'), { opacity:0, y:12 }, { opacity:1, y:0, duration:.5, stagger:.08, ease:'power2.out' });
-          const o = { a:0, c:0, r:0, p:0 };
-          tl.to(o, { a:48200, c:1540, r:3.2, p:4.1, duration:1.6, ease:'power3.out', onUpdate:() => { k(pane,'abast').textContent = Math.round(o.a).toLocaleString('ca-ES'); k(pane,'clics').textContent = Math.round(o.c).toLocaleString('ca-ES'); k(pane,'ctr').textContent = o.r.toFixed(1).replace('.', ',') + ' %'; k(pane,'cpa').textContent = o.p.toFixed(1).replace('.', ',') + ' €'; } }, '-=.2');
-          tl.fromTo(pane.querySelectorAll('.cta, .st-cta'), { scale:1 }, { scale:1.04, duration:.35, yoyo:true, repeat:5, ease:'sine.inOut' }, '-=.5');
-          tl.to({}, { duration:2 });
-          return tl;
-        }
-      ];
-      const start = () => { stop(); timer = setInterval(() => show((cur + 1) % tabs.length), 5000); };
-      const stop = () => { clearInterval(timer); timer = null; };
-      tabs.forEach((b,i) => b.addEventListener('click', () => { show(i); stop(); tabs[i].classList.add('hold'); clearTimeout(hold); hold = setTimeout(start, 12000); }));
+    // què fem: quatre passos, cadascun amb una vinyeta que es munta sola
+    const typer = (el, text, dur) => { const o = { n:0 }; return gsap.to(o, { n:text.length, duration:dur, ease:'none', onUpdate:() => { el.textContent = text.slice(0, Math.round(o.n)); } }); };
+    const count = (el, from, to, fmt, dur = 1.4) => { const o = { v:from }; return gsap.to(o, { v:to, duration:dur, ease:'power2.out', onUpdate:() => { el.textContent = fmt(o.v); } }); };
+    const VIG = [
+      v => { // presència: la marca apareix igual a la web, al correu i a la xarxa
+        const pops = [...v.querySelectorAll('.pop')], tag = v.querySelector('.tag');
+        const tl = gsap.timeline({ repeat:-1, repeatDelay:2.2 });
+        tl.set(pops, { opacity:0 });
+        tl.fromTo(v.querySelector('.web'), { y:16, opacity:0 }, { y:0, opacity:1, duration:.5 }, 0);
+        tl.fromTo(v.querySelectorAll('.web .pop'), { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.4, stagger:.15, ease:'back.out(1.6)' }, .3);
+        tl.fromTo(v.querySelector('.mail'), { y:16, opacity:0 }, { y:0, opacity:1, duration:.5 }, 1.1);
+        tl.fromTo(v.querySelectorAll('.mail .pop'), { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.4, stagger:.12, ease:'back.out(1.6)' }, 1.4);
+        tl.fromTo(v.querySelector('.post'), { y:16, opacity:0 }, { y:0, opacity:1, duration:.5 }, 2.1);
+        tl.fromTo(v.querySelectorAll('.post .pop'), { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.4, stagger:.12, ease:'back.out(1.6)' }, 2.4);
+        tl.fromTo(tag, { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 3.2);
+        tl.to(v.querySelectorAll('.brand, .from b'), { color:'#f26b1f', duration:.35, stagger:.2, yoyo:true, repeat:1 }, 3.9);
+        tl.to({}, { duration:1 });
+        return tl;
+      },
+      v => { // eficiència: les tasques s'apunten i es marquen soles
+        const lis = [...v.querySelectorAll('.tasks li')], n = v.querySelector('[data-k=n]'), h = v.querySelector('[data-k=h]');
+        const tl = gsap.timeline({ repeat:-1, repeatDelay:2 });
+        tl.set(lis, { opacity:0, y:8 }).call(() => { lis.forEach(l => l.classList.remove('ok')); n.textContent = '0'; h.textContent = '0'; });
+        lis.forEach((li, i) => {
+          const t = .3 + i * 1.15;
+          tl.to(li, { opacity:1, y:0, duration:.35 }, t);
+          tl.call(() => { li.classList.add('ok'); n.textContent = String(i + 1); }, null, t + .6);
+          tl.add(count(h, i * 2.3, (i + 1) * 2.3, x => x.toFixed(1).replace('.', ',') + ' h', .5), t + .6);
+        });
+        tl.to({}, { duration:1.2 });
+        return tl;
+      },
+      v => { // trobar-te: cerca, mapa, ChatGPT i retorn de la inversió
+        const q = v.querySelector('.q'), rs = v.querySelectorAll('.rs .r'), u = v.querySelector('.u'), a = v.querySelector('.a'), ans = v.querySelector('.ans'), roi = v.querySelector('.roi'), rv = v.querySelector('[data-k=roi]');
+        const tl = gsap.timeline({ repeat:-1, repeatDelay:2.5 });
+        tl.set([rs, u, a, roi], { opacity:0 }).call(() => { q.textContent = ''; ans.textContent = ''; rv.textContent = '1,0 €'; });
+        tl.add(typer(q, 'fisioteràpia a Gràcia', 1.1), .3);
+        tl.fromTo(rs, { opacity:0, y:8 }, { opacity:1, y:0, duration:.4, stagger:.15 }, 1.7);
+        tl.fromTo(u, { opacity:0, y:8 }, { opacity:1, y:0, duration:.4 }, 2.8);
+        tl.fromTo(a, { opacity:0, y:8 }, { opacity:1, y:0, duration:.3 }, 3.4);
+        tl.add(typer(ans, 'Et recomano atlas fisio, al carrer Verdi: molt ben valorat, tracte proper i cita en línia.', 2.2), 3.6);
+        tl.fromTo(roi, { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 5.6);
+        tl.add(count(rv, 1, 4.3, x => x.toFixed(1).replace('.', ',') + ' €', 1.6), 5.9);
+        tl.to({}, { duration:1 });
+        return tl;
+      },
+      v => { // fidelitzar: la clienta, el WhatsApp quan toca, la ressenya i la repetició
+        const out = v.querySelector('.m.out'), inn = v.querySelector('.m.in'), rev = v.querySelector('.rev'), kpi = v.querySelector('.kpi'), rep = v.querySelector('[data-k=rep]');
+        const tl = gsap.timeline({ repeat:-1, repeatDelay:2.5 });
+        tl.set([out, inn, rev, kpi], { opacity:0 }).call(() => { rep.textContent = '41 %'; });
+        tl.fromTo(v.querySelector('.cli'), { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 0);
+        tl.fromTo(out, { opacity:0, y:12, scale:.96 }, { opacity:1, y:0, scale:1, duration:.45, ease:'back.out(1.4)' }, 1);
+        tl.fromTo(inn, { opacity:0, y:12, scale:.96 }, { opacity:1, y:0, scale:1, duration:.45, ease:'back.out(1.4)' }, 2.6);
+        tl.fromTo(rev, { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 3.8);
+        tl.fromTo(kpi, { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 4.6);
+        tl.add(count(rep, 41, 68, x => Math.round(x) + ' %', 1.6), 4.9);
+        tl.to({}, { duration:1 });
+        return tl;
+      }
+    ];
+    qsteps.forEach((sec, i) => {
+      const vig = sec.querySelector('.vig'); let tl = null;
       sec._play = () => {
-        gsap.fromTo(sec.querySelectorAll('.qf-copy > *'), { opacity:0, y:20 }, { opacity:1, y:0, duration:.7, stagger:.12, ease:'power2.out' });
-        gsap.fromTo(tabs, { opacity:0, x:-12 }, { opacity:1, x:0, duration:.5, stagger:.08, delay:.3, ease:'power2.out' });
-        gsap.fromTo(sec.querySelectorAll('.qf-bridge'), { opacity:0, y:14 }, { opacity:1, y:0, duration:.7, delay:1, ease:'power2.out' });
-        show(0); start();
+        gsap.fromTo(sec.querySelectorAll('.qs-head > *, .qs-body > *'), { opacity:0, y:18 }, { opacity:1, y:0, duration:.6, stagger:.1, ease:'power2.out' });
+        gsap.fromTo(vig, { opacity:0, y:20, scale:.98 }, { opacity:1, y:0, scale:1, duration:.8, ease:'power3.out' });
+        if (tl) tl.kill(); tl = VIG[i](vig);
       };
-      sec._reset = () => { stop(); clearTimeout(hold); if (live) { live.kill(); live = null; } };
-    })();
+      sec._reset = () => { if (tl) { tl.kill(); tl = null; } };
+    });
     // pas "qui hi ha darrere"
     (function(){
       const sec = document.getElementById('qui');
@@ -1171,14 +1181,14 @@
       };
       sec._reset = () => {};
     })();
-    return () => { [...scenes, document.getElementById('quefem'), document.getElementById('qui')].forEach(s => { s._play = s._reset = null; }); };
+    return () => { [...scenes, ...qsteps, document.getElementById('qui')].forEach(s => { s._play = s._reset = null; }); };
   });
 
   /* ---- navegació per passos: un cop de rodeta o un lliscament, un pas ---- */
   let current = 0, locked = false, inZone = true;
   const zoneEnd = () => { const l = steps[steps.length - 1]; return l.offsetTop + l.offsetHeight; };
   function setZone(on){ inZone = on; html.classList.toggle('steps-locked', on); if (on) lenis.stop(); else lenis.start(); }
-  const navFor = el => '#' + (el.classList.contains('scene') ? 'presencia' : el.id);
+  const navFor = el => '#' + (el.classList.contains('scene') ? 'presencia' : el.classList.contains('qs') ? 'quefem' : el.id);
   function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', (a.dataset.step || a.getAttribute('href')) === hash)); }
   function activate(i, dir = 1){
     const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0);
