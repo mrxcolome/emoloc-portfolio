@@ -108,7 +108,7 @@
   .qs-track{display:grid;height:100%} .qs-panel{grid-area:1/1;height:100%;display:grid;align-content:start;padding:clamp(120px,19vh,190px) var(--edge) 48px;visibility:hidden} .qs-panel.on{visibility:visible}
   .qs-prog{position:absolute;left:var(--edge);top:clamp(120px,19vh,190px);margin:0;z-index:2}
   .qs-head{padding-top:36px}
-  .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:start}
+  .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-rows:minmax(196px,auto) auto;grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:start} /* la fila del titular té alçada fixa: els conceptes sempre a la mateixa altura */
   .qs-head{grid-area:head} .qs-body{grid-area:body} .qs .vig{grid-area:vig;align-self:start}
   .qs-prog{display:flex;align-items:center;gap:10px;font-size:14px;line-height:1;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
   .qs-prog .num{position:relative;display:inline-block;width:2ch;height:1em;overflow:hidden;color:var(--ink);margin-right:-5px} .qs-prog .num b{position:absolute;left:0;top:0;font-weight:600} .qs-prog .num .nxt{transform:translateY(100%)}
@@ -156,7 +156,7 @@
   @media (max-width:820px){
     .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
     .qs-panel{padding:22px var(--gutter) 24px} .qs-prog{left:var(--gutter);top:24px} .qs-head{padding-top:26px}
-    .qs-grid{grid-template-columns:1fr;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start}
+    .qs-grid{grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start}
     .qs-prog i{width:80px} .qs h2{margin-top:10px}
     .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px}
     .vig{height:min(36svh,300px);padding:12px}
