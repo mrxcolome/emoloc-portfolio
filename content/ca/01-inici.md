@@ -92,7 +92,7 @@ emoloc és la manera de portar aquesta experiència a negocis que no tenen depar
 
 ## 8. Contacte
 
-### Tens un projecte al cap?
+### Creus que et podem ajudar?
 
 Explica-me'l en quatre ratlles: què fas, què et fa perdre temps o clients, i què t'agradaria que passés. La primera conversa és sense compromís i serveix per saber si tinc sentit per al que necessites.
 
