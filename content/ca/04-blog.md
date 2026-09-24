@@ -4,7 +4,7 @@
 
 ### Blog
 
-Articles curts per a qui té una empresa i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.
+Articles curts per a qui té un negoci i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.
 
 ## Llistat
 (targeta per article: data, pilar, títol, entradeta, "llegir l'article")

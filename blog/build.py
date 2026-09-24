@@ -53,7 +53,7 @@ def card(a, full=True):
 
 filters = ''.join('<button%s data-f="%s">%s</button>' % (' class="on"' if i == 0 else '', f, f) for i, f in enumerate(['Tots', 'Presència', 'Gestió', 'Venda', 'Comunicació']))
 lst = '''  <section class="list" id="list">
-    <div class="head"><h1 class="titular">Blog</h1><p class="text suau">Articles curts per a qui té una empresa i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.</p></div>
+    <div class="head"><h1 class="titular">Blog</h1><p class="text suau">Articles curts per a qui té un negoci i no té departament digital. Responen preguntes reals, sense argot, i acaben sempre amb què pots fer demà al matí.</p></div>
     <div class="filters" id="filters">%s</div>
     <div class="grid" id="grid">
       %s
@@ -93,6 +93,7 @@ tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="te
 head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.topnav ul .on{color:var(--accent)}')
 head = head.replace('.link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}', '.link{font-weight:600}')
 head = head.replace('.emoloc{font-weight:800;letter-spacing:.04em;', '.emoloc{font-weight:800;letter-spacing:0;').replace('.emoloc{font-weight:800;letter-spacing:.01em;', '.emoloc{font-weight:800;letter-spacing:0;')
+head = head.replace('qui té una empresa i no té departament digital', 'qui té un negoci i no té departament digital')
 head = head.replace('.emoloc{font-weight:800;letter-spacing:0;', '.emoloc{font-weight:900;letter-spacing:0;').replace('9..40,800;9..40,1000&display', '9..40,800;9..40,900;9..40,1000&display')
 tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><li>Ca / es</li></ul>', '', tail)
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
@@ -101,12 +102,12 @@ tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
 # head meta (idempotent)
 if '<link rel="canonical"' not in head:
     head = head.replace('<title>emoloc blog</title>', """<title>Blog · emoloc</title>
-<meta name="description" content="Articles curts per a qui té una empresa i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">
+<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">
 <link rel="canonical" href="https://emoloc.com/blog/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="emoloc">
 <meta property="og:title" content="Blog · emoloc">
-<meta property="og:description" content="Articles curts per a qui té una empresa i no té departament digital.">
+<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">
 <meta property="og:url" content="https://emoloc.com/blog/">
 <meta property="og:image" content="https://emoloc.com/assets/og.jpg">
 <meta property="og:locale" content="ca_ES">

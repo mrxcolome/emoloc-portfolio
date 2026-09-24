@@ -17,10 +17,10 @@ Xavi Colomé · més de 25 anys en digital · director digital a Castañer · ab
 
 ### Què faig
 
-Una empresa no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix. Ho ordeno en quatre pilars.
+Un negoci no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix. Ho ordeno en quatre pilars.
 
 **Presència**
-La teva marca en digital: la web, la identitat, el contingut. Que qui et busca trobi una empresa viva i entengui en deu segons què fas.
+La teva marca en digital: la web, la identitat, el contingut. Que qui et busca trobi un negoci viu i entengui en deu segons què fas.
 
 **Gestió**
 Les eines que porten el negoci per dins: alumnes, clients, quotes, rebuts, horaris. Fetes a mida quan l'excel ja no dona més de si.
@@ -78,7 +78,7 @@ Xifra destacada: 39 € al mes, un sol pla, tot inclòs.
 
 Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital: primer com a programador i dissenyador en agències, després dirigint marketing digital i ecommerce a Tous i Textura, i des del 2019 com a director digital de Castañer.
 
-emoloc és la manera de portar aquesta experiència a empreses que no tenen departament digital però necessiten el mateix rigor. No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.
+emoloc és la manera de portar aquesta experiència a negocis que no tenen departament digital però necessiten el mateix rigor. No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.
 
 [enllaç] Sobre mi → sobre-mi
 

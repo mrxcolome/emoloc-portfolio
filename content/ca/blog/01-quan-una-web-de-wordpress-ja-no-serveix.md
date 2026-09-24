@@ -31,7 +31,7 @@ El problema no és WordPress. És que la web es va tractar com un tràmit que es
 
 ## Què pots fer demà al matí
 
-- **Fes la prova dels dos minuts** amb algú que no conegui l'empresa. Demana-li que trobi com contactar-te i que et digui què creu que fas. Escolta sense defensar-te.
+- **Fes la prova dels dos minuts** amb algú que no conegui el negoci. Demana-li que trobi com contactar-te i que et digui què creu que fas. Escolta sense defensar-te.
 - **Apunta les deu preguntes que més et fan** per telèfon o per WhatsApp. Són el guió de la teva pròxima web.
 - **Mira la fitxa de Google Business.** Sovint és el primer que veu la gent, abans que la web. Que tingui horaris, fotos recents i respostes a les ressenyes.
 
