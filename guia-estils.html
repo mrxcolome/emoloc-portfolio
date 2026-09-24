@@ -22,16 +22,16 @@
   /* ---- els quatre estils de text, i cap més ---- */
   .titular{font-size:clamp(36px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
-  .text{font-size:20px;line-height:1.55;font-weight:400}
+  .text{font-size:20px;line-height:1.6;font-weight:400}
   .petit{font-size:14px;line-height:1.5;font-weight:400}
   .negreta{font-weight:600}   /* variant de Text i de Petit */
   .suau{color:var(--muted)}
   /* ---- base: cada element hereta un dels quatre ---- */
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:20px;line-height:1.55}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:20px;line-height:1.6}
   h1,h2,h3,p{margin:0}
   h1{font-size:clamp(36px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   h2{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
-  h3{font-size:20px;line-height:1.55;font-weight:600;text-wrap:balance}   /* Text negreta, en tinta */
+  h3{font-size:20px;line-height:1.6;font-weight:600;text-wrap:balance}   /* Text negreta, en tinta */
   p{text-wrap:pretty}   /* els textos descriptius ocupen tota l'amplada del contenidor */
   a{color:inherit}
   code,.kbd{font-family:ui-monospace,Menlo,monospace;font-size:14px;line-height:1.5}
@@ -51,7 +51,7 @@
   /* colors */
   .swatch{border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;background:var(--paper)}
   .swatch .chip{height:96px}
-  .swatch .meta{padding:16px;display:grid;gap:2px;font-size:20px;line-height:1.55}
+  .swatch .meta{padding:16px;display:grid;gap:2px;font-size:20px;line-height:1.6}
   .swatch .meta b{font-weight:600}
   .swatch .meta code{color:var(--muted)}
   /* type */
@@ -94,7 +94,7 @@
   .motion:hover .dot.fast{transform:translateX(min(60vw,700px));transition:transform var(--t-fast) var(--ease)}
   .motion:hover .dot.base{transform:translateX(min(60vw,700px));transition:transform var(--t-base) var(--ease)}
   .motion:hover .dot.slow{transform:translateX(min(60vw,700px));transition:transform var(--t-slow) var(--ease)}
-  .dont{display:grid;gap:8px;padding:0;margin:24px 0 0;list-style:none;font-size:20px;line-height:1.55}
+  .dont{display:grid;gap:8px;padding:0;margin:24px 0 0;list-style:none;font-size:20px;line-height:1.6}
   .dont li{display:flex;gap:8px;color:var(--muted)}
   .dont li::before{content:"×";color:var(--accent);font-weight:800}
   .kbd{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
@@ -157,12 +157,12 @@
   <section id="type">
     <div class="sec-head">
       <h2>DM Sans, quatre estils</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Titular i Subtitular van en 1000. Text i Petit van en 400 i tenen una variant negreta en 600. Tota la interfície (botons, enllaços, etiquetes de pilar, caselles, menús) és Text negreta. Del Petit gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</p>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica: en un titular gran es tanca i s'afina, en un peu de foto s'obre perquè es llegeixi. Titular i Subtitular van en 1000. Text i Petit van en 400 i tenen una variant negreta en 600. Tota la interfície (botons, enllaços, menú superior, comptadors) és Text negreta. El menú desplegat del mòbil és Subtitular. El Text és el mateix a tot arreu i en tots els dispositius: la frase d'inici, les llistes, els paràgrafs de «Sobre mi», les targetes de projecte i el formulari. Del Petit gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</p>
     </div>
     <div>
       <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000 · mòbil 36</small></div><h1>Digital que funciona</h1></div>
       <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · 1000</small></div><h2>Presència, gestió, venda i comunicació</h2></div>
-      <div class="type-row"><div class="nom">Text<small>20 / 1.55 · 400 · negreta 600 · mòbil interlineat 1.3</small></div><p><span class="negreta">Un negoci no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><div class="nom">Text<small>20 / 1.6 · 400 · negreta 600 · igual a mòbil</small></div><p><span class="negreta">Un negoci no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
       <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 400 · negreta 600</small></div><p class="petit"><span class="negreta">Gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</span> Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
     </div>
     <ul class="dont">
