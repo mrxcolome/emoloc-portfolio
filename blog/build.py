@@ -43,9 +43,10 @@ for f in sorted(glob.glob(os.path.join(REPO, 'content/ca/blog/*.md'))):
     words = len(re.findall(r'\w+', body))
     y, mo, d = (meta['data'].split('-') + ['01'])[:3]  # data: AAAA-MM-DD
     mes = MESOS[mo].lower(); data_txt = '%d %s%s de %s' % (int(d), "d'" if mes[0] in 'aeiou' else 'de ', mes, y)
-    arts.append(dict(num=num, slug=slug, titol=cap(meta['títol']), pilar=cap(meta['pilar']), entradeta=meta['entradeta'],
+    arts.append(dict(num=num, slug=slug, iso=meta['data'], titol=cap(meta['títol']), pilar=cap(meta['pilar']), entradeta=meta['entradeta'],
                      data=data_txt, img=MEDIA + IMG[num], html=md2html(body), minuts=max(2, round(words / 200))))
 
+arts.sort(key=lambda a: a['iso'], reverse=True)  # del més recent al més antic
 def card(a, full=True):
     t = '<p class="text suau">%s</p>' % html.escape(a['entradeta'], quote=False) if full else ''
     return ('<article class="card%s" data-pilar="%s"><a class="thumb" href="#article/%s"><img src="%s" alt="" loading="lazy"></a>'
