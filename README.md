@@ -14,3 +14,13 @@ Web d'emoloc (Xavi Colomé): transformació digital per a empreses petites.
 
 Cada push a `main` sincronitza la web per FTPS a Webempresa amb l'acció de `.github/workflows/deploy.yml`.
 Cal tenir quatre secrets al repositori (Settings → Secrets and variables → Actions): `FTP_SERVIDOR`, `FTP_USUARI`, `FTP_CONTRASENYA`, `FTP_CARPETA`.
+
+## Calendari editorial del blog
+
+Un article cada quinze dies, els dies 1 i 15 de cada mes. La data va al camp `data: AAAA-MM-DD` de cada `content/ca/blog/NN-*.md` i el generador la mostra com «1 d'agost de 2026».
+
+- 01 · 1 d'agost de 2026 · Presència · Quan una web de WordPress ja no serveix
+- 02 · 15 d'agost de 2026 · Gestió · L'excel que porta el teu negoci
+- 03 · 1 de setembre de 2026 · Venda · Vendre coneixement per subscripció
+- 04 · 15 de setembre de 2026 · Comunicació · Com et troben Google i ChatGPT
+- 05 · **1 d'octubre de 2026 · pendent d'escriure**

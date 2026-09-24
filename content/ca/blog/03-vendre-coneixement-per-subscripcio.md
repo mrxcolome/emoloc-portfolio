@@ -2,7 +2,7 @@
 títol: vendre coneixement per subscripció: què cal de debò
 pilar: venda
 entradeta: Tens vint anys d'ofici i et diuen que facis "un curs en línia". La idea és bona, però una plataforma de membresia és força més que penjar vídeos.
-data: 2026-09
+data: 2026-09-01
 ---
 
 Si ets expert en alguna cosa, algú t'ha dit que hauries de fer un curs en línia. I té raó a mitges. Vendre un curs una vegada és una cosa. Construir una acadèmia per subscripció, on la gent paga cada mes perquè hi troba valor cada mes, és una altra. La segona és millor negoci i molt més exigent.

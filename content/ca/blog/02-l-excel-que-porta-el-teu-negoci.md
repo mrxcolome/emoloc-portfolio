@@ -2,7 +2,7 @@
 títol: l'excel que porta el teu negoci: quan deixa de ser una solució
 pilar: gestió
 entradeta: Un excel és una eina magnífica fins al dia que només l'entén una persona. Com saber si has arribat a aquest dia, i què fer-hi.
-data: 2026-09
+data: 2026-08-15
 ---
 
 Gairebé totes les empreses petites que conec funcionen amb un excel. O amb quatre: un d'alumnes o clients, un de quotes, un d'horaris, un de rebuts. I durant anys funciona. L'excel és flexible, tothom el sap obrir i no costa res.

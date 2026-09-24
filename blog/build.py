@@ -41,9 +41,10 @@ for f in sorted(glob.glob(os.path.join(REPO, 'content/ca/blog/*.md'))):
     slug = re.sub(r'^\d+-', '', os.path.basename(f))[:-3]
     body = m.group(2)
     words = len(re.findall(r'\w+', body))
-    y, mo = meta['data'].split('-')
+    y, mo, d = (meta['data'].split('-') + ['01'])[:3]  # data: AAAA-MM-DD
+    mes = MESOS[mo].lower(); data_txt = '%d %s%s de %s' % (int(d), "d'" if mes[0] in 'aeiou' else 'de ', mes, y)
     arts.append(dict(num=num, slug=slug, titol=cap(meta['títol']), pilar=cap(meta['pilar']), entradeta=meta['entradeta'],
-                     data='%s %s' % (MESOS[mo], y), img=MEDIA + IMG[num], html=md2html(body), minuts=max(2, round(words / 200))))
+                     data=data_txt, img=MEDIA + IMG[num], html=md2html(body), minuts=max(2, round(words / 200))))
 
 def card(a, full=True):
     t = '<p class="text suau">%s</p>' % html.escape(a['entradeta'], quote=False) if full else ''

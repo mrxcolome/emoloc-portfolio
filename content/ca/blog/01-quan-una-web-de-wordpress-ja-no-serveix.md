@@ -2,7 +2,7 @@
 títol: quan una web de WordPress ja no serveix, i com saber-ho
 pilar: presència
 entradeta: No cal ser tècnic per saber si la teva web ha caducat. Hi ha cinc senyals que es veuen des del mòbil en dos minuts.
-data: 2026-09
+data: 2026-08-01
 ---
 
 La majoria de webs d'empreses petites es van fer un dia amb bona intenció, sobre una plantilla de WordPress, i des de llavors ningú les ha tornat a mirar. No és una crítica: hi havia coses més urgents. Però la web continua allà, dient coses de tu a tothom que et busca. La pregunta és si diu les correctes.

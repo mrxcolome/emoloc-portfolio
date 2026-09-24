@@ -2,7 +2,7 @@
 títol: com et troben Google i ChatGPT, i què hi pots fer
 pilar: comunicació
 entradeta: Cada cop més gent pregunta a un assistent d'IA "quina escola de dansa em recomanes a Sant Gervasi". Si la teva web no es pot llegir, no hi sortiràs.
-data: 2026-09
+data: 2026-09-15
 ---
 
 Durant vint anys, ser trobat volia dir sortir a Google. Encara és així, però ja no és l'únic camí. Cada cop més gent obre ChatGPT, Gemini o l'assistent del mòbil i pregunta directament: "quin despatx em recomanes per a això", "quina escola hi ha a prop de casa que faci classes per a adults". I l'assistent respon amb dos o tres noms.
