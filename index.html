@@ -97,7 +97,7 @@
     #zero .hint{bottom:6vh}
     #zero .scene1{align-content:start;padding-top:16vh}
     .order-d{display:none} #zero .order-m{display:block;line-height:2}
-    #zero video{object-position:78% 50%}
+    #zero video{object-position:50% 50%}
   }
 
   /* ---------- escenes ---------- */
@@ -560,7 +560,8 @@
 <!-- ============ pantalla zero + escena 1 ============ -->
 <section id="zero">
   <div class="stage" id="zstage">
-    <video autoplay muted loop playsinline preload="auto" poster="assets/fons-digital.jpg"><source src="assets/fons-digital.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline preload="auto" poster="assets/fons-digital.jpg" id="zbg"></video>
+    <script>(function(){ var v = document.getElementById('zbg'), m = matchMedia('(max-width:820px)').matches; v.poster = m ? 'assets/fons-digital-v.jpg' : 'assets/fons-digital.jpg'; v.src = m ? 'assets/fons-digital-v.mp4' : 'assets/fons-digital.mp4'; })();</script>
     <div class="white" id="zwhite"></div>
     <div class="scene1" id="scene1">
       <h1 class="titular" id="s1title">La transformació digital que necessita la teva empresa.</h1>
