@@ -78,10 +78,12 @@
   .topnav{z-index:30}
 
   /* ---------- pantalla zero ---------- */
-  #zero .stage{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--paper)}
-  #zero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.02)}
-  #zero .veil{display:none}
-  #zero .white{position:absolute;inset:0;background:var(--paper);opacity:.5}
+  body{position:relative;z-index:0}
+  #bgvid{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--paper)}
+  #bgvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.02)}
+  #bgvid .white{position:absolute;inset:0;background:var(--paper);opacity:.5}
+  .stage{position:relative;height:100svh;min-height:560px;overflow:hidden;background:transparent}
+  #zero .stage{min-height:600px}
     #zero .scene1{position:absolute;inset:0;display:grid;align-content:center;justify-content:start;padding:96px var(--edge) 64px}
   #zero .scene1 .titular{max-width:22ch}
   .order-m{display:none}
@@ -97,22 +99,23 @@
     #zero .hint{bottom:6vh}
     #zero .scene1{align-content:start;padding-top:16vh}
     .order-d{display:none} #zero .order-m{display:block;line-height:2}
-    #zero video{object-position:50% 50%}
   }
 
   /* ---------- passos estàtics: què fem, qui ---------- */
   .pstep .stage{display:grid;align-content:center;padding:96px var(--edge) 48px}
-  /* què fem: quatre passos */
+  /* què fem: quatre passos en una pista horitzontal */
+  .qs .stage{display:block;padding:0}
+  .qs-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;height:100%;will-change:transform}
+  .qs-panel{height:100%;display:grid;align-content:center;padding:96px var(--edge) 48px}
   .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:center}
   .qs-head{grid-area:head;align-self:end} .qs-body{grid-area:body;align-self:start} .qs .vig{grid-area:vig}
   .qs-prog{display:flex;align-items:center;gap:14px;font-size:14px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
-  .qs-prog i{display:block;width:120px;height:2px;background:var(--line);position:relative;overflow:hidden} .qs-prog i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p);background:var(--accent)}
+  .qs-prog i{display:block;width:120px;height:2px;background:var(--line);position:relative;overflow:hidden} .qs-prog i b{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--accent)}
   .qs-claim{margin-top:22px;font-size:20px;line-height:1.4;font-weight:600;color:var(--muted);max-width:34ch}
   .qs h2{margin-top:18px}
   .qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
   .qs-list li{position:relative;padding-left:26px;font-size:20px;line-height:1.4}
   .qs-list li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-  .qs-res{margin-top:28px;font-size:clamp(22px,2vw,26px);font-weight:1000;letter-spacing:-.015em;line-height:1.2} .qs-res b{color:var(--accent);font-weight:1000}
   .vig{position:relative;height:min(56vh,480px);border-radius:var(--r-m);background:var(--surface);padding:18px;overflow:hidden;font-family:var(--font)}
   .vig img{display:block;width:100%;height:100%;object-fit:cover}
   .pop{opacity:0}
@@ -152,10 +155,10 @@
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
   @media (max-width:820px){
     .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
+    .qs-panel{padding:22px var(--gutter) 24px;align-content:start}
     .qs-grid{grid-template-columns:1fr;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start}
     .qs-head,.qs-body{align-self:auto} .qs-prog i{width:80px} .qs-claim{margin-top:10px;font-size:16px;line-height:1.3} .qs h2{margin-top:10px}
     .qs-list{margin-top:0;gap:8px} .qs-list li{font-size:17px;line-height:1.3;padding-left:22px} .qs-list li::before{width:8px;height:8px;top:.5em}
-    .qs-res{margin-top:14px;font-size:20px}
     .vig{height:min(36svh,300px);padding:12px}
     .v1{gap:8px} .v1 .tx,.v1 .nav{display:none} .v1 .tag{font-size:10px;padding:5px 10px}
     .v2 .tasks li{font-size:11.5px;padding:7px 9px} .v2 .tasks li:nth-child(n+5){display:none} .v2 .pf b{font-size:22px}
@@ -211,7 +214,7 @@
   @media (max-width:820px){#blog .posts{grid-template-columns:1fr;gap:14px} #blog .intro{display:none} #blog h2.subtitular{margin-bottom:36px} #blog article{padding-top:12px;display:grid;grid-template-columns:108px 1fr;column-gap:14px;align-content:start} #blog .thumb{grid-row:1/5;aspect-ratio:3/4;margin:0;border-radius:10px} #blog article h3{font-size:19px;margin-bottom:6px} #blog article .text{font-size:17px;line-height:1.3;margin-bottom:8px} #blog article .petit{margin-bottom:4px} #blog .more{margin-top:16px}}
   @media (max-width:820px){#blog article .text{display:none} #blog .thumb{grid-row:1/4}}
 
-  #contacte{background:var(--surface)}
+  #contacte{background:rgba(246,244,240,.82)}
   #contacte .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,72px);align-items:start}
   form{display:grid;gap:18px}
   .f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -242,7 +245,7 @@
 
   /* ---------- sense moviment ---------- */
   html.no-motion .stage{height:auto;min-height:0;overflow:visible;padding:96px var(--gutter) 64px}
-  html.no-motion #zero .stage{height:100svh;padding:0}
+  html.no-motion #zero .stage{height:100svh;padding:0} html.no-motion #bgvid video{display:none}
   html.no-motion .topnav{color:var(--ink)}
 </style>
 </head>
@@ -259,11 +262,14 @@
 </div>
 
 <!-- ============ pantalla zero + escena 1 ============ -->
+<div id="bgvid" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="assets/fons-digital.jpg" id="zbg"></video>
+  <script>(function(){ var v = document.getElementById('zbg'), m = matchMedia('(max-width:820px)').matches; v.poster = m ? 'assets/fons-digital-v.jpg' : 'assets/fons-digital.jpg'; v.src = m ? 'assets/fons-digital-v.mp4' : 'assets/fons-digital.mp4'; })();</script>
+  <div class="white" id="zwhite"></div>
+</div>
+
 <section id="zero">
   <div class="stage" id="zstage">
-    <video autoplay muted loop playsinline preload="auto" poster="assets/fons-digital.jpg" id="zbg"></video>
-    <script>(function(){ var v = document.getElementById('zbg'), m = matchMedia('(max-width:820px)').matches; v.poster = m ? 'assets/fons-digital-v.jpg' : 'assets/fons-digital.jpg'; v.src = m ? 'assets/fons-digital-v.mp4' : 'assets/fons-digital.mp4'; })();</script>
-    <div class="white" id="zwhite"></div>
     <div class="scene1" id="scene1">
       <h1 class="titular" id="s1title">La transformació digital que necessita el teu negoci.</h1>
       <p class="text order order-d">A emoloc t'acompanyem i et donem les eines per tenir la millor imatge, guanyar eficiència en la gestió, fer créixer el negoci amb més rendibilitat i comunicar amb una estratègia sòlida.</p>
@@ -276,112 +282,103 @@
 <!-- ============ què fem: quatre passos ============ -->
 <section class="pstep qs" id="quefem">
   <div class="stage">
+    <div class="qs-track" id="qstrack">
+      <div class="qs-panel">
     <div class="qs-grid">
-      <div class="qs-head">
-        <p class="qs-prog"><span>01 / 04</span><i style="--p:25%"></i></p>
-      <p class="qs-claim">Fem que el teu negoci funcioni millor gràcies a la transformació digital.</p>
-        <h2 class="subtitular">Una presència digital coherent.</h2>
-      </div>
-      <div class="vig v1">
-        <div class="srf web"><div class="bar"><i></i><i></i><i></i><span>koa.shop</span></div><div class="hd"><b class="brand pop">KŌA<em>.</em></b><span class="nav pop">Botiga · Nosaltres · Contacte</span></div><div class="img pop"><img src="assets/sneaker.jpg" alt=""></div><p class="tx pop">Calçat fet a mà a Mataró. Des de 1998.</p></div>
-        <div class="srf mail"><div class="from"><i class="pop">K</i><div><b class="pop">KŌA.</b><small class="pop">Novetats de tardor · avui</small></div></div><div class="img pop"><img src="assets/backpack.jpg" alt=""></div><p class="tx pop">Ha arribat la motxilla Roure.</p></div>
-        <div class="srf post"><div class="from"><i class="pop">K</i><b class="pop">koa.shop</b></div><div class="img pop"><img src="assets/sunglasses.jpg" alt=""></div><p class="tx pop">♡ 312 · Ulleres Cala, de nou en estoc</p></div>
-        <div class="tag pop">Mateixa imatge, mateix to, a tot arreu</div>
-      </div>
-      <div class="qs-body">
-        <ul class="qs-list">
-        <li>Una imatge i un to propis, iguals a tot arreu.</li>
-        <li>Continguts que expliquen què fas i per què tu.</li>
-        <li>Els canals on ser-hi, ben triats: web, xarxes, correu.</li>
-        </ul>
-        <p class="qs-res"><b>Resultat:</b> qui et mira, confia.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pstep qs" id="quefem-2">
-  <div class="stage">
-    <div class="qs-grid">
-      <div class="qs-head">
-        <p class="qs-prog"><span>02 / 04</span><i style="--p:50%"></i></p>
-        <h2 class="subtitular">Més eficiència: els processos mecànics, automatitzats.</h2>
-      </div>
-      <div class="vig v2">
-        <div class="panel"><div class="ph"><b>Fet sol, avui</b><span><b data-k="n">0</b> tasques</span></div>
-          <ul class="tasks">
-            <li><i></i><span>Rebuts de setembre enviats a 214 clients</span></li>
-            <li><i></i><span>Recordatori de cita a 18 persones per demà</span></li>
-            <li><i></i><span>Comanda setmanal al proveïdor feta</span></li>
-            <li><i></i><span>Avís d'enviament a 9 comandes en línia</span></li>
-            <li><i></i><span>Factura 1042 emesa i enviada</span></li>
-            <li><i></i><span>Fitxa de client actualitzada després de la compra</span></li>
+        <div class="qs-head">
+          <p class="qs-prog"><span>01 / 04</span><i><b data-p="25"></b></i></p>
+        <p class="qs-claim">Fem que el teu negoci funcioni millor gràcies a la transformació digital.</p>
+          <h2 class="subtitular">Una presència digital coherent.</h2>
+        </div>
+        <div class="vig v1">
+          <div class="srf web"><div class="bar"><i></i><i></i><i></i><span>koa.shop</span></div><div class="hd"><b class="brand pop">KŌA<em>.</em></b><span class="nav pop">Botiga · Nosaltres · Contacte</span></div><div class="img pop"><img src="assets/sneaker.jpg" alt=""></div><p class="tx pop">Calçat fet a mà a Mataró. Des de 1998.</p></div>
+          <div class="srf mail"><div class="from"><i class="pop">K</i><div><b class="pop">KŌA.</b><small class="pop">Novetats de tardor · avui</small></div></div><div class="img pop"><img src="assets/backpack.jpg" alt=""></div><p class="tx pop">Ha arribat la motxilla Roure.</p></div>
+          <div class="srf post"><div class="from"><i class="pop">K</i><b class="pop">koa.shop</b></div><div class="img pop"><img src="assets/sunglasses.jpg" alt=""></div><p class="tx pop">♡ 312 · Ulleres Cala, de nou en estoc</p></div>
+          <div class="tag pop">Mateixa imatge, mateix to, a tot arreu</div>
+        </div>
+        <div class="qs-body">
+          <ul class="qs-list">
+          <li>Una imatge i un to propis, iguals a tot arreu.</li>
+          <li>Continguts que expliquen què fas i per què tu.</li>
+          <li>Els canals on ser-hi, ben triats: web, xarxes, correu.</li>
           </ul>
-          <div class="pf"><span>Hores estalviades aquest mes</span><b data-k="h">0</b></div>
         </div>
       </div>
-      <div class="qs-body">
-        <ul class="qs-list">
-        <li>Rebuts, avisos, comandes i recordatoris es fan sols.</li>
-        <li>Tota la informació en un sol lloc, sense excels duplicats.</li>
-        <li>Si vens en línia, comanda, pagament i enviament sense feina afegida.</li>
-        </ul>
-        <p class="qs-res"><b>Resultat:</b> temps i errors que t'estalvies cada mes.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="pstep qs" id="quefem-3">
-  <div class="stage">
+      <div class="qs-panel">
     <div class="qs-grid">
-      <div class="qs-head">
-        <p class="qs-prog"><span>03 / 04</span><i style="--p:75%"></i></p>
-        <h2 class="subtitular">Que et trobin: inversió que torna.</h2>
-      </div>
-      <div class="vig v3">
-        <div class="srch"><div class="box"><i></i><span class="q"></span></div>
-          <div class="rs">
-            <div class="r top pop"><div><b>atlas fisio · Gràcia</b><small>4,9 ★ (212) · Obert fins a les 20 h</small></div><div class="map"><i></i></div></div>
-            <div class="r pop"><b>Centre de fisioteràpia …</b><small>4,2 ★ (38)</small></div>
-            <div class="r pop"><b>Clínica …</b><small>3,9 ★ (61)</small></div>
+        <div class="qs-head">
+          <p class="qs-prog"><span>02 / 04</span><i><b data-p="50"></b></i></p>
+          <h2 class="subtitular">Més eficiència: els processos mecànics, automatitzats.</h2>
+        </div>
+        <div class="vig v2">
+          <div class="panel"><div class="ph"><b>Fet sol, avui</b><span><b data-k="n">0</b> tasques</span></div>
+            <ul class="tasks">
+              <li><i></i><span>Rebuts de setembre enviats a 214 clients</span></li>
+              <li><i></i><span>Recordatori de cita a 18 persones per demà</span></li>
+              <li><i></i><span>Comanda setmanal al proveïdor feta</span></li>
+              <li><i></i><span>Avís d'enviament a 9 comandes en línia</span></li>
+              <li><i></i><span>Factura 1042 emesa i enviada</span></li>
+              <li><i></i><span>Fitxa de client actualitzada després de la compra</span></li>
+            </ul>
+            <div class="pf"><span>Hores estalviades aquest mes</span><b data-k="h">0</b></div>
           </div>
         </div>
-        <div class="gpt"><div class="u pop">Quin fisio em recomanes a Gràcia?</div><div class="a pop"><i></i><span class="ans"></span></div></div>
-        <div class="roi pop"><span>1 € en anuncis</span><em>→</em><b data-k="roi">1,0 €</b><span>en vendes</span></div>
+        <div class="qs-body">
+          <ul class="qs-list">
+          <li>Rebuts, avisos, comandes i recordatoris es fan sols.</li>
+          <li>Tota la informació en un sol lloc, sense excels duplicats.</li>
+          <li>Si vens en línia, comanda, pagament i enviament sense feina afegida.</li>
+          </ul>
+        </div>
       </div>
-      <div class="qs-body">
-        <ul class="qs-list">
-        <li>Sortir a Google i al mapa quan busquen el que fas.</li>
-        <li>Sortir també quan ho preguntin a ChatGPT.</li>
-        <li>Publicitat com a inversió: cada euro mesurat i que torni multiplicat.</li>
-        </ul>
-        <p class="qs-res"><b>Resultat:</b> més clients nous, i saber què t'ha costat cadascun.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="pstep qs" id="quefem-4">
-  <div class="stage">
+      <div class="qs-panel">
     <div class="qs-grid">
-      <div class="qs-head">
-        <p class="qs-prog"><span>04 / 04</span><i style="--p:100%"></i></p>
-        <h2 class="subtitular">Fidelitzar els clients actuals.</h2>
+        <div class="qs-head">
+          <p class="qs-prog"><span>03 / 04</span><i><b data-p="75"></b></i></p>
+          <h2 class="subtitular">Que et trobin: inversió que torna.</h2>
+        </div>
+        <div class="vig v3">
+          <div class="srch"><div class="box"><i></i><span class="q"></span></div>
+            <div class="rs">
+              <div class="r top pop"><div><b>atlas fisio · Gràcia</b><small>4,9 ★ (212) · Obert fins a les 20 h</small></div><div class="map"><i></i></div></div>
+              <div class="r pop"><b>Centre de fisioteràpia …</b><small>4,2 ★ (38)</small></div>
+              <div class="r pop"><b>Clínica …</b><small>3,9 ★ (61)</small></div>
+            </div>
+          </div>
+          <div class="gpt"><div class="u pop">Quin fisio em recomanes a Gràcia?</div><div class="a pop"><i></i><span class="ans"></span></div></div>
+          <div class="roi pop"><span>1 € en anuncis</span><em>→</em><b data-k="roi">1,0 €</b><span>en vendes</span></div>
+        </div>
+        <div class="qs-body">
+          <ul class="qs-list">
+          <li>Sortir a Google i al mapa quan busquen el que fas.</li>
+          <li>Sortir també quan ho preguntin a ChatGPT.</li>
+          <li>Publicitat com a inversió: cada euro mesurat i que torni multiplicat.</li>
+          </ul>
+        </div>
       </div>
-      <div class="vig v4">
-        <div class="cli"><i>M</i><div><b>Marta R.</b><small>Clienta des de 2023 · última compra fa 3 setmanes</small><small>Li agraden: ulleres, edicions limitades</small></div></div>
-        <div class="wa"><div class="m out pop">Hola Marta! Han arribat les ulleres Cala noves, com les que et van agradar. Les tens amb un 10 % fins diumenge.</div><div class="m in pop">Genial, passo dissabte!</div></div>
-        <div class="rev pop"><b>★★★★★</b><span>"Sempre m'avisen del que m'interessa, mai del que no."</span><small>Marta R. · Google</small></div>
-        <div class="kpi pop"><span>Clients que repeteixen</span><b data-k="rep">41 %</b></div>
       </div>
-      <div class="qs-body">
-        <ul class="qs-list">
-        <li>Conèixer cada client: què compra, quan i què li agrada.</li>
-        <li>Parlar-hi quan toca: novetats, ofertes, recordatoris, pel canal que fa servir.</li>
-        <li>Premiar que repeteixin: avantatges, atenció ràpida, escoltar el que diuen.</li>
-        </ul>
-        <p class="qs-res"><b>Resultat:</b> clients que repeteixen i et recomanen.</p>
+      <div class="qs-panel">
+    <div class="qs-grid">
+        <div class="qs-head">
+          <p class="qs-prog"><span>04 / 04</span><i><b data-p="100"></b></i></p>
+          <h2 class="subtitular">Fidelitzar els clients actuals.</h2>
+        </div>
+        <div class="vig v4">
+          <div class="cli"><i>M</i><div><b>Marta R.</b><small>Clienta des de 2023 · última compra fa 3 setmanes</small><small>Li agraden: ulleres, edicions limitades</small></div></div>
+          <div class="wa"><div class="m out pop">Hola Marta! Han arribat les ulleres Cala noves, com les que et van agradar. Les tens amb un 10 % fins diumenge.</div><div class="m in pop">Genial, passo dissabte!</div></div>
+          <div class="rev pop"><b>★★★★★</b><span>"Sempre m'avisen del que m'interessa, mai del que no."</span><small>Marta R. · Google</small></div>
+          <div class="kpi pop"><span>Clients que repeteixen</span><b data-k="rep">41 %</b></div>
+        </div>
+        <div class="qs-body">
+          <ul class="qs-list">
+          <li>Conèixer cada client: què compra, quan i què li agrada.</li>
+          <li>Parlar-hi quan toca: novetats, ofertes, recordatoris, pel canal que fa servir.</li>
+          <li>Premiar que repeteixin: avantatges, atenció ràpida, escoltar el que diuen.</li>
+          </ul>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -469,13 +466,6 @@
       <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><input type="hidden" name="torn" value="0">
       <div class="f2"><label class="fld">Nom<input type="text" name="nom" required></label><label class="fld">Empresa<input type="text" name="empresa" required></label></div>
       <div class="f2"><label class="fld">Email<input type="email" name="email" required></label><label class="fld">Telèfon<input type="text" name="telefon"></label></div>
-      <div><span class="text negreta">On et fa mal?</span><div class="checks" style="margin-top:10px" id="checks">
-        <label><input type="checkbox" name="p" value="presencia"> presència (web, marca, contingut)</label>
-        <label><input type="checkbox" name="p" value="gestio"> gestió (eines internes, excels)</label>
-        <label><input type="checkbox" name="p" value="venda"> venda (botiga en línia, membresia, formació)</label>
-        <label><input type="checkbox" name="p" value="comunicacio"> comunicació (Google, Meta, email, SEO)</label>
-        <label><input type="checkbox" name="p" value="nose"> no ho sé, per això escric</label>
-      </div></div>
       <label class="fld">Explica-m'ho<textarea rows="5" name="missatge" required></textarea></label>
       <label class="consent"><input type="checkbox" name="privacitat" value="1" required><span>He llegit la política de privacitat i accepto que emoloc faci servir aquestes dades per respondre'm.</span></label>
       <div class="send"><button class="btn" type="submit">Enviar</button><p class="text msg" id="fmsg" aria-live="polite"></p></div>
@@ -525,8 +515,7 @@
   const zeroTl = gsap.from('#zero .scene1 > *', { opacity:0, y:24, duration:1, stagger:.15, ease:'power2.out', delay:.2, paused:true });
 
   /* ---- passos ---- */
-  const qsteps = [...document.querySelectorAll('.qs')];
-  const steps = [document.getElementById('zero'), ...qsteps, document.getElementById('qui'), document.getElementById('projectes'), document.getElementById('blog')];
+  const steps = [document.getElementById('zero'), document.getElementById('quefem'), document.getElementById('qui'), document.getElementById('projectes'), document.getElementById('blog')];
   const free = document.getElementById('contacte');
   const mm = gsap.matchMedia();
   mm.add({ mobile:'(max-width: 820px)', desktop:'(min-width: 821px)' }, (ctx) => {
@@ -591,15 +580,39 @@
         return tl;
       }
     ];
-    qsteps.forEach((sec, i) => {
-      const vig = sec.querySelector('.vig'); let tl = null;
-      sec._play = () => {
-        gsap.fromTo(sec.querySelectorAll('.qs-head > *, .qs-body > *'), { opacity:0, y:18 }, { opacity:1, y:0, duration:.6, stagger:.1, ease:'power2.out' });
-        gsap.fromTo(vig, { opacity:0, y:20, scale:.98 }, { opacity:1, y:0, scale:1, duration:.8, ease:'power3.out' });
-        if (tl) tl.kill(); tl = VIG[i](vig);
+    (function(){
+      const sec = document.getElementById('quefem'), track = document.getElementById('qstrack'), panels = [...track.querySelectorAll('.qs-panel')];
+      let cur = 0, anim = false, tl = null, intro = null;
+      const parts = pn => ({ prog:pn.querySelector('.qs-prog'), bar:pn.querySelector('.qs-prog b'), claim:pn.querySelector('.qs-claim'), h2:pn.querySelector('h2'), lis:pn.querySelectorAll('.qs-list li'), vig:pn.querySelector('.vig') });
+      const hide = pn => { const q = parts(pn); gsap.set([q.prog, q.h2, q.lis, q.vig, q.claim].filter(Boolean), { opacity:0 }); gsap.set(q.bar, { width:0 }); };
+      const enter = n => { // el text primer i per parts, la vinyeta després i més lenta, la barra al final
+        const q = parts(panels[n]);
+        if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
+        intro = gsap.timeline();
+        intro.set(q.bar, { width:0 });
+        intro.fromTo(q.h2, { opacity:0, x:-40 }, { opacity:1, x:0, duration:.8, ease:'power3.out' }, 0);
+        if (q.claim) intro.fromTo(q.claim, { opacity:0, y:-12 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, .15);
+        intro.fromTo(q.lis, { opacity:0, x:-24 }, { opacity:1, x:0, duration:.55, stagger:.18, ease:'power2.out' }, .45);
+        intro.fromTo(q.vig, { opacity:0, x:60, scale:.97 }, { opacity:1, x:0, scale:1, duration:1.3, ease:'power2.out' }, .35);
+        intro.fromTo(q.prog, { opacity:0 }, { opacity:1, duration:.4 }, 1.1);
+        intro.to(q.bar, { width:q.bar.dataset.p + '%', duration:.9, ease:'power2.inOut' }, 1.3);
+        intro.add(() => { tl = VIG[n](q.vig); }, .9);
       };
-      sec._reset = () => { if (tl) { tl.kill(); tl = null; } };
-    });
+      const goTo = (n, animate) => {
+        cur = n;
+        if (animate) { anim = true; gsap.to(track, { xPercent:-100 * n, duration:1, ease:'power3.inOut', onComplete:() => { anim = false; } }); }
+        else gsap.set(track, { xPercent:-100 * n });
+      };
+      panels.forEach(hide);
+      sec._step = dir => { // un cop de rodeta: el següent bloc entra de dreta a esquerra
+        if (anim) return true;
+        const n = cur + dir; if (n < 0 || n >= panels.length) return false;
+        hide(panels[n]); goTo(n, true); gsap.delayedCall(.35, () => enter(n)); return true;
+      };
+      sec._play = dir => { const n = dir < 0 ? panels.length - 1 : 0; panels.forEach(hide); goTo(n, false); enter(n); };
+      sec._reset = () => { if (tl) { tl.kill(); tl = null; } if (intro) { intro.kill(); intro = null; } };
+      window.addEventListener('resize', () => gsap.set(track, { xPercent:-100 * cur }));
+    })();
     // pas "qui hi ha darrere"
     (function(){
       const sec = document.getElementById('qui');
@@ -610,14 +623,14 @@
       };
       sec._reset = () => {};
     })();
-    return () => { [...qsteps, document.getElementById('qui')].forEach(s => { s._play = s._reset = null; }); };
+    return () => { [document.getElementById('quefem'), document.getElementById('qui')].forEach(s => { s._play = s._reset = s._step = null; }); };
   });
 
   /* ---- navegació per passos: un cop de rodeta o un lliscament, un pas ---- */
   let current = 0, locked = false, inZone = true;
   const zoneEnd = () => { const l = steps[steps.length - 1]; return l.offsetTop + l.offsetHeight; };
   function setZone(on){ inZone = on; html.classList.toggle('steps-locked', on); if (on) lenis.stop(); else lenis.start(); }
-  const navFor = el => '#' + (el.classList.contains('qs') ? 'quefem' : el.id);
+  const navFor = el => '#' + el.id;
   function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', (a.dataset.step || a.getAttribute('href')) === hash)); }
   function activate(i, dir = 1){
     const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0);
@@ -669,7 +682,7 @@
     const el = document.querySelector(a.getAttribute('href')); if (!el) return; e.preventDefault();
     const idx = steps.indexOf(el);
     if (idx >= 0) { if (!inZone) setZone(true); locked = false; go(idx); }
-    else { if (inZone) { setZone(false); } current = steps.length; lenis.scrollTo(el, { duration:1.4, force:true }); }
+    else { if (inZone) { setZone(false); } current = steps.length; setNavActive('#contacte'); nav.classList.add('compact'); lenis.scrollTo(el, { duration:1.4, force:true }); }
   }));
   window.addEventListener('resize', () => { if (inZone && !locked) lenis.scrollTo(current === steps.length ? free : steps[current], { immediate:true, force:true }); });
 
@@ -744,7 +757,6 @@
     f.addEventListener('submit', async e => {
       e.preventDefault(); msg.className = 'text msg';
       if (!f.reportValidity()) return;
-      if (![...f.querySelectorAll('input[name="p"]')].some(c => c.checked)) { msg.textContent = 'Marca almenys una opció de "On et fa mal?".'; msg.classList.add('err'); return; }
       f.torn.value = Math.round((Date.now() - t0) / 1000);
       const btn = f.querySelector('.btn'); btn.disabled = true; msg.textContent = 'Enviant…';
       try {

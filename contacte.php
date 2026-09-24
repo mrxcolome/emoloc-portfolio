@@ -11,7 +11,6 @@ $empresa  = mb_substr(neteja($_POST['empresa'] ?? ''), 0, 120);
 $email    = mb_substr(neteja($_POST['email'] ?? ''), 0, 160);
 $telefon  = mb_substr(neteja($_POST['telefon'] ?? ''), 0, 40);
 $missatge = mb_substr(trim($_POST['missatge'] ?? ''), 0, 4000);
-$pilars   = array_slice(array_map('neteja', (array) (isset($_POST['p']) ? $_POST['p'] : array())), 0, 5);
 $priv     = ($_POST['privacitat'] ?? '') === '1';
 $honeypot = $_POST['web'] ?? '';
 $torn     = (int) ($_POST['torn'] ?? 0);
@@ -22,17 +21,13 @@ if ($honeypot !== '' || $torn < 3 || $nom === '' || $missatge === '' || !$priv |
     exit;
 }
 
-$noms = array('presencia' => 'presència', 'gestio' => 'gestió', 'venda' => 'venda', 'comunicacio' => 'comunicació', 'nose' => 'no ho sap');
-$llegibles = array();
-foreach ($pilars as $k) { $llegibles[] = isset($noms[$k]) ? $noms[$k] : $k; }
-$pil = implode(', ', $llegibles);
 
 $cos = "Nou missatge del formulari de contacte d'emoloc.com\n\n"
      . "Nom: $nom\n"
      . "Empresa: $empresa\n"
      . "Email: $email\n"
      . "Telèfon: " . ($telefon !== '' ? $telefon : '-') . "\n"
-     . "On li fa mal: " . ($pil !== '' ? $pil : '-') . "\n\n"
+     . "\n"
      . "Missatge:\n$missatge\n";
 
 $capceleres = "From: Web emoloc.com <xavi@emoloc.com>\r\n"
