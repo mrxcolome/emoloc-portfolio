@@ -82,6 +82,7 @@
   #bgvid{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--paper)}
   #bgvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.02)}
   #bgvid .white{position:absolute;inset:0;background:var(--paper);opacity:.5}
+  @media (max-width:820px){#bgvid .white{opacity:.68}} /* a mòbil el fons es nota menys */
   .stage{position:relative;height:100svh;min-height:560px;overflow:hidden;background:transparent}
   #zero .stage{min-height:600px}
     #zero .scene1{position:absolute;inset:0;display:grid;align-content:center;justify-content:start;padding:96px var(--edge) 64px}
@@ -112,6 +113,8 @@
   .qs-head{grid-area:head} .qs-body{grid-area:body} .qs .vig{grid-area:vig;align-self:start}
   .qs-prog{display:flex;align-items:center;gap:10px;font-size:14px;line-height:1;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
   .qs-prog .num{position:relative;display:inline-block;width:2ch;height:1em;overflow:hidden;color:var(--ink);margin-right:-5px} .qs-prog .num b{position:absolute;left:0;top:0;font-weight:600} .qs-prog .num .nxt{transform:translateY(100%)}
+  .qs-arrows{display:flex;gap:6px;margin-left:14px} .qs-arrows button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);display:grid;place-items:center;cursor:pointer;padding:0;transition:color .25s,border-color .25s,transform .25s} .qs-arrows button:hover{color:var(--ink);border-color:var(--ink)} .qs-arrows button:active{transform:scale(.92)} /* fletxes per a qui no faci servir la rodeta */
+  @media (max-width:820px){.qs-arrows{display:none}}
   .qs-prog i{display:block;width:120px;height:2px;border-radius:3px;background:var(--line);position:relative;overflow:hidden;margin-left:4px} .qs-prog i b{position:absolute;left:0;top:0;bottom:0;background:var(--accent)}
   .qs h2{margin-top:14px}
   .qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
@@ -126,7 +129,7 @@
   .v1 .hd{display:flex;justify-content:space-between;align-items:center;padding:10px 12px 6px} .v1 .brand{font-weight:900;letter-spacing:.06em;font-size:16px} .v1 .brand em{font-style:normal;color:var(--accent)} .v1 .nav{font-size:9px;color:var(--muted)}
   .v1 .img{min-height:0;overflow:hidden} .v1 .tx{padding:8px 12px 10px;font-size:11px;line-height:1.3;color:var(--ink)}
   .v1 .from{display:flex;align-items:center;gap:8px;padding:10px 12px 6px;font-size:11px} .v1 .from i{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:900;font-size:11px;flex:none} .v1 .from b{font-weight:800;letter-spacing:.04em} .v1 .from small{display:block;color:var(--muted);font-size:9px}
-  .v1 .mail .from>div{display:grid} .v1 .tag{grid-column:1/-1;justify-self:start;background:var(--ink);color:#fff;font-size:11px;font-weight:600;padding:7px 12px;border-radius:999px}
+  .v1 .mail .from>div{display:grid}
   /* v2: tasques que es fan soles */
   .v2 .panel{height:100%;background:#fff;border-radius:12px;padding:14px 16px;display:grid;grid-template-rows:auto 1fr auto;gap:10px;box-shadow:0 8px 30px rgba(27,24,21,.06)}
   .v2 .ph{display:flex;justify-content:space-between;align-items:baseline;font-size:13px} .v2 .ph b{font-weight:800} .v2 .ph span{color:var(--muted)} .v2 .ph span b{color:var(--accent);font-variant-numeric:tabular-nums}
@@ -161,7 +164,7 @@
     .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px}
     .vig{height:min(36svh,300px);padding:12px}
     @media (max-height:720px){.vig{height:min(24svh,300px)}} /* mòbils baixos: la targeta cedeix espai a la llista */
-    .v1{gap:8px} .v1 .tx,.v1 .nav{display:none} .v1 .tag{font-size:10px;padding:5px 10px}
+    .v1{gap:8px} .v1 .tx,.v1 .nav{display:none}
     .v2 .tasks li{font-size:11.5px;padding:7px 9px} .v2 .tasks li:nth-child(n+5){display:none} .v2 .pf b{font-size:22px}
     .v3{gap:8px} .v3 .rs .r:not(.top){display:none} .v3 .gpt{padding:10px} .v3 .roi{padding:8px 12px}
     .v4 .cli small:last-child{display:none} .v4 .rev{display:none}
@@ -282,7 +285,7 @@
 <!-- ============ què fem: quatre passos ============ -->
 <section class="pstep qs" id="quefem">
   <div class="stage">
-    <p class="qs-prog" id="qsprog"><span class="num"><b class="cur">01</b><b class="nxt">02</b></span><span class="of">/ 04</span><i><b class="fill" style="width:25%"></b></i></p>
+    <p class="qs-prog" id="qsprog"><span class="num"><b class="cur">01</b><b class="nxt">02</b></span><span class="of">/ 04</span><i><b class="fill" style="width:25%"></b></i><span class="qs-arrows"><button type="button" data-dir="-1" aria-label="Pas anterior"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l5-5 5 5"/></svg></button><button type="button" data-dir="1" aria-label="Pas següent"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></button></span></p>
     <div class="qs-track" id="qstrack">
       <div class="qs-panel">
     <div class="qs-grid">
@@ -293,7 +296,6 @@
           <div class="srf web"><div class="bar"><i></i><i></i><i></i><span>koa.shop</span></div><div class="hd"><b class="brand pop">KŌA<em>.</em></b><span class="nav pop">Botiga · Nosaltres · Contacte</span></div><div class="img pop"><img src="assets/sneaker.jpg" alt=""></div><p class="tx pop">Calçat fet a mà a Mataró. Des de 1998.</p></div>
           <div class="srf mail"><div class="from"><i class="pop">K</i><div><b class="pop">KŌA.</b><small class="pop">Novetats de tardor · avui</small></div></div><div class="img pop"><img src="assets/backpack.jpg" alt=""></div><p class="tx pop">Ha arribat la motxilla Roure.</p></div>
           <div class="srf post"><div class="from"><i class="pop">K</i><b class="pop">koa.shop</b></div><div class="img pop"><img src="assets/sunglasses.jpg" alt=""></div><p class="tx pop">♡ 312 · Ulleres Cala, de nou en estoc</p></div>
-          <div class="tag pop">Mateixa imatge, mateix to, a tot arreu</div>
         </div>
         <div class="qs-body">
           <ul class="qs-list">
@@ -521,7 +523,7 @@
     const count = (el, from, to, fmt, dur = 1.4) => { const o = { v:from }; return gsap.to(o, { v:to, duration:dur, ease:'power2.out', onUpdate:() => { el.textContent = fmt(o.v); } }); };
     const VIG = [
       v => { // presència: la marca apareix igual a la web, al correu i a la xarxa
-        const pops = [...v.querySelectorAll('.pop')], tag = v.querySelector('.tag');
+        const pops = [...v.querySelectorAll('.pop')];
         const tl = gsap.timeline({ repeat:-1, repeatDelay:2.2 });
         tl.set(pops, { opacity:0 });
         tl.fromTo(v.querySelector('.web'), { y:16, opacity:0 }, { y:0, opacity:1, duration:.5 }, 0);
@@ -530,7 +532,6 @@
         tl.fromTo(v.querySelectorAll('.mail .pop'), { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.4, stagger:.12, ease:'back.out(1.6)' }, 1.4);
         tl.fromTo(v.querySelector('.post'), { y:16, opacity:0 }, { y:0, opacity:1, duration:.5 }, 2.1);
         tl.fromTo(v.querySelectorAll('.post .pop'), { opacity:0, scale:.9 }, { opacity:1, scale:1, duration:.4, stagger:.12, ease:'back.out(1.6)' }, 2.4);
-        tl.fromTo(tag, { opacity:0, y:10 }, { opacity:1, y:0, duration:.5 }, 3.2);
         tl.to(v.querySelectorAll('.brand, .from b'), { color:'#f26b1f', duration:.35, stagger:.2, yoyo:true, repeat:1 }, 3.9);
         tl.to({}, { duration:1 });
         return tl;
@@ -695,6 +696,7 @@
     if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); go(current + 1, true); }
     if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); go(current - 1, true); }
   });
+  document.querySelectorAll('#qsprog .qs-arrows button').forEach(b => b.addEventListener('click', () => { if (inZone) go(current + Number(b.dataset.dir), true); }));
   // enllaços interns: dins de la zona de passos, van al pas; fora, desplaçament normal
   document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
     const el = document.querySelector(a.getAttribute('href')); if (!el) return; e.preventDefault();
