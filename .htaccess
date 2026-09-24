@@ -20,6 +20,9 @@ SetEnvIf Request_URI ^/test/ NOINDEX
 Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
 </IfModule>
 
+# Codificació: tot el lloc és UTF-8
+AddDefaultCharset UTF-8
+
 # Tipus i compressió
 AddType image/svg+xml .svg
 AddType video/mp4 .mp4
