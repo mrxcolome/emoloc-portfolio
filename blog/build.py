@@ -185,9 +185,9 @@ head = re.sub(r'\.art \.lead\{[^}]*\}', '.art .lead{margin-top:20px;font-size:18
 head = re.sub(r'\.art \.body p\{[^}]*\}', '.art .body p{font-size:18px;line-height:1.5;font-weight:300;margin-bottom:18px}', head)
 head = re.sub(r'\.art \.body li\{font-size:\d+px;line-height:[\d.]+;(?:font-weight:\d+;)?', '.art .body li{font-size:18px;line-height:1.5;font-weight:300;', head)
 MOB = ('@media (max-width:820px){.subtitular{font-size:29px;letter-spacing:-.04em} '
-       '.text,.topnav ul,.btn,.filters button,.art .lead,.art .body p,.art .body li,.cta .text{font-size:22px} '
+       '.text,.topnav ul,.btn,.filters button,.art .lead,.art .body p,.art .body li,.cta .text{font-size:20px} '
        '.text,.art .lead,.art .body p,.art .body li{line-height:1.3} '
-       '.text-bold,.card h3,.art .body h2{font-size:23px}} /* Tipografia mòbil: Subtitular 29 / −4 %; Text 22 / 1.3; Text Bold 23 */')
+       '.text-bold,.card h3,.art .body h2{font-size:21px}} /* Tipografia mòbil: Subtitular 29 / −4 %; Text 20 / 1.3; Text Bold 21 */')
 head = re.sub(r'[ \t]*@media \(max-width:820px\)\{\.subtitular\{font-size:2[89]px[^\n]*\n', '', head)  # fora la línia antiga
 head = head.replace('</style>', '  ' + MOB + '\n</style>', 1)  # al final del CSS perquè guanyi a les regles d'escriptori
 open(OUT, 'w', encoding='utf-8').write(head + main + tail)
