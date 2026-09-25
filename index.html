@@ -112,11 +112,7 @@
   .qs-head{padding-top:36px}
   .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-rows:minmax(196px,auto) auto;grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:start} /* la fila del titular té alçada fixa: els conceptes sempre a la mateixa altura */
   .qs-head{grid-area:head} .qs-body{grid-area:body} .qs .vig{grid-area:vig;align-self:start}
-  .qs-prog{display:flex;align-items:center;gap:10px;font-size:14px;line-height:1;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
-  .qs-prog .num{position:relative;display:inline-block;width:2ch;height:1em;overflow:hidden;color:var(--ink);margin-right:-5px} .qs-prog .num b{position:absolute;left:0;top:0;font-weight:600} .qs-prog .num .nxt{transform:translateY(100%)}
-  .qs-arrows{display:flex;gap:6px;margin-left:14px} .qs-arrows button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;transition:color .25s,border-color .25s,transform .25s} .qs-arrows button:hover{color:var(--ink);border-color:var(--ink)} .qs-arrows button:active{transform:scale(.92)} /* fletxes per a qui no faci servir la rodeta */
-  @media (max-width:820px){.qs-arrows{display:none}}
-  .qs-prog i{display:block;width:120px;height:2px;border-radius:3px;background:var(--line);position:relative;overflow:hidden;margin-left:4px} .qs-prog i b{position:absolute;left:0;top:0;bottom:0;background:var(--accent)}
+  .qs-dots{display:flex;gap:2px;margin-left:-9px} .qs-dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center} .qs-dots button::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s} .qs-dots button.on::before{background:var(--accent);transform:scale(1.3)} .qs-dots button:hover::before{background:var(--ink)} .qs-dots button.on:hover::before{background:var(--accent)} /* els puntets del pas */
   .qs h2{margin-top:14px}
   .qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
   .qs-list li{padding:12px 18px;background:var(--surface);border-radius:12px;line-height:1.3} /* cada concepte dins d'un rectangle, en Text compacte */
@@ -159,9 +155,9 @@
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
   @media (max-width:820px){
     .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
-    .qs-panel{padding:22px var(--gutter) 24px} .qs-prog{left:var(--gutter);top:24px} .qs-head{padding-top:26px}
+    .qs-panel{padding:22px var(--gutter) 24px} .qs-prog{left:calc(var(--gutter) - 9px);top:18px} .qs-dots{margin-left:0} .qs-head{padding-top:26px}
     .qs-grid{grid-template-columns:1fr;grid-template-rows:minmax(132px,auto) auto auto;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start} /* fila del titular fixa també a mòbil */
-    .qs-prog i{width:80px} .qs h2{margin-top:10px}
+    .qs h2{margin-top:10px}
     .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px}
     .vig{height:min(36svh,300px);padding:12px}
     @media (max-height:720px){.vig{height:min(24svh,300px)}} /* mòbils baixos: la targeta cedeix espai a la llista */
@@ -187,9 +183,9 @@
   html.no-motion .reveal{opacity:1;transform:none}
 
 
-  .proj-head{margin-bottom:24px} .proj-head .text{margin-top:14px} /* en una sola línia */
-  .deck{display:grid} .deck .case{grid-area:1/1;will-change:transform}
-  .deck .case+.case{box-shadow:0 -24px 60px rgba(27,24,21,.16)}
+  .proj-head{margin-bottom:24px;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:16px} .proj-head .text{grid-column:1/-1;margin-top:14px} /* en una sola línia; els puntets, a la dreta del titular */
+  .proj-dots{margin-left:0;margin-right:-9px}
+  .deck{display:grid} .deck .case{grid-area:1/1;will-change:transform} /* les targetes passen lateralment */
   .case{display:grid;grid-template-columns:minmax(260px,540px) 1fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--surface);border-radius:var(--r-m);padding:clamp(24px,3vw,40px);box-shadow:0 -1px 0 var(--line)}
   .case .shot{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(27,24,21,.18);aspect-ratio:16/10;background:#fff} /* la mateixa proporció que les captures */
   .case .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .7s ease;transform-origin:50% 0}
@@ -298,7 +294,7 @@
 <!-- ============ què fem: quatre passos ============ -->
 <section class="pstep qs" id="quefem">
   <div class="stage">
-    <p class="qs-prog" id="qsprog"><span class="num"><b class="cur">01</b><b class="nxt">02</b></span><span class="of">/ 04</span><i><b class="fill" style="width:25%"></b></i><span class="qs-arrows"><button type="button" data-dir="-1" aria-label="Pas anterior"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l5-5 5 5"/></svg></button><button type="button" data-dir="1" aria-label="Pas següent"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></button></span></p>
+    <div class="qs-prog qs-dots" id="qsprog" role="tablist" aria-label="Pas"><button type="button" data-n="0" aria-label="Pas 1 de 4" class="on"></button><button type="button" data-n="1" aria-label="Pas 2 de 4"></button><button type="button" data-n="2" aria-label="Pas 3 de 4"></button><button type="button" data-n="3" aria-label="Pas 4 de 4"></button></div>
     <div class="qs-track" id="qstrack">
       <div class="qs-panel">
     <div class="qs-grid">
@@ -414,6 +410,7 @@
   <div class="stage">
     <div class="proj-head">
       <h2 class="subtitular">Projectes recents</h2>
+      <div class="qs-dots proj-dots" id="projdots" role="tablist" aria-label="Projecte"><button type="button" class="on" aria-label="Projecte 1 de 2"></button><button type="button" aria-label="Projecte 2 de 2"></button></div>
       <p class="text">Projectes que hem acompanyat fent-los créixer com a negoci, millorant la seva presència i guanyant en eficiència.</p>
     </div>
     <div class="deck">
@@ -595,18 +592,11 @@
     ];
     (function(){
       const sec = document.getElementById('quefem'), panels = [...sec.querySelectorAll('.qs-panel')];
-      const prog = document.getElementById('qsprog'), numCur = prog.querySelector('.cur'), numNxt = prog.querySelector('.nxt'), rail = prog.querySelector('i'), fill = prog.querySelector('.fill');
+      const prog = document.getElementById('qsprog'), dots = [...prog.querySelectorAll('button')];
       let cur = 0, anim = false, tl = null, intro = null;
       const parts = pn => ({ claim:pn.querySelector('.qs-claim'), h2:pn.querySelector('h2'), lis:[...pn.querySelectorAll('.qs-list li')], vig:pn.querySelector('.vig') });
-      const pct = n => (n + 1) * 25 + '%', two = n => String(n + 1).padStart(2, '0');
-      const counter = (n, t) => { // els números passen com un marcador, la barra s'infla, creix i es desinfla
-        numNxt.textContent = two(n);
-        t.to(numCur, { yPercent:-100, duration:.45, ease:'power2.inOut' }, 0);
-        t.fromTo(numNxt, { yPercent:100 }, { yPercent:0, duration:.45, ease:'power2.inOut', onComplete:() => { numCur.textContent = two(n); gsap.set(numCur, { yPercent:0 }); gsap.set(numNxt, { yPercent:100 }); } }, 0);
-        t.to(rail, { height:7, duration:.3, ease:'power2.out' }, 0);
-        t.to(fill, { width:pct(n), duration:.9, ease:'power2.inOut' }, .1);
-        t.to(rail, { height:2, duration:.45, ease:'power2.inOut' }, .8);
-      };
+      const setDots = n => dots.forEach((d, k) => d.classList.toggle('on', k === n));
+      const counter = (n, t) => { t.call(() => setDots(n), null, .2); };
       const enter = (n, dir, t, at) => { // cada element entra per un costat diferent
         const q = parts(panels[n]);
         t.set(panels[n], { visibility:'visible' }, at).call(() => panels[n].classList.add('on'), null, at);
@@ -628,23 +618,25 @@
       };
       const hide = pn => { const q = parts(pn); pn.classList.remove('on'); gsap.set([q.h2, q.claim, q.vig, ...q.lis].filter(Boolean), { opacity:0, x:0, y:0 }); };
       panels.forEach(hide);
-      sec._step = dir => {
-        if (anim) return true;
-        const n = cur + dir; if (n < 0 || n >= panels.length) return false;
+      const transition = (n, dir) => { // del bloc actual al bloc n, lateralment
         anim = true; if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
         const from = cur; cur = n;
         intro = gsap.timeline({ onComplete:() => { anim = false; } });
         leave(from, dir, intro); counter(n, intro); enter(n, dir, intro, .45);
-        return true;
       };
+      sec._step = dir => {
+        if (anim) return true;
+        const n = cur + dir; if (n < 0 || n >= panels.length) return false;
+        transition(n, dir); return true;
+      };
+      dots.forEach((d, k) => d.addEventListener('click', () => { if (!anim && k !== cur) transition(k, k > cur ? 1 : -1); })); // clic en un puntet: va a aquell bloc
       sec._play = dir => {
-        const n = dir < 0 ? panels.length - 1 : 0;
+        // escriptori: entrant des de baix es comença pel 04; mòbil: es torna al bloc on s'era (els blocs es passen lateralment)
+        const n = mobile ? cur : (dir < 0 ? panels.length - 1 : 0);
         if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
-        panels.forEach(hide); cur = n; anim = false;
-        numCur.textContent = two(n); gsap.set(numCur, { yPercent:0 }); gsap.set(numNxt, { yPercent:100 }); gsap.set(rail, { height:2 });
+        panels.forEach(hide); cur = n; anim = false; setDots(n);
         intro = gsap.timeline();
         intro.fromTo(prog, { opacity:0 }, { opacity:1, duration:.5 }, 0);
-        intro.fromTo(fill, { width:0 }, { width:pct(n), duration:.9, ease:'power2.inOut' }, .2);
         enter(n, 1, intro, 0);
       };
       sec._reset = () => { if (tl) { tl.kill(); tl = null; } if (intro) { intro.kill(); intro = null; } anim = false; };
@@ -673,12 +665,12 @@
     gsap.set(nav, { color:INK });
     if (i === 0) { zeroTl.restart(); gsap.fromTo('#zhint', { y:120, visibility:'visible' }, { y:0, duration:.8, delay:.5, ease:'power2.out', overwrite:true }); } else if (el._play) el._play(dir);
   }
-  function go(i, byInput = false){
+  function go(i, byInput = false, wholeStep = false){
     if (locked) return;
     if (i < 0) i = 0;
     if (i > steps.length) i = steps.length;
-    // passos amb sub-passos interns (projectes): el cop de rodeta el consumeix el pas
-    if (byInput && steps[current] && steps[current]._step && steps[current]._step(i - current)) return;
+    // passos amb sub-passos interns: el cop de rodeta el consumeix el pas (tret que es demani canviar de secció sencera)
+    if (byInput && !wholeStep && steps[current] && steps[current]._step && steps[current]._step(i - current)) return;
     const prev = current; current = i; locked = true;
     if (prev === 0 && i > 0) { // el "Desplaça't" marxa cap avall mentre la pàgina puja: el fixem a la pantalla i el baixem
       const hint = document.getElementById('zhint'), r = hint.getBoundingClientRect();
@@ -704,12 +696,13 @@
   window.addEventListener('touchstart', e => { touchY = e.touches[0].clientY; touchX = e.touches[0].clientX; }, { passive:true });
   window.addEventListener('touchend', e => {
     if (touchY === null) return; const dy = touchY - e.changedTouches[0].clientY, dx = touchX - e.changedTouches[0].clientX; touchY = null;
-    if (Math.abs(dx) > Math.abs(dy)) { // gest horitzontal: dins de "Com ho fem" passa de bloc; al carrusel del blog no fa res
-      if (inZone && Math.abs(dx) >= 50 && steps[current] && steps[current].id === 'quefem' && !e.target.closest('#blog .posts')) go(current + (dx > 0 ? 1 : -1), true);
+    const lateral = steps[current] && ['quefem', 'projectes'].includes(steps[current].id); // seccions amb contingut que es passa lateralment
+    if (Math.abs(dx) > Math.abs(dy)) { // gest horitzontal: passa de bloc o de projecte; al carrusel del blog no fa res
+      if (inZone && Math.abs(dx) >= 50 && lateral && !e.target.closest('#blog .posts')) go(current + (dx > 0 ? 1 : -1), true);
       return;
     }
     if (Math.abs(dy) < 40) return;
-    if (inZone) go(current + (dy > 0 ? 1 : -1), true);
+    if (inZone) go(current + (dy > 0 ? 1 : -1), true, lateral); // a mòbil, el gest vertical canvia de secció; el lateral, de contingut
     else if (dy < 0 && lenis.scroll <= zoneEnd() + 40) { setZone(true); go(steps.length - 1, true); }
   }, { passive:true });
   window.addEventListener('keydown', e => {
@@ -717,7 +710,6 @@
     if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); go(current + 1, true); }
     if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); go(current - 1, true); }
   });
-  document.querySelectorAll('#qsprog .qs-arrows button').forEach(b => b.addEventListener('click', () => { if (inZone) go(current + Number(b.dataset.dir), true); }));
   (function(){ // punts del carrusel del blog (mòbil)
     const track = document.querySelector('#blog .posts'), dots = document.getElementById('blogdots'); if (!track || !dots) return;
     const arts = [...track.querySelectorAll('article')]; dots.innerHTML = arts.map(() => '<i></i>').join('');
@@ -751,26 +743,27 @@
       return { start, stop, build };
     });
     let sub = 0, anim = false;
-    const show = n => { sub = n; ctrls.forEach((k, j) => j === n ? k.start() : k.stop()); };
-    const lay = n => { // estat estàtic: la targeta n a dalt de la pila
-      cases.forEach((c, j) => gsap.set(c, j < n ? { yPercent:0, scale:.95, y:-24, opacity:.45 } : j === n ? { yPercent:0, scale:1, y:0, opacity:1 } : { yPercent:180, scale:1, y:0, opacity:1 }));
+    const pdots = [...document.querySelectorAll('#projdots button')];
+    const show = n => { sub = n; pdots.forEach((d, k) => d.classList.toggle('on', k === n)); ctrls.forEach((k, j) => j === n ? k.start() : k.stop()); };
+    const lay = n => { // estat estàtic: la targeta n al centre, les anteriors fora per l'esquerra, les següents fora per la dreta
+      cases.forEach((c, j) => gsap.set(c, { xPercent: j < n ? -112 : j === n ? 0 : 112, opacity: j === n ? 1 : 0, scale:1, y:0, yPercent:0 }));
+    };
+    const transition = (n, dir) => { // la targeta actual marxa pel costat contrari i la nova entra pel costat d'on venim
+      anim = true;
+      gsap.to(cases[sub], { xPercent:-112 * dir, opacity:0, duration:.6, ease:'power3.in' });
+      gsap.fromTo(cases[n], { xPercent:112 * dir, opacity:0 }, { xPercent:0, opacity:1, duration:.9, delay:.2, ease:'power3.out', onComplete:() => { anim = false; } });
+      ctrls[n].build(.6);
+      show(n);
     };
     sec._step = dir => {
       if (anim) return true;
       const n = sub + dir; if (n < 0 || n >= cases.length) return false;
-      anim = true;
-      if (dir > 0) {
-        gsap.to(cases[sub], { scale:.95, y:-24, opacity:.45, duration:.8, ease:'power3.inOut' });
-        gsap.fromTo(cases[n], { yPercent:180 }, { yPercent:0, duration:.9, ease:'power3.out', onComplete:() => { anim = false; } });
-        ctrls[n].build(.4);
-      } else {
-        gsap.to(cases[sub], { yPercent:180, duration:.7, ease:'power3.in', onComplete:() => { anim = false; } });
-        gsap.to(cases[n], { scale:1, y:0, opacity:1, duration:.8, ease:'power3.out' });
-      }
-      show(n); return true;
+      transition(n, dir); return true;
     };
+    pdots.forEach((d, k) => d.addEventListener('click', () => { if (!anim && k !== sub) transition(k, k > sub ? 1 : -1); }));
     sec._play = dir => {
-      const n = dir < 0 ? cases.length - 1 : 0;
+      // escriptori: des de baix es comença per l'últim; mòbil: es torna al projecte on s'era
+      const n = matchMedia('(max-width:820px)').matches ? sub : (dir < 0 ? cases.length - 1 : 0);
       lay(n);
       gsap.fromTo(sec.querySelector('h2'), { opacity:0, y:16 }, { opacity:1, y:0, duration:.6, ease:'power2.out' });
       const c = cases[n];
