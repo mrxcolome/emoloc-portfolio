@@ -109,13 +109,13 @@ head = head.replace('<meta name="description" content="Articles curts per a qui 
 head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}')
 # --- Subtitular a 1.0; Text Bold i Petit Bold amb espaiat −2 % ---
 head = head.replace('.subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}', '.subtitular{font-size:clamp(28px,4vw,40px);line-height:1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}')
-head = head.replace('.card h3{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:6px 0 8px}', '.card h3{font-size:18px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:6px 0 8px}')
-head = head.replace('.art .body h2{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:36px 0 10px}', '.art .body h2{font-size:18px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:36px 0 10px}')
+head = head.replace('.card h3{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:6px 0 8px}', '.card h3{font-size:19px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:6px 0 8px}')
+head = head.replace('.art .body h2{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:36px 0 10px}', '.art .body h2{font-size:19px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:36px 0 10px}')
 head = head.replace('.art .body strong{font-weight:800}', '.art .body strong{font-weight:800;letter-spacing:-.04em}')
-head = head.replace('.text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800}', '.text-bold{font-size:18px;line-height:1.3;font-weight:800;letter-spacing:-.04em} .petit-bold{font-size:14px;line-height:1.5;font-weight:800;letter-spacing:-.02em} .negreta{font-weight:800;letter-spacing:-.04em} .petit.negreta,.petit .negreta{letter-spacing:-.02em}')
+head = head.replace('.text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800}', '.text-bold{font-size:19px;line-height:1.3;font-weight:800;letter-spacing:-.04em} .petit-bold{font-size:15px;line-height:1.5;font-weight:800;letter-spacing:-.02em} .negreta{font-weight:800;letter-spacing:-.04em} .petit.negreta,.petit .negreta{letter-spacing:-.02em}')
 # --- pesos definitius: Text 18/1.3 Regular 300 i Bold 800; Petit 14/1.5 Regular 300 i Bold 800 ---
 for f in ['family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800;9..40,900;9..40,1000']: head = head.replace(f, 'family=DM+Sans:opsz,wght@9..40,200..1000')
-head = head.replace('.text{font-size:18px;line-height:1.6;font-weight:400}', '.text{font-size:18px;line-height:1.3;font-weight:300}')
+head = head.replace('.text{font-size:18px;line-height:1.6;font-weight:400}', '.text{font-size:18px;line-height:1.5;font-weight:300}')
 head = head.replace('.petit{font-size:14px;line-height:1.5;font-weight:400}', '.petit{font-size:14px;line-height:1.5;font-weight:300}')
 head = head.replace('.negreta{font-weight:600}', '.negreta{font-weight:800}').replace('.negreta{font-weight:800}', '.text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800}') if '.text-bold{' not in head else head
 head = head.replace('.topnav ul{display:flex;gap:28px;font-weight:400;font-size:18px}', '.topnav ul{display:flex;gap:28px;font-weight:300;font-size:18px}')
@@ -123,10 +123,10 @@ head = head.replace('font-weight:400;font-size:18px;line-height:1;transition:tra
 head = head.replace('  .link{font-weight:400;text-decoration:underline;text-underline-offset:3px}', '  .link{font-weight:300;text-decoration:underline;text-underline-offset:3px}')
 head = head.replace('.filters button{font:inherit;font-weight:400;font-size:18px;', '.filters button{font:inherit;font-weight:300;font-size:18px;')
 head = head.replace('.card h3{font-size:18px;font-weight:600;letter-spacing:0;line-height:1.6;margin:6px 0 8px}', '.card h3{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:6px 0 8px}')
-head = head.replace('.art .lead{margin-top:20px;font-size:18px;line-height:1.6}', '.art .lead{margin-top:20px;font-size:18px;line-height:1.3;font-weight:300}')
-head = head.replace('.art .body p{font-size:18px;line-height:1.6;margin-bottom:20px}', '.art .body p{font-size:18px;line-height:1.3;font-weight:300;margin-bottom:18px}')
+head = head.replace('.art .lead{margin-top:20px;font-size:18px;line-height:1.6}', '.art .lead{margin-top:20px;font-size:18px;line-height:1.5;font-weight:300}')
+head = head.replace('.art .body p{font-size:18px;line-height:1.6;margin-bottom:20px}', '.art .body p{font-size:18px;line-height:1.5;font-weight:300;margin-bottom:18px}')
 head = head.replace('.art .body h2{font-size:18px;font-weight:600;letter-spacing:0;line-height:1.6;margin:40px 0 10px}', '.art .body h2{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:36px 0 10px}')
-head = head.replace('.art .body li{font-size:18px;line-height:1.6;', '.art .body li{font-size:18px;line-height:1.3;font-weight:300;')
+head = head.replace('.art .body li{font-size:18px;line-height:1.6;', '.art .body li{font-size:18px;line-height:1.5;font-weight:300;')
 head = head.replace('.art .body strong{font-weight:600}', '.art .body strong{font-weight:800}')
 head = head.replace('.topnav .parlem{padding:10px 18px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:600;font-size:16px}', '.topnav .parlem{padding:10px 18px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:300;font-size:18px}')
 # --- quatre estils: Titular 72 (només a l'inici del web), Subtitular 40, Text 18 (Regular/Bold), Petit 14 (Regular/Bold) ---
