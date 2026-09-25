@@ -599,6 +599,9 @@
       const sec = document.getElementById('quefem'), panels = [...sec.querySelectorAll('.qs-panel')];
       const prog = document.getElementById('qsprog'), dots = [...prog.querySelectorAll('button')];
       let cur = 0, anim = false, tl = null, intro = null;
+      const AUTO = 9000; let auto = null; // si ningú interactua, els blocs van passant sols (el temps d'una volta de la vinyeta)
+      const autoStop = () => { clearTimeout(auto); auto = null; };
+      const autoArm = ms => { autoStop(); if (html.classList.contains('menu-open')) ms = Math.max(ms, 4000); auto = setTimeout(() => { if (document.hidden || anim || locked || html.classList.contains('menu-open')) { autoArm(1500); return; } transition((cur + 1) % panels.length, 1, true); }, ms); };
       const parts = pn => ({ claim:pn.querySelector('.qs-claim'), desc:pn.querySelector('.qs-desc'), h2:pn.querySelector('h2'), lis:[...pn.querySelectorAll('.qs-list li')], vig:pn.querySelector('.vig') });
       const setDots = n => dots.forEach((d, k) => d.classList.toggle('on', k === n));
       const counter = (n, t) => { t.call(() => setDots(n), null, .2); };
@@ -625,10 +628,10 @@
       };
       const hide = pn => { const q = parts(pn); pn.classList.remove('on'); gsap.set([q.h2, q.claim, q.desc, q.vig, ...q.lis].filter(Boolean), { opacity:0, x:0, y:0 }); };
       panels.forEach(hide);
-      const transition = (n, dir) => { // del bloc actual al bloc n, lateralment
-        anim = true; if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
+      const transition = (n, dir, byAuto = false) => { // del bloc actual al bloc n, lateralment
+        anim = true; autoStop(); if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
         const from = cur; cur = n;
-        intro = gsap.timeline({ onComplete:() => { anim = false; } });
+        intro = gsap.timeline({ onComplete:() => { anim = false; autoArm(byAuto ? AUTO : AUTO * 1.5); } }); // després d'un gest de l'usuari s'espera una mica més
         leave(from, dir, intro); counter(n, intro); enter(n, dir, intro, .45);
       };
       sec._step = dir => {
@@ -642,11 +645,11 @@
         const n = mobile ? cur : (dir < 0 ? panels.length - 1 : 0);
         if (intro) intro.kill(); if (tl) { tl.kill(); tl = null; }
         panels.forEach(hide); cur = n; anim = false; setDots(n);
-        intro = gsap.timeline();
+        intro = gsap.timeline({ onComplete:() => autoArm(AUTO) });
         intro.fromTo(prog, { opacity:0 }, { opacity:1, duration:.5 }, 0);
         enter(n, 1, intro, 0);
       };
-      sec._reset = () => { if (tl) { tl.kill(); tl = null; } if (intro) { intro.kill(); intro = null; } anim = false; };
+      sec._reset = () => { autoStop(); if (tl) { tl.kill(); tl = null; } if (intro) { intro.kill(); intro = null; } anim = false; };
     })();
     // pas "qui hi ha darrere"
     (function(){
@@ -745,7 +748,7 @@
           gsap.fromTo(rows[n], { x:40, opacity:0 }, { x:0, opacity:1, duration:.55, delay:.2, ease:'power3.out' });
         }
       };
-      rows.forEach((r, k) => r.addEventListener('click', e => { if (e.target.closest('a')) return; set(k); hold = Date.now() + 9000; }));
+      rows.forEach((r, k) => r.addEventListener('click', e => { if (e.target.closest('a')) return; set(k); hold = Date.now() + 9000; autoArm(AUTO); }));
       const stop = () => { clearInterval(timer); timer = null; };
       const start = (delay = 1200) => { stop(); hold = Date.now() + delay; set(0); timer = setInterval(() => { if (Date.now() > hold) set((i + 1) % rows.length); }, 3600); };
       const build = (delay = 0) => isM()
@@ -754,8 +757,11 @@
       return { start, stop, build };
     });
     let sub = 0, anim = false;
+    const AUTO = 14000; let auto = null; // si ningú interactua, els projectes van passant sols (un cop vistos els quatre pilars)
+    const autoStop = () => { clearTimeout(auto); auto = null; };
+    const autoArm = ms => { autoStop(); auto = setTimeout(() => { if (document.hidden || anim || locked || html.classList.contains('menu-open')) { autoArm(1500); return; } transition((sub + 1) % cases.length, 1); }, ms); };
     const pdots = [...document.querySelectorAll('#projdots button')];
-    const show = n => { sub = n; pdots.forEach((d, k) => d.classList.toggle('on', k === n)); ctrls.forEach((k, j) => j === n ? k.start() : k.stop()); };
+    const show = n => { sub = n; pdots.forEach((d, k) => d.classList.toggle('on', k === n)); ctrls.forEach((k, j) => j === n ? k.start() : k.stop()); autoArm(AUTO); };
     const lay = n => { // estat estàtic: la targeta n al centre, les anteriors fora per l'esquerra, les següents fora per la dreta
       cases.forEach((c, j) => gsap.set(c, { xPercent: j < n ? -112 : j === n ? 0 : 112, opacity: j === n ? 1 : 0, scale:1, y:0, yPercent:0 }));
     };
@@ -783,7 +789,7 @@
       ctrls[n].build(.4);
       show(n);
     };
-    sec._reset = () => { ctrls.forEach(k => k.stop()); };
+    sec._reset = () => { autoStop(); ctrls.forEach(k => k.stop()); };
     lay(0);
   })();
   (function(){
