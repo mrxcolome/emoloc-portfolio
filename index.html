@@ -68,7 +68,7 @@
   .topnav .burger span{display:block;height:2px;background:currentColor;margin:6px 8px;border-radius:2px}
   .menu{position:fixed;inset:0;z-index:29;background:var(--paper);display:none;flex-direction:column;justify-content:center;gap:8px;padding:0 var(--gutter)}
   .menu.open{display:flex}
-  .menu a{font-size:28px;line-height:1;font-weight:1000;letter-spacing:-.015em;padding:14px 0;border-bottom:1px solid var(--line)} /* Subtitular mòbil */
+  .menu a{font-size:29px;line-height:1;font-weight:1000;letter-spacing:-.04em;padding:14px 0;border-bottom:1px solid var(--line)} /* Subtitular mòbil */
   @media (max-width:900px){.topnav ul{display:none}.topnav .burger{display:block}.emoloc{font-size:30px}
     .topnav .emoloc,.topnav .parlem{transition:transform .9s var(--ease)} .topnav.compact .emoloc,.topnav.compact .parlem{transform:translateY(-110px);pointer-events:none}}
   html.menu-open .topnav{color:var(--ink)!important}
@@ -253,14 +253,14 @@
   /* ---------- mòbil, general ---------- */
   @media (max-width:820px){
     .titular{font-size:44px} /* Titular mòbil: 44 / 1.0 / 1000 / −2 % */
-    .subtitular,.case h3{font-size:28px} /* Subtitular mòbil: 28 / 1.0 / 1000 / −1,5 % */
+    .subtitular,.case h3{font-size:29px;letter-spacing:-.04em} /* Subtitular mòbil: 29 / 1.0 / 1000 / −4 % */
   }
 
   /* ---------- sense moviment ---------- */
   html.no-motion .stage{height:auto;min-height:0;overflow:visible;padding:96px var(--gutter) 64px}
   html.no-motion #zero .stage{height:100svh;padding:0} html.no-motion #bgvid video{display:none}
   html.no-motion .topnav{color:var(--ink)}
-  @media (max-width:820px){.text,.qs-list li,.btn,.pillar,.topnav ul,#zero .hint,.pil .desc>p,label.fld,input[type=text],input[type=email],textarea,.checks label{font-size:20px} .text,.qs-list li,.pil .desc>p,label.fld,.checks label{line-height:1.8} .text-bold,.pil b,#blog article h3{font-size:21px}} /* Tipografia mòbil: Text 20 / 1.8; Text Bold 21 / 1.3 */
+  @media (max-width:820px){.text,.qs-list li,.btn,.pillar,.topnav ul,#zero .hint,.pil .desc>p,label.fld,input[type=text],input[type=email],textarea,.checks label{font-size:21px} .text-bold,.pil b,#blog article h3{font-size:21px}} /* Tipografia mòbil: Text 21 / 1.5; Text Bold 21 / 1.3 */
 </style>
 </head>
 <body>
