@@ -86,11 +86,11 @@ head, rest = cur.split('<main class="wrap">', 1)
 _, tail = rest.split('</main>', 1)
 # nav + footer: es tornen a escriure sempre
 NAV = ('<nav class="topnav"><a class="emoloc" href="../"><b>.</b>emoloc</a><ul>'
-       '<li><a href="../#zero">Inici</a></li><li><a href="../#quefem">Com ho fem</a></li><li><a href="../#qui">Sobre mi</a></li>'
+       '<li><a href="../#zero">Inici</a></li><li><a href="../#quefem">Serveis</a></li><li><a href="../#qui">Sobre mi</a></li>'
        '<li><a href="../#projectes">Projectes</a></li><li class="on"><a href="#">Blog</a></li>'
        '<li><a href="../#contacte">Contacte</a></li></ul><a class="parlem" href="../#contacte">Parlem</a></nav>')
 head = re.sub(r'<nav class="topnav">.*?</nav>', NAV, head, flags=re.S)
-tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="text negreta"><li>Inici</li><li>Com ho fem</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>', tail, count=1, flags=re.S)
+tail = re.sub(r'<ul class="text negreta"><li>Inici</li>.*?</ul>', '<ul class="text negreta"><li>Inici</li><li>Serveis</li><li>Sobre mi</li><li>Projectes</li><li>Blog</li><li>Contacte</li></ul>', tail, count=1, flags=re.S)
 head = head.replace('.topnav ul .on{border-bottom:2px solid var(--accent)}', '.topnav ul .on{color:var(--accent)}')
 head = head.replace('.link{font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:2px}', '.link{font-weight:600}')
 head = head.replace('.emoloc{font-weight:800;letter-spacing:.04em;', '.emoloc{font-weight:800;letter-spacing:0;').replace('.emoloc{font-weight:800;letter-spacing:.01em;', '.emoloc{font-weight:800;letter-spacing:0;')
@@ -100,6 +100,8 @@ tail = re.sub(r'\s*<ul class="text negreta"><li>Linkedin</li><li>Instagram</li><
 head = head.replace('grid-template-columns:1.4fr 1fr 1fr;gap:32px;border-top:1px solid var(--line)', 'grid-template-columns:1.4fr 1fr;gap:32px;border-top:1px solid var(--line)')
 tail = tail.replace('<p class="text">Xavi Colomé · Barcelona<br>', '<p class="text">Xavi Colomé<br>')
 tail = tail.replace('necessita la teva empresa', 'necessita el teu negoci')
+tail = tail.replace('<li>Com ho fem</li>', '<li>Serveis</li>')
+head = head.replace('>Com ho fem</a>', '>Serveis</a>')
 tail = re.sub(r'<p class="text">Xavi Colomé(?: · Barcelona)?<br>xavi@emoloc.com</p>', '', tail)  # sense nom ni correu al peu
 tail = tail.replace('<span>Avís legal</span><span>Política de privacitat</span><span>Galetes</span>', '<a href="../avis-legal.html">Avís legal</a><a href="../privacitat.html">Política de privacitat</a><a href="../galetes.html">Galetes</a>')
 tail = tail.replace('<p class="text suau">La transformació digital', '<p class="text">La transformació digital')
