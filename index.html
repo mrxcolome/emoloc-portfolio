@@ -41,10 +41,10 @@
   ul{list-style:none}
   img,video{display:block}
   .titular{font-size:clamp(36px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
-  .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
+  .subtitular{font-size:clamp(28px,4vw,40px);line-height:1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
   .text,.qs-list li{font-size:18px;line-height:1.3;font-weight:300} /* Text 18/1.3: Regular 300 */
   .petit{font-size:14px;line-height:1.5;font-weight:300} /* Petit 14/1.5: Regular 300, Bold 800 */
-  .text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800} /* Text Bold i Petit Bold; .negreta és la drecera */
+  .text-bold{font-size:18px;line-height:1.3;font-weight:800;letter-spacing:-.02em} .petit-bold{font-size:14px;line-height:1.5;font-weight:800;letter-spacing:-.02em} .negreta{font-weight:800;letter-spacing:-.02em} /* Text Bold i Petit Bold; .negreta és la drecera */
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:var(--r-pill);background:var(--accent);color:var(--on-accent);font-weight:300;font-size:18px;line-height:1;transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);border:0;cursor:pointer}
   .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(242,107,31,.3)}
   .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
@@ -192,13 +192,13 @@
   .case .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .7s ease;transform-origin:50% 0}
   .case .shot img.on{opacity:1}
   .case .body{max-width:640px}
-  .case h3{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em} /* Subtitular */
+  .case h3{font-size:clamp(28px,4vw,40px);line-height:1;font-weight:1000;letter-spacing:-.015em} /* Subtitular */
   .case .body>.text{margin-top:4px}
   .pil{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:4px}
   .pil li{position:relative;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;padding:10px 14px;border-radius:12px;cursor:pointer;overflow:hidden;transition:background .4s;opacity:0}
   .pil li.on{background:#fff}
-  .pil .n{font-size:14px;line-height:1.5;font-weight:800;color:var(--ink);padding-top:3px;transition:color .3s} /* Petit Bold */ .pil li.on .n{color:var(--accent)}
-  .pil b{display:block;font-size:18px;line-height:1.3;font-weight:800} /* Text Bold */
+  .pil .n{font-size:14px;line-height:1.5;font-weight:800;letter-spacing:-.02em;color:var(--ink);padding-top:3px;transition:color .3s} /* Petit Bold */ .pil li.on .n{color:var(--accent)}
+  .pil b{display:block;font-size:18px;line-height:1.3;font-weight:800;letter-spacing:-.02em} /* Text Bold */
   .pil .desc{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)} .pil li.on .desc{grid-template-rows:1fr}
   .pil .desc>p{min-height:0;overflow:hidden;font-size:18px;line-height:1.3;font-weight:300;color:var(--ink);opacity:0;transition:opacity .3s} .pil li.on .desc>p{opacity:1;transition:opacity .4s .15s}
   .pil p a{font-weight:300}
@@ -213,7 +213,7 @@
   #blog article{display:flex;flex-direction:column;align-items:stretch;transition:transform var(--t-base) var(--ease)} #blog article .btn{align-self:flex-start;margin-top:auto} /* els botons, tots al mateix peu */
   #blog .thumb{display:block;aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--surface)} #blog .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--t-slow) var(--ease)} #blog article:hover .thumb img{transform:scale(1.04)}
   #blog article:hover{transform:translateY(-4px)}
-  #blog article h3{font-size:18px;font-weight:800;letter-spacing:0;margin:0 0 8px;line-height:1.3} /* Text Bold */
+  #blog article h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px;line-height:1.3} /* Text Bold */
   #blog article .petit{margin-bottom:10px}
   #blog article .text{margin-bottom:16px}
   /* blog a mòbil: un article visible, els altres lliscant lateralment */

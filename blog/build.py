@@ -107,6 +107,12 @@ tail = tail.replace('<span>Avís legal</span><span>Política de privacitat</span
 tail = tail.replace('<p class="text suau">La transformació digital', '<p class="text">La transformació digital')
 head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
 head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}')
+# --- Subtitular a 1.0; Text Bold i Petit Bold amb espaiat −2 % ---
+head = head.replace('.subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}', '.subtitular{font-size:clamp(28px,4vw,40px);line-height:1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}')
+head = head.replace('.card h3{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:6px 0 8px}', '.card h3{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.3;margin:6px 0 8px}')
+head = head.replace('.art .body h2{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:36px 0 10px}', '.art .body h2{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.3;margin:36px 0 10px}')
+head = head.replace('.art .body strong{font-weight:800}', '.art .body strong{font-weight:800;letter-spacing:-.02em}')
+head = head.replace('.text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800}', '.text-bold{font-size:18px;line-height:1.3;font-weight:800;letter-spacing:-.02em} .petit-bold{font-size:14px;line-height:1.5;font-weight:800;letter-spacing:-.02em} .negreta{font-weight:800;letter-spacing:-.02em}')
 # --- pesos definitius: Text 18/1.3 Regular 300 i Bold 800; Petit 14/1.5 Regular 300 i Bold 800 ---
 for f in ['family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800;9..40,900;9..40,1000']: head = head.replace(f, 'family=DM+Sans:opsz,wght@9..40,200..1000')
 head = head.replace('.text{font-size:18px;line-height:1.6;font-weight:400}', '.text{font-size:18px;line-height:1.3;font-weight:300}')
