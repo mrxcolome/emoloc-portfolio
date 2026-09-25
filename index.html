@@ -599,7 +599,7 @@
       const sec = document.getElementById('quefem'), panels = [...sec.querySelectorAll('.qs-panel')];
       const prog = document.getElementById('qsprog'), dots = [...prog.querySelectorAll('button')];
       let cur = 0, anim = false, tl = null, intro = null;
-      const AUTO = 9000; let auto = null; // si ningú interactua, els blocs van passant sols (el temps d'una volta de la vinyeta)
+      const AUTO = 4000; let auto = null; // si ningú interactua, els blocs van passant sols
       const autoStop = () => { clearTimeout(auto); auto = null; };
       const autoArm = ms => { autoStop(); if (html.classList.contains('menu-open')) ms = Math.max(ms, 4000); auto = setTimeout(() => { if (document.hidden || anim || locked || html.classList.contains('menu-open')) { autoArm(1500); return; } transition((cur + 1) % panels.length, 1, true); }, ms); };
       const parts = pn => ({ claim:pn.querySelector('.qs-claim'), desc:pn.querySelector('.qs-desc'), h2:pn.querySelector('h2'), lis:[...pn.querySelectorAll('.qs-list li')], vig:pn.querySelector('.vig') });
