@@ -56,11 +56,11 @@
   .swatch .meta b{font-weight:800}
   .swatch .meta code{color:var(--ink)}
   /* type */
-  .type-row{display:grid;grid-template-columns:180px 1fr;gap:16px;align-items:center;padding-block:24px;border-top:1px solid var(--line)}
+  .type-row{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:center;padding-block:24px;border-top:1px solid var(--line)}
   .type-row>*{margin:0;align-self:center}
   .type-row:first-child{border-top:0}
   .type-row .nom{display:grid;gap:2px;font-size:18px;line-height:1.3;font-weight:300;color:var(--ink)}
-  .type-row .nom small{display:block;color:var(--ink);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
+  .type-row .nom small{display:block;color:var(--ink);font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums;font-weight:300} .type-row .nom small.on{margin-top:6px} /* tres files: nom · mida / interlineat / gruix / tracking · on apareix */
   /* components: botons, enllaços, etiquetes i caselles van en Text negreta; el Petit només per a aclariments */
   .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:14px 24px;font-weight:300;font-size:18px;line-height:1.3;text-decoration:none;border:1px solid transparent;transition:transform var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-1px)}
@@ -161,13 +161,13 @@
       <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica. Set estils i prou. Titular (72, Bold): només el titular de l'inici. Subtitular (40, Bold): tots els titulars de bloc i de pàgina. Entradeta (40, gruix 200): només la frase de sota el titular de l'inici. Text (18 / 1,3, gruix 300): tot el text del web, també menús, botons i formularis. Text Bold (18 / 1,3, gruix 800): títols dins de targetes i subtítols d'article. Petit (14 / 1,5, gruix 300): dates, categories i textos legals. Petit Bold (14 / 1,5, gruix 800): números de pilar i encapçalaments de les legals. L'espaiat entre caràcters es tanca només als grans: −2 % al Titular, −1,5 % al Subtitular i −1 % a l'Entradeta; Text i Petit van a 0. Cap altre gruix ni mida.</p>
     </div>
     <div>
-      <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000 · espaiat −2 % · només a l'inici del web</small></div><h1>Digital que funciona</h1></div>
-      <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · 1000 · espaiat −1,5 % · titulars de bloc i de pàgina</small></div><h2>Serveis, projectes i blog</h2></div>
-      <div class="type-row"><div class="nom">Entradeta<small>40 / 1.2 · 200 · espaiat −1 % · només la frase d'inici</small></div><p style="font-size:clamp(28px,4vw,40px);line-height:1.2;letter-spacing:-.01em;font-weight:200">T'acompanyem amb una estratègia sòlida.</p></div>
-      <div class="type-row"><div class="nom">Text<small>18 / 1.3 · 300 · espaiat 0 · tot el text, menús, botons i formularis</small></div><p class="text">Un negoci no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
-      <div class="type-row"><div class="nom">Text Bold<small>18 / 1.3 · 800 · espaiat 0 · títols de targeta (blog, projectes) i subtítols d'article</small></div><p class="text-bold">Com et troben Google i ChatGPT, i què hi pots fer</p></div>
-      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 300 · espaiat 0 · dates, categories i textos legals</small></div><p class="petit">15 de setembre de 2026 · Comunicació. Primera lectura de resultats, dades de Google Search Console.</p></div>
-      <div class="type-row"><div class="nom">Petit Bold<small>14 / 1.5 · 800 · espaiat 0 · números de pilar i encapçalaments de les legals</small></div><p class="petit-bold">Qui és el responsable</p></div>
+      <div class="type-row"><div class="nom">Titular<small>72 / 1.0 / 1000 / −2 %</small><small class="on">Titular de l'inici</small></div><h1>Digital que funciona</h1></div>
+      <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 / 1000 / −1,5 %</small><small class="on">Titulars de bloc i de pàgina</small></div><h2>Serveis, projectes i blog</h2></div>
+      <div class="type-row"><div class="nom">Entradeta<small>40 / 1.2 / 200 / −1 %</small><small class="on">Frase de sota el titular de l'inici</small></div><p style="font-size:clamp(28px,4vw,40px);line-height:1.2;letter-spacing:-.01em;font-weight:200">T'acompanyem amb una estratègia sòlida.</p></div>
+      <div class="type-row"><div class="nom">Text<small>18 / 1.3 / 300 / 0</small><small class="on">Paràgrafs, menús, botons i formularis</small></div><p class="text">Un negoci no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><div class="nom">Text Bold<small>18 / 1.3 / 800 / 0</small><small class="on">Títols de targeta del blog i dels projectes, subtítols d'article</small></div><p class="text-bold">Com et troben Google i ChatGPT, i què hi pots fer</p></div>
+      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 / 300 / 0</small><small class="on">Dates, categories i textos legals</small></div><p class="petit">15 de setembre de 2026 · Comunicació. Primera lectura de resultats, dades de Google Search Console.</p></div>
+      <div class="type-row"><div class="nom">Petit Bold<small>14 / 1.5 / 800 / 0</small><small class="on">Números de pilar i encapçalaments de les legals</small></div><p class="petit-bold">Qui és el responsable</p></div>
     </div>
     <ul class="dont">
       <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
