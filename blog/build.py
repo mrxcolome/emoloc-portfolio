@@ -176,5 +176,19 @@ tail = tail.replace('''  const list = document.getElementById('list'), art = doc
 '''    const slug = (location.hash.match(/^#article\\/([\\w-]+)/) || [])[1];
     const cur = arts.find(a => a.dataset.slug === slug); const isArt = !!cur;
     arts.forEach(a => a.classList.toggle('on', a === cur)); list.classList.toggle('off', isArt);''')
+# --- normalització tipogràfica final (idempotent): els set estils, escriptori i mòbil ---
+head = re.sub(r'\.text\{font-size:\d+px;line-height:[\d.]+;font-weight:\d+\}', '.text{font-size:18px;line-height:1.5;font-weight:300}', head)
+head = re.sub(r'\.text-bold\{[^}]*\}', '.text-bold{font-size:19px;line-height:1.3;font-weight:800;letter-spacing:-.04em}', head)
+head = re.sub(r'\.card h3\{[^}]*\}', '.card h3{font-size:19px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:6px 0 8px}', head)
+head = re.sub(r'\.art \.body h2\{[^}]*\}', '.art .body h2{font-size:19px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:36px 0 10px}', head)
+head = re.sub(r'\.art \.lead\{[^}]*\}', '.art .lead{margin-top:20px;font-size:18px;line-height:1.5;font-weight:300}', head)
+head = re.sub(r'\.art \.body p\{[^}]*\}', '.art .body p{font-size:18px;line-height:1.5;font-weight:300;margin-bottom:18px}', head)
+head = re.sub(r'\.art \.body li\{font-size:\d+px;line-height:[\d.]+;(?:font-weight:\d+;)?', '.art .body li{font-size:18px;line-height:1.5;font-weight:300;', head)
+MOB = ('@media (max-width:820px){.subtitular{font-size:28px} '
+       '.text,.topnav ul,.btn,.filters button,.art .lead,.art .body p,.art .body li,.cta .text{font-size:20px} '
+       '.text,.art .lead,.art .body p,.art .body li{line-height:1.8} '
+       '.text-bold,.card h3,.art .body h2{font-size:21px}} /* Tipografia mòbil: Subtitular 28; Text 20 / 1.8; Text Bold 21 */')
+head = re.sub(r'[ \t]*@media \(max-width:820px\)\{\.subtitular\{font-size:28px\}[^\n]*\n', '', head)  # fora la línia antiga
+head = head.replace('</style>', '  ' + MOB + '\n</style>', 1)  # al final del CSS perquè guanyi a les regles d'escriptori
 open(OUT, 'w', encoding='utf-8').write(head + main + tail)
 print('ok', len(arts), 'articles')
