@@ -111,7 +111,7 @@ head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}')
 for f in ['family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800;9..40,900;9..40,1000']: head = head.replace(f, 'family=DM+Sans:opsz,wght@9..40,200..1000')
 head = head.replace('.text{font-size:18px;line-height:1.6;font-weight:400}', '.text{font-size:18px;line-height:1.3;font-weight:300}')
 head = head.replace('.petit{font-size:14px;line-height:1.5;font-weight:400}', '.petit{font-size:14px;line-height:1.5;font-weight:300}')
-head = head.replace('.negreta{font-weight:600}', '.negreta{font-weight:800}')
+head = head.replace('.negreta{font-weight:600}', '.negreta{font-weight:800}').replace('.negreta{font-weight:800}', '.text-bold{font-size:18px;line-height:1.3;font-weight:800} .petit-bold{font-size:14px;line-height:1.5;font-weight:800} .negreta{font-weight:800}') if '.text-bold{' not in head else head
 head = head.replace('.topnav ul{display:flex;gap:28px;font-weight:400;font-size:18px}', '.topnav ul{display:flex;gap:28px;font-weight:300;font-size:18px}')
 head = head.replace('font-weight:400;font-size:18px;line-height:1;transition:transform var(--t-fast) var(--ease)}', 'font-weight:300;font-size:18px;line-height:1;transition:transform var(--t-fast) var(--ease)}')
 head = head.replace('  .link{font-weight:400;text-decoration:underline;text-underline-offset:3px}', '  .link{font-weight:300;text-decoration:underline;text-underline-offset:3px}')

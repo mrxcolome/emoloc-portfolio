@@ -19,12 +19,14 @@
 
   html{color-scheme:light only}
   *{box-sizing:border-box}
-  /* ---- els quatre estils de text, i cap més ---- */
+  /* ---- els set estils de text, i cap més ---- */
   .titular{font-size:clamp(36px,12vw,72px);line-height:1;font-weight:1000;letter-spacing:-.02em;text-wrap:balance}
   .subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}
   .text{font-size:18px;line-height:1.3;font-weight:300}   /* Text: Regular 300, Bold 800 */
   .petit{font-size:14px;line-height:1.5;font-weight:300}
-  .negreta{font-weight:800}   /* variant Bold de Text i de Petit */
+  .text-bold{font-size:18px;line-height:1.3;font-weight:800}
+  .petit-bold{font-size:14px;line-height:1.5;font-weight:800}
+  .negreta{font-weight:800}   /* drecera: Text o Petit en Bold */
   /* ---- base: cada element hereta un dels quatre ---- */
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);padding-inline:var(--gutter);padding-block:0 96px;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.3;font-weight:300}
   h1,h2,h3,p{margin:0}
@@ -112,7 +114,7 @@
   <section>
     <div class="sec-head">
       <h1>Guia d'estils emoloc</h1>
-      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en quatre estils, un moviment, els components i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
+      <p class="lead">Perquè tot el que faci emoloc sembli d'emoloc: la web, el prototip, els dossiers, les presentacions. Cinc colors, una lletra en set estils, un moviment, els components i les normes de la casa. Qualsevol cosa nova ha de sortir d'aquí. Aquesta guia està composta només amb els seus propis estils.</p>
     </div>
   </section>
 
@@ -155,15 +157,17 @@
 
   <section id="type">
     <div class="sec-head">
-      <h2>DM Sans, quatre estils</h2>
-      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica. Quatre estils i prou. El Titular gran (72, Bold) només surt a l'inici del web. El Subtitular (40, Bold) fa tots els titulars de bloc i de pàgina. L'Entradeta (40, gruix 200) és només la frase de sota el titular de l'inici. El Text (18, interlineat 1,3) és tot el text del web, també els menús, els botons i els formularis, en Regular (300); la variant Bold (800) només per als títols dins de targetes (blog, projectes, subtítols d'article). El Petit (14) és per a dates, categories i textos legals, en Regular (300) o Bold (800). Cap altre gruix ni mida.</p>
+      <h2>DM Sans, set estils</h2>
+      <p class="lead">Una geomètrica neta i sense pretensions, amb mida òptica. Set estils i prou. Titular (72, Bold): només el titular de l'inici. Subtitular (40, Bold): tots els titulars de bloc i de pàgina. Entradeta (40, gruix 200): només la frase de sota el titular de l'inici. Text (18 / 1,3, gruix 300): tot el text del web, també menús, botons i formularis. Text Bold (18 / 1,3, gruix 800): títols dins de targetes i subtítols d'article. Petit (14 / 1,5, gruix 300): dates, categories i textos legals. Petit Bold (14 / 1,5, gruix 800): números de pilar i encapçalaments de les legals. Cap altre gruix ni mida.</p>
     </div>
     <div>
       <div class="type-row"><div class="nom">Titular<small>72 / 1.0 · 1000 · només a l'inici del web</small></div><h1>Digital que funciona</h1></div>
       <div class="type-row"><div class="nom">Subtitular<small>40 / 1.1 · Bold 1000 · titulars de bloc i de pàgina</small></div><h2>Serveis, projectes i blog</h2></div>
       <div class="type-row"><div class="nom">Entradeta<small>40 / 1.2 · 200 · només la frase d'inici</small></div><p style="font-size:clamp(28px,4vw,40px);line-height:1.2;letter-spacing:-.01em;font-weight:200">T'acompanyem amb una estratègia sòlida.</p></div>
-      <div class="type-row"><div class="nom">Text<small>18 / 1.3 · Regular 300 i Bold 800 · tot el text, menús, botons i formularis</small></div><p><span class="negreta">Un negoci no necessita "una web" o "publicitat a Google".</span> Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
-      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · Regular 300 i Bold 800 · dates, categories i textos legals</small></div><p class="petit"><span class="negreta">Gairebé no se'n fa ús: només textos legals, aclariments, peus de foto i la font d'una xifra.</span> Primera lectura de resultats, 19 de setembre de 2026, dades de Google Search Console.</p></div>
+      <div class="type-row"><div class="nom">Text<small>18 / 1.3 · 300 · tot el text, menús, botons i formularis</small></div><p class="text">Un negoci no necessita "una web" o "publicitat a Google". Necessita que la trobin, que el dia a dia no depengui d'un excel, que vendre sigui fàcil i que la gent sàpiga que existeix.</p></div>
+      <div class="type-row"><div class="nom">Text Bold<small>18 / 1.3 · 800 · títols de targeta (blog, projectes) i subtítols d'article</small></div><p class="text-bold">Com et troben Google i ChatGPT, i què hi pots fer</p></div>
+      <div class="type-row"><div class="nom">Petit<small>14 / 1.5 · 300 · dates, categories i textos legals</small></div><p class="petit">15 de setembre de 2026 · Comunicació. Primera lectura de resultats, dades de Google Search Console.</p></div>
+      <div class="type-row"><div class="nom">Petit Bold<small>14 / 1.5 · 800 · números de pilar i encapçalaments de les legals</small></div><p class="petit-bold">Qui és el responsable</p></div>
     </div>
     <ul class="dont">
       <li>Tot el text amb caixa alta inicial normal: titulars, botons, etiquetes i menús comencen en majúscula. L'única excepció és el logotip.</li>
