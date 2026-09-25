@@ -107,6 +107,8 @@ tail = tail.replace('<span>Avís legal</span><span>Política de privacitat</span
 tail = tail.replace('<p class="text suau">La transformació digital', '<p class="text">La transformació digital')
 head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
 head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}')
+# --- mòbil: Text a 1.5 (sense el 1.3 antic); Subtitular mòbil 28 ---
+head = head.replace('@media (max-width:820px){.text{line-height:1.3}}', '@media (max-width:820px){.subtitular{font-size:28px}}')
 # --- Subtitular a 1.0; Text Bold i Petit Bold amb espaiat −2 % ---
 head = head.replace('.subtitular{font-size:clamp(28px,4vw,40px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}', '.subtitular{font-size:clamp(28px,4vw,40px);line-height:1;font-weight:1000;letter-spacing:-.015em;text-wrap:balance}')
 head = head.replace('.card h3{font-size:18px;font-weight:800;letter-spacing:0;line-height:1.3;margin:6px 0 8px}', '.card h3{font-size:19px;font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:6px 0 8px}')

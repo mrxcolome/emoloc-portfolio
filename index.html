@@ -68,8 +68,7 @@
   .topnav .burger span{display:block;height:2px;background:currentColor;margin:6px 8px;border-radius:2px}
   .menu{position:fixed;inset:0;z-index:29;background:var(--paper);display:none;flex-direction:column;justify-content:center;gap:8px;padding:0 var(--gutter)}
   .menu.open{display:flex}
-  .menu a{font-size:clamp(26px,7.4vw,34px);line-height:1.1;font-weight:1000;letter-spacing:-.015em;padding:12px 0;border-bottom:1px solid var(--line)} /* Subtitular */
-  .menu .lang{margin-top:24px;font-weight:300;color:var(--ink)}
+  .menu a{font-size:28px;line-height:1;font-weight:1000;letter-spacing:-.015em;padding:14px 0;border-bottom:1px solid var(--line)} /* Subtitular mòbil */
   @media (max-width:900px){.topnav ul{display:none}.topnav .burger{display:block}.emoloc{font-size:30px}
     .topnav .emoloc,.topnav .parlem{transition:transform .9s var(--ease)} .topnav.compact .emoloc,.topnav.compact .parlem{transform:translateY(-110px);pointer-events:none}}
   html.menu-open .topnav{color:var(--ink)!important}
@@ -100,7 +99,7 @@
   @media (max-width:820px){
     #zero .hint{bottom:6vh}
     #zero .scene1{align-content:start;padding-top:16vh}
-    .order-d{display:none} #zero .order-m{display:block}
+    .order-d{display:none} #zero .order-m{display:block;font-size:26px;line-height:1.2;font-weight:200;letter-spacing:0} /* Entradeta mòbil: 26 / 1.2 / 200 / 0 */
   }
 
   /* ---------- passos estàtics: què fem, qui ---------- */
@@ -113,9 +112,9 @@
   .qs-grid{display:grid;grid-template-columns:minmax(0,540px) minmax(0,1fr);grid-template-rows:minmax(196px,auto) auto;grid-template-areas:"head vig" "body vig";gap:8px clamp(32px,5vw,80px);align-items:start} /* la fila del titular té alçada fixa: els conceptes sempre a la mateixa altura */
   .qs-head{grid-area:head} .qs-body{grid-area:body} .qs .vig{grid-area:vig;align-self:start}
   .qs-dots{display:flex;gap:2px} .qs-dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center} .qs-dots button::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s} .qs-dots button.on::before{background:var(--accent);transform:scale(1.3)} .qs-dots button:hover::before{background:var(--ink)} .qs-dots button.on:hover::before{background:var(--accent)} /* els puntets del pas */
-  .qs h2{margin-top:14px} .qs-desc{margin-top:14px;max-width:44ch} @media (max-width:820px){.qs-desc{margin-top:8px;line-height:1.3}}
+  .qs h2{margin-top:14px} .qs-desc{margin-top:14px;max-width:44ch} @media (max-width:820px){.qs-desc{margin-top:8px}}
   .qs-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
-  .qs-list li{padding:12px 18px;background:var(--surface);border-radius:12px;line-height:1.3} /* cada concepte dins d'un rectangle, en Text compacte */
+  .qs-list li{padding:12px 18px;background:var(--surface);border-radius:12px} /* cada concepte dins d'un rectangle, en Text */
   .vig{position:relative;height:min(56vh,480px);border-radius:var(--r-m);background:var(--surface);padding:18px;overflow:hidden;font-family:var(--font)}
   .vig img{display:block;width:100%;height:100%;object-fit:cover}
   .pop{opacity:0}
@@ -171,7 +170,7 @@
     .qui-copy{order:0;padding:60px var(--gutter) 20px}
     .qui .vidbox{order:1;flex:1;min-height:0;width:100%;height:auto;aspect-ratio:auto;border-radius:0;background:var(--surface)}
     .qui video{width:100%;height:100%;object-fit:cover;object-position:50% 47%} /* el punt fix són els ulls (al 47 % de l'alçada del vídeo): queden sempre a mitja alçada del requadre, sigui quin sigui el mòbil */
-    .qui-copy h2 + .text{margin-top:16px} .qui-copy .text + .text{margin-top:16px} .qui-copy .text{line-height:1.3} /* Text compacte */
+    .qui-copy h2 + .text{margin-top:16px} .qui-copy .text + .text{margin-top:16px}
     .qui-copy .text + .text{display:none} /* a mòbil només el primer paràgraf: el vídeo guanya alçada i la cara es veu més lluny */
   }
 
@@ -204,7 +203,7 @@
   .pil p a{font-weight:300}
   .pil .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent)} .pil li.on .bar{animation:fill 3.6s linear forwards}
   .case .actions{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap}
-  @media (max-width:820px){.proj-head{margin-bottom:20px} .proj-head .text{margin-top:10px;line-height:1.3} @media (max-height:720px){.proj-head .text{display:none}} .case{grid-template-columns:1fr;gap:12px;padding:16px} .case .body>.text{display:none} .case .actions{margin-top:12px} .case .shot{aspect-ratio:16/10} .pil li{padding:8px 12px} .pil{display:grid} .pil li{grid-area:1/1;opacity:0;pointer-events:none} .pil li.on{pointer-events:auto} @media (max-height:720px){.case .shot{aspect-ratio:2/1} .case{padding:12px} .pil li{padding:6px 12px} .case .actions{margin-top:10px}}}
+  @media (max-width:820px){.proj-head{margin-bottom:20px} .proj-head .text{margin-top:10px} @media (max-height:720px){.proj-head .text{display:none}} .case{grid-template-columns:1fr;gap:12px;padding:16px} .case .body>.text{display:none} .case .actions{margin-top:12px} .case .shot{aspect-ratio:16/10} .pil li{padding:8px 12px} .pil{display:grid} .pil li{grid-area:1/1;opacity:0;pointer-events:none} .pil li.on{pointer-events:auto} @media (max-height:720px){.case .shot{aspect-ratio:2/1} .case{padding:12px} .pil li{padding:6px 12px} .case .actions{margin-top:10px}}}
 
 
   #blog .stage{padding-left:max(var(--edge),calc(50% - 560px));padding-right:max(var(--edge),calc(50% - 560px))} /* el contingut no passa de 1120 px */
@@ -218,11 +217,11 @@
   #blog article .text{margin-bottom:16px}
   /* blog a mòbil: un article visible, els altres lliscant lateralment */
   @media (max-width:820px){
-    #blog .intro{display:block;line-height:1.3;margin:10px 0 18px} #blog h2.subtitular{margin-bottom:0}
+    #blog .intro{display:block;margin:10px 0 18px} #blog h2.subtitular{margin-bottom:0}
     #blog .posts{display:grid;grid-template-columns:1fr} #blog article{grid-area:1/1;will-change:transform} /* una targeta visible; les altres entren lateralment amb el mateix motor que la resta de blocs */
     #blog article{display:flex;flex-direction:column;align-items:stretch}
     #blog .thumb{aspect-ratio:16/9;margin:0 0 12px;border-radius:10px;width:100%}
-    #blog article h3{margin-bottom:6px} #blog article .text{display:block;line-height:1.3;margin-bottom:12px} #blog article .petit{margin-bottom:4px}
+    #blog article h3{margin-bottom:6px} #blog article .text{display:block;margin-bottom:12px} #blog article .petit{margin-bottom:4px}
     #blog article:hover{transform:none}
     #blog .dots{display:flex;gap:8px;justify-content:center;margin-top:16px} #blog .dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .3s} #blog .dots i.on{background:var(--accent)}
     @media (max-height:720px){#blog article .text{display:none} #blog .intro{display:none}}
@@ -253,7 +252,8 @@
 
   /* ---------- mòbil, general ---------- */
   @media (max-width:820px){
-    .subtitular{font-size:clamp(26px,7.4vw,34px)}
+    .titular{font-size:44px} /* Titular mòbil: 44 / 1.0 / 1000 / −2 % */
+    .subtitular,.case h3{font-size:28px} /* Subtitular mòbil: 28 / 1.0 / 1000 / −1,5 % */
   }
 
   /* ---------- sense moviment ---------- */
@@ -271,7 +271,6 @@
 </nav>
 <div class="menu" id="menu">
   <a href="#zero">Inici</a><a href="#quefem">Serveis</a><a href="#qui">Sobre mi</a><a href="#projectes">Projectes</a><a href="blog/" data-step="#blog">Blog</a><a href="#contacte">Contacte</a>
-  <span class="lang">Ca / es</span>
 </div>
 
 <!-- ============ pantalla zero + escena 1 ============ -->
