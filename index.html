@@ -74,7 +74,7 @@
   html.menu-open .topnav{color:var(--ink)!important}
   html.steps-locked{overscroll-behavior:none}
   .topnav::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity var(--t-base) var(--ease);z-index:-1;border-bottom:1px solid rgba(27,24,21,.06)}
-  .topnav.solid::before{opacity:1}
+  .topnav.solid::before{opacity:1} @media (max-width:820px){.topnav.solid::before{opacity:0}} /* a mòbil no hi ha barra blanca: tapava el titular de Contacte */
   .topnav{z-index:30}
 
   /* ---------- pantalla zero ---------- */
@@ -98,7 +98,7 @@
   @keyframes drop{to{top:100%}}
   @media (max-width:820px){
     #zero .hint{bottom:6vh}
-    #zero .scene1{align-content:start;padding-top:16vh}
+    #zero .scene1{align-content:start;padding-top:22vh} @media (max-height:720px){#zero .scene1{padding-top:19vh}} /* els dos blocs de text una mica més avall */
     .order-d{display:none} #zero .order-m{display:block;font-size:30px;line-height:1.2;font-weight:200;letter-spacing:0} /* Entradeta mòbil: 30 / 1.2 / 200 / 0 */
   }
 
@@ -153,8 +153,8 @@
   .qui-copy h2 + .text{margin-top:32px} .qui-copy .text + .text{margin-top:36px}
   .bridge{margin-top:28px;font-size:clamp(22px,2.2vw,28px);font-weight:1000;letter-spacing:-.015em;line-height:1.15}
   @media (max-width:820px){
-    .pstep .stage{padding:22px var(--gutter) 24px;align-content:start}
-    .qs-panel{padding:48px var(--gutter) 52px} @media (max-height:720px){.qs-panel{padding-top:28px}} .qs-prog{bottom:14px} .qs-head{padding-top:0}
+    .pstep .stage{padding:60px var(--gutter) 24px;align-content:start} /* a mòbil, els cinc subtitulars a 60 px del capdamunt de la secció */
+    .qs .stage{padding-top:0} .qs-panel{padding:50px var(--gutter) 52px} .qs-prog{bottom:14px} .qs-head{padding-top:0}
     .qs-grid{grid-template-columns:1fr;grid-template-rows:minmax(132px,auto) auto auto;grid-template-areas:"head" "vig" "body";gap:14px;align-items:start} /* fila del titular fixa també a mòbil */
     .qs h2{margin-top:10px}
     .qs-list{margin-top:0;gap:8px} .qs-list li{padding:8px 14px;border-radius:10px}
