@@ -55,7 +55,7 @@ def card(a, full=True):
 
 filters = ''.join('<button%s data-f="%s">%s</button>' % (' class="on"' if i == 0 else '', f, f) for i, f in enumerate(['Tots', 'Presència', 'Gestió', 'Venda', 'Comunicació']))
 lst = '''  <section class="list" id="list">
-    <div class="head"><h1 class="titular">Blog</h1><p class="text">Articles curts per entendre què pot aportar la transformació digital al teu negoci.</p></div>
+    <div class="head"><h1 class="subtitular">Blog</h1><p class="text">Articles curts per entendre què pot aportar la transformació digital al teu negoci.</p></div>
     <div class="filters" id="filters">%s</div>
     <div class="grid" id="grid">
       %s
@@ -67,13 +67,13 @@ def art(a):
     others = [b for b in arts if b is not a][:3]
     return '''  <section class="art" data-slug="%s">
     <p><a class="btn sec" href="#"><span aria-hidden="true">←</span> Tots els articles</a></p>
-    <header style="margin-top:40px"><p class="petit suau">%s · %s</p><h1 class="titular" style="margin-top:12px">%s</h1><p class="lead">%s</p><div class="meta text negreta suau"><span>Xavi Colomé</span><span>·</span><span>%d minuts de lectura</span><span>·</span><span>Ca / es</span></div></header>
+    <header style="margin-top:40px"><p class="petit suau">%s · %s</p><h1 class="subtitular">%s</h1><p class="lead">%s</p><div class="meta petit"><span>Xavi Colomé</span><span>·</span><span>%d minuts de lectura</span><span>·</span><span>Ca / es</span></div></header>
     <div class="hero"><img src="%s" alt=""></div>
     <div class="body">
 %s
     </div>
-    <div class="cta"><div><p class="subtitular" style="font-size:28px">Creus que et podem ajudar?</p><p class="text" style="margin-top:8px">La primera conversa és sense compromís i serveix per veure si t'hi podem ajudar.</p></div><a class="btn" href="../#contacte">Parlem</a></div>
-    <div class="more"><p class="subtitular" style="font-size:28px;margin-bottom:8px">Més articles</p><div class="grid">
+    <div class="cta"><div><p class="subtitular">Creus que et podem ajudar?</p><p class="text" style="margin-top:8px">La primera conversa és sense compromís i serveix per veure si t'hi podem ajudar.</p></div><a class="btn" href="../#contacte">Parlem</a></div>
+    <div class="more"><p class="subtitular" style="margin-bottom:8px">Més articles</p><div class="grid">
         %s
     </div></div>
   </section>
@@ -106,7 +106,20 @@ tail = re.sub(r'<p class="text">Xavi Colomé(?: · Barcelona)?<br>xavi@emoloc.co
 tail = tail.replace('<span>Avís legal</span><span>Política de privacitat</span><span>Galetes</span>', '<a href="../avis-legal.html">Avís legal</a><a href="../privacitat.html">Política de privacitat</a><a href="../galetes.html">Galetes</a>')
 tail = tail.replace('<p class="text suau">La transformació digital', '<p class="text">La transformació digital')
 head = head.replace('<meta name="description" content="Articles curts per a qui té un negoci i no té departament digital: web, gestió, venda en línia i comunicació. Sense argot i amb què fer demà al matí.">', '<meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">').replace('<meta property="og:description" content="Articles curts per a qui té un negoci i no té departament digital.">', '<meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">')
-head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}').replace('.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--muted)}', '.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4}')
+head = head.replace('.suau{color:var(--muted)}', '.suau{color:inherit}')
+# --- quatre estils: Titular 72 (només a l'inici del web), Subtitular 40, Text 18 (Regular/Bold), Petit 14 (Regular/Bold) ---
+head = head.replace('.text{font-size:20px;line-height:1.6;font-weight:400}', '.text{font-size:18px;line-height:1.6;font-weight:400}')
+head = head.replace('.topnav ul{display:flex;gap:28px;font-weight:600;font-size:16px}', '.topnav ul{display:flex;gap:28px;font-weight:400;font-size:18px}')
+head = head.replace('font-weight:600;font-size:20px;line-height:1;transition:transform var(--t-fast) var(--ease)}', 'font-weight:400;font-size:18px;line-height:1;transition:transform var(--t-fast) var(--ease)}')
+head = head.replace('  .link{font-weight:600}', '  .link{font-weight:400;text-decoration:underline;text-underline-offset:3px}')
+head = head.replace('.filters button{font:inherit;font-weight:600;font-size:20px;', '.filters button{font:inherit;font-weight:400;font-size:18px;')
+head = head.replace('.card h3{font-size:clamp(24px,2.4vw,30px);font-weight:1000;letter-spacing:-.015em;line-height:1.1;margin:10px 0 12px}', '.card h3{font-size:18px;font-weight:600;letter-spacing:0;line-height:1.6;margin:6px 0 8px}')
+head = head.replace('.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4}', '.art .lead{margin-top:20px;font-size:18px;line-height:1.6}')
+head = head.replace('.art .body p{font-size:20px;line-height:1.55;margin-bottom:22px}', '.art .body p{font-size:18px;line-height:1.6;margin-bottom:20px}')
+head = head.replace('.art .body h2{font-size:clamp(26px,3vw,32px);font-weight:1000;letter-spacing:-.015em;line-height:1.1;margin:48px 0 18px}', '.art .body h2{font-size:18px;font-weight:600;letter-spacing:0;line-height:1.6;margin:40px 0 10px}')
+head = head.replace('.art .body li{font-size:20px;line-height:1.55;', '.art .body li{font-size:18px;line-height:1.6;')
+head = head.replace('.art header{max-width:860px}', '.art header{max-width:860px} .art header .subtitular{margin-top:12px}')
+tail = tail.replace('<ul class="text negreta"><li>Inici</li>', '<ul class="text"><li>Inici</li>').replace('.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--muted)}', '.art .lead{margin-top:24px;font-size:clamp(22px,2.2vw,26px);line-height:1.4}')
 head = head.replace('.card{border-top:2px solid var(--ink);padding:20px 0 8px;', '.card{padding:0 0 8px;display:flex;flex-direction:column;align-items:stretch;').replace('  .card .text{margin-bottom:16px}\n', '  .card .text{margin-bottom:16px} .card .btn{align-self:flex-start;margin-top:auto}\n')  # sense ratlles negres; botons al mateix peu
 if '.btn.sec{' not in head:
     head = head.replace('  .link{font-weight:600}\n', '  .link{font-weight:600}\n  .btn.sec{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)} .btn.sec:hover{box-shadow:inset 0 0 0 1px var(--ink)}\n')  # botó secundari, com a la portada.replace('.text{font-size:20px;line-height:1.55;font-weight:400}', '.text{font-size:20px;line-height:1.6;font-weight:400}')  # text sempre en tinta, Text 20/1.6
