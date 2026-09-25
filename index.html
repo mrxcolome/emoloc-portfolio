@@ -610,19 +610,20 @@
       const enter = (n, dir, t, at) => { // cada element entra per un costat diferent
         const q = parts(panels[n]);
         t.set(panels[n], { visibility:'visible' }, at).call(() => panels[n].classList.add('on'), null, at);
-        t.fromTo(q.h2, { opacity:0, x:70 * dir }, { opacity:1, x:0, duration:.8, ease:'power3.out' }, at);
-        if (q.claim) t.fromTo(q.claim, { opacity:0, y:-14 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, at + .1);
-        t.fromTo(q.lis, { opacity:0, x:0, y:26 }, { opacity:1, x:0, y:0, duration:.55, stagger:.16, ease:'power2.out' }, at + .3); // x:0 perquè en marxar s'havien desplaçat de costat
-        t.fromTo(q.vig, { opacity:0, y:70, scale:.97 }, { opacity:1, y:0, scale:1, duration:1.2, ease:'power2.out' }, at + .2);
+        // tot entra pel costat d'on venim (dreta si avancem), esglaonat: titular, conceptes un rere l'altre, vinyeta
+        t.fromTo(q.h2, { opacity:0, x:90 * dir, y:0 }, { opacity:1, x:0, duration:.8, ease:'power3.out' }, at);
+        if (q.claim) t.fromTo(q.claim, { opacity:0, x:60 * dir }, { opacity:1, x:0, duration:.6, ease:'power2.out' }, at + .1);
+        t.fromTo(q.lis, { opacity:0, x:70 * dir, y:0 }, { opacity:1, x:0, duration:.6, stagger:.14, ease:'power3.out' }, at + .2);
+        t.fromTo(q.vig, { opacity:0, x:160 * dir, y:0, scale:.98 }, { opacity:1, x:0, scale:1, duration:1.1, ease:'power3.out' }, at + .15);
         t.call(() => { tl = VIG[n](q.vig); tl.pause(0); }, null, at); // es crea ja amagada, abans que la targeta es vegi
         t.call(() => { if (tl) tl.play(); }, null, at + .7);
       };
       const leave = (n, dir, t) => { // cada element marxa per un costat diferent del que entra
         const q = parts(panels[n]);
         t.to(q.h2, { opacity:0, x:-90 * dir, duration:.5, ease:'power2.in' }, 0);
-        if (q.claim) t.to(q.claim, { opacity:0, y:-20, duration:.4, ease:'power2.in' }, 0);
-        t.to(q.lis, { opacity:0, x:-40 * dir, duration:.4, stagger:.07, ease:'power2.in' }, .05);
-        t.to(q.vig, { opacity:0, y:-50, scale:.98, duration:.55, ease:'power2.in' }, 0);
+        if (q.claim) t.to(q.claim, { opacity:0, x:-60 * dir, duration:.4, ease:'power2.in' }, .05);
+        t.to(q.lis, { opacity:0, x:-70 * dir, duration:.45, stagger:.08, ease:'power2.in' }, .05);
+        t.to(q.vig, { opacity:0, x:-140 * dir, scale:.98, duration:.55, ease:'power2.in' }, .1);
         t.call(() => { panels[n].classList.remove('on'); }, null, .6);
       };
       const hide = pn => { const q = parts(pn); pn.classList.remove('on'); gsap.set([q.h2, q.claim, q.vig, ...q.lis].filter(Boolean), { opacity:0, x:0, y:0 }); };
@@ -703,7 +704,11 @@
   window.addEventListener('touchstart', e => { touchY = e.touches[0].clientY; touchX = e.touches[0].clientX; }, { passive:true });
   window.addEventListener('touchend', e => {
     if (touchY === null) return; const dy = touchY - e.changedTouches[0].clientY, dx = touchX - e.changedTouches[0].clientX; touchY = null;
-    if (Math.abs(dy) < 40 || Math.abs(dx) > Math.abs(dy)) return; // un gest horitzontal (carrusel del blog) no canvia de pas
+    if (Math.abs(dx) > Math.abs(dy)) { // gest horitzontal: dins de "Com ho fem" passa de bloc; al carrusel del blog no fa res
+      if (inZone && Math.abs(dx) >= 50 && steps[current] && steps[current].id === 'quefem' && !e.target.closest('#blog .posts')) go(current + (dx > 0 ? 1 : -1), true);
+      return;
+    }
+    if (Math.abs(dy) < 40) return;
     if (inZone) go(current + (dy > 0 ? 1 : -1), true);
     else if (dy < 0 && lenis.scroll <= zoneEnd() + 40) { setZone(true); go(steps.length - 1, true); }
   }, { passive:true });
