@@ -18,6 +18,8 @@ Articles curts per entendre què pot aportar la transformació digital al teu ne
 ## Següents
 5. presència · la fitxa de Google del teu negoci: la pàgina que més gent veu i que ningú cuida (2 d'octubre)
 6. gestió · les tasques que fas cada setmana i que es poden fer soles (14 d'octubre)
+7. venda · vendre per internet sense muntar una gran botiga online: per on començar (6 de setembre)
+8. comunicació · escriure als clients sense molestar: el correu i el WhatsApp ben fets (21 de setembre)
 
 ## Ritme
 Un article cada dues setmanes com a mínim. Redactats amb IA a partir d'un guió meu, i revisats per mi abans de publicar. Cada article en català i castellà.
