@@ -670,12 +670,8 @@
   function setZone(on){ inZone = on; html.classList.toggle('steps-locked', on); if (on) lenis.stop(); else lenis.start(); }
   const navFor = el => '#' + el.id;
   function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', (a.dataset.step || a.getAttribute('href')) === hash)); }
-  // el fons canvia amb cada secció: el vídeo es veu sempre igual, però l'onada canvia de color (gir de to sobre el taronja), de manera gradual
-  const bgv = document.getElementById('zbg');
-  const HUE = { zero:0, quefem:200, qui:110, projectes:265, blog:150, contacte:320 }; // taronja, blau, verd, violeta, turquesa, rosa
-  function setBg(id){ gsap.to(bgv, { filter:'hue-rotate(' + (HUE[id] || 0) + 'deg)', duration:1.6, ease:'power2.inOut', overwrite:true }); }
   function activate(i, dir = 1){
-    const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0); setBg(el.id);
+    const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0);
     gsap.set(nav, { color:INK });
     if (i === 0) { zeroTl.restart(); gsap.fromTo('#zhint', { y:120, visibility:'visible' }, { y:0, duration:.8, delay:.5, ease:'power2.out', overwrite:true }); } else if (el._play) el._play(dir);
   }
@@ -692,7 +688,7 @@
       gsap.to(hint, { y:window.innerHeight - r.top + 20, duration:1, ease:'power2.in', overwrite:true, onComplete:() => gsap.set(hint, { clearProps:'position,top,left,right,bottom', y:120, visibility:'hidden' }) });
     }
     const target = i === steps.length ? free : steps[i];
-    if (i < steps.length) activate(i, byInput ? i - prev : 1); else { setNavActive('#contacte'); nav.classList.add('compact'); setBg('contacte'); }
+    if (i < steps.length) activate(i, byInput ? i - prev : 1); else { setNavActive('#contacte'); nav.classList.add('compact'); }
     lenis.scrollTo(target, { duration:1.1, force:true, lock:true, onComplete:() => {
       locked = false;
       if (prev !== i && prev > 0 && prev < steps.length) steps[prev]._reset && steps[prev]._reset();
@@ -729,7 +725,7 @@
     const el = document.querySelector(a.getAttribute('href')); if (!el) return; e.preventDefault();
     const idx = steps.indexOf(el);
     if (idx >= 0) { if (!inZone) setZone(true); locked = false; go(idx); }
-    else { if (inZone) { setZone(false); } current = steps.length; setNavActive('#contacte'); nav.classList.add('compact'); setBg('contacte'); lenis.scrollTo(el, { duration:1.4, force:true }); }
+    else { if (inZone) { setZone(false); } current = steps.length; setNavActive('#contacte'); nav.classList.add('compact'); lenis.scrollTo(el, { duration:1.4, force:true }); }
   }));
   window.addEventListener('resize', () => { if (inZone && !locked) lenis.scrollTo(current === steps.length ? free : steps[current], { immediate:true, force:true }); });
 
