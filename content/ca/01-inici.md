@@ -78,7 +78,9 @@ Xifra destacada: 39 € al mes, un sol pla, tot inclòs.
 
 Sóc en Xavi Colomé. Fa més de 25 anys que treballo en digital: primer com a programador i dissenyador en agències, després dirigint marketing digital i ecommerce a Tous i Textura, i des del 2019 com a director digital de Castañer.
 
-emoloc és la manera de portar aquesta experiència a negocis que no tenen departament digital però necessiten el mateix rigor. No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.
+emoloc és la manera de portar aquesta experiència a negocis que no tenen departament digital però necessiten el mateix rigor.
+
+No és una agència: sóc jo, la manera de fer que he après en vint-i-cinc anys i la intel·ligència artificial com a equip.
 
 [enllaç] Sobre mi → sobre-mi
 
