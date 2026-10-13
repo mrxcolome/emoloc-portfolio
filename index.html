@@ -670,10 +670,10 @@
   function setZone(on){ inZone = on; html.classList.toggle('steps-locked', on); if (on) lenis.stop(); else lenis.start(); }
   const navFor = el => '#' + el.id;
   function setNavActive(hash){ document.querySelectorAll('.topnav ul a, .menu a').forEach(a => a.classList.toggle('on', (a.dataset.step || a.getAttribute('href')) === hash)); }
-  // el fons canvia amb cada secció: blanc on hi ha targetes beix (Inici, Serveis, Projectes) i beix on no n'hi ha (Sobre mi, Blog, Contacte); el vel també varia d'intensitat
-  const veil = document.getElementById('zwhite'), isM = () => matchMedia('(max-width:820px)').matches;
-  const BG = { zero:['#ffffff', .5, .68], quefem:['#ffffff', .78, .86], qui:['#f6f4f0', .86, .92], projectes:['#ffffff', .6, .76], blog:['#f6f4f0', .86, .92], contacte:['#f6f4f0', .86, .92] };
-  function setBg(id){ const [c, d, m] = BG[id] || BG.zero; gsap.to(veil, { backgroundColor:c, opacity:isM() ? m : d, duration:1.1, ease:'power2.inOut', overwrite:true }); }
+  // el fons canvia amb cada secció: el vídeo es veu sempre igual, però l'onada canvia de color (gir de to sobre el taronja), de manera gradual
+  const bgv = document.getElementById('zbg');
+  const HUE = { zero:0, quefem:200, qui:110, projectes:265, blog:150, contacte:320 }; // taronja, blau, verd, violeta, turquesa, rosa
+  function setBg(id){ gsap.to(bgv, { filter:'hue-rotate(' + (HUE[id] || 0) + 'deg)', duration:1.6, ease:'power2.inOut', overwrite:true }); }
   function activate(i, dir = 1){
     const el = steps[i]; setNavActive(navFor(el)); nav.classList.toggle('compact', i > 0); setBg(el.id);
     gsap.set(nav, { color:INK });
