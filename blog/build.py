@@ -54,14 +54,21 @@ def card(a, full=True):
             % (' reveal' if full else '', a['pilar'], a['slug'], a['img'], a['data'], a['pilar'], html.escape(a['titol'], quote=False), t, a['slug']))
 
 filters = ''.join('<button%s data-f="%s">%s</button>' % (' class="on"' if i == 0 else '', f, f) for i, f in enumerate(['Tots', 'Presència', 'Gestió', 'Venda', 'Comunicació']))
+def feat(a):  # l'article més recent, en gran: imatge a l'esquerra, títol en Subtitular i botó principal
+    return ('<article class="card feat reveal" data-pilar="%s"><a class="thumb" href="#article/%s"><img src="%s" alt=""></a>'
+            '<div class="feat-body"><p class="petit suau">%s · %s</p><h2 class="subtitular"><a href="#article/%s">%s</a></h2><p class="text">%s</p>'
+            '<a class="btn" href="#article/%s">Llegir l\'article <span aria-hidden="true">→</span></a></div></article>'
+            % (a['pilar'], a['slug'], a['img'], a['data'], a['pilar'], a['slug'], html.escape(a['titol'], quote=False), html.escape(a['entradeta'], quote=False), a['slug']))
+
 lst = '''  <section class="list" id="list">
     <div class="head"><h1 class="subtitular">Blog</h1><p class="text">Articles curts per entendre què pot aportar la transformació digital al teu negoci.</p></div>
+    %s
     <div class="filters" id="filters">%s</div>
     <div class="grid" id="grid">
       %s
     </div>
   </section>
-''' % (filters, '\n      '.join(card(a) for a in arts))
+''' % (feat(arts[0]), filters, '\n      '.join(card(a) for a in arts[1:]))
 
 def art(a):
     others = [b for b in arts if b is not a][:3]
@@ -190,5 +197,17 @@ MOB = ('@media (max-width:820px){.subtitular{font-size:29px;letter-spacing:-.04e
        '.text-bold,.card h3,.art .body h2{font-size:21px}} /* Tipografia mòbil: Subtitular 29 / −4 %; Text 20 / 1.3; Text Bold 21 */')
 head = re.sub(r'[ \t]*@media \(max-width:820px\)\{\.subtitular\{font-size:2[89]px[^\n]*\n', '', head)  # fora la línia antiga
 head = head.replace('</style>', '  ' + MOB + '\n</style>', 1)  # al final del CSS perquè guanyi a les regles d'escriptori
+# --- portada del blog: destacat i graella de tres (idempotent) ---
+FEAT = """  .feat{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;background:var(--surface);border-radius:var(--r-m);padding:clamp(16px,2vw,24px);margin-top:48px}
+  .feat .thumb{aspect-ratio:4/3;margin:0;border-radius:12px} .feat-body{padding:8px clamp(0px,2vw,24px) 8px 0} .feat .subtitular{margin:10px 0 18px} .feat .text{margin-bottom:28px} .feat .btn{align-self:flex-start}
+  .feat:hover{transform:none} .feat:hover .thumb img{transform:scale(1.03)}
+  .list .filters{margin-top:56px} .list .grid{grid-template-columns:repeat(3,1fr);gap:40px 32px}
+  @media (max-width:1024px){.list .grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:820px){.feat{grid-template-columns:1fr;gap:16px;padding:12px;margin-top:32px} .feat .thumb{aspect-ratio:3/2} .feat-body{padding:4px 8px 12px} .feat .subtitular{margin:8px 0 12px} .feat .text{margin-bottom:20px} .list .filters{margin-top:36px} .list .grid{grid-template-columns:1fr}}
+"""
+if '.feat{' not in head:
+    head = head.replace('</style>', FEAT + '</style>', 1)
+tail = tail.replace("document.querySelectorAll('#grid .card')", "document.querySelectorAll('#list .card')")  # el filtre també amaga el destacat
+head = re.sub(r'( \.art header \.subtitular\{margin-top:12px\})+', r'\1', head)  # una sola vegada
 open(OUT, 'w', encoding='utf-8').write(head + main + tail)
 print('ok', len(arts), 'articles')
