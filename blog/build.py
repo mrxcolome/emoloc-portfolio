@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(ROOT, '..'))
 OUT = os.path.join(ROOT, 'index.html')
 MEDIA = '../assets/'
-IMG = {'01': 'blog-wordpress.jpg', '02': 'blog-excel.jpg', '03': 'blog-subscripcio.jpg', '04': 'blog-ia.jpg'}
+IMG = {'01': 'blog-wordpress.jpg', '02': 'blog-excel.jpg', '03': 'blog-subscripcio.jpg', '04': 'blog-ia.jpg', '05': 'blog-google.jpg', '06': 'blog-tasques.jpg'}
 MESOS = {'01':'Gener','02':'Febrer','03':'Març','04':'Abril','05':'Maig','06':'Juny','07':'Juliol','08':'Agost','09':'Setembre','10':'Octubre','11':'Novembre','12':'Desembre'}
 
 def cap(s): return s[:1].upper() + s[1:]

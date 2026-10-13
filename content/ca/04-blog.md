@@ -15,5 +15,9 @@ Articles curts per entendre què pot aportar la transformació digital al teu ne
 3. venda · vendre coneixement per subscripció: què cal de debò
 4. comunicació · com et troben Google i ChatGPT, i què hi pots fer
 
+## Següents
+5. presència · la fitxa de Google del teu negoci: la pàgina que més gent veu i que ningú cuida (2 d'octubre)
+6. gestió · les tasques que fas cada setmana i que es poden fer soles (14 d'octubre)
+
 ## Ritme
 Un article cada dues setmanes com a mínim. Redactats amb IA a partir d'un guió meu, i revisats per mi abans de publicar. Cada article en català i castellà.

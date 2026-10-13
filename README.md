@@ -17,10 +17,12 @@ Cal tenir quatre secrets al repositori (Settings → Secrets and variables → A
 
 ## Calendari editorial del blog
 
-Un article cada quinze dies, els dies 1 i 15 de cada mes. La data va al camp `data: AAAA-MM-DD` de cada `content/ca/blog/NN-*.md` i el generador la mostra com «1 d'agost de 2026».
+Un article cada quinze dies, al voltant dels dies 1 i 15 de cada mes. La data va al camp `data: AAAA-MM-DD` de cada `content/ca/blog/NN-*.md` i el generador la mostra com «1 d'agost de 2026».
 
 - 01 · 1 d'agost de 2026 · Presència · Quan una web de WordPress ja no serveix
 - 02 · 15 d'agost de 2026 · Gestió · L'excel que porta el teu negoci
 - 03 · 1 de setembre de 2026 · Venda · Vendre coneixement per subscripció
 - 04 · 15 de setembre de 2026 · Comunicació · Com et troben Google i ChatGPT
-- 05 · **1 d'octubre de 2026 · pendent d'escriure**
+- 05 · 2 d'octubre de 2026 · Presència · La fitxa de Google del teu negoci
+- 06 · 14 d'octubre de 2026 · Gestió · Les tasques que fas cada setmana i que es poden fer soles
+- 07 · **1 de novembre de 2026 · Venda · pendent d'escriure**
