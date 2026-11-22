@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>emoloc · transformació digital per a petits negocis</title>
 <meta name="description" content="Presència, gestió, venda i comunicació. emoloc acompanya negocis sense departament digital amb web, eines a mida, venda en línia i comunicació. Xavi Colomé, Barcelona.">
-<link rel="canonical" href="https://emoloc.com/">
+<link rel="canonical" href="https://xavicolome.com/">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="emoloc">
 <meta property="og:title" content="emoloc · transformació digital per a petits negocis">
 <meta property="og:description" content="Presència, gestió, venda i comunicació. La transformació digital que necessita el teu negoci, feta a mida.">
-<meta property="og:url" content="https://emoloc.com/">
-<meta property="og:image" content="https://emoloc.com/assets/og.jpg">
+<meta property="og:url" content="https://xavicolome.com/">
+<meta property="og:image" content="https://xavicolome.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ca_ES">
@@ -479,7 +479,7 @@
       <h2 class="subtitular reveal">Creus que et podem ajudar?</h2>
       <p class="text reveal">Explica'ns en quatre ratlles què fas, què et fa perdre temps o clients i què t'agradaria que passés. La primera conversa és sense compromís i serveix per veure si t'hi podem ajudar. Cada proposta és a mida.</p>
     </div>
-    <form class="reveal" id="fcontacte" action="contacte.php" method="post" novalidate>
+    <form class="reveal" id="fcontacte" action="/contacte" method="post" novalidate>
       <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><input type="hidden" name="torn" value="0">
       <div class="f2"><label class="fld">Nom<input type="text" name="nom" required></label><label class="fld">Empresa<input type="text" name="empresa" required></label></div>
       <div class="f2"><label class="fld">Email<input type="email" name="email" required></label><label class="fld">Telèfon<input type="text" name="telefon"></label></div>
@@ -827,7 +827,7 @@
     const o = { v:f };
     ScrollTrigger.create({ trigger:el, start:'top 85%', once:true, onEnter:() => gsap.to(o, { v:n, duration:1.8, ease:'power3.out', onUpdate:() => { el.textContent = o.v.toFixed(dec).replace('.', ',') + suffix; } }) });
   });
-  // formulari de contacte: envia a contacte.php i mostra el resultat sense recarregar
+  // formulari de contacte: envia a /contacte (funció de Cloudflare Pages) i mostra el resultat sense recarregar
   (function(){
     const f = document.getElementById('fcontacte'), msg = document.getElementById('fmsg'), t0 = Date.now();
     if (!f) return;

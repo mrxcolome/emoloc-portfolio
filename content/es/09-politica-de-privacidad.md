@@ -1,6 +1,6 @@
 # Política de privacidad
 
-Esta política explica qué datos personales recoge emoloc.com, para qué y qué derechos tienes. Está escrita para que se entienda, no para que haya que leerla dos veces.
+Esta política explica qué datos personales recoge xavicolome.com, para qué y qué derechos tienes. Está escrita para que se entienda, no para que haya que leerla dos veces.
 
 ## Quién es el responsable
 

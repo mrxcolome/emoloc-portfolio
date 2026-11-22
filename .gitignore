@@ -4,3 +4,4 @@ design/escena-presencia.html
 __pycache__/
 .DS_Store
 Thumbs.db
+dist/

@@ -1,6 +1,6 @@
 # Política de privacitat
 
-Aquesta política explica quines dades personals recull emoloc.com, per a què i quins drets tens. Està escrita perquè s'entengui, no perquè s'hagi de llegir dues vegades.
+Aquesta política explica quines dades personals recull xavicolome.com, per a què i quins drets tens. Està escrita perquè s'entengui, no perquè s'hagi de llegir dues vegades.
 
 ## Qui és el responsable
 

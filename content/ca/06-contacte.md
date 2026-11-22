@@ -53,7 +53,7 @@ Gràcies per escriure. He rebut el teu missatge sobre [empresa] i te'l llegiré 
 Si mentrestant et ve al cap alguna cosa més, respon aquest mateix email.
 
 Xavi Colomé
-emoloc · emoloc.com
+emoloc · xavicolome.com
 
 ## Email d'avís (a tu)
 

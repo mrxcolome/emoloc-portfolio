@@ -1,7 +1,9 @@
-# Desplegament automàtic a Webempresa: cada push a main sincronitza la web per FTPS.
-# Credencials als Secrets del repo (Settings -> Secrets and variables -> Actions):
-#   FTP_SERVIDOR, FTP_USUARI, FTP_CONTRASENYA, FTP_CARPETA (p. ex. /www/)
-name: desplegar a webempresa
+# Desplegament automàtic a Cloudflare Pages: cada push a main publica la web a xavicolome.com.
+# Secrets del repo (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  (token d'API amb el permís "Cloudflare Pages: Edit")
+#   CLOUDFLARE_ACCOUNT_ID (l'identificador del compte, a la pàgina d'inici del tauler de Cloudflare)
+# La clau del correu del formulari (RESEND_API_KEY) NO va aquí: es posa al projecte de Pages, a Settings → Variables and Secrets.
+name: desplegar a cloudflare pages
 
 on:
   push:
@@ -15,51 +17,18 @@ concurrency:
 jobs:
   desplegar:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: baixar el codi
         uses: actions/checkout@v4
 
-      - name: normalitzar la carpeta de destí (ha d'acabar amb /)
-        id: carpeta
-        env:
-          FTP_CARPETA: ${{ secrets.FTP_CARPETA }}
-        run: |
-          dir="${FTP_CARPETA%/}/"
-          # PROTECCIÓ MENTRE ÉS DE PROVA: només es publica dins d'una carpeta /test/.
-          # Quan passem a l'arrel, treu aquestes tres línies.
-          if [[ "$dir" != */test/ ]]; then echo "::error::La carpeta de destí no acaba en /test/ (té ${#dir} caràcters). Aturo el desplegament per no tocar la web actual."; exit 1; fi
-          echo "dir=$dir" >> "$GITHUB_OUTPUT"
+      - name: preparar la carpeta dist/ (només els fitxers que es publiquen)
+        run: bash scripts/dist.sh
 
-      - name: diagnòstic de connexió (no mostra cap valor secret)
-        env:
-          FTP_SERVIDOR: ${{ secrets.FTP_SERVIDOR }}
-          FTP_USUARI: ${{ secrets.FTP_USUARI }}
-          FTP_CONTRASENYA: ${{ secrets.FTP_CONTRASENYA }}
-          FTP_CARPETA: ${{ secrets.FTP_CARPETA }}
-        run: |
-          echo "servidor: ${#FTP_SERVIDOR} caràcters, resol a $(getent hosts "$FTP_SERVIDOR" | awk '{print $1}' | head -1)"
-          echo "usuari: ${#FTP_USUARI} caràcters, porta arrova: $([[ "$FTP_USUARI" == *@* ]] && echo sí || echo no), espais o salts de línia: $([[ "$FTP_USUARI" =~ [[:space:]] ]] && echo SÍ || echo no)"
-          echo "contrasenya: ${#FTP_CONTRASENYA} caràcters, espais o salts de línia: $([[ "$FTP_CONTRASENYA" =~ [[:space:]] ]] && echo SÍ || echo no)"
-          echo "carpeta: ${#FTP_CARPETA} caràcters$([[ "$FTP_CARPETA" == /test/ || "$FTP_CARPETA" == /test ]] && echo ' (és /test/)')"
-          echo "adreça pública d'aquest executor de GitHub: $(curl -s --max-time 10 https://api.ipify.org || echo desconeguda)"
-          echo "--- un únic intent d'entrada amb FTPS explícit (port 21) ---"
-          curl -sS --ssl-reqd --insecure --max-time 40 -v --list-only "ftp://$FTP_SERVIDOR/" --user "$FTP_USUARI:$FTP_CONTRASENYA" > /tmp/llista.txt 2> /tmp/dialeg.txt && echo "ENTRADA CORRECTA, $(wc -l < /tmp/llista.txt) entrades a l'arrel del compte" || echo "ENTRADA REBUTJADA"
-          grep -E "^[<>] " /tmp/dialeg.txt | grep -viE "^> PASS" | head -20
-
-      - name: sincronitzar per FTPS (només fitxers canviats)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: publicar a Cloudflare Pages (projecte xavicolome)
+        uses: cloudflare/wrangler-action@v3
         with:
-          server: ${{ secrets.FTP_SERVIDOR }}
-          username: ${{ secrets.FTP_USUARI }}
-          password: ${{ secrets.FTP_CONTRASENYA }}
-          protocol: ftps
-          server-dir: ${{ steps.carpeta.outputs.dir }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            .github/**
-            content/**
-            design/**
-            blog/build.py
-            .gitignore
-            README.md
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=xavicolome --branch=main --commit-dirty=true

@@ -4,4 +4,4 @@ Allow: /
 Disallow: /design/
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
-Sitemap: https://emoloc.com/sitemap.xml
+Sitemap: https://xavicolome.com/sitemap.xml

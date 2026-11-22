@@ -53,7 +53,7 @@ Gracias por escribir. He recibido tu mensaje sobre [empresa] y lo leeré con cal
 Si mientras tanto se te ocurre algo más, responde a este mismo email.
 
 Xavi Colomé
-emoloc · emoloc.com
+emoloc · xavicolome.com
 
 ## Email de aviso (a ti)
 

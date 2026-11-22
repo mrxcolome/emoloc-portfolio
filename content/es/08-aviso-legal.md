@@ -8,7 +8,7 @@ En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad d
 - **NIF:** 38125725M
 - **Dirección:** Comte de Salvatierra, 8 · 08006 Barcelona
 - **Email:** xavi@emoloc.com
-- **Sitio web:** emoloc.com
+- **Sitio web:** xavicolome.com
 
 ## Actividad
 

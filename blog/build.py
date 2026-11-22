@@ -159,13 +159,13 @@ if '.btn.sec{' not in head:
 if '<link rel="canonical"' not in head:
     head = head.replace('<title>emoloc blog</title>', """<title>Blog · emoloc</title>
 <meta name="description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">
-<link rel="canonical" href="https://emoloc.com/blog/">
+<link rel="canonical" href="https://xavicolome.com/blog/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="emoloc">
 <meta property="og:title" content="Blog · emoloc">
 <meta property="og:description" content="Articles curts per entendre què pot aportar la transformació digital al teu negoci.">
-<meta property="og:url" content="https://emoloc.com/blog/">
-<meta property="og:image" content="https://emoloc.com/assets/og.jpg">
+<meta property="og:url" content="https://xavicolome.com/blog/">
+<meta property="og:image" content="https://xavicolome.com/assets/og.jpg">
 <meta property="og:locale" content="ca_ES">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">""")
 # CSS for thumbs / hero (idempotent)

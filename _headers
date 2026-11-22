@@ -1,0 +1,17 @@
+# Capçaleres per a Cloudflare Pages (substitueix l'.htaccess de Webempresa)
+# Per defecte, tot fresc (HTML); els mitjans i les llibreries, amb caché llarga.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: no-cache, must-revalidate
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+/libs/*
+  ! Cache-Control
+  Cache-Control: public, max-age=604800
+/robots.txt
+  ! Cache-Control
+  Cache-Control: public, max-age=3600
+/design/*
+  X-Robots-Tag: noindex, nofollow
